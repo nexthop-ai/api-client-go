@@ -22,7 +22,7 @@ func TestCollections_Addcollectionitems(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -43,7 +43,7 @@ func TestCollections_Createcollection(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -649,7 +649,7 @@ func TestCollections_Deletecollection(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -673,7 +673,7 @@ func TestCollections_Deletecollectionitem(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -695,7 +695,7 @@ func TestCollections_Editcollection(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -1263,7 +1263,7 @@ func TestCollections_Editcollectionitem(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -1285,7 +1285,7 @@ func TestCollections_Getcollection(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -1306,7 +1306,7 @@ func TestCollections_Listcollections(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 

@@ -15,7 +15,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -56,7 +56,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 

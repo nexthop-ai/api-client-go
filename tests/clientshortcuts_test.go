@@ -22,7 +22,7 @@ func TestClientShortcuts_Createshortcut(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -614,7 +614,7 @@ func TestClientShortcuts_Deleteshortcut(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -635,7 +635,7 @@ func TestClientShortcuts_Getshortcut(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -658,7 +658,7 @@ func TestClientShortcuts_Listshortcuts(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -694,7 +694,7 @@ func TestClientShortcuts_Updateshortcut(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 

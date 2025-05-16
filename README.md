@@ -82,7 +82,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -125,7 +125,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -158,10 +158,10 @@ func main() {
 
 This SDK supports the following security schemes globally:
 
-| Name               | Type   | Scheme  | Environment Variable        |
-| ------------------ | ------ | ------- | --------------------------- |
-| `ActAsBearerToken` | apiKey | API key | `GLEAN_ACT_AS_BEARER_TOKEN` |
-| `CookieAuth`       | apiKey | API key | `GLEAN_COOKIE_AUTH`         |
+| Name         | Type   | Scheme      | Environment Variable |
+| ------------ | ------ | ----------- | -------------------- |
+| `APIToken`   | http   | HTTP Bearer | `GLEAN_API_TOKEN`    |
+| `CookieAuth` | apiKey | API key     | `GLEAN_COOKIE_AUTH`  |
 
 You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```go
@@ -181,7 +181,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -485,7 +485,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -565,7 +565,7 @@ func main() {
 				RetryConnectionErrors: false,
 			}),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -641,7 +641,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -1359,7 +1359,7 @@ func main() {
 	s := apiclientgo.New(
 		apiclientgo.WithInstance("<value>"),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 
@@ -1420,7 +1420,7 @@ func main() {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL("https://instance-name-be.glean.com"),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
 		}),
 	)
 

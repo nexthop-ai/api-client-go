@@ -21,7 +21,9 @@ func TestAnnouncements_Createannouncement(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Client.Announcements.Create(ctx, components.CreateAnnouncementRequest{
@@ -1390,7 +1392,9 @@ func TestAnnouncements_Deleteannouncement(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Client.Announcements.Delete(ctx, components.DeleteAnnouncementRequest{
@@ -1409,7 +1413,9 @@ func TestAnnouncements_Updateannouncement(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Client.Announcements.Update(ctx, components.UpdateAnnouncementRequest{

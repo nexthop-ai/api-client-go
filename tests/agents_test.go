@@ -13,51 +13,92 @@ import (
 )
 
 func TestAgents_Runagent(t *testing.T) {
-	ctx := context.Background()
-
-	testHTTPClient := createTestHTTPClient("runagent")
-
-	s := apiclientgo.New(
-		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
-		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-	)
-
-	res, err := s.Client.Agents.Run(ctx, components.RunAgentRequest{}, nil)
-	require.NoError(t, err)
-	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
-
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step runagent.test referencing operation runagent not found in document`]")
 }
 
 func TestAgents_Listagents(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step listagents.test referencing operation listagents not found in document`]")
+}
+
+func TestAgents_Getagentinputs(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getagentinputs.test referencing operation getagentinputs not found in document`]")
+}
+
+func TestAgents_GetAgent(t *testing.T) {
 	ctx := context.Background()
 
-	testHTTPClient := createTestHTTPClient("listagents")
+	testHTTPClient := createTestHTTPClient("getAgent")
 
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
-	res, err := s.Client.Agents.List(ctx, nil, nil)
+	res, err := s.Client.Agents.Retrieve(ctx, "<id>", nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
 }
 
-func TestAgents_Getagentinputs(t *testing.T) {
+func TestAgents_GetAgentSchemas(t *testing.T) {
 	ctx := context.Background()
 
-	testHTTPClient := createTestHTTPClient("getagentinputs")
+	testHTTPClient := createTestHTTPClient("getAgentSchemas")
 
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
-	res, err := s.Client.Agents.RetrieveInputs(ctx, components.GetAgentInputsRequest{}, nil)
+	res, err := s.Client.Agents.RetrieveSchemas(ctx, "<id>", nil)
+	require.NoError(t, err)
+	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+
+}
+
+func TestAgents_SearchAgents(t *testing.T) {
+	ctx := context.Background()
+
+	testHTTPClient := createTestHTTPClient("searchAgents")
+
+	s := apiclientgo.New(
+		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
+		apiclientgo.WithClient(testHTTPClient),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
+	)
+
+	res, err := s.Client.Agents.List(ctx, components.SearchAgentsRequest{})
+	require.NoError(t, err)
+	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
+
+}
+
+func TestAgents_CreateAndStreamRun(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createAndStreamRun.test referencing operation createAndStreamRun is not currently supported`]")
+}
+
+func TestAgents_CreateAndWaitRun(t *testing.T) {
+	ctx := context.Background()
+
+	testHTTPClient := createTestHTTPClient("createAndWaitRun")
+
+	s := apiclientgo.New(
+		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
+		apiclientgo.WithClient(testHTTPClient),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
+	)
+
+	res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{})
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

@@ -24,6 +24,8 @@ const (
 	AcceptHeaderEnumWildcardRootWildcard AcceptHeaderEnum = "*/*"
 	AcceptHeaderEnumApplicationJson      AcceptHeaderEnum = "application/json"
 	AcceptHeaderEnumTextPlain            AcceptHeaderEnum = "text/plain"
+	AcceptHeaderEnumTextEventStream      AcceptHeaderEnum = "text/event-stream"
+	AcceptHeaderEnumTextCsv              AcceptHeaderEnum = "text/csv"
 )
 
 func (e AcceptHeaderEnum) ToPointer() *AcceptHeaderEnum {

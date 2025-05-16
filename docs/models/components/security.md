@@ -5,4 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `APIToken`         | **string*          | :heavy_minus_sign: | N/A                |
+| `ActAsBearerToken` | **string*          | :heavy_minus_sign: | N/A                |
+| `CookieAuth`       | **string*          | :heavy_minus_sign: | N/A                |

@@ -3,12 +3,20 @@
 package components
 
 type Security struct {
-	APIToken *string `security:"scheme,type=http,subtype=bearer,name=Authorization,env=glean_api_token"`
+	ActAsBearerToken *string `security:"scheme,type=apiKey,subtype=header,name=Authorization,env=glean_act_as_bearer_token"`
+	CookieAuth       *string `security:"scheme,type=apiKey,subtype=header,name=Authorization,env=glean_cookie_auth"`
 }
 
-func (o *Security) GetAPIToken() *string {
+func (o *Security) GetActAsBearerToken() *string {
 	if o == nil {
 		return nil
 	}
-	return o.APIToken
+	return o.ActAsBearerToken
+}
+
+func (o *Security) GetCookieAuth() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CookieAuth
 }

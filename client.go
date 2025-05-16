@@ -18,6 +18,7 @@ type Client struct {
 	Entities       *Entities
 	Shortcuts      *ClientShortcuts
 	Verification   *Verification
+	Governance     *Governance
 
 	sdkConfiguration sdkConfiguration
 }
@@ -40,5 +41,6 @@ func newClient(sdkConfig sdkConfiguration) *Client {
 		Entities:         newEntities(sdkConfig),
 		Shortcuts:        newClientShortcuts(sdkConfig),
 		Verification:     newVerification(sdkConfig),
+		Governance:       newGovernance(sdkConfig),
 	}
 }

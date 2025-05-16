@@ -14,7 +14,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
@@ -53,7 +55,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{

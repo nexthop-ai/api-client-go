@@ -226,6 +226,10 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request *components.SearchReq
 				return nil, err
 			}
 
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
 			return nil, &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1116,6 +1120,10 @@ func (s *Search) Query(ctx context.Context, request *components.SearchRequest, o
 				return nil, err
 			}
 
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
 			return nil, &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)

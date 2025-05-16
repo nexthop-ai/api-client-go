@@ -15,7 +15,7 @@ import (
 
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
-	"https://instance-name-be.glean.com",
+	"https://{instance}-be.glean.com",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -143,10 +143,9 @@ func WithClient(client HTTPClient) SDKOption {
 }
 
 // WithSecurity configures the SDK to use the provided security details
-func WithSecurity(apiToken string) SDKOption {
+func WithSecurity(security components.Security) SDKOption {
 	return func(sdk *Glean) {
-		security := components.Security{APIToken: &apiToken}
-		sdk.sdkConfiguration.Security = utils.AsSecuritySource(&security)
+		sdk.sdkConfiguration.Security = utils.AsSecuritySource(security)
 	}
 }
 
@@ -178,9 +177,9 @@ func New(opts ...SDKOption) *Glean {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.9.0",
-			SDKVersion:        "0.3.0",
-			GenVersion:        "2.598.21",
-			UserAgent:         "speakeasy-sdk/go 0.3.0 2.598.21 0.9.0 github.com/gleanwork/api-client-go",
+			SDKVersion:        "0.4.0",
+			GenVersion:        "2.604.2",
+			UserAgent:         "speakeasy-sdk/go 0.4.0 2.604.2 0.9.0 github.com/gleanwork/api-client-go",
 			ServerDefaults: []map[string]string{
 				{
 					"instance": "instance-name",

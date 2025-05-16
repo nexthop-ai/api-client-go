@@ -20,7 +20,9 @@ func TestIndexingDocuments_PostAPIIndexV1Indexdocument(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.AddOrUpdate(ctx, components.IndexDocumentRequest{
@@ -41,7 +43,9 @@ func TestIndexingDocuments_PostAPIIndexV1Indexdocuments(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.Index(ctx, components.IndexDocumentsRequest{
@@ -65,7 +69,9 @@ func TestIndexingDocuments_PostAPIIndexV1Bulkindexdocuments(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.BulkIndex(ctx, components.BulkIndexDocumentsRequest{
@@ -90,7 +96,9 @@ func TestIndexingDocuments_PostAPIIndexV1Processalldocuments(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.ProcessAll(ctx, nil)
@@ -107,7 +115,9 @@ func TestIndexingDocuments_PostAPIIndexV1Deletedocument(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.Delete(ctx, components.DeleteDocumentRequest{

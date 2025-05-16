@@ -1,0 +1,11 @@
+# CreateDlpReportRequest
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `Name`                                                                          | **string*                                                                       | :heavy_minus_sign:                                                              | Name of the policy being created.                                               |
+| `Config`                                                                        | [*components.DlpConfig](../../models/components/dlpconfig.md)                   | :heavy_minus_sign:                                                              | Detailed configuration of what documents and sensitive content will be scanned. |
+| `Frequency`                                                                     | [*components.DlpFrequency](../../models/components/dlpfrequency.md)             | :heavy_minus_sign:                                                              | Interval between scans. DAILY is deprecated.                                    |
+| `AutoHideDocs`                                                                  | **bool*                                                                         | :heavy_minus_sign:                                                              | Controls whether the policy should hide documents with violations.              |

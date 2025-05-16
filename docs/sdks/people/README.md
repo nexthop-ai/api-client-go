@@ -31,8 +31,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -40,7 +40,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.Debug(ctx, "<value>", components.DebugUserRequest{
@@ -91,8 +93,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -100,7 +102,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.Count(ctx, components.GetUserCountRequest{
@@ -145,8 +149,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -154,18 +158,16 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.Index(ctx, components.IndexEmployeeRequest{
         Employee: components.EmployeeInfoDefinition{
-            Email: "Santos.Turcotte@yahoo.com",
+            Email: "Jerrold_Hermann@hotmail.com",
             Department: "<value>",
             DatasourceProfiles: []components.DatasourceProfile{
-                components.DatasourceProfile{
-                    Datasource: "github",
-                    Handle: "<value>",
-                },
                 components.DatasourceProfile{
                     Datasource: "github",
                     Handle: "<value>",
@@ -212,8 +214,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -221,12 +223,45 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.BulkIndex(ctx, components.BulkIndexEmployeesRequest{
         UploadID: "<id>",
-        Employees: []components.EmployeeInfoDefinition{},
+        Employees: []components.EmployeeInfoDefinition{
+            components.EmployeeInfoDefinition{
+                Email: "Robin.Stoltenberg@yahoo.com",
+                Department: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+            },
+            components.EmployeeInfoDefinition{
+                Email: "Robin.Stoltenberg@yahoo.com",
+                Department: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+            },
+            components.EmployeeInfoDefinition{
+                Email: "Robin.Stoltenberg@yahoo.com",
+                Department: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+            },
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -268,6 +303,7 @@ package main
 import(
 	"context"
 	"os"
+	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -276,7 +312,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.ProcessAllEmployeesAndTeams(ctx)
@@ -318,8 +356,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -327,7 +365,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.Delete(ctx, components.DeleteEmployeeRequest{
@@ -372,8 +412,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -381,7 +421,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.IndexTeam(ctx, components.IndexTeamRequest{
@@ -404,13 +446,7 @@ func main() {
             },
             Members: []components.TeamMember{
                 components.TeamMember{
-                    Email: "Rachelle20@yahoo.com",
-                },
-                components.TeamMember{
-                    Email: "Rebeka.Gerhold@hotmail.com",
-                },
-                components.TeamMember{
-                    Email: "Jace86@yahoo.com",
+                    Email: "Nasir.Hilll73@hotmail.com",
                 },
             },
         },
@@ -454,8 +490,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -463,7 +499,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.DeleteTeam(ctx, components.DeleteTeamRequest{
@@ -508,8 +546,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -517,12 +555,60 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.People.BulkIndexTeams(ctx, components.BulkIndexTeamsRequest{
         UploadID: "<id>",
-        Teams: []components.TeamInfoDefinition{},
+        Teams: []components.TeamInfoDefinition{
+            components.TeamInfoDefinition{
+                ID: "<id>",
+                Name: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+                Members: []components.TeamMember{},
+            },
+            components.TeamInfoDefinition{
+                ID: "<id>",
+                Name: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+                Members: []components.TeamMember{},
+            },
+            components.TeamInfoDefinition{
+                ID: "<id>",
+                Name: "<value>",
+                DatasourceProfiles: []components.DatasourceProfile{
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                    components.DatasourceProfile{
+                        Datasource: "github",
+                        Handle: "<value>",
+                    },
+                },
+                Members: []components.TeamMember{},
+            },
+        },
     })
     if err != nil {
         log.Fatal(err)

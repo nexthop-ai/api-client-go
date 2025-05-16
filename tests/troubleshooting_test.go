@@ -24,7 +24,9 @@ func TestTroubleshooting_PostAPIIndexV1Checkdocumentaccess(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.CheckAccess(ctx, components.CheckDocumentAccessRequest{
@@ -46,7 +48,9 @@ func TestTroubleshooting_PostAPIIndexV1Getdocumentstatus(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.Status(ctx, components.GetDocumentStatusRequest{
@@ -67,7 +71,9 @@ func TestTroubleshooting_PostAPIIndexV1Getdocumentcount(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.Documents.Count(ctx, components.GetDocumentCountRequest{
@@ -86,7 +92,9 @@ func TestTroubleshooting_PostAPIIndexV1Getusercount(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+		}),
 	)
 
 	res, err := s.Indexing.People.Count(ctx, components.GetUserCountRequest{

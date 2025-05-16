@@ -81,7 +81,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
@@ -122,7 +124,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
@@ -152,13 +156,14 @@ func main() {
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security scheme globally:
+This SDK supports the following security schemes globally:
 
-| Name       | Type | Scheme      | Environment Variable |
-| ---------- | ---- | ----------- | -------------------- |
-| `APIToken` | http | HTTP Bearer | `GLEAN_API_TOKEN`    |
+| Name               | Type   | Scheme  | Environment Variable        |
+| ------------------ | ------ | ------- | --------------------------- |
+| `ActAsBearerToken` | apiKey | API key | `GLEAN_ACT_AS_BEARER_TOKEN` |
+| `CookieAuth`       | apiKey | API key | `GLEAN_COOKIE_AUTH`         |
 
-You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
+You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```go
 package main
 
@@ -175,7 +180,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -260,9 +267,11 @@ For more information on obtaining the appropriate token type, please contact you
 
 #### [Client.Agents](docs/sdks/agents/README.md)
 
-* [Run](docs/sdks/agents/README.md#run) - Runs an Agent.
-* [List](docs/sdks/agents/README.md#list) - Lists all agents.
-* [RetrieveInputs](docs/sdks/agents/README.md#retrieveinputs) - Gets the inputs to an agent.
+* [Retrieve](docs/sdks/agents/README.md#retrieve) - Get Agent
+* [RetrieveSchemas](docs/sdks/agents/README.md#retrieveschemas) - Get Agent Schemas
+* [List](docs/sdks/agents/README.md#list) - Search Agents
+* [RunStream](docs/sdks/agents/README.md#runstream) - Create Run, Stream Output
+* [Run](docs/sdks/agents/README.md#run) - Create Run, Wait for Output
 
 #### [Client.Announcements](docs/sdks/announcements/README.md)
 
@@ -317,6 +326,32 @@ For more information on obtaining the appropriate token type, please contact you
 
 * [List](docs/sdks/entities/README.md#list) - List entities
 * [ReadPeople](docs/sdks/entities/README.md#readpeople) - Read people
+
+
+#### [Client.Governance.Data](docs/sdks/data/README.md)
+
+
+#### [Client.Governance.Data.Policies](docs/sdks/policies/README.md)
+
+* [Retrieve](docs/sdks/policies/README.md#retrieve) - Gets specified Policy.
+* [Update](docs/sdks/policies/README.md#update) - Updates an existing policy.
+* [List](docs/sdks/policies/README.md#list) - Lists policies.
+* [Create](docs/sdks/policies/README.md#create) - Creates new policy.
+* [Download](docs/sdks/policies/README.md#download) - Downloads violations CSV for policy.
+
+#### [Client.Governance.Data.Reports](docs/sdks/reports/README.md)
+
+* [Create](docs/sdks/reports/README.md#create) - Creates new one-time report.
+* [Download](docs/sdks/reports/README.md#download) - Downloads violations CSV for report.
+* [Status](docs/sdks/reports/README.md#status) - Fetches report run status.
+
+#### [Client.Governance.Documents](docs/sdks/governancedocuments/README.md)
+
+
+#### [Client.Governance.Documents.Visibilityoverrides](docs/sdks/visibilityoverrides/README.md)
+
+* [List](docs/sdks/visibilityoverrides/README.md#list) - Fetches documents visibility.
+* [Create](docs/sdks/visibilityoverrides/README.md#create) - Hide/Un-hide docs.
 
 #### [Client.Insights](docs/sdks/insights/README.md)
 
@@ -449,7 +484,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -527,7 +564,9 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -601,7 +640,9 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Collections.Create(ctx, components.CreateCollectionRequest{
@@ -677,8 +718,25 @@ func main() {
 												},
 											},
 										},
+										components.FacetFilterSet{
+											Filters: []components.FacetFilter{
+												components.FacetFilter{
+													FieldName: apiclientgo.String("type"),
+													Values: []components.FacetFilterValue{
+														components.FacetFilterValue{
+															Value:        apiclientgo.String("Spreadsheet"),
+															RelationType: components.RelationTypeEquals.ToPointer(),
+														},
+														components.FacetFilterValue{
+															Value:        apiclientgo.String("Presentation"),
+															RelationType: components.RelationTypeEquals.ToPointer(),
+														},
+													},
+												},
+											},
+										},
 									},
-									FacetBucketSize: 134365,
+									FacetBucketSize: 977077,
 									AuthTokens: []components.AuthToken{
 										components.AuthToken{
 											AccessToken: "123abc",
@@ -691,7 +749,7 @@ func main() {
 								},
 								Ranges: []components.TextRange{
 									components.TextRange{
-										StartIndex: 796474,
+										StartIndex: 86650,
 										Document: &components.Document{
 											Metadata: &components.DocumentMetadata{
 												Datasource: apiclientgo.String("datasource"),
@@ -726,47 +784,11 @@ func main() {
 														},
 														DocumentID: "<id>",
 													},
-													components.PinDocument{
-														AudienceFilters: []components.FacetFilter{
-															components.FacetFilter{
-																FieldName: apiclientgo.String("type"),
-																Values: []components.FacetFilterValue{
-																	components.FacetFilterValue{
-																		Value:        apiclientgo.String("Spreadsheet"),
-																		RelationType: components.RelationTypeEquals.ToPointer(),
-																	},
-																	components.FacetFilterValue{
-																		Value:        apiclientgo.String("Presentation"),
-																		RelationType: components.RelationTypeEquals.ToPointer(),
-																	},
-																},
-															},
-														},
-														DocumentID: "<id>",
-													},
-													components.PinDocument{
-														AudienceFilters: []components.FacetFilter{
-															components.FacetFilter{
-																FieldName: apiclientgo.String("type"),
-																Values: []components.FacetFilterValue{
-																	components.FacetFilterValue{
-																		Value:        apiclientgo.String("Spreadsheet"),
-																		RelationType: components.RelationTypeEquals.ToPointer(),
-																	},
-																	components.FacetFilterValue{
-																		Value:        apiclientgo.String("Presentation"),
-																		RelationType: components.RelationTypeEquals.ToPointer(),
-																	},
-																},
-															},
-														},
-														DocumentID: "<id>",
-													},
 												},
 												Collections: []components.Collection{
 													components.Collection{
 														Name:        "<value>",
-														Description: "fumigate convection though zowie",
+														Description: "meaty dial elegantly while react",
 														AudienceFilters: []components.FacetFilter{
 															components.FacetFilter{
 																FieldName: apiclientgo.String("type"),
@@ -782,14 +804,28 @@ func main() {
 																},
 															},
 														},
-														ID: 496323,
+														ID: 854591,
 														Items: []components.CollectionItem{
 															components.CollectionItem{
-																CollectionID: 782367,
+																CollectionID: 697663,
 																Shortcut: &components.Shortcut{
 																	InputAlias: "<value>",
 																},
-																ItemType: components.CollectionItemItemTypeDocument,
+																ItemType: components.CollectionItemItemTypeText,
+															},
+															components.CollectionItem{
+																CollectionID: 697663,
+																Shortcut: &components.Shortcut{
+																	InputAlias: "<value>",
+																},
+																ItemType: components.CollectionItemItemTypeText,
+															},
+															components.CollectionItem{
+																CollectionID: 697663,
+																Shortcut: &components.Shortcut{
+																	InputAlias: "<value>",
+																},
+																ItemType: components.CollectionItemItemTypeText,
 															},
 														},
 													},
@@ -798,22 +834,21 @@ func main() {
 													Reacts: []components.Reaction{
 														components.Reaction{},
 														components.Reaction{},
-														components.Reaction{},
 													},
 													Shares: []components.Share{
 														components.Share{
-															NumDaysAgo: 219974,
+															NumDaysAgo: 365776,
 														},
 														components.Share{
-															NumDaysAgo: 449221,
+															NumDaysAgo: 365776,
 														},
 														components.Share{
-															NumDaysAgo: 427887,
+															NumDaysAgo: 365776,
 														},
 													},
 												},
 												Verification: &components.Verification{
-													State: components.StateVerified,
+													State: components.StateDeprecated,
 													Metadata: &components.VerificationMetadata{
 														Reminders: []components.Reminder{
 															components.Reminder{
@@ -821,7 +856,7 @@ func main() {
 																	Name:         "George Clooney",
 																	ObfuscatedID: "abc123",
 																},
-																RemindAt: 491427,
+																RemindAt: 268615,
 															},
 														},
 														LastReminder: &components.Reminder{
@@ -829,11 +864,17 @@ func main() {
 																Name:         "George Clooney",
 																ObfuscatedID: "abc123",
 															},
-															RemindAt: 490420,
+															RemindAt: 423482,
 														},
 													},
 												},
 												Shortcuts: []components.Shortcut{
+													components.Shortcut{
+														InputAlias: "<value>",
+													},
+													components.Shortcut{
+														InputAlias: "<value>",
+													},
 													components.Shortcut{
 														InputAlias: "<value>",
 													},
@@ -946,7 +987,7 @@ func main() {
 											},
 										},
 									},
-									FacetBucketSize: 45416,
+									FacetBucketSize: 977077,
 									AuthTokens: []components.AuthToken{
 										components.AuthToken{
 											AccessToken: "123abc",
@@ -957,8 +998,160 @@ func main() {
 										},
 									},
 								},
+								Ranges: []components.TextRange{
+									components.TextRange{
+										StartIndex: 86650,
+										Document: &components.Document{
+											Metadata: &components.DocumentMetadata{
+												Datasource: apiclientgo.String("datasource"),
+												ObjectType: apiclientgo.String("Feature Request"),
+												Container:  apiclientgo.String("container"),
+												ParentID:   apiclientgo.String("JIRA_EN-1337"),
+												MimeType:   apiclientgo.String("mimeType"),
+												DocumentID: apiclientgo.String("documentId"),
+												CreateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+												UpdateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+												Components: []string{
+													"Backend",
+													"Networking",
+												},
+												Status: apiclientgo.String("[\"Done\"]"),
+												Pins: []components.PinDocument{
+													components.PinDocument{
+														AudienceFilters: []components.FacetFilter{
+															components.FacetFilter{
+																FieldName: apiclientgo.String("type"),
+																Values: []components.FacetFilterValue{
+																	components.FacetFilterValue{
+																		Value:        apiclientgo.String("Spreadsheet"),
+																		RelationType: components.RelationTypeEquals.ToPointer(),
+																	},
+																	components.FacetFilterValue{
+																		Value:        apiclientgo.String("Presentation"),
+																		RelationType: components.RelationTypeEquals.ToPointer(),
+																	},
+																},
+															},
+														},
+														DocumentID: "<id>",
+													},
+												},
+												Collections: []components.Collection{
+													components.Collection{
+														Name:        "<value>",
+														Description: "meaty dial elegantly while react",
+														AudienceFilters: []components.FacetFilter{
+															components.FacetFilter{
+																FieldName: apiclientgo.String("type"),
+																Values: []components.FacetFilterValue{
+																	components.FacetFilterValue{
+																		Value:        apiclientgo.String("Spreadsheet"),
+																		RelationType: components.RelationTypeEquals.ToPointer(),
+																	},
+																	components.FacetFilterValue{
+																		Value:        apiclientgo.String("Presentation"),
+																		RelationType: components.RelationTypeEquals.ToPointer(),
+																	},
+																},
+															},
+														},
+														ID: 854591,
+														Items: []components.CollectionItem{
+															components.CollectionItem{
+																CollectionID: 697663,
+																Shortcut: &components.Shortcut{
+																	InputAlias: "<value>",
+																},
+																ItemType: components.CollectionItemItemTypeText,
+															},
+															components.CollectionItem{
+																CollectionID: 697663,
+																Shortcut: &components.Shortcut{
+																	InputAlias: "<value>",
+																},
+																ItemType: components.CollectionItemItemTypeText,
+															},
+															components.CollectionItem{
+																CollectionID: 697663,
+																Shortcut: &components.Shortcut{
+																	InputAlias: "<value>",
+																},
+																ItemType: components.CollectionItemItemTypeText,
+															},
+														},
+													},
+												},
+												Interactions: &components.DocumentInteractions{
+													Reacts: []components.Reaction{
+														components.Reaction{},
+														components.Reaction{},
+													},
+													Shares: []components.Share{
+														components.Share{
+															NumDaysAgo: 365776,
+														},
+														components.Share{
+															NumDaysAgo: 365776,
+														},
+														components.Share{
+															NumDaysAgo: 365776,
+														},
+													},
+												},
+												Verification: &components.Verification{
+													State: components.StateDeprecated,
+													Metadata: &components.VerificationMetadata{
+														Reminders: []components.Reminder{
+															components.Reminder{
+																Assignee: components.Person{
+																	Name:         "George Clooney",
+																	ObfuscatedID: "abc123",
+																},
+																RemindAt: 268615,
+															},
+														},
+														LastReminder: &components.Reminder{
+															Assignee: components.Person{
+																Name:         "George Clooney",
+																ObfuscatedID: "abc123",
+															},
+															RemindAt: 423482,
+														},
+													},
+												},
+												Shortcuts: []components.Shortcut{
+													components.Shortcut{
+														InputAlias: "<value>",
+													},
+													components.Shortcut{
+														InputAlias: "<value>",
+													},
+													components.Shortcut{
+														InputAlias: "<value>",
+													},
+												},
+												CustomData: map[string]components.CustomDataValue{
+													"someCustomField": components.CustomDataValue{},
+												},
+											},
+										},
+									},
+								},
 								InputDetails: &components.SearchRequestInputDetails{
 									HasCopyPaste: apiclientgo.Bool(true),
+								},
+							},
+							Results: []components.SearchResult{
+								components.SearchResult{
+									Title:        apiclientgo.String("title"),
+									URL:          "https://example.com/foo/bar",
+									NativeAppURL: apiclientgo.String("slack://foo/bar"),
+									Snippets: []components.SearchResultSnippet{
+										components.SearchResultSnippet{
+											Snippet:  "snippet",
+											MimeType: apiclientgo.String("mimeType"),
+										},
+									},
 								},
 							},
 						},
@@ -973,6 +1166,10 @@ func main() {
 						PhotoURL:   apiclientgo.String("https://example.com/george.jpg"),
 						StartDate:  types.MustNewDateFromString("2000-01-23"),
 						DatasourceProfile: []components.DatasourceProfile{
+							components.DatasourceProfile{
+								Datasource: "github",
+								Handle:     "<value>",
+							},
 							components.DatasourceProfile{
 								Datasource: "github",
 								Handle:     "<value>",
@@ -990,6 +1187,7 @@ func main() {
 						InviteInfo: &components.InviteInfo{
 							Invites: []components.ChannelInviteInfo{
 								components.ChannelInviteInfo{},
+								components.ChannelInviteInfo{},
 							},
 						},
 						CustomFields: []components.CustomFieldData{
@@ -1002,50 +1200,26 @@ func main() {
 									components.CreateCustomFieldValueCustomFieldValueStr(
 										components.CustomFieldValueStr{},
 									),
+									components.CreateCustomFieldValueCustomFieldValueStr(
+										components.CustomFieldValueStr{},
+									),
 								},
 							},
 							components.CustomFieldData{
-								Label:  "<value>",
-								Values: []components.CustomFieldValue{},
-							},
-						},
-						Badges: []components.Badge{
-							components.Badge{
-								Key:         apiclientgo.String("deployment_name_new_hire"),
-								DisplayName: apiclientgo.String("New hire"),
-								IconConfig: &components.IconConfig{
-									Color:    apiclientgo.String("#343CED"),
-									Key:      apiclientgo.String("person_icon"),
-									IconType: components.IconTypeGlyph.ToPointer(),
-									Name:     apiclientgo.String("user"),
+								Label: "<value>",
+								Values: []components.CustomFieldValue{
+									components.CreateCustomFieldValueCustomFieldValueStr(
+										components.CustomFieldValueStr{},
+									),
+									components.CreateCustomFieldValueCustomFieldValueStr(
+										components.CustomFieldValueStr{},
+									),
+									components.CreateCustomFieldValueCustomFieldValueStr(
+										components.CustomFieldValueStr{},
+									),
 								},
 							},
 						},
-					},
-				},
-				Role: components.UserRoleOwner,
-			},
-			components.UserRoleSpecification{
-				Person: &components.Person{
-					Name:         "George Clooney",
-					ObfuscatedID: "abc123",
-					Metadata: &components.PersonMetadata{
-						Type:       components.PersonMetadataTypeFullTime.ToPointer(),
-						Title:      apiclientgo.String("Actor"),
-						Department: apiclientgo.String("Movies"),
-						Email:      apiclientgo.String("george@example.com"),
-						Location:   apiclientgo.String("Hollywood, CA"),
-						Phone:      apiclientgo.String("6505551234"),
-						PhotoURL:   apiclientgo.String("https://example.com/george.jpg"),
-						StartDate:  types.MustNewDateFromString("2000-01-23"),
-						DatasourceProfile: []components.DatasourceProfile{
-							components.DatasourceProfile{
-								Datasource: "github",
-								Handle:     "<value>",
-							},
-						},
-						QuerySuggestions: &components.QuerySuggestionList{},
-						InviteInfo:       &components.InviteInfo{},
 						Badges: []components.Badge{
 							components.Badge{
 								Key:         apiclientgo.String("deployment_name_new_hire"),
@@ -1082,9 +1256,26 @@ func main() {
 								Datasource: "github",
 								Handle:     "<value>",
 							},
+							components.DatasourceProfile{
+								Datasource: "github",
+								Handle:     "<value>",
+							},
 						},
-						QuerySuggestions: &components.QuerySuggestionList{},
-						InviteInfo:       &components.InviteInfo{},
+						QuerySuggestions: &components.QuerySuggestionList{
+							Suggestions: []components.QuerySuggestion{
+								components.QuerySuggestion{
+									Query:      "app:github type:pull author:mortimer",
+									Label:      apiclientgo.String("Mortimer's PRs"),
+									Datasource: apiclientgo.String("github"),
+								},
+							},
+						},
+						InviteInfo: &components.InviteInfo{
+							Invites: []components.ChannelInviteInfo{
+								components.ChannelInviteInfo{},
+								components.ChannelInviteInfo{},
+							},
+						},
 						Badges: []components.Badge{
 							components.Badge{
 								Key:         apiclientgo.String("deployment_name_new_hire"),
@@ -1099,89 +1290,7 @@ func main() {
 						},
 					},
 				},
-				Role: components.UserRoleVerifier,
-			},
-			components.UserRoleSpecification{
-				Person: &components.Person{
-					Name:         "George Clooney",
-					ObfuscatedID: "abc123",
-					Metadata: &components.PersonMetadata{
-						Type:       components.PersonMetadataTypeFullTime.ToPointer(),
-						Title:      apiclientgo.String("Actor"),
-						Department: apiclientgo.String("Movies"),
-						Email:      apiclientgo.String("george@example.com"),
-						Location:   apiclientgo.String("Hollywood, CA"),
-						Phone:      apiclientgo.String("6505551234"),
-						PhotoURL:   apiclientgo.String("https://example.com/george.jpg"),
-						StartDate:  types.MustNewDateFromString("2000-01-23"),
-						DatasourceProfile: []components.DatasourceProfile{
-							components.DatasourceProfile{
-								Datasource: "github",
-								Handle:     "<value>",
-							},
-							components.DatasourceProfile{
-								Datasource: "github",
-								Handle:     "<value>",
-							},
-							components.DatasourceProfile{
-								Datasource: "github",
-								Handle:     "<value>",
-							},
-						},
-						QuerySuggestions: &components.QuerySuggestionList{},
-						InviteInfo:       &components.InviteInfo{},
-						Badges: []components.Badge{
-							components.Badge{
-								Key:         apiclientgo.String("deployment_name_new_hire"),
-								DisplayName: apiclientgo.String("New hire"),
-								IconConfig: &components.IconConfig{
-									Color:    apiclientgo.String("#343CED"),
-									Key:      apiclientgo.String("person_icon"),
-									IconType: components.IconTypeGlyph.ToPointer(),
-									Name:     apiclientgo.String("user"),
-								},
-							},
-						},
-					},
-				},
-				Role: components.UserRoleAnswerModerator,
-			},
-			components.UserRoleSpecification{
-				Person: &components.Person{
-					Name:         "George Clooney",
-					ObfuscatedID: "abc123",
-					Metadata: &components.PersonMetadata{
-						Type:       components.PersonMetadataTypeFullTime.ToPointer(),
-						Title:      apiclientgo.String("Actor"),
-						Department: apiclientgo.String("Movies"),
-						Email:      apiclientgo.String("george@example.com"),
-						Location:   apiclientgo.String("Hollywood, CA"),
-						Phone:      apiclientgo.String("6505551234"),
-						PhotoURL:   apiclientgo.String("https://example.com/george.jpg"),
-						StartDate:  types.MustNewDateFromString("2000-01-23"),
-						DatasourceProfile: []components.DatasourceProfile{
-							components.DatasourceProfile{
-								Datasource: "github",
-								Handle:     "<value>",
-							},
-						},
-						QuerySuggestions: &components.QuerySuggestionList{},
-						InviteInfo:       &components.InviteInfo{},
-						Badges: []components.Badge{
-							components.Badge{
-								Key:         apiclientgo.String("deployment_name_new_hire"),
-								DisplayName: apiclientgo.String("New hire"),
-								IconConfig: &components.IconConfig{
-									Color:    apiclientgo.String("#343CED"),
-									Key:      apiclientgo.String("person_icon"),
-									IconType: components.IconTypeGlyph.ToPointer(),
-									Name:     apiclientgo.String("user"),
-								},
-							},
-						},
-					},
-				},
-				Role: components.UserRoleOwner,
+				Role: components.UserRoleViewer,
 			},
 		},
 		AudienceFilters: []components.FacetFilter{
@@ -1226,9 +1335,9 @@ func main() {
 
 The default server `https://{instance}-be.glean.com` contains variables and is set to `https://instance-name-be.glean.com` by default. To override default values, the following options are available when initializing the SDK client instance:
 
-| Variable   | Option                          | Default           | Description                                                                                                  |
-| ---------- | ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------ |
-| `instance` | `WithInstance(instance string)` | `"instance-name"` | The instance name (typically the email domain without the extension) that determines the deployment backend. |
+| Variable   | Option                          | Default           | Description                                                                                            |
+| ---------- | ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
+| `instance` | `WithInstance(instance string)` | `"instance-name"` | The instance name (typically the email domain without the TLD) that determines the deployment backend. |
 
 #### Example
 
@@ -1249,7 +1358,9 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithInstance("<value>"),
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -1308,7 +1419,9 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL("https://instance-name-be.glean.com"),
-		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithSecurity(components.Security{
+			ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+		}),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{

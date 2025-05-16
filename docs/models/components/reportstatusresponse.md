@@ -1,0 +1,9 @@
+# ReportStatusResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `Status`                                                                                        | [*components.ReportStatusResponseStatus](../../models/components/reportstatusresponsestatus.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `StartTime`                                                                                     | **string*                                                                                       | :heavy_minus_sign:                                                                              | The timestamp at which the report's run/scan began.                                             |

@@ -439,6 +439,10 @@ func (s *Collections) Create(ctx context.Context, request components.CreateColle
 				return nil, err
 			}
 
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
 			return nil, &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -655,6 +659,10 @@ func (s *Collections) Delete(ctx context.Context, request components.DeleteColle
 				return nil, err
 			}
 
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
 			return nil, &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -1108,6 +1116,10 @@ func (s *Collections) Update(ctx context.Context, request components.EditCollect
 				return nil, err
 			}
 
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
 			return nil, &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)

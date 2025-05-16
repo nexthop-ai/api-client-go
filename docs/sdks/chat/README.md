@@ -28,8 +28,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -37,7 +37,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
@@ -91,6 +93,7 @@ package main
 import(
 	"context"
 	"os"
+	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -99,7 +102,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.DeleteAll(ctx, nil)
@@ -142,8 +147,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -151,14 +156,13 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.Delete(ctx, components.DeleteChatsRequest{
-        Ids: []string{
-            "<value>",
-            "<value>",
-        },
+        Ids: []string{},
     }, nil)
     if err != nil {
         log.Fatal(err)
@@ -200,8 +204,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -209,7 +213,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.Retrieve(ctx, components.GetChatRequest{
@@ -255,6 +261,7 @@ package main
 import(
 	"context"
 	"os"
+	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -263,7 +270,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.List(ctx, nil)
@@ -306,8 +315,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -315,7 +324,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.RetrieveApplication(ctx, components.GetChatApplicationRequest{
@@ -361,8 +372,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -370,11 +381,18 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.UploadFiles(ctx, components.UploadChatFilesRequest{
-        Files: []components.File{},
+        Files: []components.File{
+            components.File{
+                FileName: "example.file",
+                Content: content,
+            },
+        },
     }, nil)
     if err != nil {
         log.Fatal(err)
@@ -416,8 +434,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -425,13 +443,14 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.RetrieveFiles(ctx, components.GetChatFilesRequest{
         FileIds: []string{
-            "<value>",
-            "<value>",
+            "<value 1>",
         },
     }, nil)
     if err != nil {
@@ -474,8 +493,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -483,12 +502,16 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.DeleteFiles(ctx, components.DeleteChatFilesRequest{
         FileIds: []string{
-            "<value>",
+            "<value 1>",
+            "<value 2>",
+            "<value 3>",
         },
     }, nil)
     if err != nil {
@@ -531,8 +554,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -540,7 +563,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{

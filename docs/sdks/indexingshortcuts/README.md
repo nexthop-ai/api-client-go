@@ -20,8 +20,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -29,7 +29,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.Shortcuts.BulkIndex(ctx, components.BulkIndexShortcutsRequest{
@@ -37,9 +39,15 @@ func main() {
         Shortcuts: []components.ExternalShortcut{
             components.ExternalShortcut{
                 InputAlias: "<value>",
-                DestinationURL: "https://only-juggernaut.com/",
+                DestinationURL: "https://plump-tune-up.biz/",
                 CreatedBy: "<value>",
-                IntermediateURL: "https://descriptive-electronics.name",
+                IntermediateURL: "https://lean-sightseeing.net",
+            },
+            components.ExternalShortcut{
+                InputAlias: "<value>",
+                DestinationURL: "https://plump-tune-up.biz/",
+                CreatedBy: "<value>",
+                IntermediateURL: "https://lean-sightseeing.net",
             },
         },
     })
@@ -82,8 +90,8 @@ package main
 import(
 	"context"
 	"os"
-	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/models/components"
+	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
 
@@ -91,7 +99,9 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+        apiclientgo.WithSecurity(components.Security{
+            ActAsBearerToken: apiclientgo.String(os.Getenv("GLEAN_ACT_AS_BEARER_TOKEN")),
+        }),
     )
 
     res, err := s.Indexing.Shortcuts.Upload(ctx, components.UploadShortcutsRequest{
@@ -99,7 +109,17 @@ func main() {
         Shortcuts: []components.IndexingShortcut{
             components.IndexingShortcut{
                 InputAlias: "<value>",
-                DestinationURL: "https://needy-harp.name",
+                DestinationURL: "https://majestic-pharmacopoeia.info/",
+                CreatedBy: "<value>",
+            },
+            components.IndexingShortcut{
+                InputAlias: "<value>",
+                DestinationURL: "https://majestic-pharmacopoeia.info/",
+                CreatedBy: "<value>",
+            },
+            components.IndexingShortcut{
+                InputAlias: "<value>",
+                DestinationURL: "https://majestic-pharmacopoeia.info/",
                 CreatedBy: "<value>",
             },
         },

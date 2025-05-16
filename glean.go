@@ -177,9 +177,9 @@ func New(opts ...SDKOption) *Glean {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.9.0",
-			SDKVersion:        "0.4.0",
+			SDKVersion:        "0.4.1",
 			GenVersion:        "2.604.2",
-			UserAgent:         "speakeasy-sdk/go 0.4.0 2.604.2 0.9.0 github.com/gleanwork/api-client-go",
+			UserAgent:         "speakeasy-sdk/go 0.4.1 2.604.2 0.9.0 github.com/gleanwork/api-client-go",
 			ServerDefaults: []map[string]string{
 				{
 					"instance": "instance-name",

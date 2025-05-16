@@ -42,7 +42,7 @@ func TestChat_Deleteallchats(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -61,7 +61,7 @@ func TestChat_Deletechats(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -85,7 +85,7 @@ func TestChat_Getchat(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -106,7 +106,7 @@ func TestChat_Listchats(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -125,7 +125,7 @@ func TestChat_Getchatapplication(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -146,7 +146,7 @@ func TestChat_Uploadchatfiles(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -167,7 +167,7 @@ func TestChat_Getchatfiles(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -191,7 +191,7 @@ func TestChat_Deletechatfiles(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -214,7 +214,7 @@ func TestChat_ChatStreamDefaultExample(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -243,7 +243,7 @@ func TestChat_ChatStreamGptAgentExample(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -275,7 +275,7 @@ func TestChat_ChatStreamStreamingExample(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -297,7 +297,7 @@ func TestChat_ChatStreamUpdateResponse(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 
@@ -4668,7 +4668,7 @@ func TestChat_ChatStreamCitationResponse(t *testing.T) {
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
 		apiclientgo.WithSecurity(components.Security{
-			ActAsBearerToken: apiclientgo.String(utils.GetEnv("GLEAN_ACT_AS_BEARER_TOKEN", "value")),
+			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 		}),
 	)
 

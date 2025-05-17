@@ -143,9 +143,10 @@ func WithClient(client HTTPClient) SDKOption {
 }
 
 // WithSecurity configures the SDK to use the provided security details
-func WithSecurity(security components.Security) SDKOption {
+func WithSecurity(apiToken string) SDKOption {
 	return func(sdk *Glean) {
-		sdk.sdkConfiguration.Security = utils.AsSecuritySource(security)
+		security := components.Security{APIToken: &apiToken}
+		sdk.sdkConfiguration.Security = utils.AsSecuritySource(&security)
 	}
 }
 
@@ -177,9 +178,9 @@ func New(opts ...SDKOption) *Glean {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.9.0",
-			SDKVersion:        "0.4.1",
-			GenVersion:        "2.604.2",
-			UserAgent:         "speakeasy-sdk/go 0.4.1 2.604.2 0.9.0 github.com/gleanwork/api-client-go",
+			SDKVersion:        "0.4.2",
+			GenVersion:        "2.604.4",
+			UserAgent:         "speakeasy-sdk/go 0.4.2 2.604.4 0.9.0 github.com/gleanwork/api-client-go",
 			ServerDefaults: []map[string]string{
 				{
 					"instance": "instance-name",

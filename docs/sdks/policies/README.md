@@ -23,7 +23,6 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -32,9 +31,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Governance.Data.Policies.Retrieve(ctx, "<id>", nil)
@@ -78,8 +75,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -87,9 +84,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Governance.Data.Policies.Update(ctx, "<id>", components.UpdateDlpReportRequest{})
@@ -133,7 +128,6 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -142,9 +136,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Governance.Data.Policies.List(ctx, nil, nil)
@@ -188,8 +180,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -197,9 +189,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Governance.Data.Policies.Create(ctx, components.CreateDlpReportRequest{})
@@ -242,7 +232,6 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -251,9 +240,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Governance.Data.Policies.Download(ctx, "<id>")

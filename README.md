@@ -81,9 +81,7 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
@@ -124,9 +122,7 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
@@ -156,14 +152,13 @@ func main() {
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security schemes globally:
+This SDK supports the following security scheme globally:
 
-| Name         | Type   | Scheme      | Environment Variable |
-| ------------ | ------ | ----------- | -------------------- |
-| `APIToken`   | http   | HTTP Bearer | `GLEAN_API_TOKEN`    |
-| `CookieAuth` | apiKey | API key     | `GLEAN_COOKIE_AUTH`  |
+| Name       | Type | Scheme      | Environment Variable |
+| ---------- | ---- | ----------- | -------------------- |
+| `APIToken` | http | HTTP Bearer | `GLEAN_API_TOKEN`    |
 
-You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
 ```go
 package main
 
@@ -180,9 +175,7 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -484,9 +477,7 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -564,9 +555,7 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -640,9 +629,7 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Collections.Create(ctx, components.CreateCollectionRequest{
@@ -1358,9 +1345,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithInstance("<value>"),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{
@@ -1419,9 +1404,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL("https://instance-name-be.glean.com"),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-		}),
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 
 	res, err := s.Client.Activity.Report(ctx, components.Activity{

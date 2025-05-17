@@ -21,9 +21,7 @@ func TestAnswers_Createanswer(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Answers.Create(ctx, components.CreateAnswerRequest{
@@ -766,9 +764,7 @@ func TestAnswers_Deleteanswer(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Answers.Delete(ctx, components.DeleteAnswerRequest{
@@ -788,9 +784,7 @@ func TestAnswers_Editanswer(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Answers.Update(ctx, components.EditAnswerRequest{
@@ -1407,9 +1401,7 @@ func TestAnswers_Getanswer(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Answers.Retrieve(ctx, components.GetAnswerRequest{
@@ -1429,9 +1421,7 @@ func TestAnswers_Listanswers(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Answers.List(ctx, components.ListAnswersRequest{})

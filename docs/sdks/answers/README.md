@@ -23,8 +23,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/types"
 	"log"
 )
@@ -33,9 +33,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Answers.Create(ctx, components.CreateAnswerRequest{
@@ -1429,8 +1427,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -1438,9 +1436,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Answers.Delete(ctx, components.DeleteAnswerRequest{
@@ -1486,8 +1482,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/types"
 	"log"
 )
@@ -1496,9 +1492,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Answers.Update(ctx, components.EditAnswerRequest{
@@ -2462,8 +2456,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -2471,9 +2465,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Answers.Retrieve(ctx, components.GetAnswerRequest{
@@ -2519,8 +2511,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -2528,9 +2520,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Answers.List(ctx, components.ListAnswersRequest{})

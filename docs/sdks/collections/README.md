@@ -26,8 +26,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -35,9 +35,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.AddItems(ctx, components.AddCollectionItemsRequest{
@@ -82,8 +80,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/types"
 	"log"
 )
@@ -92,9 +90,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.Create(ctx, components.CreateCollectionRequest{
@@ -801,8 +797,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -810,9 +806,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.Delete(ctx, components.DeleteCollectionRequest{
@@ -862,8 +856,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -871,9 +865,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.DeleteItem(ctx, components.DeleteCollectionItemRequest{
@@ -919,8 +911,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/types"
 	"log"
 )
@@ -929,9 +921,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.Update(ctx, components.EditCollectionRequest{
@@ -2033,8 +2023,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -2042,9 +2032,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.UpdateItem(ctx, components.EditCollectionItemRequest{
@@ -2090,8 +2078,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -2099,9 +2087,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.Retrieve(ctx, components.GetCollectionRequest{
@@ -2146,8 +2132,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -2155,9 +2141,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Collections.List(ctx, components.ListCollectionsRequest{})

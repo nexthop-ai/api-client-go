@@ -21,9 +21,7 @@ func TestCollections_Addcollectionitems(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.AddItems(ctx, components.AddCollectionItemsRequest{
@@ -42,9 +40,7 @@ func TestCollections_Createcollection(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.Create(ctx, components.CreateCollectionRequest{
@@ -648,9 +644,7 @@ func TestCollections_Deletecollection(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.Delete(ctx, components.DeleteCollectionRequest{
@@ -672,9 +666,7 @@ func TestCollections_Deletecollectionitem(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.DeleteItem(ctx, components.DeleteCollectionItemRequest{
@@ -694,9 +686,7 @@ func TestCollections_Editcollection(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.Update(ctx, components.EditCollectionRequest{
@@ -1262,9 +1252,7 @@ func TestCollections_Editcollectionitem(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.UpdateItem(ctx, components.EditCollectionItemRequest{
@@ -1284,9 +1272,7 @@ func TestCollections_Getcollection(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.Retrieve(ctx, components.GetCollectionRequest{
@@ -1305,9 +1291,7 @@ func TestCollections_Listcollections(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Collections.List(ctx, components.ListCollectionsRequest{})

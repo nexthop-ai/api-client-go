@@ -20,9 +20,7 @@ func TestEntities_Listentities(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Entities.List(ctx, components.ListEntitiesRequest{
@@ -56,9 +54,7 @@ func TestEntities_People(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Entities.ReadPeople(ctx, components.PeopleRequest{

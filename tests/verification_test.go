@@ -20,9 +20,7 @@ func TestVerification_Addverificationreminder(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Verification.AddReminder(ctx, components.ReminderRequest{
@@ -41,9 +39,7 @@ func TestVerification_Listverifications(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Verification.List(ctx, nil)
@@ -60,9 +56,7 @@ func TestVerification_Verify(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Verification.Verify(ctx, components.VerifyRequest{

@@ -21,8 +21,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -30,9 +30,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Verification.AddReminder(ctx, components.ReminderRequest{
@@ -77,7 +75,6 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"log"
 )
@@ -86,9 +83,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Verification.List(ctx, nil)
@@ -131,8 +126,8 @@ package main
 import(
 	"context"
 	"os"
-	"github.com/gleanwork/api-client-go/models/components"
 	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
 
@@ -140,9 +135,7 @@ func main() {
     ctx := context.Background()
 
     s := apiclientgo.New(
-        apiclientgo.WithSecurity(components.Security{
-            APIToken: apiclientgo.String(os.Getenv("GLEAN_API_TOKEN")),
-        }),
+        apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
     res, err := s.Client.Verification.Verify(ctx, components.VerifyRequest{

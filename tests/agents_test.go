@@ -32,9 +32,7 @@ func TestAgents_GetAgent(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Agents.Retrieve(ctx, "<id>", nil)
@@ -51,9 +49,7 @@ func TestAgents_GetAgentSchemas(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Agents.RetrieveSchemas(ctx, "<id>", nil)
@@ -70,9 +66,7 @@ func TestAgents_SearchAgents(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Agents.List(ctx, components.SearchAgentsRequest{})
@@ -93,9 +87,7 @@ func TestAgents_CreateAndWaitRun(t *testing.T) {
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
 		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(components.Security{
-			APIToken: apiclientgo.String(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-		}),
+		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
 	res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{})

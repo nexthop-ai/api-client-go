@@ -461,8 +461,8 @@ func (s *Policies) Update(ctx context.Context, id string, updateDlpReportRequest
 
 // List - Lists policies.
 // Lists policies with filtering.
-func (s *Policies) List(ctx context.Context, autoHide *bool, frequency *string, opts ...operations.Option) (*operations.GetpoliciesResponse, error) {
-	request := operations.GetpoliciesRequest{
+func (s *Policies) List(ctx context.Context, autoHide *bool, frequency *string, opts ...operations.Option) (*operations.ListpoliciesResponse, error) {
+	request := operations.ListpoliciesRequest{
 		AutoHide:  autoHide,
 		Frequency: frequency,
 	}
@@ -493,7 +493,7 @@ func (s *Policies) List(ctx context.Context, autoHide *bool, frequency *string, 
 	hookCtx := hooks.HookContext{
 		BaseURL:        baseURL,
 		Context:        ctx,
-		OperationID:    "getpolicies",
+		OperationID:    "listpolicies",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
@@ -617,7 +617,7 @@ func (s *Policies) List(ctx context.Context, autoHide *bool, frequency *string, 
 		}
 	}
 
-	res := &operations.GetpoliciesResponse{
+	res := &operations.ListpoliciesResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,

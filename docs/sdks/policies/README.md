@@ -160,7 +160,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetpoliciesResponse](../../models/operations/getpoliciesresponse.md), error**
+**[*operations.ListpoliciesResponse](../../models/operations/listpoliciesresponse.md), error**
 
 ### Errors
 

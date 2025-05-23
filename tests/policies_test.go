@@ -29,9 +29,17 @@ func TestPolicies_Getpolicy(t *testing.T) {
 }
 
 func TestPolicies_Getpolicies(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getpolicies.test referencing operation getpolicies not found in document`]")
+}
+
+func TestPolicies_Downloadpolicycsv(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step downloadpolicycsv.test contains criterion simple with invalid condition`, `workflow step downloadpolicycsv.test does not contain $contentType successCriteria and required for response body assertion`]")
+}
+
+func TestPolicies_Listpolicies(t *testing.T) {
 	ctx := context.Background()
 
-	testHTTPClient := createTestHTTPClient("getpolicies")
+	testHTTPClient := createTestHTTPClient("listpolicies")
 
 	s := apiclientgo.New(
 		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
@@ -43,8 +51,4 @@ func TestPolicies_Getpolicies(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
-}
-
-func TestPolicies_Downloadpolicycsv(t *testing.T) {
-	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step downloadpolicycsv.test contains criterion simple with invalid condition`, `workflow step downloadpolicycsv.test does not contain $contentType successCriteria and required for response body assertion`]")
 }

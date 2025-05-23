@@ -24,7 +24,7 @@ func TestSearch_Adminsearch(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Search.QueryAsAdmin(ctx, &components.SearchRequest{
+	res, err := s.Client.Search.QueryAsAdmin(ctx, components.SearchRequest{
 		TrackingToken: apiclientgo.String("trackingToken"),
 		SourceDocument: &components.Document{
 			Metadata: &components.DocumentMetadata{
@@ -1972,7 +1972,7 @@ func TestSearch_Recommendations(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Search.Recommendations(ctx, &components.RecommendationsRequest{
+	res, err := s.Client.Search.Recommendations(ctx, components.RecommendationsRequest{
 		SourceDocument: &components.Document{
 			Metadata: &components.DocumentMetadata{
 				Datasource: apiclientgo.String("datasource"),
@@ -3879,7 +3879,7 @@ func TestSearch_Search(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Search.Query(ctx, &components.SearchRequest{
+	res, err := s.Client.Search.Query(ctx, components.SearchRequest{
 		TrackingToken: apiclientgo.String("trackingToken"),
 		SourceDocument: &components.Document{
 			Metadata: &components.DocumentMetadata{

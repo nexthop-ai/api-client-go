@@ -1,0 +1,9 @@
+# ToolsCallRequest
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `Name`                                                                                                    | *string*                                                                                                  | :heavy_check_mark:                                                                                        | Required name of the tool to execute                                                                      |
+| `Parameters`                                                                                              | map[string][components.ToolsCallParameter](../../models/components/toolscallparameter.md)                 | :heavy_check_mark:                                                                                        | The parameters for the tool. Each key is the name of the parameter and the value is the parameter object. |

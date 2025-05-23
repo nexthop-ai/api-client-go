@@ -378,6 +378,11 @@ For more information on obtaining the appropriate token type, please contact you
 * [List](docs/sdks/clientshortcuts/README.md#list) - List shortcuts
 * [Update](docs/sdks/clientshortcuts/README.md#update) - Update shortcut
 
+#### [Client.Tools](docs/sdks/tools/README.md)
+
+* [List](docs/sdks/tools/README.md#list) - List available tools
+* [Run](docs/sdks/tools/README.md#run) - Execute the specified tool
+
 #### [Client.Verification](docs/sdks/verification/README.md)
 
 * [AddReminder](docs/sdks/verification/README.md#addreminder) - Create verification

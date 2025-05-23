@@ -28,7 +28,7 @@ func newSearch(sdkConfig sdkConfiguration) *Search {
 
 // QueryAsAdmin - Search the index (admin)
 // Retrieves results for search query without respect for permissions. This is available only to privileged users.
-func (s *Search) QueryAsAdmin(ctx context.Context, request *components.SearchRequest, opts ...operations.Option) (*operations.AdminsearchResponse, error) {
+func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequest, opts ...operations.Option) (*operations.AdminsearchResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -59,7 +59,7 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request *components.SearchReq
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -702,7 +702,7 @@ func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedReques
 
 // Recommendations - Recommend documents
 // Retrieve recommended documents for the given URL or Glean Document ID.
-func (s *Search) Recommendations(ctx context.Context, request *components.RecommendationsRequest, opts ...operations.Option) (*operations.RecommendationsResponse, error) {
+func (s *Search) Recommendations(ctx context.Context, request components.RecommendationsRequest, opts ...operations.Option) (*operations.RecommendationsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -733,7 +733,7 @@ func (s *Search) Recommendations(ctx context.Context, request *components.Recomm
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -922,7 +922,7 @@ func (s *Search) Recommendations(ctx context.Context, request *components.Recomm
 
 // Query - Search
 // Retrieve results from the index for the given query and filters.
-func (s *Search) Query(ctx context.Context, request *components.SearchRequest, opts ...operations.Option) (*operations.SearchResponse, error) {
+func (s *Search) Query(ctx context.Context, request components.SearchRequest, opts ...operations.Option) (*operations.SearchResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -953,7 +953,7 @@ func (s *Search) Query(ctx context.Context, request *components.SearchRequest, o
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

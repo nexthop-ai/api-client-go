@@ -296,25 +296,13 @@ func testGetchatGetchat0(w http.ResponseWriter, req *http.Request) {
 													Metadata: &components.VerificationMetadata{
 														Reminders: []components.Reminder{
 															components.Reminder{
-																Assignee: components.Person{
-																	Name:         "George Clooney",
-																	ObfuscatedID: "abc123",
-																},
 																RemindAt: 845806,
 															},
 															components.Reminder{
-																Assignee: components.Person{
-																	Name:         "George Clooney",
-																	ObfuscatedID: "abc123",
-																},
 																RemindAt: 350813,
 															},
 														},
 														LastReminder: &components.Reminder{
-															Assignee: components.Person{
-																Name:         "George Clooney",
-																ObfuscatedID: "abc123",
-															},
 															RemindAt: 534384,
 														},
 													},
@@ -347,10 +335,6 @@ func testGetchatGetchat0(w http.ResponseWriter, req *http.Request) {
 													State: components.StateUnverified,
 													Metadata: &components.VerificationMetadata{
 														LastReminder: &components.Reminder{
-															Assignee: components.Person{
-																Name:         "George Clooney",
-																ObfuscatedID: "abc123",
-															},
 															RemindAt: 533795,
 														},
 													},

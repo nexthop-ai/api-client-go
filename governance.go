@@ -2,17 +2,26 @@
 
 package apiclientgo
 
+import (
+	"github.com/gleanwork/api-client-go/internal/config"
+	"github.com/gleanwork/api-client-go/internal/hooks"
+)
+
 type Governance struct {
 	Data      *Data
 	Documents *GovernanceDocuments
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Glean
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newGovernance(sdkConfig sdkConfiguration) *Governance {
+func newGovernance(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Governance {
 	return &Governance{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Data:             newData(sdkConfig),
-		Documents:        newGovernanceDocuments(sdkConfig),
+		hooks:            hooks,
+		Data:             newData(rootSDK, sdkConfig, hooks),
+		Documents:        newGovernanceDocuments(rootSDK, sdkConfig, hooks),
 	}
 }

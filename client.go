@@ -2,6 +2,11 @@
 
 package apiclientgo
 
+import (
+	"github.com/gleanwork/api-client-go/internal/config"
+	"github.com/gleanwork/api-client-go/internal/hooks"
+)
+
 type Client struct {
 	Activity       *Activity
 	Announcements  *Announcements
@@ -21,28 +26,32 @@ type Client struct {
 	Tools          *Tools
 	Governance     *Governance
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Glean
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newClient(sdkConfig sdkConfiguration) *Client {
+func newClient(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Client {
 	return &Client{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Activity:         newActivity(sdkConfig),
-		Announcements:    newAnnouncements(sdkConfig),
-		Answers:          newAnswers(sdkConfig),
-		Authentication:   newClientAuthentication(sdkConfig),
-		Chat:             newChat(sdkConfig),
-		Agents:           newAgents(sdkConfig),
-		Collections:      newCollections(sdkConfig),
-		Documents:        newClientDocuments(sdkConfig),
-		Insights:         newInsights(sdkConfig),
-		Messages:         newMessages(sdkConfig),
-		Pins:             newPins(sdkConfig),
-		Search:           newSearch(sdkConfig),
-		Entities:         newEntities(sdkConfig),
-		Shortcuts:        newClientShortcuts(sdkConfig),
-		Verification:     newVerification(sdkConfig),
-		Tools:            newTools(sdkConfig),
-		Governance:       newGovernance(sdkConfig),
+		hooks:            hooks,
+		Activity:         newActivity(rootSDK, sdkConfig, hooks),
+		Announcements:    newAnnouncements(rootSDK, sdkConfig, hooks),
+		Answers:          newAnswers(rootSDK, sdkConfig, hooks),
+		Authentication:   newClientAuthentication(rootSDK, sdkConfig, hooks),
+		Chat:             newChat(rootSDK, sdkConfig, hooks),
+		Agents:           newAgents(rootSDK, sdkConfig, hooks),
+		Collections:      newCollections(rootSDK, sdkConfig, hooks),
+		Documents:        newClientDocuments(rootSDK, sdkConfig, hooks),
+		Insights:         newInsights(rootSDK, sdkConfig, hooks),
+		Messages:         newMessages(rootSDK, sdkConfig, hooks),
+		Pins:             newPins(rootSDK, sdkConfig, hooks),
+		Search:           newSearch(rootSDK, sdkConfig, hooks),
+		Entities:         newEntities(rootSDK, sdkConfig, hooks),
+		Shortcuts:        newClientShortcuts(rootSDK, sdkConfig, hooks),
+		Verification:     newVerification(rootSDK, sdkConfig, hooks),
+		Tools:            newTools(rootSDK, sdkConfig, hooks),
+		Governance:       newGovernance(rootSDK, sdkConfig, hooks),
 	}
 }

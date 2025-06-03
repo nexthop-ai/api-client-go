@@ -253,18 +253,10 @@ func TestCollections_Createcollection(t *testing.T) {
 													Metadata: &components.VerificationMetadata{
 														Reminders: []components.Reminder{
 															components.Reminder{
-																Assignee: components.Person{
-																	Name:         "George Clooney",
-																	ObfuscatedID: "abc123",
-																},
 																RemindAt: 491427,
 															},
 														},
 														LastReminder: &components.Reminder{
-															Assignee: components.Person{
-																Name:         "George Clooney",
-																ObfuscatedID: "abc123",
-															},
 															RemindAt: 490420,
 														},
 													},
@@ -898,18 +890,10 @@ func TestCollections_Editcollection(t *testing.T) {
 													Metadata: &components.VerificationMetadata{
 														Reminders: []components.Reminder{
 															components.Reminder{
-																Assignee: components.Person{
-																	Name:         "George Clooney",
-																	ObfuscatedID: "abc123",
-																},
 																RemindAt: 335191,
 															},
 														},
 														LastReminder: &components.Reminder{
-															Assignee: components.Person{
-																Name:         "George Clooney",
-																ObfuscatedID: "abc123",
-															},
 															RemindAt: 532806,
 														},
 													},
@@ -942,10 +926,6 @@ func TestCollections_Editcollection(t *testing.T) {
 													State: components.StateVerified,
 													Metadata: &components.VerificationMetadata{
 														LastReminder: &components.Reminder{
-															Assignee: components.Person{
-																Name:         "George Clooney",
-																ObfuscatedID: "abc123",
-															},
 															RemindAt: 416023,
 														},
 													},

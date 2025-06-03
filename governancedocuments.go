@@ -2,15 +2,24 @@
 
 package apiclientgo
 
+import (
+	"github.com/gleanwork/api-client-go/internal/config"
+	"github.com/gleanwork/api-client-go/internal/hooks"
+)
+
 type GovernanceDocuments struct {
 	Visibilityoverrides *Visibilityoverrides
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Glean
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newGovernanceDocuments(sdkConfig sdkConfiguration) *GovernanceDocuments {
+func newGovernanceDocuments(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *GovernanceDocuments {
 	return &GovernanceDocuments{
+		rootSDK:             rootSDK,
 		sdkConfiguration:    sdkConfig,
-		Visibilityoverrides: newVisibilityoverrides(sdkConfig),
+		hooks:               hooks,
+		Visibilityoverrides: newVisibilityoverrides(rootSDK, sdkConfig, hooks),
 	}
 }

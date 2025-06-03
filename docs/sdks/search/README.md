@@ -234,6 +234,54 @@ func main() {
 
     res, err := s.Client.Search.Recommendations(ctx, components.RecommendationsRequest{
         SourceDocument: &components.Document{
+            ContainerDocument: &components.Document{
+                Metadata: &components.DocumentMetadata{
+                    Datasource: apiclientgo.String("datasource"),
+                    ObjectType: apiclientgo.String("Feature Request"),
+                    Container: apiclientgo.String("container"),
+                    ParentID: apiclientgo.String("JIRA_EN-1337"),
+                    MimeType: apiclientgo.String("mimeType"),
+                    DocumentID: apiclientgo.String("documentId"),
+                    CreateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                    UpdateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                    Author: &components.Person{
+                        Name: "name",
+                        ObfuscatedID: "<id>",
+                    },
+                    Components: []string{
+                        "Backend",
+                        "Networking",
+                    },
+                    Status: apiclientgo.String("[\"Done\"]"),
+                    CustomData: map[string]components.CustomDataValue{
+                        "someCustomField": components.CustomDataValue{},
+                    },
+                },
+            },
+            ParentDocument: &components.Document{
+                Metadata: &components.DocumentMetadata{
+                    Datasource: apiclientgo.String("datasource"),
+                    ObjectType: apiclientgo.String("Feature Request"),
+                    Container: apiclientgo.String("container"),
+                    ParentID: apiclientgo.String("JIRA_EN-1337"),
+                    MimeType: apiclientgo.String("mimeType"),
+                    DocumentID: apiclientgo.String("documentId"),
+                    CreateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                    UpdateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                    Author: &components.Person{
+                        Name: "name",
+                        ObfuscatedID: "<id>",
+                    },
+                    Components: []string{
+                        "Backend",
+                        "Networking",
+                    },
+                    Status: apiclientgo.String("[\"Done\"]"),
+                    CustomData: map[string]components.CustomDataValue{
+                        "someCustomField": components.CustomDataValue{},
+                    },
+                },
+            },
             Metadata: &components.DocumentMetadata{
                 Datasource: apiclientgo.String("datasource"),
                 ObjectType: apiclientgo.String("Feature Request"),
@@ -314,6 +362,54 @@ func main() {
                 },
             },
             Context: &components.Document{
+                ContainerDocument: &components.Document{
+                    Metadata: &components.DocumentMetadata{
+                        Datasource: apiclientgo.String("datasource"),
+                        ObjectType: apiclientgo.String("Feature Request"),
+                        Container: apiclientgo.String("container"),
+                        ParentID: apiclientgo.String("JIRA_EN-1337"),
+                        MimeType: apiclientgo.String("mimeType"),
+                        DocumentID: apiclientgo.String("documentId"),
+                        CreateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                        UpdateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                        Author: &components.Person{
+                            Name: "name",
+                            ObfuscatedID: "<id>",
+                        },
+                        Components: []string{
+                            "Backend",
+                            "Networking",
+                        },
+                        Status: apiclientgo.String("[\"Done\"]"),
+                        CustomData: map[string]components.CustomDataValue{
+                            "someCustomField": components.CustomDataValue{},
+                        },
+                    },
+                },
+                ParentDocument: &components.Document{
+                    Metadata: &components.DocumentMetadata{
+                        Datasource: apiclientgo.String("datasource"),
+                        ObjectType: apiclientgo.String("Feature Request"),
+                        Container: apiclientgo.String("container"),
+                        ParentID: apiclientgo.String("JIRA_EN-1337"),
+                        MimeType: apiclientgo.String("mimeType"),
+                        DocumentID: apiclientgo.String("documentId"),
+                        CreateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                        UpdateTime: types.MustNewTimeFromString("2000-01-23T04:56:07.000Z"),
+                        Author: &components.Person{
+                            Name: "name",
+                            ObfuscatedID: "<id>",
+                        },
+                        Components: []string{
+                            "Backend",
+                            "Networking",
+                        },
+                        Status: apiclientgo.String("[\"Done\"]"),
+                        CustomData: map[string]components.CustomDataValue{
+                            "someCustomField": components.CustomDataValue{},
+                        },
+                    },
+                },
                 Metadata: &components.DocumentMetadata{
                     Datasource: apiclientgo.String("datasource"),
                     ObjectType: apiclientgo.String("Feature Request"),

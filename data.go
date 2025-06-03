@@ -2,17 +2,26 @@
 
 package apiclientgo
 
+import (
+	"github.com/gleanwork/api-client-go/internal/config"
+	"github.com/gleanwork/api-client-go/internal/hooks"
+)
+
 type Data struct {
 	Policies *Policies
 	Reports  *Reports
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Glean
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newData(sdkConfig sdkConfiguration) *Data {
+func newData(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Data {
 	return &Data{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Policies:         newPolicies(sdkConfig),
-		Reports:          newReports(sdkConfig),
+		hooks:            hooks,
+		Policies:         newPolicies(rootSDK, sdkConfig, hooks),
+		Reports:          newReports(rootSDK, sdkConfig, hooks),
 	}
 }

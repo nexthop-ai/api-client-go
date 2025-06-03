@@ -191,7 +191,9 @@ func main() {
         apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
-    res, err := s.Client.Agents.RunStream(ctx, components.AgentRunCreate{})
+    res, err := s.Client.Agents.RunStream(ctx, components.AgentRunCreate{
+        AgentID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -243,7 +245,9 @@ func main() {
         apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
-    res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{})
+    res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{
+        AgentID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }

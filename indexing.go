@@ -2,6 +2,11 @@
 
 package apiclientgo
 
+import (
+	"github.com/gleanwork/api-client-go/internal/config"
+	"github.com/gleanwork/api-client-go/internal/hooks"
+)
+
 type Indexing struct {
 	Documents      *IndexingDocuments
 	Permissions    *Permissions
@@ -11,18 +16,22 @@ type Indexing struct {
 	Authentication *IndexingAuthentication
 	Shortcuts      *IndexingShortcuts
 
-	sdkConfiguration sdkConfiguration
+	rootSDK          *Glean
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
-func newIndexing(sdkConfig sdkConfiguration) *Indexing {
+func newIndexing(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hooks) *Indexing {
 	return &Indexing{
+		rootSDK:          rootSDK,
 		sdkConfiguration: sdkConfig,
-		Documents:        newIndexingDocuments(sdkConfig),
-		Permissions:      newPermissions(sdkConfig),
-		Datasource:       newDatasource(sdkConfig),
-		People:           newPeople(sdkConfig),
-		Datasources:      newDatasources(sdkConfig),
-		Authentication:   newIndexingAuthentication(sdkConfig),
-		Shortcuts:        newIndexingShortcuts(sdkConfig),
+		hooks:            hooks,
+		Documents:        newIndexingDocuments(rootSDK, sdkConfig, hooks),
+		Permissions:      newPermissions(rootSDK, sdkConfig, hooks),
+		Datasource:       newDatasource(rootSDK, sdkConfig, hooks),
+		People:           newPeople(rootSDK, sdkConfig, hooks),
+		Datasources:      newDatasources(rootSDK, sdkConfig, hooks),
+		Authentication:   newIndexingAuthentication(rootSDK, sdkConfig, hooks),
+		Shortcuts:        newIndexingShortcuts(rootSDK, sdkConfig, hooks),
 	}
 }

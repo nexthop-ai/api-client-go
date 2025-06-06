@@ -1,3 +1,4 @@
 [tools]
+"aqua:speakeasy-api/speakeasy" = "latest"
 go = "1.22"
 gotestsum = "latest"

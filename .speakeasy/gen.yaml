@@ -23,9 +23,10 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: true
 go:
-  version: 0.5.1
+  version: 0.6.0
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
+  baseErrorName: GleanError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIError
   envVarPrefix: GLEAN

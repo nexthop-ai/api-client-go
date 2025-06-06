@@ -260,11 +260,11 @@ For more information on obtaining the appropriate token type, please contact you
 
 #### [Client.Agents](docs/sdks/agents/README.md)
 
-* [Retrieve](docs/sdks/agents/README.md#retrieve) - Get Agent
-* [RetrieveSchemas](docs/sdks/agents/README.md#retrieveschemas) - Get Agent Schemas
-* [List](docs/sdks/agents/README.md#list) - Search Agents
-* [RunStream](docs/sdks/agents/README.md#runstream) - Create Run, Stream Output
-* [Run](docs/sdks/agents/README.md#run) - Create Run, Wait for Output
+* [Retrieve](docs/sdks/agents/README.md#retrieve) - Retrieve an agent
+* [RetrieveSchemas](docs/sdks/agents/README.md#retrieveschemas) - List an agent's schemas
+* [List](docs/sdks/agents/README.md#list) - Search agents
+* [RunStream](docs/sdks/agents/README.md#runstream) - Create an agent run and stream the response
+* [Run](docs/sdks/agents/README.md#run) - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
 
 #### [Client.Announcements](docs/sdks/announcements/README.md)
 

@@ -5,15 +5,15 @@
 
 ### Available Operations
 
-* [Retrieve](#retrieve) - Get Agent
-* [RetrieveSchemas](#retrieveschemas) - Get Agent Schemas
-* [List](#list) - Search Agents
-* [RunStream](#runstream) - Create Run, Stream Output
-* [Run](#run) - Create Run, Wait for Output
+* [Retrieve](#retrieve) - Retrieve an agent
+* [RetrieveSchemas](#retrieveschemas) - List an agent's schemas
+* [List](#list) - Search agents
+* [RunStream](#runstream) - Create an agent run and stream the response
+* [Run](#run) - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
 
 ## Retrieve
 
-Get an agent by ID. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/GET/agents/{agent_id}). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+Returns details of an [agent](https://developers.glean.com/agents/agents-api) created in the Agent Builder.
 
 ### Example Usage
 
@@ -65,7 +65,7 @@ func main() {
 
 ## RetrieveSchemas
 
-Get an agent's schemas by ID. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/GET/agents/{agent_id}/schemas). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+Return [agent](https://developers.glean.com/agents/agents-api)'s input and output schemas. You can use these schemas to detect changes to an agent's input or output structure.
 
 ### Example Usage
 
@@ -117,7 +117,7 @@ func main() {
 
 ## List
 
-List Agents available in this service. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/POST/agents/search). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+Search for [agents](https://developers.glean.com/agents/agents-api) by agent name. 
 
 ### Example Usage
 
@@ -139,7 +139,9 @@ func main() {
         apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
-    res, err := s.Client.Agents.List(ctx, components.SearchAgentsRequest{})
+    res, err := s.Client.Agents.List(ctx, components.SearchAgentsRequest{
+        Name: apiclientgo.String("HR Policy Agent"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -169,7 +171,7 @@ func main() {
 
 ## RunStream
 
-Creates and triggers a run of an agent. Streams the output in SSE format. This endpoint implements the LangChain Agent Protocol, specifically part of the Runs stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/runs/POST/runs/stream). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol. Note that running agents that reference third party platform write actions is unsupported as it requires user confirmation.
+Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the result as a stream of server-sent events (SSE).
 
 ### Example Usage
 
@@ -223,7 +225,7 @@ func main() {
 
 ## Run
 
-Creates and triggers a run of an agent. Waits for final output and then returns it. This endpoint implements the LangChain Agent Protocol, specifically part of the Runs stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/runs/POST/runs/wait). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol. Note that running agents that reference third party platform write actions is unsupported as it requires user confirmation.
+Executes an agent run and returns the final response.
 
 ### Example Usage
 

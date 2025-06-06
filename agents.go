@@ -31,8 +31,8 @@ func newAgents(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.H
 	}
 }
 
-// Retrieve - Get Agent
-// Get an agent by ID. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/GET/agents/{agent_id}). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+// Retrieve an agent
+// Returns details of an [agent](https://developers.glean.com/agents/agents-api) created in the Agent Builder.
 func (s *Agents) Retrieve(ctx context.Context, agentID string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentResponse, error) {
 	request := operations.GetAgentRequest{
 		TimezoneOffset: timezoneOffset,
@@ -254,8 +254,8 @@ func (s *Agents) Retrieve(ctx context.Context, agentID string, timezoneOffset *i
 
 }
 
-// RetrieveSchemas - Get Agent Schemas
-// Get an agent's schemas by ID. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/GET/agents/{agent_id}/schemas). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+// RetrieveSchemas - List an agent's schemas
+// Return [agent](https://developers.glean.com/agents/agents-api)'s input and output schemas. You can use these schemas to detect changes to an agent's input or output structure.
 func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentSchemasResponse, error) {
 	request := operations.GetAgentSchemasRequest{
 		TimezoneOffset: timezoneOffset,
@@ -479,8 +479,8 @@ func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, timezoneOf
 
 }
 
-// List - Search Agents
-// List Agents available in this service. This endpoint implements the LangChain Agent Protocol, specifically part of the Agents stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/agents/POST/agents/search). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol.
+// List - Search agents
+// Search for [agents](https://developers.glean.com/agents/agents-api) by agent name.
 func (s *Agents) List(ctx context.Context, request components.SearchAgentsRequest, opts ...operations.Option) (*operations.SearchAgentsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -702,8 +702,8 @@ func (s *Agents) List(ctx context.Context, request components.SearchAgentsReques
 
 }
 
-// RunStream - Create Run, Stream Output
-// Creates and triggers a run of an agent. Streams the output in SSE format. This endpoint implements the LangChain Agent Protocol, specifically part of the Runs stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/runs/POST/runs/stream). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol. Note that running agents that reference third party platform write actions is unsupported as it requires user confirmation.
+// RunStream - Create an agent run and stream the response
+// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the result as a stream of server-sent events (SSE).
 func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreate, opts ...operations.Option) (*operations.CreateAndStreamRunResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -923,8 +923,8 @@ func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreat
 
 }
 
-// Run - Create Run, Wait for Output
-// Creates and triggers a run of an agent. Waits for final output and then returns it. This endpoint implements the LangChain Agent Protocol, specifically part of the Runs stage (https://langchain-ai.github.io/agent-protocol/api.html#tag/runs/POST/runs/wait). It adheres to the standard contract defined for agent interoperability and can be used by agent runtimes that support the Agent Protocol. Note that running agents that reference third party platform write actions is unsupported as it requires user confirmation.
+// Run - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
+// Executes an agent run and returns the final response.
 func (s *Agents) Run(ctx context.Context, request components.AgentRunCreate, opts ...operations.Option) (*operations.CreateAndWaitRunResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

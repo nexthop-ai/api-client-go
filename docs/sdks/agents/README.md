@@ -9,7 +9,7 @@
 * [RetrieveSchemas](#retrieveschemas) - List an agent's schemas
 * [List](#list) - Search agents
 * [RunStream](#runstream) - Create an agent run and stream the response
-* [Run](#run) - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
+* [Run](#run) - Create an agent run and wait for the response
 
 ## Retrieve
 
@@ -225,7 +225,7 @@ func main() {
 
 ## Run
 
-Executes an agent run and returns the final response.
+Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the final response.
 
 ### Example Usage
 

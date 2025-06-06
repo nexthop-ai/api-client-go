@@ -923,8 +923,8 @@ func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreat
 
 }
 
-// Run - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
-// Executes an agent run and returns the final response.
+// Run - Create an agent run and wait for the response
+// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the final response.
 func (s *Agents) Run(ctx context.Context, request components.AgentRunCreate, opts ...operations.Option) (*operations.CreateAndWaitRunResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

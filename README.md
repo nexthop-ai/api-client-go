@@ -264,7 +264,7 @@ For more information on obtaining the appropriate token type, please contact you
 * [RetrieveSchemas](docs/sdks/agents/README.md#retrieveschemas) - List an agent's schemas
 * [List](docs/sdks/agents/README.md#list) - Search agents
 * [RunStream](docs/sdks/agents/README.md#runstream) - Create an agent run and stream the response
-* [Run](docs/sdks/agents/README.md#run) - Create an [agent](https://developers.glean.com/agents/agents-api) run and wait for the response
+* [Run](docs/sdks/agents/README.md#run) - Create an agent run and wait for the response
 
 #### [Client.Announcements](docs/sdks/announcements/README.md)
 

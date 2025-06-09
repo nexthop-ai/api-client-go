@@ -6,6 +6,10 @@ import (
 	"testing"
 )
 
+func TestReports_Createreport(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createreport.test referencing operation createreport is missing required request body`, `workflow step createreport.test contains criterion simple with invalid condition`, `workflow step createreport.test does not contain $contentType successCriteria and required for response body assertion`]")
+}
+
 func TestReports_Downloadreportcsv(t *testing.T) {
 	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step downloadreportcsv.test contains criterion simple with invalid condition`, `workflow step downloadreportcsv.test does not contain $contentType successCriteria and required for response body assertion`]")
 }

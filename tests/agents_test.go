@@ -6,7 +6,6 @@ import (
 	"context"
 	apiclientgo "github.com/gleanwork/api-client-go"
 	"github.com/gleanwork/api-client-go/internal/utils"
-	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
@@ -59,20 +58,7 @@ func TestAgents_GetAgentSchemas(t *testing.T) {
 }
 
 func TestAgents_SearchAgents(t *testing.T) {
-	ctx := context.Background()
-
-	testHTTPClient := createTestHTTPClient("searchAgents")
-
-	s := apiclientgo.New(
-		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
-		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-	)
-
-	res, err := s.Client.Agents.List(ctx, components.SearchAgentsRequest{})
-	require.NoError(t, err)
-	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
-
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step searchAgents.test referencing operation searchAgents is missing required request body`]")
 }
 
 func TestAgents_CreateAndStreamRun(t *testing.T) {
@@ -80,18 +66,5 @@ func TestAgents_CreateAndStreamRun(t *testing.T) {
 }
 
 func TestAgents_CreateAndWaitRun(t *testing.T) {
-	ctx := context.Background()
-
-	testHTTPClient := createTestHTTPClient("createAndWaitRun")
-
-	s := apiclientgo.New(
-		apiclientgo.WithServerURL(utils.GetEnv("TEST_SERVER_URL", "http://localhost:18080")),
-		apiclientgo.WithClient(testHTTPClient),
-		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
-	)
-
-	res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{})
-	require.NoError(t, err)
-	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
-
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createAndWaitRun.test referencing operation createAndWaitRun is missing required request body`]")
 }

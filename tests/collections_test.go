@@ -1244,6 +1244,10 @@ func TestCollections_Editcollectionitem(t *testing.T) {
 
 }
 
+func TestCollections_Editdocumentcollections(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step editdocumentcollections.test referencing operation editdocumentcollections not found in document`]")
+}
+
 func TestCollections_Getcollection(t *testing.T) {
 	ctx := context.Background()
 
@@ -1278,4 +1282,12 @@ func TestCollections_Listcollections(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
+}
+
+func TestCollections_Movecollectionitem(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step movecollectionitem.test referencing operation movecollectionitem not found in document`]")
+}
+
+func TestCollections_Pincollection(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step pincollection.test referencing operation pincollection not found in document`]")
 }

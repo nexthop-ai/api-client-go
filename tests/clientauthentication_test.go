@@ -11,6 +11,10 @@ import (
 	"testing"
 )
 
+func TestClientAuthentication_Createanonymoustoken(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createanonymoustoken.test referencing operation createanonymoustoken not found in document`]")
+}
+
 func TestClientAuthentication_Createauthtoken(t *testing.T) {
 	ctx := context.Background()
 

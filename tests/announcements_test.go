@@ -1382,6 +1382,10 @@ func TestAnnouncements_Createannouncement(t *testing.T) {
 
 }
 
+func TestAnnouncements_Createdraftannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createdraftannouncement.test referencing operation createdraftannouncement not found in document`]")
+}
+
 func TestAnnouncements_Deleteannouncement(t *testing.T) {
 	ctx := context.Background()
 
@@ -1399,6 +1403,38 @@ func TestAnnouncements_Deleteannouncement(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
+}
+
+func TestAnnouncements_Deletedraftannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step deletedraftannouncement.test referencing operation deletedraftannouncement not found in document`]")
+}
+
+func TestAnnouncements_Getannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getannouncement.test referencing operation getannouncement not found in document`]")
+}
+
+func TestAnnouncements_Getdraftannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getdraftannouncement.test referencing operation getdraftannouncement not found in document`]")
+}
+
+func TestAnnouncements_Listannouncements(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step listannouncements.test referencing operation listannouncements not found in document`]")
+}
+
+func TestAnnouncements_Previewannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step previewannouncement.test referencing operation previewannouncement not found in document`]")
+}
+
+func TestAnnouncements_Previewannouncementdraft(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step previewannouncementdraft.test referencing operation previewannouncementdraft not found in document`]")
+}
+
+func TestAnnouncements_Publishdraftannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step publishdraftannouncement.test referencing operation publishdraftannouncement not found in document`]")
+}
+
+func TestAnnouncements_Unpublishannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step unpublishannouncement.test referencing operation unpublishannouncement not found in document`]")
 }
 
 func TestAnnouncements_Updateannouncement(t *testing.T) {
@@ -3389,4 +3425,8 @@ func TestAnnouncements_Updateannouncement(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
+}
+
+func TestAnnouncements_Updatedraftannouncement(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step updatedraftannouncement.test referencing operation updatedraftannouncement not found in document`]")
 }

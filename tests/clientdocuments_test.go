@@ -99,3 +99,7 @@ func TestClientDocuments_Getdocumentsbyfacets(t *testing.T) {
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
 }
+
+func TestClientDocuments_Getdocumentanalytics(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getdocumentanalytics.test referencing operation getdocumentanalytics not found in document`]")
+}

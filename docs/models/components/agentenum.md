@@ -5,7 +5,8 @@ Name of the agent.
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `AgentEnumDefault` | DEFAULT            |
-| `AgentEnumGpt`     | GPT                |
+| Name                 | Value                |
+| -------------------- | -------------------- |
+| `AgentEnumDefault`   | DEFAULT              |
+| `AgentEnumGpt`       | GPT                  |
+| `AgentEnumUniversal` | UNIVERSAL            |

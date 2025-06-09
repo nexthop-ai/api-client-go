@@ -1413,3 +1413,35 @@ func TestAnswers_Listanswers(t *testing.T) {
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
 }
+
+func TestAnswers_Previewanswer(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step previewanswer.test referencing operation previewanswer not found in document`]")
+}
+
+func TestAnswers_Previewanswerdraft(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step previewanswerdraft.test referencing operation previewanswerdraft not found in document`]")
+}
+
+func TestAnswers_Updateanswerlikes(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step updateanswerlikes.test referencing operation updateanswerlikes not found in document`]")
+}
+
+func TestAnswers_Createanswerboard(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createanswerboard.test referencing operation createanswerboard not found in document`]")
+}
+
+func TestAnswers_Deleteanswerboards(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step deleteanswerboards.test referencing operation deleteanswerboards not found in document`]")
+}
+
+func TestAnswers_Editanswerboard(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step editanswerboard.test referencing operation editanswerboard not found in document`]")
+}
+
+func TestAnswers_Getanswerboard(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getanswerboard.test referencing operation getanswerboard not found in document`]")
+}
+
+func TestAnswers_Listanswerboards(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step listanswerboards.test referencing operation listanswerboards not found in document`]")
+}

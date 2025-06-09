@@ -32,6 +32,10 @@ func TestPolicies_Getpolicies(t *testing.T) {
 	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getpolicies.test referencing operation getpolicies not found in document`]")
 }
 
+func TestPolicies_Createpolicy(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createpolicy.test referencing operation createpolicy is missing required request body`, `workflow step createpolicy.test contains criterion simple with invalid condition`, `workflow step createpolicy.test does not contain $contentType successCriteria and required for response body assertion`]")
+}
+
 func TestPolicies_Downloadpolicycsv(t *testing.T) {
 	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step downloadpolicycsv.test contains criterion simple with invalid condition`, `workflow step downloadpolicycsv.test does not contain $contentType successCriteria and required for response body assertion`]")
 }

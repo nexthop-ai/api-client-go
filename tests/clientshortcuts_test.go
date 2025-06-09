@@ -635,6 +635,10 @@ func TestClientShortcuts_Getshortcut(t *testing.T) {
 
 }
 
+func TestClientShortcuts_Getsimilarshortcuts(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step getsimilarshortcuts.test referencing operation getsimilarshortcuts not found in document`]")
+}
+
 func TestClientShortcuts_Listshortcuts(t *testing.T) {
 	ctx := context.Background()
 
@@ -667,6 +671,10 @@ func TestClientShortcuts_Listshortcuts(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
+}
+
+func TestClientShortcuts_Previewshortcut(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step previewshortcut.test referencing operation previewshortcut not found in document`]")
 }
 
 func TestClientShortcuts_Updateshortcut(t *testing.T) {

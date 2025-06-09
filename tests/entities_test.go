@@ -67,3 +67,7 @@ func TestEntities_People(t *testing.T) {
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
 }
+
+func TestEntities_Teams(t *testing.T) {
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step teams.test referencing operation teams not found in document`]")
+}

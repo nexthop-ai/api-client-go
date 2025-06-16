@@ -370,11 +370,16 @@ func main() {
         apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
+    example, fileErr := os.Open("example.file")
+    if fileErr != nil {
+        panic(fileErr)
+    }
+
     res, err := s.Client.Chat.UploadFiles(ctx, components.UploadChatFilesRequest{
         Files: []components.File{
             components.File{
                 FileName: "example.file",
-                Content: content,
+                Content: example,
             },
         },
     }, nil)

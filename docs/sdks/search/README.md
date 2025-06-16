@@ -24,7 +24,6 @@ import(
 	"context"
 	"os"
 	apiclientgo "github.com/gleanwork/api-client-go"
-	"github.com/gleanwork/api-client-go/types"
 	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )
@@ -475,7 +474,6 @@ import(
 	"context"
 	"os"
 	apiclientgo "github.com/gleanwork/api-client-go"
-	"github.com/gleanwork/api-client-go/types"
 	"github.com/gleanwork/api-client-go/models/components"
 	"log"
 )

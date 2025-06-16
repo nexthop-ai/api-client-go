@@ -24,7 +24,7 @@ func (o *File) GetContent() any {
 
 type UploadChatFilesRequest struct {
 	// Raw files to be uploaded for chat in binary format.
-	Files []File `multipartForm:"name=files"`
+	Files []File `multipartForm:"file,name=files"`
 }
 
 func (o *UploadChatFilesRequest) GetFiles() []File {

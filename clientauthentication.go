@@ -32,7 +32,11 @@ func newClientAuthentication(rootSDK *Glean, sdkConfig config.SDKConfiguration, 
 }
 
 // CreateToken - Create authentication token
-// Creates an authentication token for the authenticated user.
+// Creates an authentication token for the authenticated user. These are
+// specifically intended to be used with the [Web SDK](https://developers.glean.com/web).
+//
+// Note: The tokens generated from this endpoint are **not** valid tokens
+// for use with the Client API (e.g. `/rest/api/v1/*`).
 func (s *ClientAuthentication) CreateToken(ctx context.Context, opts ...operations.Option) (*operations.CreateauthtokenResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

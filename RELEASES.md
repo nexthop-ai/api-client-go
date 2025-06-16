@@ -149,3 +149,13 @@ Based on:
 - [go v0.6.3] .
 ### Releases
 - [Go v0.6.3] https://github.com/gleanwork/api-client-go/releases/tag/v0.6.3 - .
+
+## 2025-06-16 01:17:41
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.563.1 (2.629.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.6.4] .
+### Releases
+- [Go v0.6.4] https://github.com/gleanwork/api-client-go/releases/tag/v0.6.4 - .

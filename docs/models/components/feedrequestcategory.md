@@ -20,6 +20,7 @@
 | `FeedRequestCategoryDisplayableList`              | DISPLAYABLE_LIST                                  |
 | `FeedRequestCategorySocialLink`                   | SOCIAL_LINK                                       |
 | `FeedRequestCategoryExternalTasks`                | EXTERNAL_TASKS                                    |
+| `FeedRequestCategoryWorkflowCollections`          | WORKFLOW_COLLECTIONS                              |
 | `FeedRequestCategoryZeroStateChatSuggestion`      | ZERO_STATE_CHAT_SUGGESTION                        |
 | `FeedRequestCategoryZeroStateChatToolSuggestion`  | ZERO_STATE_CHAT_TOOL_SUGGESTION                   |
 | `FeedRequestCategoryZeroStateWorkflowCreatedByMe` | ZERO_STATE_WORKFLOW_CREATED_BY_ME                 |

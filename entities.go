@@ -32,7 +32,7 @@ func newEntities(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 }
 
 // List entities
-// List some set of details for all entities that fit the given criteria and return in the requested order. Does not support negation in filters, assumes relation type EQUALS. There is a limit of 10000 entities that can be retrieved via this endpoint.
+// List some set of details for all entities that fit the given criteria and return in the requested order. Does not support negation in filters, assumes relation type EQUALS. There is a limit of 10000 entities that can be retrieved via this endpoint, except when using FULL_DIRECTORY request type for people entities.
 func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequest, opts ...operations.Option) (*operations.ListentitiesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

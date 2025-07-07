@@ -10,12 +10,14 @@ How this document relates to the including entity.
 | `RelationAttachment`           | ATTACHMENT                     |
 | `RelationCanonical`            | CANONICAL                      |
 | `RelationCase`                 | CASE                           |
-| `RelationContact`              | CONTACT                        |
+| `RelationContactLower`         | contact                        |
+| `RelationContactUpper`         | CONTACT                        |
 | `RelationConversationMessages` | CONVERSATION_MESSAGES          |
 | `RelationExpert`               | EXPERT                         |
 | `RelationFrom`                 | FROM                           |
 | `RelationHighlight`            | HIGHLIGHT                      |
-| `RelationOpportunity`          | OPPORTUNITY                    |
+| `RelationOpportunityLower`     | opportunity                    |
+| `RelationOpportunityUpper`     | OPPORTUNITY                    |
 | `RelationRecent`               | RECENT                         |
 | `RelationSource`               | SOURCE                         |
 | `RelationTicket`               | TICKET                         |

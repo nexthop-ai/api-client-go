@@ -195,6 +195,11 @@ func main() {
 
     res, err := s.Client.Agents.RunStream(ctx, components.AgentRunCreate{
         AgentID: "<id>",
+        Messages: []components.Message{
+            components.Message{
+                Role: apiclientgo.String("USER"),
+            },
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -249,6 +254,11 @@ func main() {
 
     res, err := s.Client.Agents.Run(ctx, components.AgentRunCreate{
         AgentID: "<id>",
+        Messages: []components.Message{
+            components.Message{
+                Role: apiclientgo.String("USER"),
+            },
+        },
     })
     if err != nil {
         log.Fatal(err)

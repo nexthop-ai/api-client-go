@@ -3,9 +3,10 @@
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `RelationTypeEquals`   | EQUALS                 |
-| `RelationTypeIDEquals` | ID_EQUALS              |
-| `RelationTypeLt`       | LT                     |
-| `RelationTypeGt`       | GT                     |
+| Name                    | Value                   |
+| ----------------------- | ----------------------- |
+| `RelationTypeEquals`    | EQUALS                  |
+| `RelationTypeIDEquals`  | ID_EQUALS               |
+| `RelationTypeLt`        | LT                      |
+| `RelationTypeGt`        | GT                      |
+| `RelationTypeNotEquals` | NOT_EQUALS              |

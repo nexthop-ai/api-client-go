@@ -251,10 +251,18 @@ func TestAnswers_Createanswer(t *testing.T) {
 														Metadata: &components.VerificationMetadata{
 															Reminders: []components.Reminder{
 																components.Reminder{
+																	Assignee: components.Person{
+																		Name:         "George Clooney",
+																		ObfuscatedID: "abc123",
+																	},
 																	RemindAt: 491427,
 																},
 															},
 															LastReminder: &components.Reminder{
+																Assignee: components.Person{
+																	Name:         "George Clooney",
+																	ObfuscatedID: "abc123",
+																},
 																RemindAt: 490420,
 															},
 														},
@@ -1047,10 +1055,18 @@ func TestAnswers_Editanswer(t *testing.T) {
 													Metadata: &components.VerificationMetadata{
 														Reminders: []components.Reminder{
 															components.Reminder{
+																Assignee: components.Person{
+																	Name:         "George Clooney",
+																	ObfuscatedID: "abc123",
+																},
 																RemindAt: 843043,
 															},
 														},
 														LastReminder: &components.Reminder{
+															Assignee: components.Person{
+																Name:         "George Clooney",
+																ObfuscatedID: "abc123",
+															},
 															RemindAt: 630893,
 														},
 													},

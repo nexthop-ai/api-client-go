@@ -1,4 +1,4 @@
-speakeasyVersion: 1.576.1
+speakeasyVersion: 1.580.2
 sources:
     Glean API:
         sourceNamespace: glean-api-specs
@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:01cf4577ff2f15ba160b16bba410571a8ba0c5fefa7e6dd7101edef7ef7c68dc
         tags:
             - latest
-            - speakeasy-sdk-regen-1750453705
+            - speakeasy-sdk-regen-1751974091
     petstore-oas:
         sourceNamespace: petstore-oas
         sourceRevisionDigest: sha256:97b2eff2f43ce14276d28efc41ec5de8034cde61db8445f12b626e4dc88ea40e
@@ -21,7 +21,7 @@ targets:
         sourceRevisionDigest: sha256:57fc6af98e6e9e98c92547985293be8fafd52d2a1d1ef88d4b24636743b9f119
         sourceBlobDigest: sha256:01cf4577ff2f15ba160b16bba410571a8ba0c5fefa7e6dd7101edef7ef7c68dc
         codeSamplesNamespace: glean-api-specs-go-code-samples
-        codeSamplesRevisionDigest: sha256:e60dc880cdcc0e5a8bd65f90d4cfcee71da0ad3ad72c85a3e23fbbda0029afc2
+        codeSamplesRevisionDigest: sha256:5632022f8c10eaa92a511e97f202a903d3a4a8c0107b9c869ef20012c705e3ee
     petstore:
         source: petstore-oas
         sourceNamespace: petstore-oas

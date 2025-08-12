@@ -17,6 +17,7 @@ Fetches the specified policy version, or the latest if no version is provided.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getpolicy" method="get" path="/rest/api/v1/governance/data/policies/{id}" -->
 ```go
 package main
 
@@ -69,6 +70,7 @@ Updates an existing policy.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="updatepolicy" method="post" path="/rest/api/v1/governance/data/policies/{id}" -->
 ```go
 package main
 
@@ -122,6 +124,7 @@ Lists policies with filtering.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listpolicies" method="get" path="/rest/api/v1/governance/data/policies" -->
 ```go
 package main
 
@@ -174,6 +177,7 @@ Creates a new policy with specified specifications and returns its id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createpolicy" method="post" path="/rest/api/v1/governance/data/policies" -->
 ```go
 package main
 
@@ -226,6 +230,7 @@ Downloads CSV violations report for a specific policy id. This does not support 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="downloadpolicycsv" method="get" path="/rest/api/v1/governance/data/policies/{id}/download" -->
 ```go
 package main
 

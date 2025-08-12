@@ -14,6 +14,7 @@ Report user activity that occurs on indexed documents such as viewing or editing
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="activity" method="post" path="/rest/api/v1/activity" -->
 ```go
 package main
 
@@ -92,6 +93,7 @@ Report events that happen to results within a Glean client UI, such as search re
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="feedback" method="post" path="/rest/api/v1/feedback" -->
 ```go
 package main
 

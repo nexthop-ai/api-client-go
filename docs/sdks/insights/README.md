@@ -13,6 +13,7 @@ Reads the aggregate information for each user, query, and content.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="insights" method="post" path="/rest/api/v1/insights" -->
 ```go
 package main
 

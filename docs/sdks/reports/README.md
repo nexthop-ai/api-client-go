@@ -15,6 +15,7 @@ Creates a new one-time report and executes its batch job.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createreport" method="post" path="/rest/api/v1/governance/data/reports" -->
 ```go
 package main
 
@@ -67,6 +68,7 @@ Downloads CSV violations report for a specific report id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="downloadreportcsv" method="get" path="/rest/api/v1/governance/data/reports/{id}/download" -->
 ```go
 package main
 
@@ -118,6 +120,7 @@ Fetches the status of the run corresponding to the report-id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getreportstatus" method="get" path="/rest/api/v1/governance/data/reports/{id}/status" -->
 ```go
 package main
 

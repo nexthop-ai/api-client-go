@@ -16,6 +16,7 @@ Read the emails of all users who have access to the given document.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getdocpermissions" method="post" path="/rest/api/v1/getdocpermissions" -->
 ```go
 package main
 
@@ -68,6 +69,7 @@ Read the documents including metadata (does not include enhanced metadata via `/
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getdocuments" method="post" path="/rest/api/v1/getdocuments" -->
 ```go
 package main
 
@@ -119,6 +121,7 @@ Read the documents including metadata (does not include enhanced metadata via `/
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getdocumentsbyfacets" method="post" path="/rest/api/v1/getdocumentsbyfacets" -->
 ```go
 package main
 
@@ -208,6 +211,7 @@ Generate an AI summary of the requested documents.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="summarize" method="post" path="/rest/api/v1/summarize" -->
 ```go
 package main
 

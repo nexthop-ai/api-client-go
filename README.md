@@ -87,6 +87,7 @@ func main() {
 	res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("What are the company holidays this year?"),
@@ -128,6 +129,7 @@ func main() {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("What are the company holidays this year?"),
@@ -1459,12 +1461,13 @@ The built-in `net/http` client satisfies this interface and a default client bas
 import (
 	"net/http"
 	"time"
-	"github.com/myorg/your-go-sdk"
+
+	"github.com/gleanwork/api-client-go"
 )
 
 var (
 	httpClient = &http.Client{Timeout: 30 * time.Second}
-	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+	sdkClient  = apiclientgo.New(apiclientgo.WithClient(httpClient))
 )
 ```
 

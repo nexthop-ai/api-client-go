@@ -15,6 +15,7 @@ Creates a verification reminder for the document. Users can create verification 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="addverificationreminder" method="post" path="/rest/api/v1/addverificationreminder" -->
 ```go
 package main
 
@@ -69,6 +70,7 @@ Returns the information to be rendered in verification dashboard. Includes infor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listverifications" method="post" path="/rest/api/v1/listverifications" -->
 ```go
 package main
 
@@ -120,6 +122,7 @@ Verify documents to keep the knowledge up to date within customer corpus.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="verify" method="post" path="/rest/api/v1/verify" -->
 ```go
 package main
 

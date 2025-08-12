@@ -20,6 +20,7 @@ func main() {
 	res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("What are the company holidays this year?"),
@@ -59,6 +60,7 @@ func main() {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("What are the company holidays this year?"),

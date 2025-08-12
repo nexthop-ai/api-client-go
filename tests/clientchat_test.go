@@ -188,6 +188,7 @@ func TestClientChat_ChatStreamDefaultExample(t *testing.T) {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("What are the company holidays this year?"),
@@ -215,6 +216,7 @@ func TestClientChat_ChatStreamGptAgentExample(t *testing.T) {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Fragments: []components.ChatMessageFragment{
 					components.ChatMessageFragment{
 						Text: apiclientgo.String("Who was the first person to land on the moon?"),
@@ -265,6 +267,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Citations: []components.ChatMessageCitation{
 					components.ChatMessageCitation{
 						SourceDocument: &components.Document{
@@ -2432,6 +2435,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 				},
 			},
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Citations: []components.ChatMessageCitation{
 					components.ChatMessageCitation{
 						SourceDocument: &components.Document{
@@ -4634,6 +4638,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 	res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
 		Messages: []components.ChatMessage{
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Citations: []components.ChatMessageCitation{
 					components.ChatMessageCitation{
 						SourceDocument: &components.Document{
@@ -6632,6 +6637,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 				},
 			},
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Citations: []components.ChatMessageCitation{
 					components.ChatMessageCitation{
 						SourceDocument: &components.Document{
@@ -7707,6 +7713,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 				},
 			},
 			components.ChatMessage{
+				Author: components.AuthorUser.ToPointer(),
 				Citations: []components.ChatMessageCitation{
 					components.ChatMessageCitation{
 						SourceDocument: &components.Document{

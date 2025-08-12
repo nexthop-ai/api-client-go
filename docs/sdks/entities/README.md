@@ -14,6 +14,7 @@ List some set of details for all entities that fit the given criteria and return
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listentities" method="post" path="/rest/api/v1/listentities" -->
 ```go
 package main
 
@@ -83,6 +84,7 @@ Read people details for the given IDs.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="people" method="post" path="/rest/api/v1/people" -->
 ```go
 package main
 

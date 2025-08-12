@@ -22,6 +22,7 @@ Have a conversation with Glean AI.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="chat" method="post" path="/rest/api/v1/chat" -->
 ```go
 package main
 
@@ -43,6 +44,7 @@ func main() {
     res, err := s.Client.Chat.Create(ctx, components.ChatRequest{
         Messages: []components.ChatMessage{
             components.ChatMessage{
+                Author: components.AuthorUser.ToPointer(),
                 Fragments: []components.ChatMessageFragment{
                     components.ChatMessageFragment{
                         Text: apiclientgo.String("What are the company holidays this year?"),
@@ -85,6 +87,7 @@ Deletes all saved Chats a user has had and all their contained conversational co
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deleteallchats" method="post" path="/rest/api/v1/deleteallchats" -->
 ```go
 package main
 
@@ -136,6 +139,7 @@ Deletes saved Chats and all their contained conversational content.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deletechats" method="post" path="/rest/api/v1/deletechats" -->
 ```go
 package main
 
@@ -191,6 +195,7 @@ Retrieves the chat history between Glean Assistant and the user for a given Chat
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getchat" method="post" path="/rest/api/v1/getchat" -->
 ```go
 package main
 
@@ -246,6 +251,7 @@ Retrieves all the saved Chats between Glean Assistant and the user. The returned
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listchats" method="post" path="/rest/api/v1/listchats" -->
 ```go
 package main
 
@@ -297,6 +303,7 @@ Gets the Chat application details for the specified application ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getchatapplication" method="post" path="/rest/api/v1/getchatapplication" -->
 ```go
 package main
 
@@ -352,6 +359,7 @@ Upload files for Chat.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="uploadchatfiles" method="post" path="/rest/api/v1/uploadchatfiles" -->
 ```go
 package main
 
@@ -417,6 +425,7 @@ Get files uploaded by a user for Chat.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getchatfiles" method="post" path="/rest/api/v1/getchatfiles" -->
 ```go
 package main
 
@@ -474,6 +483,7 @@ Delete files uploaded by a user for Chat.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deletechatfiles" method="post" path="/rest/api/v1/deletechatfiles" -->
 ```go
 package main
 
@@ -533,6 +543,7 @@ Have a conversation with Glean AI.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="chatStream" method="post" path="/rest/api/v1/chat#stream" -->
 ```go
 package main
 
@@ -554,6 +565,7 @@ func main() {
     res, err := s.Client.Chat.CreateStream(ctx, components.ChatRequest{
         Messages: []components.ChatMessage{
             components.ChatMessage{
+                Author: components.AuthorUser.ToPointer(),
                 Fragments: []components.ChatMessageFragment{
                     components.ChatMessageFragment{
                         Text: apiclientgo.String("What are the company holidays this year?"),

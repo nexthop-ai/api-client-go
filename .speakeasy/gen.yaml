@@ -24,7 +24,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: true
 go:
-  version: 0.7.1
+  version: 0.8.0
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: GleanError
@@ -43,6 +43,8 @@ go:
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request
+  modulePath: ""
   outputModelSuffix: output
   packageName: github.com/gleanwork/api-client-go
   responseFormat: envelope-http
+  sdkPackageName: ""

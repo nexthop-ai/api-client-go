@@ -14,6 +14,7 @@ Add or update a custom datasource and its schema.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/adddatasource" method="post" path="/api/index/v1/adddatasource" -->
 ```go
 package main
 
@@ -79,6 +80,7 @@ Fetches the datasource config for the specified custom datasource.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/getdatasourceconfig" method="post" path="/api/index/v1/getdatasourceconfig" -->
 ```go
 package main
 

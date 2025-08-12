@@ -233,7 +233,7 @@ func (s *IndexingDocuments) AddOrUpdate(ctx context.Context, request components.
 }
 
 // Index documents
-// Adds or updates multiple documents in the index. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#choosing-indexdocuments-vs-bulkindexdocuments) documentation for an explanation of when to use this endpoint.
+// Adds or updates multiple documents in the index. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-indexing/choosing-indexdocuments-vs-bulkindexdocuments) documentation for an explanation of when to use this endpoint.
 func (s *IndexingDocuments) Index(ctx context.Context, request components.IndexDocumentsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1IndexdocumentsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -434,7 +434,7 @@ func (s *IndexingDocuments) Index(ctx context.Context, request components.IndexD
 }
 
 // BulkIndex - Bulk index documents
-// Replaces the documents in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces the documents in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *IndexingDocuments) BulkIndex(ctx context.Context, request components.BulkIndexDocumentsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexdocumentsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1044,7 +1044,7 @@ func (s *IndexingDocuments) Delete(ctx context.Context, request components.Delet
 //
 // Gives various information that would help in debugging related to a particular document. Currently in beta, might undergo breaking changes without prior notice.
 //
-// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/) for more information.
+// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/indexing/debugging/datasource-config) for more information.
 func (s *IndexingDocuments) Debug(ctx context.Context, datasource string, debugDocumentRequest components.DebugDocumentRequest, opts ...operations.Option) (*operations.PostAPIIndexV1DebugDatasourceDocumentResponse, error) {
 	request := operations.PostAPIIndexV1DebugDatasourceDocumentRequest{
 		Datasource:           datasource,
@@ -1269,7 +1269,7 @@ func (s *IndexingDocuments) Debug(ctx context.Context, datasource string, debugD
 //
 // Gives various information that would help in debugging related to a batch of documents. Currently in beta, might undergo breaking changes without prior notice.
 //
-// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/) for more information.
+// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/indexing/debugging/datasource-config) for more information.
 func (s *IndexingDocuments) DebugMany(ctx context.Context, datasource string, debugDocumentsRequest components.DebugDocumentsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1DebugDatasourceDocumentsResponse, error) {
 	request := operations.PostAPIIndexV1DebugDatasourceDocumentsRequest{
 		Datasource:            datasource,
@@ -1493,7 +1493,7 @@ func (s *IndexingDocuments) DebugMany(ctx context.Context, datasource string, de
 // CheckAccess - Check document access
 // Check if a given user has access to access a document in a custom datasource
 //
-// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/) for more information.
+// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/indexing/debugging/datasource-config) for more information.
 func (s *IndexingDocuments) CheckAccess(ctx context.Context, request components.CheckDocumentAccessRequest, opts ...operations.Option) (*operations.PostAPIIndexV1CheckdocumentaccessResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1714,7 +1714,7 @@ func (s *IndexingDocuments) CheckAccess(ctx context.Context, request components.
 // Status - Get document upload and indexing status
 // Intended for debugging/validation. Fetches the current upload and indexing status of documents.
 //
-// Tip: Use [/debug/{datasource}/document](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/#debug-datasource-document) for richer information.
+// Tip: Use [/debug/{datasource}/document](https://developers.glean.com/indexing/debugging/datasource-document) for richer information.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *IndexingDocuments) Status(ctx context.Context, request components.GetDocumentStatusRequest, opts ...operations.Option) (*operations.PostAPIIndexV1GetdocumentstatusResponse, error) {
@@ -1937,7 +1937,7 @@ func (s *IndexingDocuments) Status(ctx context.Context, request components.GetDo
 // Count - Get document count
 // Fetches document count for the specified custom datasource.
 //
-// Tip: Use [/debug/{datasource}/status](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/#debug-datasource-status) for richer information.
+// Tip: Use [/debug/{datasource}/status](https://developers.glean.com/indexing/debugging/datasource-status) for richer information.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *IndexingDocuments) Count(ctx context.Context, request components.GetDocumentCountRequest, opts ...operations.Option) (*operations.PostAPIIndexV1GetdocumentcountResponse, error) {

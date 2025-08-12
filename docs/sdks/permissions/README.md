@@ -24,6 +24,7 @@ Updates the permissions for a given document without modifying document content.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/updatepermissions" method="post" path="/api/index/v1/updatepermissions" -->
 ```go
 package main
 
@@ -79,6 +80,7 @@ Adds a datasource user or updates an existing user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/indexuser" method="post" path="/api/index/v1/indexuser" -->
 ```go
 package main
 
@@ -133,10 +135,11 @@ func main() {
 
 ## BulkIndexUsers
 
-Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/bulkindexusers" method="post" path="/api/index/v1/bulkindexusers" -->
 ```go
 package main
 
@@ -206,6 +209,7 @@ Add or update a group in the datasource.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/indexgroup" method="post" path="/api/index/v1/indexgroup" -->
 ```go
 package main
 
@@ -259,10 +263,11 @@ func main() {
 
 ## BulkIndexGroups
 
-Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/bulkindexgroups" method="post" path="/api/index/v1/bulkindexgroups" -->
 ```go
 package main
 
@@ -326,6 +331,7 @@ Add the memberships of a group in the datasource.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/indexmembership" method="post" path="/api/index/v1/indexmembership" -->
 ```go
 package main
 
@@ -379,10 +385,11 @@ func main() {
 
 ## BulkIndexMemberships
 
-Replaces the memberships for a group in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+Replaces the memberships for a group in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/bulkindexmemberships" method="post" path="/api/index/v1/bulkindexmemberships" -->
 ```go
 package main
 
@@ -444,6 +451,7 @@ Schedules the immediate processing of all group memberships uploaded through the
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/processallmemberships" method="post" path="/api/index/v1/processallmemberships" -->
 ```go
 package main
 
@@ -495,6 +503,7 @@ Delete the user from the datasource. Silently succeeds if user is not present.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/deleteuser" method="post" path="/api/index/v1/deleteuser" -->
 ```go
 package main
 
@@ -550,6 +559,7 @@ Delete group from the datasource. Silently succeeds if group is not present.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/deletegroup" method="post" path="/api/index/v1/deletegroup" -->
 ```go
 package main
 
@@ -605,6 +615,7 @@ Delete membership to a group in the specified datasource. Silently succeeds if m
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/deletemembership" method="post" path="/api/index/v1/deletemembership" -->
 ```go
 package main
 
@@ -662,6 +673,7 @@ Allow the datasource be visible to the specified beta users. The default behavio
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/betausers" method="post" path="/api/index/v1/betausers" -->
 ```go
 package main
 

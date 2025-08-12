@@ -431,7 +431,7 @@ func (s *Permissions) IndexUser(ctx context.Context, request components.IndexUse
 }
 
 // BulkIndexUsers - Bulk index users
-// Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *Permissions) BulkIndexUsers(ctx context.Context, request components.BulkIndexUsersRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexusersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -829,7 +829,7 @@ func (s *Permissions) IndexGroup(ctx context.Context, request components.IndexGr
 }
 
 // BulkIndexGroups - Bulk index groups
-// Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *Permissions) BulkIndexGroups(ctx context.Context, request components.BulkIndexGroupsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexgroupsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1227,7 +1227,7 @@ func (s *Permissions) IndexMembership(ctx context.Context, request components.In
 }
 
 // BulkIndexMemberships - Bulk index memberships for a group
-// Replaces the memberships for a group in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces the memberships for a group in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *Permissions) BulkIndexMemberships(ctx context.Context, request components.BulkIndexMembershipsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexmembershipsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

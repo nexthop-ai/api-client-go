@@ -17,6 +17,7 @@ Create a user-generated Answer that contains a question and answer.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createanswer" method="post" path="/rest/api/v1/createanswer" -->
 ```go
 package main
 
@@ -1421,6 +1422,7 @@ Delete an existing user-generated Answer.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deleteanswer" method="post" path="/rest/api/v1/deleteanswer" -->
 ```go
 package main
 
@@ -1476,6 +1478,7 @@ Update an existing user-generated Answer.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="editanswer" method="post" path="/rest/api/v1/editanswer" -->
 ```go
 package main
 
@@ -2450,6 +2453,7 @@ Read the details of a particular Answer given its ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getanswer" method="post" path="/rest/api/v1/getanswer" -->
 ```go
 package main
 
@@ -2505,6 +2509,7 @@ List Answers created by the current user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listanswers" method="post" path="/rest/api/v1/listanswers" -->
 ```go
 package main
 

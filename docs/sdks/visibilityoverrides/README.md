@@ -14,6 +14,7 @@ Fetches the visibility override status of the documents passed.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getdocvisibility" method="get" path="/rest/api/v1/governance/documents/visibilityoverrides" -->
 ```go
 package main
 
@@ -65,6 +66,7 @@ Sets the visibility-override state of the documents specified, effectively hidin
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="setdocvisibility" method="post" path="/rest/api/v1/governance/documents/visibilityoverrides" -->
 ```go
 package main
 

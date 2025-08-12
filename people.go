@@ -35,7 +35,7 @@ func newPeople(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.H
 //
 // Gives various information that would help in debugging related to a particular user. Currently in beta, might undergo breaking changes without prior notice.
 //
-// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/) for more information.
+// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/indexing/debugging/datasource-config) for more information.
 func (s *People) Debug(ctx context.Context, datasource string, debugUserRequest components.DebugUserRequest, opts ...operations.Option) (*operations.PostAPIIndexV1DebugDatasourceUserResponse, error) {
 	request := operations.PostAPIIndexV1DebugDatasourceUserRequest{
 		Datasource:       datasource,
@@ -259,7 +259,7 @@ func (s *People) Debug(ctx context.Context, datasource string, debugUserRequest 
 // Count - Get user count
 // Fetches user count for the specified custom datasource.
 //
-// Tip: Use [/debug/{datasource}/status](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/#debug-datasource-status) for richer information.
+// Tip: Use [/debug/{datasource}/status](https://developers.glean.com/indexing/debugging/datasource-status) for richer information.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *People) Count(ctx context.Context, request components.GetUserCountRequest, opts ...operations.Option) (*operations.PostAPIIndexV1GetusercountResponse, error) {
@@ -679,7 +679,7 @@ func (s *People) Index(ctx context.Context, request components.IndexEmployeeRequ
 }
 
 // BulkIndex - Bulk index employees
-// Replaces all the currently indexed employees using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces all the currently indexed employees using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *People) BulkIndex(ctx context.Context, request components.BulkIndexEmployeesRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexemployeesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1667,7 +1667,7 @@ func (s *People) DeleteTeam(ctx context.Context, request components.DeleteTeamRe
 }
 
 // BulkIndexTeams - Bulk index teams
-// Replaces all the currently indexed teams using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/docs/indexing_api_bulk_indexing/#bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Replaces all the currently indexed teams using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
 func (s *People) BulkIndexTeams(ctx context.Context, request components.BulkIndexTeamsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexteamsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

@@ -17,6 +17,7 @@ Create a user-generated shortcut that contains an alias and destination URL.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createshortcut" method="post" path="/rest/api/v1/createshortcut" -->
 ```go
 package main
 
@@ -1679,6 +1680,7 @@ Delete an existing user-generated shortcut.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deleteshortcut" method="post" path="/rest/api/v1/deleteshortcut" -->
 ```go
 package main
 
@@ -1733,6 +1735,7 @@ Read a particular shortcut's details given its ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getshortcut" method="post" path="/rest/api/v1/getshortcut" -->
 ```go
 package main
 
@@ -1789,6 +1792,7 @@ List shortcuts editable/owned by the currently authenticated user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listshortcuts" method="post" path="/rest/api/v1/listshortcuts" -->
 ```go
 package main
 
@@ -1858,6 +1862,7 @@ Updates the shortcut with the given ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="updateshortcut" method="post" path="/rest/api/v1/updateshortcut" -->
 ```go
 package main
 

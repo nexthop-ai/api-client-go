@@ -20,6 +20,7 @@ Add items to a Collection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="addcollectionitems" method="post" path="/rest/api/v1/addcollectionitems" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Create a publicly visible (empty) Collection of documents.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createcollection" method="post" path="/rest/api/v1/createcollection" -->
 ```go
 package main
 
@@ -791,6 +793,7 @@ Delete a Collection given the Collection's ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deletecollection" method="post" path="/rest/api/v1/deletecollection" -->
 ```go
 package main
 
@@ -850,6 +853,7 @@ Delete a single item from a Collection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="deletecollectionitem" method="post" path="/rest/api/v1/deletecollectionitem" -->
 ```go
 package main
 
@@ -905,6 +909,7 @@ Update the properties of an existing Collection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="editcollection" method="post" path="/rest/api/v1/editcollection" -->
 ```go
 package main
 
@@ -2017,6 +2022,7 @@ Update the URL, Glean Document ID, description of an item within a Collection gi
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="editcollectionitem" method="post" path="/rest/api/v1/editcollectionitem" -->
 ```go
 package main
 
@@ -2072,6 +2078,7 @@ Read the details of a Collection given its ID. Does not fetch items in this Coll
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getcollection" method="post" path="/rest/api/v1/getcollection" -->
 ```go
 package main
 
@@ -2126,6 +2133,7 @@ List all existing Collections.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listcollections" method="post" path="/rest/api/v1/listcollections" -->
 ```go
 package main
 

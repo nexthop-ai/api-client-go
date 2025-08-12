@@ -14,6 +14,7 @@ Replaces all the currently indexed shortcuts using paginated batch API calls. No
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/bulkindexshortcuts" method="post" path="/api/index/v1/bulkindexshortcuts" -->
 ```go
 package main
 
@@ -82,6 +83,7 @@ Creates glean shortcuts for uploaded shortcuts info. Glean would host the shortc
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="post_/api/index/v1/uploadshortcuts" method="post" path="/api/index/v1/uploadshortcuts" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ Returns details of an [agent](https://developers.glean.com/agents/agents-api) cr
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getAgent" method="get" path="/rest/api/v1/agents/{agent_id}" -->
 ```go
 package main
 
@@ -69,6 +70,7 @@ Return [agent](https://developers.glean.com/agents/agents-api)'s input and outpu
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getAgentSchemas" method="get" path="/rest/api/v1/agents/{agent_id}/schemas" -->
 ```go
 package main
 
@@ -121,6 +123,7 @@ Search for [agents](https://developers.glean.com/agents/agents-api) by agent nam
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="searchAgents" method="post" path="/rest/api/v1/agents/search" -->
 ```go
 package main
 
@@ -175,6 +178,7 @@ Executes an [agent](https://developers.glean.com/agents/agents-api) run and retu
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createAndStreamRun" method="post" path="/rest/api/v1/agents/runs/stream" -->
 ```go
 package main
 
@@ -234,6 +238,7 @@ Executes an [agent](https://developers.glean.com/agents/agents-api) run and retu
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="createAndWaitRun" method="post" path="/rest/api/v1/agents/runs/wait" -->
 ```go
 package main
 

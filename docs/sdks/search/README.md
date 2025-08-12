@@ -17,6 +17,7 @@ Retrieves results for search query without respect for permissions. This is avai
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="adminsearch" method="post" path="/rest/api/v1/adminsearch" -->
 ```go
 package main
 
@@ -101,6 +102,7 @@ Retrieve query suggestions, operators and documents for the given partially type
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="autocomplete" method="post" path="/rest/api/v1/autocomplete" -->
 ```go
 package main
 
@@ -158,6 +160,7 @@ The personalized feed/home includes different types of contents including sugges
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="feed" method="post" path="/rest/api/v1/feed" -->
 ```go
 package main
 
@@ -212,6 +215,7 @@ Retrieve recommended documents for the given URL or Glean Document ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="recommendations" method="post" path="/rest/api/v1/recommendations" -->
 ```go
 package main
 
@@ -467,6 +471,7 @@ Retrieve results from the index for the given query and filters.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="search" method="post" path="/rest/api/v1/search" -->
 ```go
 package main
 

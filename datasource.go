@@ -34,7 +34,7 @@ func newDatasource(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hoo
 //
 // Gather information about the datasource's overall status. Currently in beta, might undergo breaking changes without prior notice.
 //
-// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/docs/indexing_api/indexing_api_troubleshooting/) for more information.
+// Tip: Refer to the [Troubleshooting tutorial](https://developers.glean.com/indexing/debugging/datasource-config) for more information.
 func (s *Datasource) Status(ctx context.Context, datasource string, opts ...operations.Option) (*operations.PostAPIIndexV1DebugDatasourceStatusResponse, error) {
 	request := operations.PostAPIIndexV1DebugDatasourceStatusRequest{
 		Datasource: datasource,

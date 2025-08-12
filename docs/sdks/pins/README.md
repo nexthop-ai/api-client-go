@@ -17,6 +17,7 @@ Update an existing user-generated pin.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="editpin" method="post" path="/rest/api/v1/editpin" -->
 ```go
 package main
 
@@ -85,6 +86,7 @@ Read pin details given its ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="getpin" method="post" path="/rest/api/v1/getpin" -->
 ```go
 package main
 
@@ -137,6 +139,7 @@ Lists all pins.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="listpins" method="post" path="/rest/api/v1/listpins" -->
 ```go
 package main
 
@@ -189,6 +192,7 @@ Pin a document as a result for a given search query.Pin results that are known t
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="pin" method="post" path="/rest/api/v1/pin" -->
 ```go
 package main
 
@@ -257,6 +261,7 @@ Unpin a previously pinned result.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="unpin" method="post" path="/rest/api/v1/unpin" -->
 ```go
 package main
 

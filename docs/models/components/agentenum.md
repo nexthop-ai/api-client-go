@@ -10,3 +10,5 @@ Name of the agent.
 | `AgentEnumDefault`   | DEFAULT              |
 | `AgentEnumGpt`       | GPT                  |
 | `AgentEnumUniversal` | UNIVERSAL            |
+| `AgentEnumFast`      | FAST                 |
+| `AgentEnumAdvanced`  | ADVANCED             |

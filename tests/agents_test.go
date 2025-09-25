@@ -62,7 +62,7 @@ func TestAgents_SearchAgents(t *testing.T) {
 }
 
 func TestAgents_CreateAndStreamRun(t *testing.T) {
-	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createAndStreamRun.test referencing operation createAndStreamRun is not currently supported`]")
+	t.Skip("incomplete test found please make sure to address the following errors: [`workflow step createAndStreamRun.test referencing operation createAndStreamRun is missing required request body`]")
 }
 
 func TestAgents_CreateAndWaitRun(t *testing.T) {

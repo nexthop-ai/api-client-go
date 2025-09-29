@@ -341,7 +341,7 @@ For more information on obtaining the appropriate token type, please contact you
 
 #### [Client.Insights](docs/sdks/insights/README.md)
 
-* [Retrieve](docs/sdks/insights/README.md#retrieve) - Read insights
+* [Retrieve](docs/sdks/insights/README.md#retrieve) - Get insights
 
 #### [Client.Messages](docs/sdks/messages/README.md)
 

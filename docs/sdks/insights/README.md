@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [Retrieve](#retrieve) - Read insights
+* [Retrieve](#retrieve) - Get insights
 
 ## Retrieve
 
-Reads the aggregate information for each user, query, and content.
+Gets the aggregate usage insights data displayed in the Insights Dashboards.
 
 ### Example Usage
 
@@ -32,13 +32,7 @@ func main() {
         apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
     )
 
-    res, err := s.Client.Insights.Retrieve(ctx, components.InsightsRequest{
-        Categories: []components.InsightsRequestCategory{
-            components.InsightsRequestCategoryCollections,
-            components.InsightsRequestCategoryShortcuts,
-            components.InsightsRequestCategoryAnnouncements,
-        },
-    })
+    res, err := s.Client.Insights.Retrieve(ctx, components.InsightsRequest{})
     if err != nil {
         log.Fatal(err)
     }

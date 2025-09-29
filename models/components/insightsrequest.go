@@ -10,17 +10,20 @@ import (
 type InsightsRequestCategory string
 
 const (
-	InsightsRequestCategoryAgents        InsightsRequestCategory = "AGENTS"
-	InsightsRequestCategoryAi            InsightsRequestCategory = "AI"
-	InsightsRequestCategoryAiApps        InsightsRequestCategory = "AI_APPS"
-	InsightsRequestCategoryAnnouncements InsightsRequestCategory = "ANNOUNCEMENTS"
-	InsightsRequestCategoryAnswers       InsightsRequestCategory = "ANSWERS"
-	InsightsRequestCategoryCollections   InsightsRequestCategory = "COLLECTIONS"
-	InsightsRequestCategoryContent       InsightsRequestCategory = "CONTENT"
-	InsightsRequestCategoryGleanAssist   InsightsRequestCategory = "GLEAN_ASSIST"
-	InsightsRequestCategoryQueries       InsightsRequestCategory = "QUERIES"
-	InsightsRequestCategoryShortcuts     InsightsRequestCategory = "SHORTCUTS"
-	InsightsRequestCategoryUsers         InsightsRequestCategory = "USERS"
+	InsightsRequestCategoryAgents                  InsightsRequestCategory = "AGENTS"
+	InsightsRequestCategoryAgentUsers              InsightsRequestCategory = "AGENT_USERS"
+	InsightsRequestCategoryTopAgents               InsightsRequestCategory = "TOP_AGENTS"
+	InsightsRequestCategoryAgentsUsageByDepartment InsightsRequestCategory = "AGENTS_USAGE_BY_DEPARTMENT"
+	InsightsRequestCategoryAi                      InsightsRequestCategory = "AI"
+	InsightsRequestCategoryAiApps                  InsightsRequestCategory = "AI_APPS"
+	InsightsRequestCategoryAnnouncements           InsightsRequestCategory = "ANNOUNCEMENTS"
+	InsightsRequestCategoryAnswers                 InsightsRequestCategory = "ANSWERS"
+	InsightsRequestCategoryCollections             InsightsRequestCategory = "COLLECTIONS"
+	InsightsRequestCategoryContent                 InsightsRequestCategory = "CONTENT"
+	InsightsRequestCategoryGleanAssist             InsightsRequestCategory = "GLEAN_ASSIST"
+	InsightsRequestCategoryQueries                 InsightsRequestCategory = "QUERIES"
+	InsightsRequestCategoryShortcuts               InsightsRequestCategory = "SHORTCUTS"
+	InsightsRequestCategoryUsers                   InsightsRequestCategory = "USERS"
 )
 
 func (e InsightsRequestCategory) ToPointer() *InsightsRequestCategory {
@@ -33,6 +36,12 @@ func (e *InsightsRequestCategory) UnmarshalJSON(data []byte) error {
 	}
 	switch v {
 	case "AGENTS":
+		fallthrough
+	case "AGENT_USERS":
+		fallthrough
+	case "TOP_AGENTS":
+		fallthrough
+	case "AGENTS_USAGE_BY_DEPARTMENT":
 		fallthrough
 	case "AI":
 		fallthrough
@@ -93,22 +102,59 @@ func (e *AssistantActivityType) UnmarshalJSON(data []byte) error {
 }
 
 type InsightsRequest struct {
+	OverviewRequest  *InsightsOverviewRequest  `json:"overviewRequest,omitempty"`
+	AssistantRequest *InsightsAssistantRequest `json:"assistantRequest,omitempty"`
+	AgentsRequest    *AgentsInsightsV2Request  `json:"agentsRequest,omitempty"`
+	// If true, suppresses the generation of per-user Insights in the response. Default is false.
+	DisablePerUserInsights *bool `json:"disablePerUserInsights,omitempty"`
 	// Categories of data requested. Request can include single or multiple types.
-	Categories []InsightsRequestCategory `json:"categories"`
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	Categories []InsightsRequestCategory `json:"categories,omitempty"`
 	// Departments that the data is requested for. If this is empty, corresponds to whole company.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	Departments          []string                      `json:"departments,omitempty"`
 	DayRange             *Period                       `json:"dayRange,omitempty"`
 	AiAppRequestOptions  *InsightsAiAppRequestOptions  `json:"aiAppRequestOptions,omitempty"`
 	AgentsRequestOptions *InsightsAgentsRequestOptions `json:"agentsRequestOptions,omitempty"`
 	// Types of activity that should count in the definition of an Assistant Active User. Affects only insights for AI category.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	AssistantActivityTypes []AssistantActivityType `json:"assistantActivityTypes,omitempty"`
-	// If true, suppresses the generation of per-user Insights in the response. Default is false.
-	DisablePerUserInsights *bool `json:"disablePerUserInsights,omitempty"`
+}
+
+func (i *InsightsRequest) GetOverviewRequest() *InsightsOverviewRequest {
+	if i == nil {
+		return nil
+	}
+	return i.OverviewRequest
+}
+
+func (i *InsightsRequest) GetAssistantRequest() *InsightsAssistantRequest {
+	if i == nil {
+		return nil
+	}
+	return i.AssistantRequest
+}
+
+func (i *InsightsRequest) GetAgentsRequest() *AgentsInsightsV2Request {
+	if i == nil {
+		return nil
+	}
+	return i.AgentsRequest
+}
+
+func (i *InsightsRequest) GetDisablePerUserInsights() *bool {
+	if i == nil {
+		return nil
+	}
+	return i.DisablePerUserInsights
 }
 
 func (i *InsightsRequest) GetCategories() []InsightsRequestCategory {
 	if i == nil {
-		return []InsightsRequestCategory{}
+		return nil
 	}
 	return i.Categories
 }
@@ -146,11 +192,4 @@ func (i *InsightsRequest) GetAssistantActivityTypes() []AssistantActivityType {
 		return nil
 	}
 	return i.AssistantActivityTypes
-}
-
-func (i *InsightsRequest) GetDisablePerUserInsights() *bool {
-	if i == nil {
-		return nil
-	}
-	return i.DisablePerUserInsights
 }

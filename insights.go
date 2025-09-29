@@ -31,8 +31,8 @@ func newInsights(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 	}
 }
 
-// Retrieve - Read insights
-// Reads the aggregate information for each user, query, and content.
+// Retrieve - Get insights
+// Gets the aggregate usage insights data displayed in the Insights Dashboards.
 func (s *Insights) Retrieve(ctx context.Context, request components.InsightsRequest, opts ...operations.Option) (*operations.InsightsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

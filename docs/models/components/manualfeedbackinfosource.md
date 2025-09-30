@@ -26,3 +26,4 @@ The source associated with the Feedback.event.MANUAL_FEEDBACK event.
 | `ManualFeedbackInfoSourceSearch`             | SEARCH                                       |
 | `ManualFeedbackInfoSourceSidebar`            | SIDEBAR                                      |
 | `ManualFeedbackInfoSourceSummary`            | SUMMARY                                      |
+| `ManualFeedbackInfoSourceTasks`              | TASKS                                        |

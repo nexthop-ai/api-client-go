@@ -26,6 +26,7 @@
 | `FeedRequestCategoryZeroStateWorkflowCreatedByMe` | ZERO_STATE_WORKFLOW_CREATED_BY_ME                 |
 | `FeedRequestCategoryZeroStateWorkflowFavorites`   | ZERO_STATE_WORKFLOW_FAVORITES                     |
 | `FeedRequestCategoryZeroStateWorkflowPopular`     | ZERO_STATE_WORKFLOW_POPULAR                       |
+| `FeedRequestCategoryZeroStateWorkflowRecent`      | ZERO_STATE_WORKFLOW_RECENT                        |
 | `FeedRequestCategoryZeroStateWorkflowSuggestion`  | ZERO_STATE_WORKFLOW_SUGGESTION                    |
 | `FeedRequestCategoryPersonalizedChatSuggestion`   | PERSONALIZED_CHAT_SUGGESTION                      |
 | `FeedRequestCategoryDailyDigest`                  | DAILY_DIGEST                                      |

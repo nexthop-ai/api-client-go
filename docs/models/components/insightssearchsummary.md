@@ -1,0 +1,11 @@
+# InsightsSearchSummary
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `MonthlyActiveUsers`                                                        | **int64*                                                                    | :heavy_minus_sign:                                                          | Number of current Monthly Active Users, in the specified departments.       |
+| `WeeklyActiveUsers`                                                         | **int64*                                                                    | :heavy_minus_sign:                                                          | Number of current Weekly Active Users, in the specified departments.        |
+| `NumSearches`                                                               | **int64*                                                                    | :heavy_minus_sign:                                                          | Total number of searches by users over the specified time period.           |
+| `NumSearchUsers`                                                            | **int64*                                                                    | :heavy_minus_sign:                                                          | Total number of distinct users who searched over the specified time period. |

@@ -250,9 +250,6 @@ For more information on obtaining the appropriate token type, please contact you
 <details open>
 <summary>Available methods</summary>
 
-### [Client](docs/sdks/client/README.md)
-
-
 #### [Client.Activity](docs/sdks/activity/README.md)
 
 * [Report](docs/sdks/activity/README.md#report) - Report document activity
@@ -381,10 +378,6 @@ For more information on obtaining the appropriate token type, please contact you
 * [AddReminder](docs/sdks/verification/README.md#addreminder) - Create verification
 * [List](docs/sdks/verification/README.md#list) - List verifications
 * [Verify](docs/sdks/verification/README.md#verify) - Update verification
-
-
-### [Indexing](docs/sdks/indexing/README.md)
-
 
 #### [Indexing.Authentication](docs/sdks/indexingauthentication/README.md)
 

@@ -63,7 +63,7 @@ func (s *ClientDocuments) RetrievePermissions(ctx context.Context, request compo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getdocpermissions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -284,7 +284,7 @@ func (s *ClientDocuments) Retrieve(ctx context.Context, request *components.GetD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getdocuments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -505,7 +505,7 @@ func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, request *compone
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getdocumentsbyfacets",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -726,7 +726,7 @@ func (s *ClientDocuments) Summarize(ctx context.Context, request components.Summ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "summarize",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

@@ -69,7 +69,7 @@ func (s *Datasource) Status(ctx context.Context, datasource string, opts ...oper
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/debug/{datasource}/status",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

@@ -67,7 +67,7 @@ func (s *ClientAuthentication) CreateToken(ctx context.Context, opts ...operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createauthtoken",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

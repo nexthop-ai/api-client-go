@@ -62,7 +62,7 @@ func (s *Activity) Report(ctx context.Context, request components.Activity, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "activity",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -266,7 +266,7 @@ func (s *Activity) Feedback(ctx context.Context, feedbackQueryParameter *string,
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "feedback",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Feedback1", "json", `request:"mediaType=application/json"`)

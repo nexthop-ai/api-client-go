@@ -63,7 +63,7 @@ func (s *Announcements) Create(ctx context.Context, request components.CreateAnn
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createannouncement",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *Announcements) Delete(ctx context.Context, request components.DeleteAnn
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteannouncement",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -481,7 +481,7 @@ func (s *Announcements) Update(ctx context.Context, request components.UpdateAnn
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "updateannouncement",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

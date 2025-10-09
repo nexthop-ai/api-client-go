@@ -68,7 +68,7 @@ func (s *Agents) Retrieve(ctx context.Context, agentID string, timezoneOffset *i
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getAgent",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -291,7 +291,7 @@ func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, timezoneOf
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getAgentSchemas",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -511,7 +511,7 @@ func (s *Agents) List(ctx context.Context, request components.SearchAgentsReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "searchAgents",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -734,7 +734,7 @@ func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createAndStreamRun",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -955,7 +955,7 @@ func (s *Agents) Run(ctx context.Context, request components.AgentRunCreate, opt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createAndWaitRun",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

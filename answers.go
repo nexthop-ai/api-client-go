@@ -63,7 +63,7 @@ func (s *Answers) Create(ctx context.Context, request components.CreateAnswerReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createanswer",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *Answers) Delete(ctx context.Context, request components.DeleteAnswerReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteanswer",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -481,7 +481,7 @@ func (s *Answers) Update(ctx context.Context, request components.EditAnswerReque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "editanswer",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -700,7 +700,7 @@ func (s *Answers) Retrieve(ctx context.Context, request components.GetAnswerRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getanswer",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -919,7 +919,7 @@ func (s *Answers) List(ctx context.Context, request components.ListAnswersReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listanswers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

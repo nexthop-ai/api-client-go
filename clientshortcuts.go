@@ -63,7 +63,7 @@ func (s *ClientShortcuts) Create(ctx context.Context, request components.CreateS
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createshortcut",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *ClientShortcuts) Delete(ctx context.Context, request components.DeleteS
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteshortcut",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -481,7 +481,7 @@ func (s *ClientShortcuts) Retrieve(ctx context.Context, request components.GetSh
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getshortcut",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -700,7 +700,7 @@ func (s *ClientShortcuts) List(ctx context.Context, request components.ListShort
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listshortcuts",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -919,7 +919,7 @@ func (s *ClientShortcuts) Update(ctx context.Context, request components.UpdateS
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "updateshortcut",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

@@ -68,7 +68,7 @@ func (s *Chat) Create(ctx context.Context, chatRequest components.ChatRequest, t
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "chat",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ChatRequest", "json", `request:"mediaType=application/json"`)
@@ -297,7 +297,7 @@ func (s *Chat) DeleteAll(ctx context.Context, timezoneOffset *int64, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteallchats",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -498,7 +498,7 @@ func (s *Chat) Delete(ctx context.Context, deleteChatsRequest components.DeleteC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deletechats",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteChatsRequest", "json", `request:"mediaType=application/json"`)
@@ -708,7 +708,7 @@ func (s *Chat) Retrieve(ctx context.Context, getChatRequest components.GetChatRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getchat",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetChatRequest", "json", `request:"mediaType=application/json"`)
@@ -937,7 +937,7 @@ func (s *Chat) List(ctx context.Context, timezoneOffset *int64, opts ...operatio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listchats",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1158,7 +1158,7 @@ func (s *Chat) RetrieveApplication(ctx context.Context, getChatApplicationReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getchatapplication",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetChatApplicationRequest", "json", `request:"mediaType=application/json"`)
@@ -1386,7 +1386,7 @@ func (s *Chat) UploadFiles(ctx context.Context, uploadChatFilesRequest component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "uploadchatfiles",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UploadChatFilesRequest", "multipart", `request:"mediaType=multipart/form-data"`)
@@ -1616,7 +1616,7 @@ func (s *Chat) RetrieveFiles(ctx context.Context, getChatFilesRequest components
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getchatfiles",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetChatFilesRequest", "json", `request:"mediaType=application/json"`)
@@ -1846,7 +1846,7 @@ func (s *Chat) DeleteFiles(ctx context.Context, deleteChatFilesRequest component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deletechatfiles",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteChatFilesRequest", "json", `request:"mediaType=application/json"`)
@@ -2056,7 +2056,7 @@ func (s *Chat) CreateStream(ctx context.Context, chatRequest components.ChatRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "chatStream",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ChatRequest", "json", `request:"mediaType=application/json"`)

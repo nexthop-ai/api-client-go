@@ -63,7 +63,7 @@ func (s *Collections) AddItems(ctx context.Context, request components.AddCollec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "addcollectionitems",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *Collections) Create(ctx context.Context, request components.CreateColle
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createcollection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -526,7 +526,7 @@ func (s *Collections) Delete(ctx context.Context, request components.DeleteColle
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deletecollection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -750,7 +750,7 @@ func (s *Collections) DeleteItem(ctx context.Context, request components.DeleteC
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deletecollectionitem",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -971,7 +971,7 @@ func (s *Collections) Update(ctx context.Context, request components.EditCollect
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "editcollection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1215,7 +1215,7 @@ func (s *Collections) UpdateItem(ctx context.Context, request components.EditCol
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "editcollectionitem",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1434,7 +1434,7 @@ func (s *Collections) Retrieve(ctx context.Context, request components.GetCollec
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getcollection",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1653,7 +1653,7 @@ func (s *Collections) List(ctx context.Context, request components.ListCollectio
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listcollections",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

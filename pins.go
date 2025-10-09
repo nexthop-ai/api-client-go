@@ -63,7 +63,7 @@ func (s *Pins) Update(ctx context.Context, request components.EditPinRequest, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "editpin",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *Pins) Retrieve(ctx context.Context, request components.GetPinRequest, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getpin",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -501,7 +501,7 @@ func (s *Pins) List(ctx context.Context, request operations.ListpinsRequest, opt
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listpins",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -720,7 +720,7 @@ func (s *Pins) Create(ctx context.Context, request components.PinRequest, opts .
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "pin",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -939,7 +939,7 @@ func (s *Pins) Remove(ctx context.Context, request components.Unpin, opts ...ope
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "unpin",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

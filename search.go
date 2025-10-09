@@ -63,7 +63,7 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "adminsearch",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -309,7 +309,7 @@ func (s *Search) Autocomplete(ctx context.Context, request components.Autocomple
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "autocomplete",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -528,7 +528,7 @@ func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "feed",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -749,7 +749,7 @@ func (s *Search) Recommendations(ctx context.Context, request components.Recomme
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "recommendations",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -973,7 +973,7 @@ func (s *Search) Query(ctx context.Context, request components.SearchRequest, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "search",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

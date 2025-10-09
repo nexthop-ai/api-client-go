@@ -68,7 +68,7 @@ func (s *Policies) Retrieve(ctx context.Context, id string, version *int64, opts
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getpolicy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -287,7 +287,7 @@ func (s *Policies) Update(ctx context.Context, id string, updateDlpReportRequest
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "updatepolicy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateDlpReportRequest", "json", `request:"mediaType=application/json"`)
@@ -509,7 +509,7 @@ func (s *Policies) List(ctx context.Context, autoHide *bool, frequency *string, 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listpolicies",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -723,7 +723,7 @@ func (s *Policies) Create(ctx context.Context, request components.CreateDlpRepor
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createpolicy",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -944,7 +944,7 @@ func (s *Policies) Download(ctx context.Context, id string, opts ...operations.O
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "downloadpolicycsv",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

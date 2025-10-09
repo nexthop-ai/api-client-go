@@ -63,7 +63,7 @@ func (s *IndexingDocuments) AddOrUpdate(ctx context.Context, request components.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexdocument",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -264,7 +264,7 @@ func (s *IndexingDocuments) Index(ctx context.Context, request components.IndexD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexdocuments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -465,7 +465,7 @@ func (s *IndexingDocuments) BulkIndex(ctx context.Context, request components.Bu
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexdocuments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -674,7 +674,7 @@ func (s *IndexingDocuments) ProcessAll(ctx context.Context, request *components.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/processalldocuments",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -873,7 +873,7 @@ func (s *IndexingDocuments) Delete(ctx context.Context, request components.Delet
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deletedocument",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1080,7 +1080,7 @@ func (s *IndexingDocuments) Debug(ctx context.Context, datasource string, debugD
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/debug/{datasource}/document",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DebugDocumentRequest", "json", `request:"mediaType=application/json"`)
@@ -1305,7 +1305,7 @@ func (s *IndexingDocuments) DebugMany(ctx context.Context, datasource string, de
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/debug/{datasource}/documents",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DebugDocumentsRequest", "json", `request:"mediaType=application/json"`)
@@ -1524,7 +1524,7 @@ func (s *IndexingDocuments) CheckAccess(ctx context.Context, request components.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/checkdocumentaccess",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1747,7 +1747,7 @@ func (s *IndexingDocuments) Status(ctx context.Context, request components.GetDo
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/getdocumentstatus",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1970,7 +1970,7 @@ func (s *IndexingDocuments) Count(ctx context.Context, request components.GetDoc
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/getdocumentcount",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

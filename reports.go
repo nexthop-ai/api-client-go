@@ -63,7 +63,7 @@ func (s *Reports) Create(ctx context.Context, request components.UpdateDlpConfig
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createreport",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -284,7 +284,7 @@ func (s *Reports) Download(ctx context.Context, id string, opts ...operations.Op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "downloadreportcsv",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -494,7 +494,7 @@ func (s *Reports) Status(ctx context.Context, id string, opts ...operations.Opti
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getreportstatus",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

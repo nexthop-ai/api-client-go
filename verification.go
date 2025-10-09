@@ -63,7 +63,7 @@ func (s *Verification) AddReminder(ctx context.Context, request components.Remin
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "addverificationreminder",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -288,7 +288,7 @@ func (s *Verification) List(ctx context.Context, count *int64, opts ...operation
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listverifications",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -504,7 +504,7 @@ func (s *Verification) Verify(ctx context.Context, request components.VerifyRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "verify",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

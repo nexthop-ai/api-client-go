@@ -63,7 +63,7 @@ func (s *IndexingAuthentication) RotateToken(ctx context.Context, opts ...operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/rotatetoken",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

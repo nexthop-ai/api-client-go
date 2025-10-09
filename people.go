@@ -71,7 +71,7 @@ func (s *People) Debug(ctx context.Context, datasource string, debugUserRequest 
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/debug/{datasource}/user",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DebugUserRequest", "json", `request:"mediaType=application/json"`)
@@ -292,7 +292,7 @@ func (s *People) Count(ctx context.Context, request components.GetUserCountReque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/getusercount",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -511,7 +511,7 @@ func (s *People) Index(ctx context.Context, request components.IndexEmployeeRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexemployee",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -710,7 +710,7 @@ func (s *People) BulkIndex(ctx context.Context, request components.BulkIndexEmpl
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexemployees",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -909,7 +909,7 @@ func (s *People) ProcessAllEmployeesAndTeams(ctx context.Context, opts ...operat
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/processallemployeesandteams",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1101,7 +1101,7 @@ func (s *People) Delete(ctx context.Context, request components.DeleteEmployeeRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deleteemployee",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1300,7 +1300,7 @@ func (s *People) IndexTeam(ctx context.Context, request components.IndexTeamRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexteam",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1499,7 +1499,7 @@ func (s *People) DeleteTeam(ctx context.Context, request components.DeleteTeamRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deleteteam",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1698,7 +1698,7 @@ func (s *People) BulkIndexTeams(ctx context.Context, request components.BulkInde
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexteams",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

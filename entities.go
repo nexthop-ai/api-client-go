@@ -63,7 +63,7 @@ func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "listentities",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -282,7 +282,7 @@ func (s *Entities) ReadPeople(ctx context.Context, request components.PeopleRequ
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "people",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

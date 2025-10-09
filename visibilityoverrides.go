@@ -67,7 +67,7 @@ func (s *Visibilityoverrides) List(ctx context.Context, docIds []string, opts ..
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getdocvisibility",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -281,7 +281,7 @@ func (s *Visibilityoverrides) Create(ctx context.Context, request components.Upd
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "setdocvisibility",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

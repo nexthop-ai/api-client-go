@@ -62,7 +62,7 @@ func (s *Permissions) UpdatePermissions(ctx context.Context, request components.
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/updatepermissions",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -263,7 +263,7 @@ func (s *Permissions) IndexUser(ctx context.Context, request components.IndexUse
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexuser",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -462,7 +462,7 @@ func (s *Permissions) BulkIndexUsers(ctx context.Context, request components.Bul
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexusers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -661,7 +661,7 @@ func (s *Permissions) IndexGroup(ctx context.Context, request components.IndexGr
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexgroup",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -860,7 +860,7 @@ func (s *Permissions) BulkIndexGroups(ctx context.Context, request components.Bu
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexgroups",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1059,7 +1059,7 @@ func (s *Permissions) IndexMembership(ctx context.Context, request components.In
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/indexmembership",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1258,7 +1258,7 @@ func (s *Permissions) BulkIndexMemberships(ctx context.Context, request componen
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/bulkindexmemberships",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1457,7 +1457,7 @@ func (s *Permissions) ProcessMemberships(ctx context.Context, request *component
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/processallmemberships",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -1654,7 +1654,7 @@ func (s *Permissions) DeleteUser(ctx context.Context, request components.DeleteU
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deleteuser",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -1853,7 +1853,7 @@ func (s *Permissions) DeleteGroup(ctx context.Context, request components.Delete
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deletegroup",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2052,7 +2052,7 @@ func (s *Permissions) DeleteMembership(ctx context.Context, request components.D
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/deletemembership",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
@@ -2251,7 +2251,7 @@ func (s *Permissions) AuthorizeBetaUsers(ctx context.Context, request components
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/api/index/v1/betausers",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

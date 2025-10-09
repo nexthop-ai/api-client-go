@@ -7,6 +7,8 @@ type PerAgentInsight struct {
 	AgentID *string `json:"agentId,omitempty"`
 	// Agent name
 	AgentName *string `json:"agentName,omitempty"`
+	// Defines how to render an icon
+	Icon *IconConfig `json:"icon,omitempty"`
 	// Total number of users for this agent over the specified time period.
 	UserCount *int64 `json:"userCount,omitempty"`
 	// Total number of runs for this agent over the specified time period.
@@ -25,6 +27,13 @@ func (p *PerAgentInsight) GetAgentName() *string {
 		return nil
 	}
 	return p.AgentName
+}
+
+func (p *PerAgentInsight) GetIcon() *IconConfig {
+	if p == nil {
+		return nil
+	}
+	return p.Icon
 }
 
 func (p *PerAgentInsight) GetUserCount() *int64 {

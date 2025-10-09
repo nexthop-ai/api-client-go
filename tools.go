@@ -67,7 +67,7 @@ func (s *Tools) List(ctx context.Context, toolNames []string, opts ...operations
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "get_/rest/api/v1/tools/list",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -285,7 +285,7 @@ func (s *Tools) Run(ctx context.Context, request components.ToolsCallRequest, op
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "post_/rest/api/v1/tools/call",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)

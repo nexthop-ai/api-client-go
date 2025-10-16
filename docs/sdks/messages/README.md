@@ -35,6 +35,7 @@ func main() {
     res, err := s.Client.Messages.Retrieve(ctx, components.MessagesRequest{
         IDType: components.IDTypeConversationID,
         ID: "<id>",
+        Datasource: components.DatasourceGchat,
     })
     if err != nil {
         log.Fatal(err)

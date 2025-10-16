@@ -1,6 +1,6 @@
 # Datasource
 
-The type of the data source. Missing field defaults to SLACK.
+The type of the data source.
 
 
 ## Values
@@ -8,5 +8,7 @@ The type of the data source. Missing field defaults to SLACK.
 | Name                          | Value                         |
 | ----------------------------- | ----------------------------- |
 | `DatasourceSlack`             | SLACK                         |
+| `DatasourceSlackentgrid`      | SLACKENTGRID                  |
 | `DatasourceMicrosoftteams`    | MICROSOFTTEAMS                |
+| `DatasourceGchat`             | GCHAT                         |
 | `DatasourceFacebookworkplace` | FACEBOOKWORKPLACE             |

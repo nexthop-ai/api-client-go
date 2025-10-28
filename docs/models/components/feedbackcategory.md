@@ -17,4 +17,5 @@ The feature category to which the feedback applies. These should be broad produc
 | `FeedbackCategoryWorkflows`    | WORKFLOWS                      |
 | `FeedbackCategorySummary`      | SUMMARY                        |
 | `FeedbackCategoryGeneral`      | GENERAL                        |
+| `FeedbackCategoryPrism`        | PRISM                          |
 | `FeedbackCategoryPrompts`      | PROMPTS                        |

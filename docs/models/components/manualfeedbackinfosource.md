@@ -19,6 +19,7 @@ The source associated with the Feedback.event.MANUAL_FEEDBACK event.
 | `ManualFeedbackInfoSourceGeneratedQAndA`     | GENERATED_Q_AND_A                            |
 | `ManualFeedbackInfoSourceInlineMenu`         | INLINE_MENU                                  |
 | `ManualFeedbackInfoSourceNativeResult`       | NATIVE_RESULT                                |
+| `ManualFeedbackInfoSourcePrism`              | PRISM                                        |
 | `ManualFeedbackInfoSourceQAndA`              | Q_AND_A                                      |
 | `ManualFeedbackInfoSourceRelatedQuestions`   | RELATED_QUESTIONS                            |
 | `ManualFeedbackInfoSourceReportIssue`        | REPORT_ISSUE                                 |

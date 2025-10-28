@@ -5,4 +5,4 @@
 
 | Field                       | Type                        | Required                    | Description                 |
 | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `Error`                     | **string*                   | :heavy_minus_sign:          | The text for error, reason. |
+| `Error`                     | *string*                    | :heavy_check_mark:          | The text for error, reason. |

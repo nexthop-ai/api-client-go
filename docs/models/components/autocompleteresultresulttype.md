@@ -13,6 +13,7 @@
 | `AutocompleteResultResultTypeEntity`             | ENTITY                                           |
 | `AutocompleteResultResultTypeGolink`             | GOLINK                                           |
 | `AutocompleteResultResultTypeHistory`            | HISTORY                                          |
+| `AutocompleteResultResultTypeChatHistory`        | CHAT_HISTORY                                     |
 | `AutocompleteResultResultTypeNewChat`            | NEW_CHAT                                         |
 | `AutocompleteResultResultTypeOperator`           | OPERATOR                                         |
 | `AutocompleteResultResultTypeOperatorValue`      | OPERATOR_VALUE                                   |

@@ -82,6 +82,8 @@ type StructuredResult struct {
 	Code             *Code                `json:"code,omitempty"`
 	Shortcut         *Shortcut            `json:"shortcut,omitempty"`
 	QuerySuggestions *QuerySuggestionList `json:"querySuggestions,omitempty"`
+	// Metadata of a Chat a user had with Glean Assistant. This contains no actual conversational content.
+	Chat *ChatMetadata `json:"chat,omitempty"`
 	// A list of documents related to this structured result.
 	RelatedDocuments []RelatedDocuments `json:"relatedDocuments,omitempty"`
 	RelatedQuestion  *RelatedQuestion   `json:"relatedQuestion,omitempty"`
@@ -211,6 +213,13 @@ func (s *StructuredResult) GetQuerySuggestions() *QuerySuggestionList {
 		return nil
 	}
 	return s.QuerySuggestions
+}
+
+func (s *StructuredResult) GetChat() *ChatMetadata {
+	if s == nil {
+		return nil
+	}
+	return s.Chat
 }
 
 func (s *StructuredResult) GetRelatedDocuments() []RelatedDocuments {

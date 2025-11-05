@@ -1335,7 +1335,8 @@ func main() {
 	ctx := context.Background()
 
 	s := apiclientgo.New(
-		apiclientgo.WithInstance("<value>"),
+		apiclientgo.WithServerIndex(0),
+		apiclientgo.WithInstance("instance-name"),
 		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
 	)
 

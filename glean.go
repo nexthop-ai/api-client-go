@@ -2,7 +2,7 @@
 
 package apiclientgo
 
-// Generated from OpenAPI doc version 0.9.0 and generator version 2.731.4
+// Generated from OpenAPI doc version 0.9.0 and generator version 2.739.1
 
 import (
 	"context"
@@ -156,9 +156,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Glean {
 	sdk := &Glean{
-		SDKVersion: "0.11.2",
+		SDKVersion: "0.11.3",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.11.2 2.731.4 0.9.0 github.com/gleanwork/api-client-go",
+			UserAgent:  "speakeasy-sdk/go 0.11.3 2.739.1 0.9.0 github.com/gleanwork/api-client-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{

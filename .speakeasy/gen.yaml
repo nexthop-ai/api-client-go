@@ -27,7 +27,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: true
 go:
-  version: 0.11.2
+  version: 0.11.3
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: GleanError
@@ -43,6 +43,7 @@ go:
       operations: models/operations
       shared: models/components
       webhooks: models/webhooks
+  includeEmptyObjects: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request

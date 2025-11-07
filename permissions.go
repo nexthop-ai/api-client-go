@@ -432,6 +432,7 @@ func (s *Permissions) IndexUser(ctx context.Context, request components.IndexUse
 
 // BulkIndexUsers - Bulk index users
 // Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Note: Any users deleted from the existing set will have their associated memberships deleted as well.
 func (s *Permissions) BulkIndexUsers(ctx context.Context, request components.BulkIndexUsersRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexusersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -830,6 +831,7 @@ func (s *Permissions) IndexGroup(ctx context.Context, request components.IndexGr
 
 // BulkIndexGroups - Bulk index groups
 // Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+// Note: Any groups deleted from the existing set will have their associated memberships deleted as well.
 func (s *Permissions) BulkIndexGroups(ctx context.Context, request components.BulkIndexGroupsRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexgroupsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1624,6 +1626,7 @@ func (s *Permissions) ProcessMemberships(ctx context.Context, request *component
 
 // DeleteUser - Delete user
 // Delete the user from the datasource. Silently succeeds if user is not present.
+// Note: All memberships associated with the deleted user will also be deleted.
 func (s *Permissions) DeleteUser(ctx context.Context, request components.DeleteUserRequest, opts ...operations.Option) (*operations.PostAPIIndexV1DeleteuserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1823,6 +1826,7 @@ func (s *Permissions) DeleteUser(ctx context.Context, request components.DeleteU
 
 // DeleteGroup - Delete group
 // Delete group from the datasource. Silently succeeds if group is not present.
+// Note: All memberships associated with the deleted group will also be deleted.
 func (s *Permissions) DeleteGroup(ctx context.Context, request components.DeleteGroupRequest, opts ...operations.Option) (*operations.PostAPIIndexV1DeletegroupResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

@@ -88,7 +88,9 @@ func (e *ListEntitiesRequestIncludeField) UnmarshalJSON(data []byte) error {
 type RequestType string
 
 const (
-	RequestTypeStandard      RequestType = "STANDARD"
+	// RequestTypeStandard Used by default for all requests and satisfies all standard use cases for list requests. Limited to 10000 entities.
+	RequestTypeStandard RequestType = "STANDARD"
+	// RequestTypeFullDirectory Used exclusively to return a comprehensive list of all people entities in the organization, typically for audit like purposes. The recommended approach is to sort by FIRST_NAME or LAST_NAME, and use pagination for large organizations.
 	RequestTypeFullDirectory RequestType = "FULL_DIRECTORY"
 )
 

@@ -12,10 +12,15 @@ import (
 type ResponseHint string
 
 const (
-	ResponseHintAllResultCounts    ResponseHint = "ALL_RESULT_COUNTS"
-	ResponseHintFacetResults       ResponseHint = "FACET_RESULTS"
-	ResponseHintQueryMetadata      ResponseHint = "QUERY_METADATA"
-	ResponseHintResults            ResponseHint = "RESULTS"
+	// ResponseHintAllResultCounts Return result counts for each result set which has non-zero results, even when the request itself is limited to a subset.
+	ResponseHintAllResultCounts ResponseHint = "ALL_RESULT_COUNTS"
+	// ResponseHintFacetResults Return only facet results.
+	ResponseHintFacetResults ResponseHint = "FACET_RESULTS"
+	// ResponseHintQueryMetadata Returns result counts for each result set which has non-zero results, as well as other information about the search such as suggested spelling corrections.
+	ResponseHintQueryMetadata ResponseHint = "QUERY_METADATA"
+	// ResponseHintResults Return search result documents.
+	ResponseHintResults ResponseHint = "RESULTS"
+	// ResponseHintSpellcheckMetadata Return metadata pertaining to spellcheck results.
 	ResponseHintSpellcheckMetadata ResponseHint = "SPELLCHECK_METADATA"
 )
 

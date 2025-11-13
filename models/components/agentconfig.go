@@ -11,11 +11,16 @@ import (
 type AgentEnum string
 
 const (
-	AgentEnumDefault   AgentEnum = "DEFAULT"
-	AgentEnumGpt       AgentEnum = "GPT"
+	// AgentEnumDefault Integrates with your company's knowledge. This will soon be deprecated in favor of the FAST and ADVANCED `agent` values
+	AgentEnumDefault AgentEnum = "DEFAULT"
+	// AgentEnumGpt Communicates directly with the LLM. This will soon be deprecated in favor of the FAST and ADVANCED `agent` values
+	AgentEnumGpt AgentEnum = "GPT"
+	// AgentEnumUniversal Uses both company and web knowledge. This will soon be deprecated in favor of the FAST and ADVANCED `agent` values
 	AgentEnumUniversal AgentEnum = "UNIVERSAL"
-	AgentEnumFast      AgentEnum = "FAST"
-	AgentEnumAdvanced  AgentEnum = "ADVANCED"
+	// AgentEnumFast Uses an agent powered by the agentic engine that responds faster but may have lower quality results. Requires the agentic engine to be enabled in the deployment.
+	AgentEnumFast AgentEnum = "FAST"
+	// AgentEnumAdvanced Uses an agent powered by the agentic engine that thinks for longer and potentially makes more LLM calls to return higher quality results. Requires the agentic engine to be enabled in the deployment.
+	AgentEnumAdvanced AgentEnum = "ADVANCED"
 )
 
 func (e AgentEnum) ToPointer() *AgentEnum {
@@ -47,8 +52,10 @@ func (e *AgentEnum) UnmarshalJSON(data []byte) error {
 type Mode string
 
 const (
+	// ModeDefault Used if no mode supplied.
 	ModeDefault Mode = "DEFAULT"
-	ModeQuick   Mode = "QUICK"
+	// ModeQuick Deprecated.
+	ModeQuick Mode = "QUICK"
 )
 
 func (e Mode) ToPointer() *Mode {

@@ -38,15 +38,24 @@ func (e *Author) UnmarshalJSON(data []byte) error {
 type MessageType string
 
 const (
-	MessageTypeUpdate        MessageType = "UPDATE"
-	MessageTypeContent       MessageType = "CONTENT"
-	MessageTypeContext       MessageType = "CONTEXT"
-	MessageTypeDebug         MessageType = "DEBUG"
+	// MessageTypeUpdate An intermediate state message for progress updates.
+	MessageTypeUpdate MessageType = "UPDATE"
+	// MessageTypeContent A user query or response message.
+	MessageTypeContent MessageType = "CONTENT"
+	// MessageTypeContext A message providing context in addition to the user query.
+	MessageTypeContext MessageType = "CONTEXT"
+	// MessageTypeDebug A debug message. Strictly used internally.
+	MessageTypeDebug MessageType = "DEBUG"
+	// MessageTypeDebugExternal A debug message to be used while debugging Action creation.
 	MessageTypeDebugExternal MessageType = "DEBUG_EXTERNAL"
-	MessageTypeError         MessageType = "ERROR"
-	MessageTypeHeading       MessageType = "HEADING"
-	MessageTypeWarning       MessageType = "WARNING"
-	MessageTypeServerTool    MessageType = "SERVER_TOOL"
+	// MessageTypeError A message that describes an error while processing the request.
+	MessageTypeError MessageType = "ERROR"
+	// MessageTypeHeading A heading message used to distinguish different sections of the holistic response.
+	MessageTypeHeading MessageType = "HEADING"
+	// MessageTypeWarning A warning message to be shown to the user.
+	MessageTypeWarning MessageType = "WARNING"
+	// MessageTypeServerTool A message used to for server-side tool auth/use, for request and response.
+	MessageTypeServerTool MessageType = "SERVER_TOOL"
 )
 
 func (e MessageType) ToPointer() *MessageType {

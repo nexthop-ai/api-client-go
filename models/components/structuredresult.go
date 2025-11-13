@@ -12,8 +12,11 @@ import (
 type Prominence string
 
 const (
-	ProminenceHero     Prominence = "HERO"
+	// ProminenceHero A high-confidence result that should feature prominently on the page.
+	ProminenceHero Prominence = "HERO"
+	// ProminencePromoted May not be the best result but should be given additional visual distinction.
 	ProminencePromoted Prominence = "PROMOTED"
+	// ProminenceStandard Should not be distinct from any other results.
 	ProminenceStandard Prominence = "STANDARD"
 )
 

@@ -70,37 +70,67 @@ func (e *FeedbackCategory) UnmarshalJSON(data []byte) error {
 type Event string
 
 const (
-	EventClick                    Event = "CLICK"
-	EventContainerClick           Event = "CONTAINER_CLICK"
-	EventCopyLink                 Event = "COPY_LINK"
-	EventCreate                   Event = "CREATE"
-	EventDismiss                  Event = "DISMISS"
-	EventDownvote                 Event = "DOWNVOTE"
-	EventEmail                    Event = "EMAIL"
-	EventExecute                  Event = "EXECUTE"
-	EventFilter                   Event = "FILTER"
-	EventFirstToken               Event = "FIRST_TOKEN"
-	EventFocusIn                  Event = "FOCUS_IN"
-	EventLastToken                Event = "LAST_TOKEN"
-	EventManualFeedback           Event = "MANUAL_FEEDBACK"
+	// EventClick The object's primary link was clicked with the intent to view its full representation. Depending on the object type, this may imply an external navigation or navigating to a new page or view within the Glean app.
+	EventClick Event = "CLICK"
+	// EventContainerClick A link to the object's parent container (e.g. the folder in which it's located) was clicked.
+	EventContainerClick Event = "CONTAINER_CLICK"
+	// EventCopyLink The user copied a link to the primary link.
+	EventCopyLink Event = "COPY_LINK"
+	// EventCreate The user creates a document.
+	EventCreate Event = "CREATE"
+	// EventDismiss The user dismissed the object such that it was hidden from view.
+	EventDismiss Event = "DISMISS"
+	// EventDownvote The user gave feedback that the object was not useful.
+	EventDownvote Event = "DOWNVOTE"
+	// EventEmail The user attempted to send an email.
+	EventEmail Event = "EMAIL"
+	// EventExecute The user executed the object (e.g. ran a workflow).
+	EventExecute Event = "EXECUTE"
+	// EventFilter The user applied a filter.
+	EventFilter Event = "FILTER"
+	// EventFirstToken The first token of a streaming response is received.
+	EventFirstToken Event = "FIRST_TOKEN"
+	// EventFocusIn The user clicked into an interactive element, e.g. the search box.
+	EventFocusIn Event = "FOCUS_IN"
+	// EventLastToken The final token of a streaming response is received.
+	EventLastToken Event = "LAST_TOKEN"
+	// EventManualFeedback The user submitted textual manual feedback regarding the object.
+	EventManualFeedback Event = "MANUAL_FEEDBACK"
+	// EventManualFeedbackSideBySide The user submitted comparative feedback for multiple side-by-side implementations.
 	EventManualFeedbackSideBySide Event = "MANUAL_FEEDBACK_SIDE_BY_SIDE"
-	EventMarkAsRead               Event = "MARK_AS_READ"
-	EventMessage                  Event = "MESSAGE"
-	EventMiddleClick              Event = "MIDDLE_CLICK"
-	EventPageBlur                 Event = "PAGE_BLUR"
-	EventPageFocus                Event = "PAGE_FOCUS"
-	EventPageLeave                Event = "PAGE_LEAVE"
-	EventPreview                  Event = "PREVIEW"
-	EventRelatedClick             Event = "RELATED_CLICK"
-	EventRightClick               Event = "RIGHT_CLICK"
-	EventSectionClick             Event = "SECTION_CLICK"
-	EventSeen                     Event = "SEEN"
-	EventSelect                   Event = "SELECT"
-	EventShare                    Event = "SHARE"
-	EventShowMore                 Event = "SHOW_MORE"
-	EventUpvote                   Event = "UPVOTE"
-	EventView                     Event = "VIEW"
-	EventVisible                  Event = "VISIBLE"
+	// EventMarkAsRead The user explicitly marked the content as read.
+	EventMarkAsRead Event = "MARK_AS_READ"
+	// EventMessage The user attempted to send a message using their default messaing app.
+	EventMessage Event = "MESSAGE"
+	// EventMiddleClick The user middle clicked the object's primary link with the intent to open its full representation in a new tab.
+	EventMiddleClick Event = "MIDDLE_CLICK"
+	// EventPageBlur The user puts a page out of focus but keeps it in the background.
+	EventPageBlur Event = "PAGE_BLUR"
+	// EventPageFocus The user puts a page in focus, meaning it is the first to receive keyboard events.
+	EventPageFocus Event = "PAGE_FOCUS"
+	// EventPageLeave The user leaves a page and it is unloaded (by clicking a link, closing the tab/window, etc).
+	EventPageLeave Event = "PAGE_LEAVE"
+	// EventPreview The user clicked the object's inline preview affordance.
+	EventPreview      Event = "PREVIEW"
+	EventRelatedClick Event = "RELATED_CLICK"
+	// EventRightClick The user right clicked the object's primary link. This may indicate an intent to open it in a new tab or copy it.
+	EventRightClick Event = "RIGHT_CLICK"
+	// EventSectionClick The user clicked a link to a subsection of the primary object.
+	EventSectionClick Event = "SECTION_CLICK"
+	// EventSeen The user has likely seen the object (e.g. took action to make the object visible within the user's viewport).
+	EventSeen Event = "SEEN"
+	// EventSelect The user explicitly selected something, eg. a chat response variant they prefer.
+	EventSelect Event = "SELECT"
+	// EventShare The user shared the object with another user.
+	EventShare Event = "SHARE"
+	// EventShowMore The user clicked the object's show more affordance.
+	EventShowMore Event = "SHOW_MORE"
+	// EventUpvote The user gave feedback that the object was useful.
+	EventUpvote Event = "UPVOTE"
+	// EventView The object was visible within the user's viewport.
+	EventView Event = "VIEW"
+	// EventVisible The object was visible within the user's viewport.
+	EventVisible Event = "VISIBLE"
 )
 
 func (e Event) ToPointer() *Event {

@@ -11,8 +11,11 @@ import (
 type SearchResultProminenceEnum string
 
 const (
-	SearchResultProminenceEnumHero     SearchResultProminenceEnum = "HERO"
+	// SearchResultProminenceEnumHero A high-confidence result that should feature prominently on the page.
+	SearchResultProminenceEnumHero SearchResultProminenceEnum = "HERO"
+	// SearchResultProminenceEnumPromoted May not be the best result but should be given additional visual distinction.
 	SearchResultProminenceEnumPromoted SearchResultProminenceEnum = "PROMOTED"
+	// SearchResultProminenceEnumStandard Should not be distinct from any other results.
 	SearchResultProminenceEnumStandard SearchResultProminenceEnum = "STANDARD"
 )
 

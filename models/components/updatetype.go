@@ -11,7 +11,9 @@ import (
 type UpdateType string
 
 const (
-	UpdateTypeActionable  UpdateType = "ACTIONABLE"
+	// UpdateTypeActionable Updates that require user attention or action
+	UpdateTypeActionable UpdateType = "ACTIONABLE"
+	// UpdateTypeInformative Updates that are purely informational
 	UpdateTypeInformative UpdateType = "INFORMATIVE"
 )
 

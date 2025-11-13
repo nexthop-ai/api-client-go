@@ -13,9 +13,13 @@ import (
 type PersonMetadataType string
 
 const (
-	PersonMetadataTypeFullTime       PersonMetadataType = "FULL_TIME"
-	PersonMetadataTypeContractor     PersonMetadataType = "CONTRACTOR"
-	PersonMetadataTypeNonEmployee    PersonMetadataType = "NON_EMPLOYEE"
+	// PersonMetadataTypeFullTime The person is a current full-time employee of the company.
+	PersonMetadataTypeFullTime PersonMetadataType = "FULL_TIME"
+	// PersonMetadataTypeContractor The person is a current contractor of the company.
+	PersonMetadataTypeContractor PersonMetadataType = "CONTRACTOR"
+	// PersonMetadataTypeNonEmployee The person object represents a non-human actor such as a service or admin account.
+	PersonMetadataTypeNonEmployee PersonMetadataType = "NON_EMPLOYEE"
+	// PersonMetadataTypeFormerEmployee The person is a previous employee of the company.
 	PersonMetadataTypeFormerEmployee PersonMetadataType = "FORMER_EMPLOYEE"
 )
 

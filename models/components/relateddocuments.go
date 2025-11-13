@@ -12,7 +12,8 @@ import (
 type Relation string
 
 const (
-	RelationAttachment           Relation = "ATTACHMENT"
+	RelationAttachment Relation = "ATTACHMENT"
+	// RelationCanonical Canonical documents for the entity, such as overview docs, architecture docs elastic.
 	RelationCanonical            Relation = "CANONICAL"
 	RelationCase                 Relation = "CASE"
 	RelationContactLower         Relation = "contact"

@@ -11,10 +11,15 @@ import (
 type RelationType string
 
 const (
-	RelationTypeEquals    RelationType = "EQUALS"
-	RelationTypeIDEquals  RelationType = "ID_EQUALS"
-	RelationTypeLt        RelationType = "LT"
-	RelationTypeGt        RelationType = "GT"
+	// RelationTypeEquals The value is equal to the specified value.
+	RelationTypeEquals RelationType = "EQUALS"
+	// RelationTypeIDEquals The value is equal to the specified ID.
+	RelationTypeIDEquals RelationType = "ID_EQUALS"
+	// RelationTypeLt The value is less than the specified value.
+	RelationTypeLt RelationType = "LT"
+	// RelationTypeGt The value is greater than the specified value.
+	RelationTypeGt RelationType = "GT"
+	// RelationTypeNotEquals The value is not equal to the specified value.
 	RelationTypeNotEquals RelationType = "NOT_EQUALS"
 )
 

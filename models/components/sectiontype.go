@@ -11,9 +11,12 @@ import (
 type SectionType string
 
 const (
-	SectionTypeChannel  SectionType = "CHANNEL"
+	// SectionTypeChannel A standard section for channel-based digests (e.g. from Slack, Teams).
+	SectionTypeChannel SectionType = "CHANNEL"
+	// SectionTypeMentions A dedicated section that surfaces user mentions (actionable, informative, or all).
 	SectionTypeMentions SectionType = "MENTIONS"
-	SectionTypeTopic    SectionType = "TOPIC"
+	// SectionTypeTopic A section driven by a generic topic, not tied to any specific channel or instance.
+	SectionTypeTopic SectionType = "TOPIC"
 )
 
 func (e SectionType) ToPointer() *SectionType {

@@ -11,12 +11,18 @@ import (
 type DocumentVisibility string
 
 const (
-	DocumentVisibilityPrivate                 DocumentVisibility = "PRIVATE"
+	// DocumentVisibilityPrivate Only one person is able to see the document.
+	DocumentVisibilityPrivate DocumentVisibility = "PRIVATE"
+	// DocumentVisibilitySpecificPeopleAndGroups Only specific people and/or groups can see the document.
 	DocumentVisibilitySpecificPeopleAndGroups DocumentVisibility = "SPECIFIC_PEOPLE_AND_GROUPS"
-	DocumentVisibilityDomainLink              DocumentVisibility = "DOMAIN_LINK"
-	DocumentVisibilityDomainVisible           DocumentVisibility = "DOMAIN_VISIBLE"
-	DocumentVisibilityPublicLink              DocumentVisibility = "PUBLIC_LINK"
-	DocumentVisibilityPublicVisible           DocumentVisibility = "PUBLIC_VISIBLE"
+	// DocumentVisibilityDomainLink Anyone in the domain with the link can see the document.
+	DocumentVisibilityDomainLink DocumentVisibility = "DOMAIN_LINK"
+	// DocumentVisibilityDomainVisible Anyone in the domain can search for the document.
+	DocumentVisibilityDomainVisible DocumentVisibility = "DOMAIN_VISIBLE"
+	// DocumentVisibilityPublicLink Anyone with the link can see the document.
+	DocumentVisibilityPublicLink DocumentVisibility = "PUBLIC_LINK"
+	// DocumentVisibilityPublicVisible Anyone on the internet can search for the document.
+	DocumentVisibilityPublicVisible DocumentVisibility = "PUBLIC_VISIBLE"
 )
 
 func (e DocumentVisibility) ToPointer() *DocumentVisibility {

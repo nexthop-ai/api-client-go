@@ -13,13 +13,20 @@ import (
 type ActivityEventAction string
 
 const (
-	ActivityEventActionView             ActivityEventAction = "VIEW"
-	ActivityEventActionEdit             ActivityEventAction = "EDIT"
-	ActivityEventActionSearch           ActivityEventAction = "SEARCH"
-	ActivityEventActionComment          ActivityEventAction = "COMMENT"
-	ActivityEventActionCrawl            ActivityEventAction = "CRAWL"
+	// ActivityEventActionView Represents a visit to the given `url`.
+	ActivityEventActionView ActivityEventAction = "VIEW"
+	// ActivityEventActionEdit Represents an edit of the document represented by the `url`.
+	ActivityEventActionEdit ActivityEventAction = "EDIT"
+	// ActivityEventActionSearch Represents a search performed at the given `url`.
+	ActivityEventActionSearch ActivityEventAction = "SEARCH"
+	// ActivityEventActionComment Represents a comment on the document represented by the `url`.
+	ActivityEventActionComment ActivityEventAction = "COMMENT"
+	// ActivityEventActionCrawl Represents an explicit request to index the given `url` along with associated attributes in this payload.
+	ActivityEventActionCrawl ActivityEventAction = "CRAWL"
+	// ActivityEventActionHistoricalSearch Represents a search performed at the given `url` as indicated by the user's history.
 	ActivityEventActionHistoricalSearch ActivityEventAction = "HISTORICAL_SEARCH"
-	ActivityEventActionHistoricalView   ActivityEventAction = "HISTORICAL_VIEW"
+	// ActivityEventActionHistoricalView Represents a visit to the given `url` as indicated by the user's history.
+	ActivityEventActionHistoricalView ActivityEventAction = "HISTORICAL_VIEW"
 )
 
 func (e ActivityEventAction) ToPointer() *ActivityEventAction {

@@ -644,7 +644,7 @@ UploadchatfilesRequest (timezoneOffset: integer, UploadChatFilesRequest: UploadC
 UploadchatfilesResponse (HttpMeta: HTTPMetadata, UploadChatFilesResponse: UploadChatFilesResponse)
  UploadChatFilesResponse (files: array)
 GetchatfilesRequest (timezoneOffset: integer, GetChatFilesRequest: GetChatFilesRequest)
- GetChatFilesRequest (fileIds: array, chatId: string)
+ GetChatFilesRequest (fileIds: array)
 GetchatfilesResponse (HttpMeta: HTTPMetadata, GetChatFilesResponse: GetChatFilesResponse)
  GetChatFilesResponse (files: map)
 DeletechatfilesRequest (timezoneOffset: integer, DeleteChatFilesRequest: DeleteChatFilesRequest)

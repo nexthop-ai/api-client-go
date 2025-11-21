@@ -2,45 +2,6 @@
 
 package components
 
-type EngagementBreakdown struct {
-	// Number of non-user employees in the specified departments.
-	NonUsers *int64 `json:"nonUsers,omitempty"`
-	// Number of currently dormant users in the specified departments.
-	DormantUsers *int64 `json:"dormantUsers,omitempty"`
-	// Number of currently regular users in the specified departments.
-	RegularUsers *int64 `json:"regularUsers,omitempty"`
-	// Number of currently power users in the specified departments.
-	PowerUsers *int64 `json:"powerUsers,omitempty"`
-}
-
-func (e *EngagementBreakdown) GetNonUsers() *int64 {
-	if e == nil {
-		return nil
-	}
-	return e.NonUsers
-}
-
-func (e *EngagementBreakdown) GetDormantUsers() *int64 {
-	if e == nil {
-		return nil
-	}
-	return e.DormantUsers
-}
-
-func (e *EngagementBreakdown) GetRegularUsers() *int64 {
-	if e == nil {
-		return nil
-	}
-	return e.RegularUsers
-}
-
-func (e *EngagementBreakdown) GetPowerUsers() *int64 {
-	if e == nil {
-		return nil
-	}
-	return e.PowerUsers
-}
-
 type InsightsOverviewResponse struct {
 	// Number of current Monthly Active Users, in the specified departments.
 	MonthlyActiveUsers *int64 `json:"monthlyActiveUsers,omitempty"`
@@ -67,9 +28,8 @@ type InsightsOverviewResponse struct {
 	SearchDatasourceCounts map[string]int64 `json:"searchDatasourceCounts,omitempty"`
 	// Counts of cited documents in chat, by datasource, over the specified time period in the specified departments.
 	ChatDatasourceCounts map[string]int64 `json:"chatDatasourceCounts,omitempty"`
-	// Top power users, over the specified time period in the specified departments.
-	PerUserInsights     []PerUserInsight     `json:"perUserInsights,omitempty"`
-	EngagementBreakdown *EngagementBreakdown `json:"engagementBreakdown,omitempty"`
+	// Per-user insights, over the specified time period in the specified departments. All current users in the organization who have signed into Glean at least once are included.
+	PerUserInsights []PerUserInsight `json:"perUserInsights,omitempty"`
 }
 
 func (i *InsightsOverviewResponse) GetMonthlyActiveUsers() *int64 {
@@ -189,11 +149,4 @@ func (i *InsightsOverviewResponse) GetPerUserInsights() []PerUserInsight {
 		return nil
 	}
 	return i.PerUserInsights
-}
-
-func (i *InsightsOverviewResponse) GetEngagementBreakdown() *EngagementBreakdown {
-	if i == nil {
-		return nil
-	}
-	return i.EngagementBreakdown
 }

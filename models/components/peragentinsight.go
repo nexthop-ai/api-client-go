@@ -9,6 +9,8 @@ type PerAgentInsight struct {
 	AgentName *string `json:"agentName,omitempty"`
 	// Defines how to render an icon
 	Icon *IconConfig `json:"icon,omitempty"`
+	// Indicates whether the agent has been deleted
+	IsDeleted *bool `json:"isDeleted,omitempty"`
 	// Total number of users for this agent over the specified time period.
 	UserCount *int64 `json:"userCount,omitempty"`
 	// Total number of runs for this agent over the specified time period.
@@ -38,6 +40,13 @@ func (p *PerAgentInsight) GetIcon() *IconConfig {
 		return nil
 	}
 	return p.Icon
+}
+
+func (p *PerAgentInsight) GetIsDeleted() *bool {
+	if p == nil {
+		return nil
+	}
+	return p.IsDeleted
 }
 
 func (p *PerAgentInsight) GetUserCount() *int64 {

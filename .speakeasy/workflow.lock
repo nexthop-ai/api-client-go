@@ -2,11 +2,11 @@ speakeasyVersion: 1.660.0
 sources:
     Glean API:
         sourceNamespace: glean-api-specs
-        sourceRevisionDigest: sha256:62524361387995d29512015c83e4aa5507ed826187bbe8f79d238fa78cc821eb
-        sourceBlobDigest: sha256:e7f1e3c78f0d40cb37537f7827319e5cf1d07d0bec0ea4b6385636b5d8d0678e
+        sourceRevisionDigest: sha256:6e09038391ad70d5f9b70c63b3284e81624f1cd18b512456e1ef14583adba00f
+        sourceBlobDigest: sha256:62b0b08fedd634cc54f3083a149d42af7b4b534cbe8da080c65eaa8377fdcddd
         tags:
             - latest
-            - speakeasy-sdk-regen-1763762740
+            - speakeasy-sdk-regen-1763772460
     petstore-oas:
         sourceNamespace: petstore-oas
         sourceRevisionDigest: sha256:97b2eff2f43ce14276d28efc41ec5de8034cde61db8445f12b626e4dc88ea40e
@@ -18,10 +18,10 @@ targets:
     glean:
         source: Glean API
         sourceNamespace: glean-api-specs
-        sourceRevisionDigest: sha256:62524361387995d29512015c83e4aa5507ed826187bbe8f79d238fa78cc821eb
-        sourceBlobDigest: sha256:e7f1e3c78f0d40cb37537f7827319e5cf1d07d0bec0ea4b6385636b5d8d0678e
+        sourceRevisionDigest: sha256:6e09038391ad70d5f9b70c63b3284e81624f1cd18b512456e1ef14583adba00f
+        sourceBlobDigest: sha256:62b0b08fedd634cc54f3083a149d42af7b4b534cbe8da080c65eaa8377fdcddd
         codeSamplesNamespace: glean-api-specs-go-code-samples
-        codeSamplesRevisionDigest: sha256:d92670d6edd0b5ccbe0c4125240dae0594c2fdebc85732dd3574de5c9a0ebd44
+        codeSamplesRevisionDigest: sha256:08ff5d306ae2ae393dca2e2847e43f1ed3200d38fdf0c018c12f7881415ee358
     petstore:
         source: petstore-oas
         sourceNamespace: petstore-oas

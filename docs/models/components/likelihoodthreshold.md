@@ -5,7 +5,10 @@
 
 ## Values
 
-| Name                            | Value                           |
-| ------------------------------- | ------------------------------- |
-| `LikelihoodThresholdLikely`     | LIKELY                          |
-| `LikelihoodThresholdVeryLikely` | VERY_LIKELY                     |
+| Name                              | Value                             |
+| --------------------------------- | --------------------------------- |
+| `LikelihoodThresholdLikely`       | LIKELY                            |
+| `LikelihoodThresholdVeryLikely`   | VERY_LIKELY                       |
+| `LikelihoodThresholdPossible`     | POSSIBLE                          |
+| `LikelihoodThresholdUnlikely`     | UNLIKELY                          |
+| `LikelihoodThresholdVeryUnlikely` | VERY_UNLIKELY                     |

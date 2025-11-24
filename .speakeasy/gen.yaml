@@ -28,7 +28,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: true
 go:
-  version: 0.11.13
+  version: 0.11.14
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: GleanError

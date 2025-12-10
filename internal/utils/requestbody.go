@@ -176,7 +176,7 @@ func encodeMultipartFormData(w io.Writer, data interface{}) (string, error) {
 				for i := 0; i < valType.Len(); i++ {
 					arrayVal := valType.Index(i)
 
-					if err := encodeMultipartFormDataFile(writer, tag.Name+"[]", arrayVal.Type(), arrayVal); err != nil {
+					if err := encodeMultipartFormDataFile(writer, tag.Name, arrayVal.Type(), arrayVal); err != nil {
 						writer.Close()
 						return "", err
 					}

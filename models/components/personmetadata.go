@@ -81,6 +81,8 @@ type PersonMetadata struct {
 	Timezone *string `json:"timezone,omitempty"`
 	// The offset of the person's timezone in seconds from UTC.
 	TimezoneOffset *int64 `json:"timezoneOffset,omitempty"`
+	// The IANA timezone identifier, e.g. "America/Los_Angeles".
+	TimezoneIANA *string `json:"timezoneIANA,omitempty"`
 	// The URL of the person's avatar. Public, glean-authenticated and Base64 encoded data URLs are all valid (but not third-party-authenticated URLs).
 	PhotoURL *string `json:"photoUrl,omitempty"`
 	// The original photo URL of the person's avatar before any edits they made are applied
@@ -269,6 +271,13 @@ func (p *PersonMetadata) GetTimezoneOffset() *int64 {
 		return nil
 	}
 	return p.TimezoneOffset
+}
+
+func (p *PersonMetadata) GetTimezoneIANA() *string {
+	if p == nil {
+		return nil
+	}
+	return p.TimezoneIANA
 }
 
 func (p *PersonMetadata) GetPhotoURL() *string {

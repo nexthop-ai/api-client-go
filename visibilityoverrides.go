@@ -89,7 +89,7 @@ func (s *Visibilityoverrides) List(ctx context.Context, docIds []string, opts ..
 	req.Header.Set("Accept", "application/json; charset=UTF-8")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 

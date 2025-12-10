@@ -1,0 +1,9 @@
+# TimeRangeFilter
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `TimePeriodType`                                                                                      | [*components.TimeRangeFilterTimePeriodType](../../models/components/timerangefiltertimeperiodtype.md) | :heavy_minus_sign:                                                                                    | The type of time period for which to filter findings.                                                 |
+| `CustomTimeRange`                                                                                     | [*components.TimeRange](../../models/components/timerange.md)                                         | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

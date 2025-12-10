@@ -1,5 +1,4 @@
-# Answers
-(*Client.Answers*)
+# Client.Answers
 
 ## Overview
 

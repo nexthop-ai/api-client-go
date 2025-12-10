@@ -1,5 +1,4 @@
-# Datasource
-(*Indexing.Datasource*)
+# Indexing.Datasource
 
 ## Overview
 

@@ -98,7 +98,7 @@ func (u UpdateAnnouncementRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UpdateAnnouncementRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, []string{"startTime", "endTime", "title", "id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil

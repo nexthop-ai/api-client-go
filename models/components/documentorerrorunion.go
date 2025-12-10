@@ -39,8 +39,8 @@ const (
 )
 
 type DocumentOrErrorUnion struct {
-	Document        *Document        `queryParam:"inline,name=DocumentOrError"`
-	DocumentOrError *DocumentOrError `queryParam:"inline,name=DocumentOrError"`
+	Document        *Document        `queryParam:"inline,name=DocumentOrError" union:"member"`
+	DocumentOrError *DocumentOrError `queryParam:"inline,name=DocumentOrError" union:"member"`
 
 	Type DocumentOrErrorUnionType
 }

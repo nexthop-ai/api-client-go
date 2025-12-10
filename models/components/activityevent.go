@@ -75,7 +75,7 @@ func (a ActivityEvent) MarshalJSON() ([]byte, error) {
 }
 
 func (a *ActivityEvent) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"action", "timestamp", "url"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

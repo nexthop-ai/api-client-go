@@ -1,5 +1,4 @@
-# Verification
-(*Client.Verification*)
+# Client.Verification
 
 ## Overview
 

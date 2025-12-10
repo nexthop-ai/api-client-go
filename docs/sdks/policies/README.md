@@ -1,5 +1,4 @@
-# Policies
-(*Client.Governance.Data.Policies*)
+# Client.Governance.Data.Policies
 
 ## Overview
 

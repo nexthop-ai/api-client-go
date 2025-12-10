@@ -219,10 +219,10 @@ const (
 )
 
 type DocumentSpecUnion struct {
-	DocumentSpec1 *DocumentSpec1 `queryParam:"inline,name=DocumentSpec"`
-	DocumentSpec2 *DocumentSpec2 `queryParam:"inline,name=DocumentSpec"`
-	DocumentSpec3 *DocumentSpec3 `queryParam:"inline,name=DocumentSpec"`
-	DocumentSpec4 *DocumentSpec4 `queryParam:"inline,name=DocumentSpec"`
+	DocumentSpec1 *DocumentSpec1 `queryParam:"inline,name=DocumentSpec" union:"member"`
+	DocumentSpec2 *DocumentSpec2 `queryParam:"inline,name=DocumentSpec" union:"member"`
+	DocumentSpec3 *DocumentSpec3 `queryParam:"inline,name=DocumentSpec" union:"member"`
+	DocumentSpec4 *DocumentSpec4 `queryParam:"inline,name=DocumentSpec" union:"member"`
 
 	Type DocumentSpecUnionType
 }

@@ -1,5 +1,4 @@
-# Permissions
-(*Indexing.Permissions*)
+# Indexing.Permissions
 
 ## Overview
 

@@ -16,6 +16,7 @@ type QuerySuggestion struct {
 	Label *string `json:"label,omitempty"`
 	// The datasource associated with the suggestion.
 	Datasource     *string               `json:"datasource,omitempty"`
+	ResultTab      *ResultTab            `json:"resultTab,omitempty"`
 	RequestOptions *SearchRequestOptions `json:"requestOptions,omitempty"`
 	// The bolded ranges within the query of the QuerySuggestion.
 	Ranges       []TextRange                `json:"ranges,omitempty"`
@@ -66,6 +67,13 @@ func (q *QuerySuggestion) GetDatasource() *string {
 		return nil
 	}
 	return q.Datasource
+}
+
+func (q *QuerySuggestion) GetResultTab() *ResultTab {
+	if q == nil {
+		return nil
+	}
+	return q.ResultTab
 }
 
 func (q *QuerySuggestion) GetRequestOptions() *SearchRequestOptions {

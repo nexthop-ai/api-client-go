@@ -28,3 +28,4 @@ The source associated with the Feedback.event.MANUAL_FEEDBACK event.
 | `ManualFeedbackInfoSourceSidebar`            | SIDEBAR                                      |
 | `ManualFeedbackInfoSourceSummary`            | SUMMARY                                      |
 | `ManualFeedbackInfoSourceTasks`              | TASKS                                        |
+| `ManualFeedbackInfoSourceTaskExecution`      | TASK_EXECUTION                               |

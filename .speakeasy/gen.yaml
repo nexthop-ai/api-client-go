@@ -51,7 +51,7 @@ go:
   maxMethodParams: 4
   methodArguments: require-security-and-request
   modulePath: ""
-  multipartArrayFormat: legacy
+  multipartArrayFormat: standard
   nullableOptionalWrapper: false
   outputModelSuffix: output
   packageName: github.com/gleanwork/api-client-go

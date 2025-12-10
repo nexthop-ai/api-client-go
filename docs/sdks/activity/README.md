@@ -1,5 +1,4 @@
-# Activity
-(*Client.Activity*)
+# Client.Activity
 
 ## Overview
 

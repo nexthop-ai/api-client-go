@@ -23,12 +23,13 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  persistentEdits: {}
   tests:
     generateTests: true
     generateNewTests: true
     skipResponseBodyAssertions: true
 go:
-  version: 0.11.14
+  version: 0.11.15
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: GleanError
@@ -45,10 +46,12 @@ go:
       shared: models/components
       webhooks: models/webhooks
   includeEmptyObjects: false
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request
   modulePath: ""
+  multipartArrayFormat: legacy
   nullableOptionalWrapper: false
   outputModelSuffix: output
   packageName: github.com/gleanwork/api-client-go

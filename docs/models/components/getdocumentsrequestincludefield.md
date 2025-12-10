@@ -9,3 +9,4 @@
 | `GetDocumentsRequestIncludeFieldVisitorsCount`   | VISITORS_COUNT                                   |
 | `GetDocumentsRequestIncludeFieldRecentShares`    | RECENT_SHARES                                    |
 | `GetDocumentsRequestIncludeFieldDocumentContent` | DOCUMENT_CONTENT                                 |
+| `GetDocumentsRequestIncludeFieldCustomMetadata`  | CUSTOM_METADATA                                  |

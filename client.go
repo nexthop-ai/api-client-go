@@ -24,7 +24,7 @@ type Client struct {
 	Shortcuts      *ClientShortcuts
 	Verification   *Verification
 	Tools          *Tools
-	Governance     *Governance
+	Governance     *ClientGovernance
 
 	rootSDK          *Glean
 	sdkConfiguration config.SDKConfiguration
@@ -52,6 +52,6 @@ func newClient(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.H
 		Shortcuts:        newClientShortcuts(rootSDK, sdkConfig, hooks),
 		Verification:     newVerification(rootSDK, sdkConfig, hooks),
 		Tools:            newTools(rootSDK, sdkConfig, hooks),
-		Governance:       newGovernance(rootSDK, sdkConfig, hooks),
+		Governance:       newClientGovernance(rootSDK, sdkConfig, hooks),
 	}
 }

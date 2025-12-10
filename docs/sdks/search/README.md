@@ -1,5 +1,4 @@
-# Search
-(*Client.Search*)
+# Client.Search
 
 ## Overview
 

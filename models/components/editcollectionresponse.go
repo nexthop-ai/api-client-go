@@ -100,7 +100,7 @@ func (e EditCollectionResponse) MarshalJSON() ([]byte, error) {
 }
 
 func (e *EditCollectionResponse) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, []string{"name", "description", "id", "errorCode"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
 		return err
 	}
 	return nil

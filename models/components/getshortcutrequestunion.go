@@ -39,8 +39,8 @@ const (
 )
 
 type GetShortcutRequestUnion struct {
-	UserGeneratedContentID *UserGeneratedContentID `queryParam:"inline,name=GetShortcutRequest"`
-	GetShortcutRequest     *GetShortcutRequest     `queryParam:"inline,name=GetShortcutRequest"`
+	UserGeneratedContentID *UserGeneratedContentID `queryParam:"inline,name=GetShortcutRequest" union:"member"`
+	GetShortcutRequest     *GetShortcutRequest     `queryParam:"inline,name=GetShortcutRequest" union:"member"`
 
 	Type GetShortcutRequestUnionType
 }

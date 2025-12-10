@@ -1,5 +1,4 @@
-# Insights
-(*Client.Insights*)
+# Client.Insights
 
 ## Overview
 

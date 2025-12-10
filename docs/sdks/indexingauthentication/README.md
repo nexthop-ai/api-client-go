@@ -1,5 +1,4 @@
-# IndexingAuthentication
-(*Indexing.Authentication*)
+# Indexing.Authentication
 
 ## Overview
 

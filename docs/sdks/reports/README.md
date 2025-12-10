@@ -1,5 +1,4 @@
-# Reports
-(*Client.Governance.Data.Reports*)
+# Client.Governance.Data.Reports
 
 ## Overview
 

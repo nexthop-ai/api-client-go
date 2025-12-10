@@ -1,5 +1,4 @@
-# ClientShortcuts
-(*Client.Shortcuts*)
+# Client.Shortcuts
 
 ## Overview
 

@@ -14,3 +14,7 @@ Reason for failed status.
 | `ChatFileFailureReasonFileExtensionUnsupported`   | FILE_EXTENSION_UNSUPPORTED                        |
 | `ChatFileFailureReasonFileMetadataValidationFail` | FILE_METADATA_VALIDATION_FAIL                     |
 | `ChatFileFailureReasonFileProcessingTimedOut`     | FILE_PROCESSING_TIMED_OUT                         |
+| `ChatFileFailureReasonOauthNeeded`                | OAUTH_NEEDED                                      |
+| `ChatFileFailureReasonURLFetchFailed`             | URL_FETCH_FAILED                                  |
+| `ChatFileFailureReasonEmptyContent`               | EMPTY_CONTENT                                     |
+| `ChatFileFailureReasonAuthRequired`               | AUTH_REQUIRED                                     |

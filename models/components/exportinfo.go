@@ -51,6 +51,8 @@ type ExportInfo struct {
 	Filter   *DlpFindingFilter `json:"filter,omitempty"`
 	// The status of the export
 	Status *ExportInfoStatus `json:"status,omitempty"`
+	// The size of the exported file in bytes
+	ExportSize *int64 `json:"exportSize,omitempty"`
 }
 
 func (e *ExportInfo) GetCreatedBy() *DlpPerson {
@@ -100,4 +102,11 @@ func (e *ExportInfo) GetStatus() *ExportInfoStatus {
 		return nil
 	}
 	return e.Status
+}
+
+func (e *ExportInfo) GetExportSize() *int64 {
+	if e == nil {
+		return nil
+	}
+	return e.ExportSize
 }

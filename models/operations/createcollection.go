@@ -78,8 +78,8 @@ const (
 
 // CreatecollectionResponseBody - OK
 type CreatecollectionResponseBody struct {
-	ResponseBody1 *ResponseBody1 `queryParam:"inline,name=ResponseBody" union:"member"`
-	ResponseBody2 *ResponseBody2 `queryParam:"inline,name=ResponseBody" union:"member"`
+	ResponseBody1 *ResponseBody1 `queryParam:"inline" union:"member"`
+	ResponseBody2 *ResponseBody2 `queryParam:"inline" union:"member"`
 
 	Type CreatecollectionResponseBodyType
 }

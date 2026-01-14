@@ -275,7 +275,7 @@ For more information on obtaining the appropriate token type, please contact you
 * [Delete](docs/sdks/answers/README.md#delete) - Delete Answer
 * [Update](docs/sdks/answers/README.md#update) - Update Answer
 * [Retrieve](docs/sdks/answers/README.md#retrieve) - Read Answer
-* [List](docs/sdks/answers/README.md#list) - List Answers
+* [~~List~~](docs/sdks/answers/README.md#list) - List Answers :warning: **Deprecated**
 
 ### [Client.Authentication](docs/sdks/clientauthentication/README.md)
 

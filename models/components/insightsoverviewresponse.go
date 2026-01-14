@@ -20,10 +20,22 @@ type InsightsOverviewResponse struct {
 	// Unix timestamp of the last update for the insights data in the response.
 	LastUpdatedTs *int64 `json:"lastUpdatedTs,omitempty"`
 	// Search session satisfaction rate, over the specified time period in the specified departments.
-	SearchSessionSatisfaction   *float32          `json:"searchSessionSatisfaction,omitempty"`
-	MonthlyActiveUserTimeseries *LabeledCountInfo `json:"monthlyActiveUserTimeseries,omitempty"`
-	WeeklyActiveUserTimeseries  *LabeledCountInfo `json:"weeklyActiveUserTimeseries,omitempty"`
-	DailyActiveUserTimeseries   *LabeledCountInfo `json:"dailyActiveUserTimeseries,omitempty"`
+	SearchSessionSatisfaction            *float32          `json:"searchSessionSatisfaction,omitempty"`
+	MonthlyActiveUserTimeseries          *LabeledCountInfo `json:"monthlyActiveUserTimeseries,omitempty"`
+	WeeklyActiveUserTimeseries           *LabeledCountInfo `json:"weeklyActiveUserTimeseries,omitempty"`
+	DailyActiveUserTimeseries            *LabeledCountInfo `json:"dailyActiveUserTimeseries,omitempty"`
+	SearchMonthlyActiveUserTimeseries    *LabeledCountInfo `json:"searchMonthlyActiveUserTimeseries,omitempty"`
+	SearchWeeklyActiveUserTimeseries     *LabeledCountInfo `json:"searchWeeklyActiveUserTimeseries,omitempty"`
+	SearchDailyActiveUserTimeseries      *LabeledCountInfo `json:"searchDailyActiveUserTimeseries,omitempty"`
+	AssistantMonthlyActiveUserTimeseries *LabeledCountInfo `json:"assistantMonthlyActiveUserTimeseries,omitempty"`
+	AssistantWeeklyActiveUserTimeseries  *LabeledCountInfo `json:"assistantWeeklyActiveUserTimeseries,omitempty"`
+	AssistantDailyActiveUserTimeseries   *LabeledCountInfo `json:"assistantDailyActiveUserTimeseries,omitempty"`
+	AgentsMonthlyActiveUserTimeseries    *LabeledCountInfo `json:"agentsMonthlyActiveUserTimeseries,omitempty"`
+	AgentsWeeklyActiveUserTimeseries     *LabeledCountInfo `json:"agentsWeeklyActiveUserTimeseries,omitempty"`
+	AgentsDailyActiveUserTimeseries      *LabeledCountInfo `json:"agentsDailyActiveUserTimeseries,omitempty"`
+	SearchesTimeseries                   *LabeledCountInfo `json:"searchesTimeseries,omitempty"`
+	AssistantInteractionsTimeseries      *LabeledCountInfo `json:"assistantInteractionsTimeseries,omitempty"`
+	AgentRunsTimeseries                  *LabeledCountInfo `json:"agentRunsTimeseries,omitempty"`
 	// Counts of search result clicks, by datasource, over the specified time period in the specified departments.
 	SearchDatasourceCounts map[string]int64 `json:"searchDatasourceCounts,omitempty"`
 	// Counts of cited documents in chat, by datasource, over the specified time period in the specified departments.
@@ -128,6 +140,90 @@ func (i *InsightsOverviewResponse) GetDailyActiveUserTimeseries() *LabeledCountI
 		return nil
 	}
 	return i.DailyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetSearchMonthlyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.SearchMonthlyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetSearchWeeklyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.SearchWeeklyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetSearchDailyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.SearchDailyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAssistantMonthlyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AssistantMonthlyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAssistantWeeklyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AssistantWeeklyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAssistantDailyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AssistantDailyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAgentsMonthlyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AgentsMonthlyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAgentsWeeklyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AgentsWeeklyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAgentsDailyActiveUserTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AgentsDailyActiveUserTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetSearchesTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.SearchesTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAssistantInteractionsTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AssistantInteractionsTimeseries
+}
+
+func (i *InsightsOverviewResponse) GetAgentRunsTimeseries() *LabeledCountInfo {
+	if i == nil {
+		return nil
+	}
+	return i.AgentRunsTimeseries
 }
 
 func (i *InsightsOverviewResponse) GetSearchDatasourceCounts() map[string]int64 {

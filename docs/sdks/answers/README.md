@@ -8,7 +8,7 @@
 * [Delete](#delete) - Delete Answer
 * [Update](#update) - Update Answer
 * [Retrieve](#retrieve) - Read Answer
-* [List](#list) - List Answers
+* [~~List~~](#list) - List Answers :warning: **Deprecated**
 
 ## Create
 
@@ -2502,9 +2502,11 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | apierrors.APIError | 4XX, 5XX           | \*/\*              |
 
-## List
+## ~~List~~
 
 List Answers created by the current user.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

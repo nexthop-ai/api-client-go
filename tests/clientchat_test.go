@@ -720,34 +720,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "stage atop minion which best sturdy enormously afore circumference duh",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 647529,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									Collections: []components.Collection{
 										components.Collection{
 											Name:        "<value>",
@@ -1011,34 +983,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 79387,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "after er grouchy stained plus buck",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 668238,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -1319,34 +1263,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "finally waist inasmuch woot ignorance",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 291881,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -1401,34 +1317,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 833343,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "geez huzzah oof webbed certainly degenerate along inure cow zowie",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 656491,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -1646,34 +1534,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "the across instead into aching where descent shark lest times",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 760885,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -1728,34 +1588,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 750557,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "impanel hydrant spectacles justly hence absolve after sleet drat",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 603732,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -1946,34 +1778,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "amongst uh-huh reassemble upset concrete",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 911324,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -2028,34 +1832,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 146903,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "psst um devil gazebo save",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 45693,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -2242,34 +2018,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "except gadzooks geez",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 567840,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -2324,34 +2072,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 376424,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "surprise outside whether ack",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 621220,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -2892,34 +2612,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "short-term suffice why rightfully",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 974132,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -2974,34 +2666,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 186567,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "er reconsideration triumphantly meaty yearly fragrant delightfully though painfully robust",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 804940,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -3192,34 +2856,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "planula presume mismatch of commandeer ready mortally although",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 711093,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -3274,34 +2910,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 365383,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "rundown recklessly favorite supposing dull politely soon ignorant",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 171217,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -3492,34 +3100,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "striking confound wilderness but rapid an convection scoop litter than",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 569913,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -3574,34 +3154,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 123250,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "meaty impure round",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 31007,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -3815,34 +3367,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "intrigue psst furthermore personalise actually showboat eek punctuation ownership ah",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 785749,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -3897,34 +3421,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 362665,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "colorfully aha where",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 673010,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -4119,34 +3615,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "hence inquisitively proud meh yahoo",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 165945,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -4201,34 +3669,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 52239,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "excluding severe amongst bump farm zowie prickly why",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 617911,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -4423,34 +3863,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "approach hm gadzooks yahoo shameless underneath negative",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 111255,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -4505,34 +3917,6 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 										},
 									},
 									ID: 656993,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "guidance zen cross-contamination ick pry mundane thoroughly oof ha",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 474526,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -5197,34 +4581,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "extent emotional white oil buck",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 392138,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									Collections: []components.Collection{
 										components.Collection{
 											Name:        "<value>",
@@ -5542,34 +4898,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										ObfuscatedID: "abc123",
 									},
 								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "communicate prudent powerful considering quietly with tromp spring brr",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 595008,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
 								Code: &components.Code{
 									RepoName: apiclientgo.Pointer("scio"),
 									FileName: apiclientgo.Pointer("README.md"),
@@ -5850,34 +5178,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "materialise likewise ew bah scarper instead",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 291792,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -5932,34 +5232,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 535445,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "heavenly status yippee whose blushing",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 983667,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -6146,34 +5418,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "manipulate explode out",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 605176,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -6228,34 +5472,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 512474,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "complete help um live beyond for huzzah rowdy foot cross",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 402862,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -6442,34 +5658,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "lobotomise below psst duh interchange poetry",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 521402,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -6524,34 +5712,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 175510,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "fashion bleakly thankfully indeed fully",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 723852,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -6917,34 +6077,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "minus oof dazzling ew for forearm utterly hm onto unexpectedly",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 808814,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -6999,34 +6131,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 999094,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "elderly since boohoo appropriate righteously vice following complete impartial sans",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 315292,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -7221,34 +6325,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "netsuke stump terrorise ugh zowie",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 942095,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -7303,34 +6379,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 65448,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "abaft tightly blah redound qua",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 843154,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -7517,34 +6565,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "gratefully failing square consequently discourse since",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 139991,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -7599,34 +6619,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 455101,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "able mockingly boo entice softly furthermore woeful",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 33669,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -8206,34 +7198,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "affiliate who lamp blushing plait after violent",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 55380,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -8288,34 +7252,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 420468,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "gee edge scholarship",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 632878,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -8506,34 +7442,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "rust forenenst phew immediately",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 277574,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -8588,34 +7496,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 377350,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "blah lowball who moor following folklore as or",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 115719,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -8810,34 +7690,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "among under although ack gee atop horn",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 170010,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -8892,34 +7744,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 754074,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "finally jaggedly nightlife surface",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 435267,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -9133,34 +7957,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "ah once gee",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 785222,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -9215,34 +8011,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 655575,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "godparent before colorize",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 624868,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -9433,34 +8201,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "uh-huh ha notwithstanding so near troubled onto volunteer hm",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 38370,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -9515,34 +8255,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 816883,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "meanwhile instead colorfully overheard",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 209097,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",
@@ -9737,34 +8449,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 											},
 										},
 									},
-									Board: &components.AnswerBoard{
-										Name:        "<value>",
-										Description: "indelible aha yuck loyally",
-										AudienceFilters: []components.FacetFilter{
-											components.FacetFilter{
-												FieldName: apiclientgo.Pointer("type"),
-												Values: []components.FacetFilterValue{
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Spreadsheet"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-													components.FacetFilterValue{
-														Value:        apiclientgo.Pointer("Presentation"),
-														RelationType: components.RelationTypeEquals.ToPointer(),
-													},
-												},
-											},
-										},
-										ID: 278807,
-										Creator: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-										UpdatedBy: &components.Person{
-											Name:         "George Clooney",
-											ObfuscatedID: "abc123",
-										},
-									},
 									SourceDocument: &components.Document{
 										Metadata: &components.DocumentMetadata{
 											Datasource: apiclientgo.Pointer("datasource"),
@@ -9819,34 +8503,6 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 										},
 									},
 									ID: 316354,
-									Creator: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-									UpdatedBy: &components.Person{
-										Name:         "George Clooney",
-										ObfuscatedID: "abc123",
-									},
-								},
-								AnswerBoard: &components.AnswerBoard{
-									Name:        "<value>",
-									Description: "frequent aw above ultimate into till pish husky wetly agitated",
-									AudienceFilters: []components.FacetFilter{
-										components.FacetFilter{
-											FieldName: apiclientgo.Pointer("type"),
-											Values: []components.FacetFilterValue{
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Spreadsheet"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-												components.FacetFilterValue{
-													Value:        apiclientgo.Pointer("Presentation"),
-													RelationType: components.RelationTypeEquals.ToPointer(),
-												},
-											},
-										},
-									},
-									ID: 744434,
 									Creator: &components.Person{
 										Name:         "George Clooney",
 										ObfuscatedID: "abc123",

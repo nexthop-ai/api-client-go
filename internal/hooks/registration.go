@@ -11,4 +11,7 @@ package hooks
 func initHooks(h *Hooks) {
 	agentFileUploadHook := &AgentFileUploadHook{}
 	h.registerAfterErrorHook(agentFileUploadHook)
+
+	// Register the X-Glean header hook for experimental features and deprecation testing
+	h.registerBeforeRequestHook(&XGleanHook{})
 }

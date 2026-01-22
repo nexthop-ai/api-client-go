@@ -46,6 +46,7 @@ Remember that each namespace requires its own authentication token type as descr
   * [Server Selection](#server-selection)
   * [Custom HTTP Client](#custom-http-client)
   * [Special Types](#special-types)
+  * [Experimental Features and Deprecation Testing](#experimental-features-and-deprecation-testing)
 * [Development](#development)
   * [Maturity](#maturity)
   * [Contributions](#contributions)
@@ -1498,6 +1499,100 @@ d5 := types.MustNewDateFromString("2019-01-01") // returns *types.Date and panic
 d6 := types.MustDateFromString("2019-01-01") // returns types.Date and panics on error
 ```
 <!-- End Special Types [types] -->
+
+## Experimental Features and Deprecation Testing
+
+The SDK provides options to test upcoming API changes before they become the default behavior. This is useful for:
+
+- **Testing experimental features** before they are generally available
+- **Preparing for deprecations** by excluding deprecated endpoints ahead of their removal
+
+### Configuration Options
+
+You can configure these options either via environment variables or SDK constructor options:
+
+#### Using Environment Variables
+
+```bash
+export X_GLEAN_EXCLUDE_DEPRECATED_AFTER="2026-10-15"
+export X_GLEAN_INCLUDE_EXPERIMENTAL="true"
+```
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+func main() {
+	ctx := context.Background()
+
+	s := apiclientgo.New(
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithInstance(os.Getenv("GLEAN_INSTANCE")),
+	)
+
+	res, err := s.Client.Search.Query(ctx, components.SearchRequest{
+		Query: "test",
+	}, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Headers are automatically set based on environment variables
+	log.Println(res)
+}
+```
+
+#### Using SDK Constructor Options
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+
+	apiclientgo "github.com/gleanwork/api-client-go"
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+func main() {
+	ctx := context.Background()
+
+	s := apiclientgo.New(
+		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
+		apiclientgo.WithInstance(os.Getenv("GLEAN_INSTANCE")),
+		apiclientgo.WithExcludeDeprecatedAfter("2026-10-15"),
+		apiclientgo.WithIncludeExperimental(true),
+	)
+
+	res, err := s.Client.Search.Query(ctx, components.SearchRequest{
+		Query: "test",
+	}, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Println(res)
+}
+```
+
+### Option Reference
+
+| Option | Environment Variable | Type | Description |
+| ------ | -------------------- | ---- | ----------- |
+| `WithExcludeDeprecatedAfter` | `X_GLEAN_EXCLUDE_DEPRECATED_AFTER` | `string` (date) | Exclude API endpoints that will be deprecated after this date (format: `YYYY-MM-DD`). Use this to test your integration against upcoming deprecations. |
+| `WithIncludeExperimental` | `X_GLEAN_INCLUDE_EXPERIMENTAL` | `bool` | When `true`, enables experimental API features that are not yet generally available. Use this to preview and test new functionality. |
+
+> **Note:** Environment variables take precedence over SDK constructor options when both are set.
+
+> **Warning:** Experimental features may change or be removed without notice. Do not rely on experimental features in production environments.
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

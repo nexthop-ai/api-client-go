@@ -20,7 +20,7 @@ Bob,25,Marketing`)
 		Files: []components.File{
 			{FileName: "data.csv", Content: csvContent},
 		},
-	}, nil)
+	}, nil, nil)
 
 	fileID := uploadResp.UploadChatFilesResponse.Files[0].ID
 

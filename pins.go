@@ -33,7 +33,12 @@ func newPins(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hoo
 
 // Update pin
 // Update an existing user-generated pin.
-func (s *Pins) Update(ctx context.Context, request components.EditPinRequest, opts ...operations.Option) (*operations.EditpinResponse, error) {
+func (s *Pins) Update(ctx context.Context, editPinRequest components.EditPinRequest, locale *string, opts ...operations.Option) (*operations.EditpinResponse, error) {
+	request := operations.EditpinRequest{
+		Locale:         locale,
+		EditPinRequest: editPinRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Pins) Update(ctx context.Context, request components.EditPinRequest, op
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditPinRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Pins) Update(ctx context.Context, request components.EditPinRequest, op
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *Pins) Update(ctx context.Context, request components.EditPinRequest, op
 
 // Retrieve - Read pin
 // Read pin details given its ID.
-func (s *Pins) Retrieve(ctx context.Context, request components.GetPinRequest, opts ...operations.Option) (*operations.GetpinResponse, error) {
+func (s *Pins) Retrieve(ctx context.Context, getPinRequest components.GetPinRequest, locale *string, opts ...operations.Option) (*operations.GetpinResponse, error) {
+	request := operations.GetpinRequest{
+		Locale:        locale,
+		GetPinRequest: getPinRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *Pins) Retrieve(ctx context.Context, request components.GetPinRequest, o
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetPinRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *Pins) Retrieve(ctx context.Context, request components.GetPinRequest, o
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -471,7 +489,12 @@ func (s *Pins) Retrieve(ctx context.Context, request components.GetPinRequest, o
 
 // List pins
 // Lists all pins.
-func (s *Pins) List(ctx context.Context, request operations.ListpinsRequest, opts ...operations.Option) (*operations.ListpinsResponse, error) {
+func (s *Pins) List(ctx context.Context, requestBody operations.ListpinsRequestBody, locale *string, opts ...operations.Option) (*operations.ListpinsResponse, error) {
+	request := operations.ListpinsRequest{
+		Locale:      locale,
+		RequestBody: requestBody,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -504,7 +527,7 @@ func (s *Pins) List(ctx context.Context, request operations.ListpinsRequest, opt
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -528,6 +551,10 @@ func (s *Pins) List(ctx context.Context, request operations.ListpinsRequest, opt
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -690,7 +717,12 @@ func (s *Pins) List(ctx context.Context, request operations.ListpinsRequest, opt
 
 // Create pin
 // Pin a document as a result for a given search query.Pin results that are known to be a good match.
-func (s *Pins) Create(ctx context.Context, request components.PinRequest, opts ...operations.Option) (*operations.PinResponse, error) {
+func (s *Pins) Create(ctx context.Context, pinRequest components.PinRequest, locale *string, opts ...operations.Option) (*operations.PinResponse, error) {
+	request := operations.PinRequest{
+		Locale:     locale,
+		PinRequest: pinRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -723,7 +755,7 @@ func (s *Pins) Create(ctx context.Context, request components.PinRequest, opts .
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PinRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -747,6 +779,10 @@ func (s *Pins) Create(ctx context.Context, request components.PinRequest, opts .
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -909,7 +945,12 @@ func (s *Pins) Create(ctx context.Context, request components.PinRequest, opts .
 
 // Remove - Delete pin
 // Unpin a previously pinned result.
-func (s *Pins) Remove(ctx context.Context, request components.Unpin, opts ...operations.Option) (*operations.UnpinResponse, error) {
+func (s *Pins) Remove(ctx context.Context, unpin components.Unpin, locale *string, opts ...operations.Option) (*operations.UnpinResponse, error) {
+	request := operations.UnpinRequest{
+		Locale: locale,
+		Unpin:  unpin,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -942,7 +983,7 @@ func (s *Pins) Remove(ctx context.Context, request components.Unpin, opts ...ope
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Unpin", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -966,6 +1007,10 @@ func (s *Pins) Remove(ctx context.Context, request components.Unpin, opts ...ope
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

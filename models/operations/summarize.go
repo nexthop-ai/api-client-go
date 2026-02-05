@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type SummarizeRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Includes request params such as the query and specs of the documents to summarize.
+	SummarizeRequest components.SummarizeRequest `request:"mediaType=application/json"`
+}
+
+func (s *SummarizeRequest) GetLocale() *string {
+	if s == nil {
+		return nil
+	}
+	return s.Locale
+}
+
+func (s *SummarizeRequest) GetSummarizeRequest() components.SummarizeRequest {
+	if s == nil {
+		return components.SummarizeRequest{}
+	}
+	return s.SummarizeRequest
+}
+
 type SummarizeResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

@@ -55,7 +55,7 @@ func TestSearch_Adminsearch(t *testing.T) {
 			},
 			FacetBucketSize: 254944,
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -86,7 +86,7 @@ func TestSearch_Autocomplete(t *testing.T) {
 				AuthUser:    apiclientgo.Pointer("1"),
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -103,7 +103,7 @@ func TestSearch_Feed(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Search.RetrieveFeed(ctx, components.FeedRequest{})
+	res, err := s.Client.Search.RetrieveFeed(ctx, components.FeedRequest{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -2018,7 +2018,7 @@ func TestSearch_Recommendations(t *testing.T) {
 				},
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -2066,7 +2066,7 @@ func TestSearch_Search(t *testing.T) {
 			},
 			FacetBucketSize: 246815,
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

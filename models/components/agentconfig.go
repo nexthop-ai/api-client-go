@@ -21,6 +21,8 @@ const (
 	AgentEnumFast AgentEnum = "FAST"
 	// AgentEnumAdvanced Uses an agent powered by the agentic engine that thinks for longer and potentially makes more LLM calls to return higher quality results. Requires the agentic engine to be enabled in the deployment.
 	AgentEnumAdvanced AgentEnum = "ADVANCED"
+	// AgentEnumAuto Uses an agent powered by the agentic engine that routes between reasoning efforts based on the question and context.
+	AgentEnumAuto AgentEnum = "AUTO"
 )
 
 func (e AgentEnum) ToPointer() *AgentEnum {
@@ -41,6 +43,8 @@ func (e *AgentEnum) UnmarshalJSON(data []byte) error {
 	case "FAST":
 		fallthrough
 	case "ADVANCED":
+		fallthrough
+	case "AUTO":
 		*e = AgentEnum(v)
 		return nil
 	default:

@@ -33,8 +33,9 @@ func newAgents(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.H
 
 // Retrieve an agent
 // Returns details of an [agent](https://developers.glean.com/agents/agents-api) created in the Agent Builder.
-func (s *Agents) Retrieve(ctx context.Context, agentID string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentResponse, error) {
+func (s *Agents) Retrieve(ctx context.Context, agentID string, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentResponse, error) {
 	request := operations.GetAgentRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 		AgentID:        agentID,
 	}
@@ -256,8 +257,9 @@ func (s *Agents) Retrieve(ctx context.Context, agentID string, timezoneOffset *i
 
 // RetrieveSchemas - List an agent's schemas
 // Return [agent](https://developers.glean.com/agents/agents-api)'s input and output schemas. You can use these schemas to detect changes to an agent's input or output structure.
-func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentSchemasResponse, error) {
+func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetAgentSchemasResponse, error) {
 	request := operations.GetAgentSchemasRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 		AgentID:        agentID,
 	}

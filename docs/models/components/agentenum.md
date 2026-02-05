@@ -12,3 +12,4 @@ Name of the agent.
 | `AgentEnumUniversal` | UNIVERSAL            |
 | `AgentEnumFast`      | FAST                 |
 | `AgentEnumAdvanced`  | ADVANCED             |
+| `AgentEnumAuto`      | AUTO                 |

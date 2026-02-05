@@ -33,7 +33,12 @@ func newClientShortcuts(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks
 
 // Create shortcut
 // Create a user-generated shortcut that contains an alias and destination URL.
-func (s *ClientShortcuts) Create(ctx context.Context, request components.CreateShortcutRequest, opts ...operations.Option) (*operations.CreateshortcutResponse, error) {
+func (s *ClientShortcuts) Create(ctx context.Context, createShortcutRequest components.CreateShortcutRequest, locale *string, opts ...operations.Option) (*operations.CreateshortcutResponse, error) {
+	request := operations.CreateshortcutRequest{
+		Locale:                locale,
+		CreateShortcutRequest: createShortcutRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *ClientShortcuts) Create(ctx context.Context, request components.CreateS
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateShortcutRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *ClientShortcuts) Create(ctx context.Context, request components.CreateS
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *ClientShortcuts) Create(ctx context.Context, request components.CreateS
 
 // Delete shortcut
 // Delete an existing user-generated shortcut.
-func (s *ClientShortcuts) Delete(ctx context.Context, request components.DeleteShortcutRequest, opts ...operations.Option) (*operations.DeleteshortcutResponse, error) {
+func (s *ClientShortcuts) Delete(ctx context.Context, deleteShortcutRequest components.DeleteShortcutRequest, locale *string, opts ...operations.Option) (*operations.DeleteshortcutResponse, error) {
+	request := operations.DeleteshortcutRequest{
+		Locale:                locale,
+		DeleteShortcutRequest: deleteShortcutRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *ClientShortcuts) Delete(ctx context.Context, request components.DeleteS
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteShortcutRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *ClientShortcuts) Delete(ctx context.Context, request components.DeleteS
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -451,7 +469,12 @@ func (s *ClientShortcuts) Delete(ctx context.Context, request components.DeleteS
 
 // Retrieve - Read shortcut
 // Read a particular shortcut's details given its ID.
-func (s *ClientShortcuts) Retrieve(ctx context.Context, request components.GetShortcutRequestUnion, opts ...operations.Option) (*operations.GetshortcutResponse, error) {
+func (s *ClientShortcuts) Retrieve(ctx context.Context, getShortcutRequest components.GetShortcutRequestUnion, locale *string, opts ...operations.Option) (*operations.GetshortcutResponse, error) {
+	request := operations.GetshortcutRequest{
+		Locale:             locale,
+		GetShortcutRequest: getShortcutRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -484,7 +507,7 @@ func (s *ClientShortcuts) Retrieve(ctx context.Context, request components.GetSh
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetShortcutRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -508,6 +531,10 @@ func (s *ClientShortcuts) Retrieve(ctx context.Context, request components.GetSh
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -670,7 +697,12 @@ func (s *ClientShortcuts) Retrieve(ctx context.Context, request components.GetSh
 
 // List shortcuts
 // List shortcuts editable/owned by the currently authenticated user.
-func (s *ClientShortcuts) List(ctx context.Context, request components.ListShortcutsPaginatedRequest, opts ...operations.Option) (*operations.ListshortcutsResponse, error) {
+func (s *ClientShortcuts) List(ctx context.Context, listShortcutsPaginatedRequest components.ListShortcutsPaginatedRequest, locale *string, opts ...operations.Option) (*operations.ListshortcutsResponse, error) {
+	request := operations.ListshortcutsRequest{
+		Locale:                        locale,
+		ListShortcutsPaginatedRequest: listShortcutsPaginatedRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -703,7 +735,7 @@ func (s *ClientShortcuts) List(ctx context.Context, request components.ListShort
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ListShortcutsPaginatedRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -727,6 +759,10 @@ func (s *ClientShortcuts) List(ctx context.Context, request components.ListShort
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -889,7 +925,12 @@ func (s *ClientShortcuts) List(ctx context.Context, request components.ListShort
 
 // Update shortcut
 // Updates the shortcut with the given ID.
-func (s *ClientShortcuts) Update(ctx context.Context, request components.UpdateShortcutRequest, opts ...operations.Option) (*operations.UpdateshortcutResponse, error) {
+func (s *ClientShortcuts) Update(ctx context.Context, updateShortcutRequest components.UpdateShortcutRequest, locale *string, opts ...operations.Option) (*operations.UpdateshortcutResponse, error) {
+	request := operations.UpdateshortcutRequest{
+		Locale:                locale,
+		UpdateShortcutRequest: updateShortcutRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -922,7 +963,7 @@ func (s *ClientShortcuts) Update(ctx context.Context, request components.UpdateS
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateShortcutRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -946,6 +987,10 @@ func (s *ClientShortcuts) Update(ctx context.Context, request components.UpdateS
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

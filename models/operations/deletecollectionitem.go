@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type DeletecollectionitemRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Data describing the delete operation.
+	DeleteCollectionItemRequest components.DeleteCollectionItemRequest `request:"mediaType=application/json"`
+}
+
+func (d *DeletecollectionitemRequest) GetLocale() *string {
+	if d == nil {
+		return nil
+	}
+	return d.Locale
+}
+
+func (d *DeletecollectionitemRequest) GetDeleteCollectionItemRequest() components.DeleteCollectionItemRequest {
+	if d == nil {
+		return components.DeleteCollectionItemRequest{}
+	}
+	return d.DeleteCollectionItemRequest
+}
+
 type DeletecollectionitemResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

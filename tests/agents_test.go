@@ -34,7 +34,7 @@ func TestAgents_GetAgent(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Agents.Retrieve(ctx, "<id>", nil)
+	res, err := s.Client.Agents.Retrieve(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -51,7 +51,7 @@ func TestAgents_GetAgentSchemas(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Agents.RetrieveSchemas(ctx, "<id>", nil)
+	res, err := s.Client.Agents.RetrieveSchemas(ctx, "<id>", nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

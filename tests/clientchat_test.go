@@ -48,7 +48,7 @@ func TestClientChat_Deleteallchats(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Chat.DeleteAll(ctx, nil)
+	res, err := s.Client.Chat.DeleteAll(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -70,7 +70,7 @@ func TestClientChat_Deletechats(t *testing.T) {
 			"<value>",
 			"<value>",
 		},
-	}, nil)
+	}, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -89,7 +89,7 @@ func TestClientChat_Getchat(t *testing.T) {
 
 	res, err := s.Client.Chat.Retrieve(ctx, components.GetChatRequest{
 		ID: "<id>",
-	}, nil)
+	}, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -106,7 +106,7 @@ func TestClientChat_Listchats(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Chat.List(ctx, nil)
+	res, err := s.Client.Chat.List(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -125,7 +125,7 @@ func TestClientChat_Getchatapplication(t *testing.T) {
 
 	res, err := s.Client.Chat.RetrieveApplication(ctx, components.GetChatApplicationRequest{
 		ID: "<id>",
-	}, nil)
+	}, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -147,7 +147,7 @@ func TestClientChat_Getchatfiles(t *testing.T) {
 			"<value>",
 			"<value>",
 		},
-	}, nil)
+	}, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -168,7 +168,7 @@ func TestClientChat_Deletechatfiles(t *testing.T) {
 		FileIds: []string{
 			"<value>",
 		},
-	}, nil)
+	}, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type GetdocumentsbyfacetsRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Information about facet conditions for documents to be retrieved.
+	GetDocumentsByFacetsRequest *components.GetDocumentsByFacetsRequest `request:"mediaType=application/json"`
+}
+
+func (g *GetdocumentsbyfacetsRequest) GetLocale() *string {
+	if g == nil {
+		return nil
+	}
+	return g.Locale
+}
+
+func (g *GetdocumentsbyfacetsRequest) GetGetDocumentsByFacetsRequest() *components.GetDocumentsByFacetsRequest {
+	if g == nil {
+		return nil
+	}
+	return g.GetDocumentsByFacetsRequest
+}
+
 type GetdocumentsbyfacetsResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

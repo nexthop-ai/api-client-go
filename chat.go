@@ -33,8 +33,9 @@ func newChat(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.Hoo
 
 // Create - Chat
 // Have a conversation with Glean AI.
-func (s *Chat) Create(ctx context.Context, chatRequest components.ChatRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.ChatResponse, error) {
+func (s *Chat) Create(ctx context.Context, chatRequest components.ChatRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.ChatResponse, error) {
 	request := operations.ChatRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 		ChatRequest:    chatRequest,
 	}
@@ -263,8 +264,9 @@ func (s *Chat) Create(ctx context.Context, chatRequest components.ChatRequest, t
 
 // DeleteAll - Deletes all saved Chats owned by a user
 // Deletes all saved Chats a user has had and all their contained conversational content.
-func (s *Chat) DeleteAll(ctx context.Context, timezoneOffset *int64, opts ...operations.Option) (*operations.DeleteallchatsResponse, error) {
+func (s *Chat) DeleteAll(ctx context.Context, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.DeleteallchatsResponse, error) {
 	request := operations.DeleteallchatsRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 	}
 
@@ -463,8 +465,9 @@ func (s *Chat) DeleteAll(ctx context.Context, timezoneOffset *int64, opts ...ope
 
 // Delete - Deletes saved Chats
 // Deletes saved Chats and all their contained conversational content.
-func (s *Chat) Delete(ctx context.Context, deleteChatsRequest components.DeleteChatsRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.DeletechatsResponse, error) {
+func (s *Chat) Delete(ctx context.Context, deleteChatsRequest components.DeleteChatsRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.DeletechatsResponse, error) {
 	request := operations.DeletechatsRequest{
+		Locale:             locale,
 		TimezoneOffset:     timezoneOffset,
 		DeleteChatsRequest: deleteChatsRequest,
 	}
@@ -673,8 +676,9 @@ func (s *Chat) Delete(ctx context.Context, deleteChatsRequest components.DeleteC
 
 // Retrieve - Retrieves a Chat
 // Retrieves the chat history between Glean Assistant and the user for a given Chat.
-func (s *Chat) Retrieve(ctx context.Context, getChatRequest components.GetChatRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatResponse, error) {
+func (s *Chat) Retrieve(ctx context.Context, getChatRequest components.GetChatRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatResponse, error) {
 	request := operations.GetchatRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 		GetChatRequest: getChatRequest,
 	}
@@ -903,8 +907,9 @@ func (s *Chat) Retrieve(ctx context.Context, getChatRequest components.GetChatRe
 
 // List - Retrieves all saved Chats
 // Retrieves all the saved Chats between Glean Assistant and the user. The returned Chats contain only metadata and no conversational content.
-func (s *Chat) List(ctx context.Context, timezoneOffset *int64, opts ...operations.Option) (*operations.ListchatsResponse, error) {
+func (s *Chat) List(ctx context.Context, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.ListchatsResponse, error) {
 	request := operations.ListchatsRequest{
+		Locale:         locale,
 		TimezoneOffset: timezoneOffset,
 	}
 
@@ -1123,8 +1128,9 @@ func (s *Chat) List(ctx context.Context, timezoneOffset *int64, opts ...operatio
 
 // RetrieveApplication - Gets the metadata for a custom Chat application
 // Gets the Chat application details for the specified application ID.
-func (s *Chat) RetrieveApplication(ctx context.Context, getChatApplicationRequest components.GetChatApplicationRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatapplicationResponse, error) {
+func (s *Chat) RetrieveApplication(ctx context.Context, getChatApplicationRequest components.GetChatApplicationRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatapplicationResponse, error) {
 	request := operations.GetchatapplicationRequest{
+		Locale:                    locale,
 		TimezoneOffset:            timezoneOffset,
 		GetChatApplicationRequest: getChatApplicationRequest,
 	}
@@ -1351,8 +1357,9 @@ func (s *Chat) RetrieveApplication(ctx context.Context, getChatApplicationReques
 
 // UploadFiles - Upload files for Chat.
 // Upload files for Chat.
-func (s *Chat) UploadFiles(ctx context.Context, uploadChatFilesRequest components.UploadChatFilesRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.UploadchatfilesResponse, error) {
+func (s *Chat) UploadFiles(ctx context.Context, uploadChatFilesRequest components.UploadChatFilesRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.UploadchatfilesResponse, error) {
 	request := operations.UploadchatfilesRequest{
+		Locale:                 locale,
 		TimezoneOffset:         timezoneOffset,
 		UploadChatFilesRequest: uploadChatFilesRequest,
 	}
@@ -1581,8 +1588,9 @@ func (s *Chat) UploadFiles(ctx context.Context, uploadChatFilesRequest component
 
 // RetrieveFiles - Get files uploaded by a user for Chat.
 // Get files uploaded by a user for Chat.
-func (s *Chat) RetrieveFiles(ctx context.Context, getChatFilesRequest components.GetChatFilesRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatfilesResponse, error) {
+func (s *Chat) RetrieveFiles(ctx context.Context, getChatFilesRequest components.GetChatFilesRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.GetchatfilesResponse, error) {
 	request := operations.GetchatfilesRequest{
+		Locale:              locale,
 		TimezoneOffset:      timezoneOffset,
 		GetChatFilesRequest: getChatFilesRequest,
 	}
@@ -1811,8 +1819,9 @@ func (s *Chat) RetrieveFiles(ctx context.Context, getChatFilesRequest components
 
 // DeleteFiles - Delete files uploaded by a user for chat.
 // Delete files uploaded by a user for Chat.
-func (s *Chat) DeleteFiles(ctx context.Context, deleteChatFilesRequest components.DeleteChatFilesRequest, timezoneOffset *int64, opts ...operations.Option) (*operations.DeletechatfilesResponse, error) {
+func (s *Chat) DeleteFiles(ctx context.Context, deleteChatFilesRequest components.DeleteChatFilesRequest, locale *string, timezoneOffset *int64, opts ...operations.Option) (*operations.DeletechatfilesResponse, error) {
 	request := operations.DeletechatfilesRequest{
+		Locale:                 locale,
 		TimezoneOffset:         timezoneOffset,
 		DeleteChatFilesRequest: deleteChatFilesRequest,
 	}

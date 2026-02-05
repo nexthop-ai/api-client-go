@@ -33,7 +33,12 @@ func newMessages(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 
 // Retrieve - Read messages
 // Retrieves list of messages from messaging/chat datasources (e.g. Slack, Teams).
-func (s *Messages) Retrieve(ctx context.Context, request components.MessagesRequest, opts ...operations.Option) (*operations.MessagesResponse, error) {
+func (s *Messages) Retrieve(ctx context.Context, messagesRequest components.MessagesRequest, locale *string, opts ...operations.Option) (*operations.MessagesResponse, error) {
+	request := operations.MessagesRequest{
+		Locale:          locale,
+		MessagesRequest: messagesRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Messages) Retrieve(ctx context.Context, request components.MessagesRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "MessagesRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Messages) Retrieve(ctx context.Context, request components.MessagesRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

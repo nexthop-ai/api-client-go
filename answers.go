@@ -33,7 +33,12 @@ func newAnswers(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.
 
 // Create Answer
 // Create a user-generated Answer that contains a question and answer.
-func (s *Answers) Create(ctx context.Context, request components.CreateAnswerRequest, opts ...operations.Option) (*operations.CreateanswerResponse, error) {
+func (s *Answers) Create(ctx context.Context, createAnswerRequest components.CreateAnswerRequest, locale *string, opts ...operations.Option) (*operations.CreateanswerResponse, error) {
+	request := operations.CreateanswerRequest{
+		Locale:              locale,
+		CreateAnswerRequest: createAnswerRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Answers) Create(ctx context.Context, request components.CreateAnswerReq
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateAnswerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Answers) Create(ctx context.Context, request components.CreateAnswerReq
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *Answers) Create(ctx context.Context, request components.CreateAnswerReq
 
 // Delete Answer
 // Delete an existing user-generated Answer.
-func (s *Answers) Delete(ctx context.Context, request components.DeleteAnswerRequest, opts ...operations.Option) (*operations.DeleteanswerResponse, error) {
+func (s *Answers) Delete(ctx context.Context, deleteAnswerRequest components.DeleteAnswerRequest, locale *string, opts ...operations.Option) (*operations.DeleteanswerResponse, error) {
+	request := operations.DeleteanswerRequest{
+		Locale:              locale,
+		DeleteAnswerRequest: deleteAnswerRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *Answers) Delete(ctx context.Context, request components.DeleteAnswerReq
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteAnswerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *Answers) Delete(ctx context.Context, request components.DeleteAnswerReq
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -451,7 +469,12 @@ func (s *Answers) Delete(ctx context.Context, request components.DeleteAnswerReq
 
 // Update Answer
 // Update an existing user-generated Answer.
-func (s *Answers) Update(ctx context.Context, request components.EditAnswerRequest, opts ...operations.Option) (*operations.EditanswerResponse, error) {
+func (s *Answers) Update(ctx context.Context, editAnswerRequest components.EditAnswerRequest, locale *string, opts ...operations.Option) (*operations.EditanswerResponse, error) {
+	request := operations.EditanswerRequest{
+		Locale:            locale,
+		EditAnswerRequest: editAnswerRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -484,7 +507,7 @@ func (s *Answers) Update(ctx context.Context, request components.EditAnswerReque
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditAnswerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -508,6 +531,10 @@ func (s *Answers) Update(ctx context.Context, request components.EditAnswerReque
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -670,7 +697,12 @@ func (s *Answers) Update(ctx context.Context, request components.EditAnswerReque
 
 // Retrieve - Read Answer
 // Read the details of a particular Answer given its ID.
-func (s *Answers) Retrieve(ctx context.Context, request components.GetAnswerRequest, opts ...operations.Option) (*operations.GetanswerResponse, error) {
+func (s *Answers) Retrieve(ctx context.Context, getAnswerRequest components.GetAnswerRequest, locale *string, opts ...operations.Option) (*operations.GetanswerResponse, error) {
+	request := operations.GetanswerRequest{
+		Locale:           locale,
+		GetAnswerRequest: getAnswerRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -703,7 +735,7 @@ func (s *Answers) Retrieve(ctx context.Context, request components.GetAnswerRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetAnswerRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -727,6 +759,10 @@ func (s *Answers) Retrieve(ctx context.Context, request components.GetAnswerRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -890,8 +926,13 @@ func (s *Answers) Retrieve(ctx context.Context, request components.GetAnswerRequ
 // List Answers
 // List Answers created by the current user.
 //
-// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *Answers) List(ctx context.Context, request components.ListAnswersRequest, opts ...operations.Option) (*operations.ListanswersResponse, error) {
+// Deprecated: Deprecated on 2026-01-21, removal scheduled for 2026-10-15: Answer boards have been removed and this endpoint no longer serves a purpose.
+func (s *Answers) List(ctx context.Context, listAnswersRequest components.ListAnswersRequest, locale *string, opts ...operations.Option) (*operations.ListanswersResponse, error) {
+	request := operations.ListanswersRequest{
+		Locale:             locale,
+		ListAnswersRequest: listAnswersRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -924,7 +965,7 @@ func (s *Answers) List(ctx context.Context, request components.ListAnswersReques
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ListAnswersRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -948,6 +989,10 @@ func (s *Answers) List(ctx context.Context, request components.ListAnswersReques
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

@@ -33,7 +33,12 @@ func newAnnouncements(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *
 
 // Create Announcement
 // Create a textual announcement visible to some set of users based on department and location.
-func (s *Announcements) Create(ctx context.Context, request components.CreateAnnouncementRequest, opts ...operations.Option) (*operations.CreateannouncementResponse, error) {
+func (s *Announcements) Create(ctx context.Context, createAnnouncementRequest components.CreateAnnouncementRequest, locale *string, opts ...operations.Option) (*operations.CreateannouncementResponse, error) {
+	request := operations.CreateannouncementRequest{
+		Locale:                    locale,
+		CreateAnnouncementRequest: createAnnouncementRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Announcements) Create(ctx context.Context, request components.CreateAnn
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateAnnouncementRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Announcements) Create(ctx context.Context, request components.CreateAnn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *Announcements) Create(ctx context.Context, request components.CreateAnn
 
 // Delete Announcement
 // Delete an existing user-generated announcement.
-func (s *Announcements) Delete(ctx context.Context, request components.DeleteAnnouncementRequest, opts ...operations.Option) (*operations.DeleteannouncementResponse, error) {
+func (s *Announcements) Delete(ctx context.Context, deleteAnnouncementRequest components.DeleteAnnouncementRequest, locale *string, opts ...operations.Option) (*operations.DeleteannouncementResponse, error) {
+	request := operations.DeleteannouncementRequest{
+		Locale:                    locale,
+		DeleteAnnouncementRequest: deleteAnnouncementRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *Announcements) Delete(ctx context.Context, request components.DeleteAnn
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteAnnouncementRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *Announcements) Delete(ctx context.Context, request components.DeleteAnn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -451,7 +469,12 @@ func (s *Announcements) Delete(ctx context.Context, request components.DeleteAnn
 
 // Update Announcement
 // Update a textual announcement visible to some set of users based on department and location.
-func (s *Announcements) Update(ctx context.Context, request components.UpdateAnnouncementRequest, opts ...operations.Option) (*operations.UpdateannouncementResponse, error) {
+func (s *Announcements) Update(ctx context.Context, updateAnnouncementRequest components.UpdateAnnouncementRequest, locale *string, opts ...operations.Option) (*operations.UpdateannouncementResponse, error) {
+	request := operations.UpdateannouncementRequest{
+		Locale:                    locale,
+		UpdateAnnouncementRequest: updateAnnouncementRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -484,7 +507,7 @@ func (s *Announcements) Update(ctx context.Context, request components.UpdateAnn
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateAnnouncementRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -508,6 +531,10 @@ func (s *Announcements) Update(ctx context.Context, request components.UpdateAnn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type EditpinRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Edit pins request
+	EditPinRequest components.EditPinRequest `request:"mediaType=application/json"`
+}
+
+func (e *EditpinRequest) GetLocale() *string {
+	if e == nil {
+		return nil
+	}
+	return e.Locale
+}
+
+func (e *EditpinRequest) GetEditPinRequest() components.EditPinRequest {
+	if e == nil {
+		return components.EditPinRequest{}
+	}
+	return e.EditPinRequest
+}
+
 type EditpinResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

@@ -95,7 +95,7 @@ func main() {
 				},
 			},
 		},
-	}, nil)
+	}, nil, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1294,7 +1294,7 @@ func main() {
 				},
 			},
 		},
-	})
+	}, nil)
 	if err != nil {
 
 		var e *apierrors.CollectionError

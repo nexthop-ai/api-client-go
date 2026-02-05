@@ -33,7 +33,12 @@ func newCollections(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *ho
 
 // AddItems - Add Collection item
 // Add items to a Collection.
-func (s *Collections) AddItems(ctx context.Context, request components.AddCollectionItemsRequest, opts ...operations.Option) (*operations.AddcollectionitemsResponse, error) {
+func (s *Collections) AddItems(ctx context.Context, addCollectionItemsRequest components.AddCollectionItemsRequest, locale *string, opts ...operations.Option) (*operations.AddcollectionitemsResponse, error) {
+	request := operations.AddcollectionitemsRequest{
+		Locale:                    locale,
+		AddCollectionItemsRequest: addCollectionItemsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Collections) AddItems(ctx context.Context, request components.AddCollec
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AddCollectionItemsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Collections) AddItems(ctx context.Context, request components.AddCollec
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *Collections) AddItems(ctx context.Context, request components.AddCollec
 
 // Create Collection
 // Create a publicly visible (empty) Collection of documents.
-func (s *Collections) Create(ctx context.Context, request components.CreateCollectionRequest, opts ...operations.Option) (*operations.CreatecollectionResponse, error) {
+func (s *Collections) Create(ctx context.Context, createCollectionRequest components.CreateCollectionRequest, locale *string, opts ...operations.Option) (*operations.CreatecollectionResponse, error) {
+	request := operations.CreatecollectionRequest{
+		Locale:                  locale,
+		CreateCollectionRequest: createCollectionRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *Collections) Create(ctx context.Context, request components.CreateColle
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateCollectionRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *Collections) Create(ctx context.Context, request components.CreateColle
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -496,7 +514,12 @@ func (s *Collections) Create(ctx context.Context, request components.CreateColle
 
 // Delete Collection
 // Delete a Collection given the Collection's ID.
-func (s *Collections) Delete(ctx context.Context, request components.DeleteCollectionRequest, opts ...operations.Option) (*operations.DeletecollectionResponse, error) {
+func (s *Collections) Delete(ctx context.Context, deleteCollectionRequest components.DeleteCollectionRequest, locale *string, opts ...operations.Option) (*operations.DeletecollectionResponse, error) {
+	request := operations.DeletecollectionRequest{
+		Locale:                  locale,
+		DeleteCollectionRequest: deleteCollectionRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -529,7 +552,7 @@ func (s *Collections) Delete(ctx context.Context, request components.DeleteColle
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteCollectionRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -553,6 +576,10 @@ func (s *Collections) Delete(ctx context.Context, request components.DeleteColle
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -720,7 +747,12 @@ func (s *Collections) Delete(ctx context.Context, request components.DeleteColle
 
 // DeleteItem - Delete Collection item
 // Delete a single item from a Collection.
-func (s *Collections) DeleteItem(ctx context.Context, request components.DeleteCollectionItemRequest, opts ...operations.Option) (*operations.DeletecollectionitemResponse, error) {
+func (s *Collections) DeleteItem(ctx context.Context, deleteCollectionItemRequest components.DeleteCollectionItemRequest, locale *string, opts ...operations.Option) (*operations.DeletecollectionitemResponse, error) {
+	request := operations.DeletecollectionitemRequest{
+		Locale:                      locale,
+		DeleteCollectionItemRequest: deleteCollectionItemRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -753,7 +785,7 @@ func (s *Collections) DeleteItem(ctx context.Context, request components.DeleteC
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeleteCollectionItemRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -777,6 +809,10 @@ func (s *Collections) DeleteItem(ctx context.Context, request components.DeleteC
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -941,7 +977,12 @@ func (s *Collections) DeleteItem(ctx context.Context, request components.DeleteC
 
 // Update Collection
 // Update the properties of an existing Collection.
-func (s *Collections) Update(ctx context.Context, request components.EditCollectionRequest, opts ...operations.Option) (*operations.EditcollectionResponse, error) {
+func (s *Collections) Update(ctx context.Context, editCollectionRequest components.EditCollectionRequest, locale *string, opts ...operations.Option) (*operations.EditcollectionResponse, error) {
+	request := operations.EditcollectionRequest{
+		Locale:                locale,
+		EditCollectionRequest: editCollectionRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -974,7 +1015,7 @@ func (s *Collections) Update(ctx context.Context, request components.EditCollect
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditCollectionRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -998,6 +1039,10 @@ func (s *Collections) Update(ctx context.Context, request components.EditCollect
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -1185,7 +1230,12 @@ func (s *Collections) Update(ctx context.Context, request components.EditCollect
 
 // UpdateItem - Update Collection item
 // Update the URL, Glean Document ID, description of an item within a Collection given its ID.
-func (s *Collections) UpdateItem(ctx context.Context, request components.EditCollectionItemRequest, opts ...operations.Option) (*operations.EditcollectionitemResponse, error) {
+func (s *Collections) UpdateItem(ctx context.Context, editCollectionItemRequest components.EditCollectionItemRequest, locale *string, opts ...operations.Option) (*operations.EditcollectionitemResponse, error) {
+	request := operations.EditcollectionitemRequest{
+		Locale:                    locale,
+		EditCollectionItemRequest: editCollectionItemRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1218,7 +1268,7 @@ func (s *Collections) UpdateItem(ctx context.Context, request components.EditCol
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditCollectionItemRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1242,6 +1292,10 @@ func (s *Collections) UpdateItem(ctx context.Context, request components.EditCol
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -1404,7 +1458,12 @@ func (s *Collections) UpdateItem(ctx context.Context, request components.EditCol
 
 // Retrieve - Read Collection
 // Read the details of a Collection given its ID. Does not fetch items in this Collection.
-func (s *Collections) Retrieve(ctx context.Context, request components.GetCollectionRequest, opts ...operations.Option) (*operations.GetcollectionResponse, error) {
+func (s *Collections) Retrieve(ctx context.Context, getCollectionRequest components.GetCollectionRequest, locale *string, opts ...operations.Option) (*operations.GetcollectionResponse, error) {
+	request := operations.GetcollectionRequest{
+		Locale:               locale,
+		GetCollectionRequest: getCollectionRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1437,7 +1496,7 @@ func (s *Collections) Retrieve(ctx context.Context, request components.GetCollec
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetCollectionRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1461,6 +1520,10 @@ func (s *Collections) Retrieve(ctx context.Context, request components.GetCollec
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -1623,7 +1686,12 @@ func (s *Collections) Retrieve(ctx context.Context, request components.GetCollec
 
 // List Collections
 // List all existing Collections.
-func (s *Collections) List(ctx context.Context, request components.ListCollectionsRequest, opts ...operations.Option) (*operations.ListcollectionsResponse, error) {
+func (s *Collections) List(ctx context.Context, listCollectionsRequest components.ListCollectionsRequest, locale *string, opts ...operations.Option) (*operations.ListcollectionsResponse, error) {
+	request := operations.ListcollectionsRequest{
+		Locale:                 locale,
+		ListCollectionsRequest: listCollectionsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1656,7 +1724,7 @@ func (s *Collections) List(ctx context.Context, request components.ListCollectio
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ListCollectionsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1680,6 +1748,10 @@ func (s *Collections) List(ctx context.Context, request components.ListCollectio
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

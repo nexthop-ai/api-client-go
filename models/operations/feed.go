@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type FeedRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Includes request params, client data and more for making user's feed.
+	FeedRequest components.FeedRequest `request:"mediaType=application/json"`
+}
+
+func (f *FeedRequest) GetLocale() *string {
+	if f == nil {
+		return nil
+	}
+	return f.Locale
+}
+
+func (f *FeedRequest) GetFeedRequest() components.FeedRequest {
+	if f == nil {
+		return components.FeedRequest{}
+	}
+	return f.FeedRequest
+}
+
 type FeedResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

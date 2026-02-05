@@ -750,7 +750,7 @@ func TestAnswers_Createanswer(t *testing.T) {
 				Text: "From https://en.wikipedia.org/wiki/Diffuse_sky_radiation, the sky is blue because blue light is more strongly scattered than longer-wavelength light.",
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -770,7 +770,7 @@ func TestAnswers_Deleteanswer(t *testing.T) {
 	res, err := s.Client.Answers.Delete(ctx, components.DeleteAnswerRequest{
 		ID:    3,
 		DocID: apiclientgo.Pointer("ANSWERS_answer_3"),
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -1387,7 +1387,7 @@ func TestAnswers_Editanswer(t *testing.T) {
 		CombinedAnswerText: &components.StructuredTextMutableProperties{
 			Text: "From https://en.wikipedia.org/wiki/Diffuse_sky_radiation, the sky is blue because blue light is more strongly scattered than longer-wavelength light.",
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -1407,7 +1407,7 @@ func TestAnswers_Getanswer(t *testing.T) {
 	res, err := s.Client.Answers.Retrieve(ctx, components.GetAnswerRequest{
 		ID:    apiclientgo.Pointer[int64](3),
 		DocID: apiclientgo.Pointer("ANSWERS_answer_3"),
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -1424,7 +1424,7 @@ func TestAnswers_Listanswers(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Answers.List(ctx, components.ListAnswersRequest{})
+	res, err := s.Client.Answers.List(ctx, components.ListAnswersRequest{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

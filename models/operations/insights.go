@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type InsightsRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Includes request parameters for insights requests.
+	InsightsRequest components.InsightsRequest `request:"mediaType=application/json"`
+}
+
+func (i *InsightsRequest) GetLocale() *string {
+	if i == nil {
+		return nil
+	}
+	return i.Locale
+}
+
+func (i *InsightsRequest) GetInsightsRequest() components.InsightsRequest {
+	if i == nil {
+		return components.InsightsRequest{}
+	}
+	return i.InsightsRequest
+}
+
 type InsightsResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

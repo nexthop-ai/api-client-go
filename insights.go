@@ -33,7 +33,12 @@ func newInsights(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 
 // Retrieve - Get insights
 // Gets the aggregate usage insights data displayed in the Insights Dashboards.
-func (s *Insights) Retrieve(ctx context.Context, request components.InsightsRequest, opts ...operations.Option) (*operations.InsightsResponse, error) {
+func (s *Insights) Retrieve(ctx context.Context, insightsRequest components.InsightsRequest, locale *string, opts ...operations.Option) (*operations.InsightsResponse, error) {
+	request := operations.InsightsRequest{
+		Locale:          locale,
+		InsightsRequest: insightsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Insights) Retrieve(ctx context.Context, request components.InsightsRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "InsightsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Insights) Retrieve(ctx context.Context, request components.InsightsRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

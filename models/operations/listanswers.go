@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type ListanswersRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// ListAnswers request
+	ListAnswersRequest components.ListAnswersRequest `request:"mediaType=application/json"`
+}
+
+func (l *ListanswersRequest) GetLocale() *string {
+	if l == nil {
+		return nil
+	}
+	return l.Locale
+}
+
+func (l *ListanswersRequest) GetListAnswersRequest() components.ListAnswersRequest {
+	if l == nil {
+		return components.ListAnswersRequest{}
+	}
+	return l.ListAnswersRequest
+}
+
 type ListanswersResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

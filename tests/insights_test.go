@@ -23,12 +23,7 @@ func TestInsights_Insights(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Insights.Retrieve(ctx, components.InsightsRequest{
-		Categories: []components.InsightsRequestCategory{
-			components.InsightsRequestCategoryContent,
-			components.InsightsRequestCategoryContent,
-		},
-	})
+	res, err := s.Client.Insights.Retrieve(ctx, components.InsightsRequest{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

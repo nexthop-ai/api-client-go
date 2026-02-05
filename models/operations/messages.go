@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type MessagesRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Includes request params such as the id for channel/message and direction.
+	MessagesRequest components.MessagesRequest `request:"mediaType=application/json"`
+}
+
+func (m *MessagesRequest) GetLocale() *string {
+	if m == nil {
+		return nil
+	}
+	return m.Locale
+}
+
+func (m *MessagesRequest) GetMessagesRequest() components.MessagesRequest {
+	if m == nil {
+		return components.MessagesRequest{}
+	}
+	return m.MessagesRequest
+}
+
 type MessagesResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

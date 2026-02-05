@@ -597,7 +597,7 @@ func TestClientShortcuts_Createshortcut(t *testing.T) {
 				},
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -616,7 +616,7 @@ func TestClientShortcuts_Deleteshortcut(t *testing.T) {
 
 	res, err := s.Client.Shortcuts.Delete(ctx, components.DeleteShortcutRequest{
 		ID: 545907,
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -637,7 +637,7 @@ func TestClientShortcuts_Getshortcut(t *testing.T) {
 		components.GetShortcutRequest{
 			Alias: "<value>",
 		},
-	))
+	), nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -675,7 +675,7 @@ func TestClientShortcuts_Listshortcuts(t *testing.T) {
 				},
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -1279,7 +1279,7 @@ func TestClientShortcuts_Updateshortcut(t *testing.T) {
 				Role: components.UserRoleAnswerModerator,
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

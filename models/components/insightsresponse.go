@@ -3,105 +3,10 @@
 package components
 
 type InsightsResponse struct {
-	// List of timeseries to make charts (if applicable).
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	Timeseries    []LabeledCountInfo           `json:"timeseries,omitempty"`
-	Users         *UserInsightsResponse        `json:"users,omitempty"`
-	Content       *ContentInsightsResponse     `json:"content,omitempty"`
-	Queries       *QueryInsightsResponse       `json:"queries,omitempty"`
-	Collections   *ContentInsightsResponse     `json:"collections,omitempty"`
-	CollectionsV2 *ContentInsightsResponse     `json:"collectionsV2,omitempty"`
-	Shortcuts     *ShortcutInsightsResponse    `json:"shortcuts,omitempty"`
-	Announcements *ContentInsightsResponse     `json:"announcements,omitempty"`
-	Answers       *ContentInsightsResponse     `json:"answers,omitempty"`
-	Ai            *AiInsightsResponse          `json:"ai,omitempty"`
-	AiApps        *AiAppsInsightsResponse      `json:"aiApps,omitempty"`
-	GleanAssist   *GleanAssistInsightsResponse `json:"gleanAssist,omitempty"`
-	// list of all departments.
-	//
-	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-	Departments       []string                   `json:"departments,omitempty"`
-	OverviewResponse  *InsightsOverviewResponse  `json:"overviewResponse,omitempty"`
-	AssistantResponse *AssistantInsightsResponse `json:"assistantResponse,omitempty"`
-	AgentsResponse    *AgentsInsightsV2Response  `json:"agentsResponse,omitempty"`
-}
-
-func (i *InsightsResponse) GetTimeseries() []LabeledCountInfo {
-	if i == nil {
-		return nil
-	}
-	return i.Timeseries
-}
-
-func (i *InsightsResponse) GetUsers() *UserInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Users
-}
-
-func (i *InsightsResponse) GetContent() *ContentInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Content
-}
-
-func (i *InsightsResponse) GetQueries() *QueryInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Queries
-}
-
-func (i *InsightsResponse) GetCollections() *ContentInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Collections
-}
-
-func (i *InsightsResponse) GetCollectionsV2() *ContentInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.CollectionsV2
-}
-
-func (i *InsightsResponse) GetShortcuts() *ShortcutInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Shortcuts
-}
-
-func (i *InsightsResponse) GetAnnouncements() *ContentInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Announcements
-}
-
-func (i *InsightsResponse) GetAnswers() *ContentInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Answers
-}
-
-func (i *InsightsResponse) GetAi() *AiInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.Ai
-}
-
-func (i *InsightsResponse) GetAiApps() *AiAppsInsightsResponse {
-	if i == nil {
-		return nil
-	}
-	return i.AiApps
+	GleanAssist       *GleanAssistInsightsResponse `json:"gleanAssist,omitempty"`
+	OverviewResponse  *InsightsOverviewResponse    `json:"overviewResponse,omitempty"`
+	AssistantResponse *AssistantInsightsResponse   `json:"assistantResponse,omitempty"`
+	AgentsResponse    *AgentsInsightsV2Response    `json:"agentsResponse,omitempty"`
 }
 
 func (i *InsightsResponse) GetGleanAssist() *GleanAssistInsightsResponse {
@@ -109,13 +14,6 @@ func (i *InsightsResponse) GetGleanAssist() *GleanAssistInsightsResponse {
 		return nil
 	}
 	return i.GleanAssist
-}
-
-func (i *InsightsResponse) GetDepartments() []string {
-	if i == nil {
-		return nil
-	}
-	return i.Departments
 }
 
 func (i *InsightsResponse) GetOverviewResponse() *InsightsOverviewResponse {

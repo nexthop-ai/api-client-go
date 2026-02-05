@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type VerifyRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Details about the verification request.
+	VerifyRequest components.VerifyRequest `request:"mediaType=application/json"`
+}
+
+func (v *VerifyRequest) GetLocale() *string {
+	if v == nil {
+		return nil
+	}
+	return v.Locale
+}
+
+func (v *VerifyRequest) GetVerifyRequest() components.VerifyRequest {
+	if v == nil {
+		return components.VerifyRequest{}
+	}
+	return v.VerifyRequest
+}
+
 type VerifyResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

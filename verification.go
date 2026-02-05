@@ -33,7 +33,12 @@ func newVerification(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *h
 
 // AddReminder - Create verification
 // Creates a verification reminder for the document. Users can create verification reminders from different product surfaces.
-func (s *Verification) AddReminder(ctx context.Context, request components.ReminderRequest, opts ...operations.Option) (*operations.AddverificationreminderResponse, error) {
+func (s *Verification) AddReminder(ctx context.Context, reminderRequest components.ReminderRequest, locale *string, opts ...operations.Option) (*operations.AddverificationreminderResponse, error) {
+	request := operations.AddverificationreminderRequest{
+		Locale:          locale,
+		ReminderRequest: reminderRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Verification) AddReminder(ctx context.Context, request components.Remin
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ReminderRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Verification) AddReminder(ctx context.Context, request components.Remin
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -254,9 +263,10 @@ func (s *Verification) AddReminder(ctx context.Context, request components.Remin
 
 // List verifications
 // Returns the information to be rendered in verification dashboard. Includes information for each document owned by user regarding their verifications.
-func (s *Verification) List(ctx context.Context, count *int64, opts ...operations.Option) (*operations.ListverificationsResponse, error) {
+func (s *Verification) List(ctx context.Context, count *int64, locale *string, opts ...operations.Option) (*operations.ListverificationsResponse, error) {
 	request := operations.ListverificationsRequest{
-		Count: count,
+		Count:  count,
+		Locale: locale,
 	}
 
 	o := operations.Options{}
@@ -474,7 +484,12 @@ func (s *Verification) List(ctx context.Context, count *int64, opts ...operation
 
 // Verify - Update verification
 // Verify documents to keep the knowledge up to date within customer corpus.
-func (s *Verification) Verify(ctx context.Context, request components.VerifyRequest, opts ...operations.Option) (*operations.VerifyResponse, error) {
+func (s *Verification) Verify(ctx context.Context, verifyRequest components.VerifyRequest, locale *string, opts ...operations.Option) (*operations.VerifyResponse, error) {
+	request := operations.VerifyRequest{
+		Locale:        locale,
+		VerifyRequest: verifyRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -507,7 +522,7 @@ func (s *Verification) Verify(ctx context.Context, request components.VerifyRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "VerifyRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -531,6 +546,10 @@ func (s *Verification) Verify(ctx context.Context, request components.VerifyRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

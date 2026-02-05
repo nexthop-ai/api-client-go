@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type AddcollectionitemsRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Data describing the add operation.
+	AddCollectionItemsRequest components.AddCollectionItemsRequest `request:"mediaType=application/json"`
+}
+
+func (a *AddcollectionitemsRequest) GetLocale() *string {
+	if a == nil {
+		return nil
+	}
+	return a.Locale
+}
+
+func (a *AddcollectionitemsRequest) GetAddCollectionItemsRequest() components.AddCollectionItemsRequest {
+	if a == nil {
+		return components.AddCollectionItemsRequest{}
+	}
+	return a.AddCollectionItemsRequest
+}
+
 type AddcollectionitemsResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type UpdateshortcutRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Shortcut content. Id need to be specified for the shortcut.
+	UpdateShortcutRequest components.UpdateShortcutRequest `request:"mediaType=application/json"`
+}
+
+func (u *UpdateshortcutRequest) GetLocale() *string {
+	if u == nil {
+		return nil
+	}
+	return u.Locale
+}
+
+func (u *UpdateshortcutRequest) GetUpdateShortcutRequest() components.UpdateShortcutRequest {
+	if u == nil {
+		return components.UpdateShortcutRequest{}
+	}
+	return u.UpdateShortcutRequest
+}
+
 type UpdateshortcutResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

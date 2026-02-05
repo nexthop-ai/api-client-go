@@ -33,7 +33,12 @@ func newEntities(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 
 // List entities
 // List some set of details for all entities that fit the given criteria and return in the requested order. Does not support negation in filters, assumes relation type EQUALS. There is a limit of 10000 entities that can be retrieved via this endpoint, except when using FULL_DIRECTORY request type for people entities.
-func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequest, opts ...operations.Option) (*operations.ListentitiesResponse, error) {
+func (s *Entities) List(ctx context.Context, listEntitiesRequest components.ListEntitiesRequest, locale *string, opts ...operations.Option) (*operations.ListentitiesResponse, error) {
+	request := operations.ListentitiesRequest{
+		Locale:              locale,
+		ListEntitiesRequest: listEntitiesRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "ListEntitiesRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -252,7 +261,12 @@ func (s *Entities) List(ctx context.Context, request components.ListEntitiesRequ
 
 // ReadPeople - Read people
 // Read people details for the given IDs.
-func (s *Entities) ReadPeople(ctx context.Context, request components.PeopleRequest, opts ...operations.Option) (*operations.PeopleResponse, error) {
+func (s *Entities) ReadPeople(ctx context.Context, peopleRequest components.PeopleRequest, locale *string, opts ...operations.Option) (*operations.PeopleResponse, error) {
+	request := operations.PeopleRequest{
+		Locale:        locale,
+		PeopleRequest: peopleRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -285,7 +299,7 @@ func (s *Entities) ReadPeople(ctx context.Context, request components.PeopleRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PeopleRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +323,10 @@ func (s *Entities) ReadPeople(ctx context.Context, request components.PeopleRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

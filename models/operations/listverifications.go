@@ -9,6 +9,8 @@ import (
 type ListverificationsRequest struct {
 	// Maximum number of documents to return
 	Count *int64 `queryParam:"style=form,explode=true,name=count"`
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
 }
 
 func (l *ListverificationsRequest) GetCount() *int64 {
@@ -16,6 +18,13 @@ func (l *ListverificationsRequest) GetCount() *int64 {
 		return nil
 	}
 	return l.Count
+}
+
+func (l *ListverificationsRequest) GetLocale() *string {
+	if l == nil {
+		return nil
+	}
+	return l.Locale
 }
 
 type ListverificationsResponse struct {

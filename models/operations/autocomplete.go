@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type AutocompleteRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Autocomplete request
+	AutocompleteRequest components.AutocompleteRequest `request:"mediaType=application/json"`
+}
+
+func (a *AutocompleteRequest) GetLocale() *string {
+	if a == nil {
+		return nil
+	}
+	return a.Locale
+}
+
+func (a *AutocompleteRequest) GetAutocompleteRequest() components.AutocompleteRequest {
+	if a == nil {
+		return components.AutocompleteRequest{}
+	}
+	return a.AutocompleteRequest
+}
+
 type AutocompleteResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

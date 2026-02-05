@@ -33,7 +33,12 @@ func newClientDocuments(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks
 
 // RetrievePermissions - Read document permissions
 // Read the emails of all users who have access to the given document.
-func (s *ClientDocuments) RetrievePermissions(ctx context.Context, request components.GetDocPermissionsRequest, opts ...operations.Option) (*operations.GetdocpermissionsResponse, error) {
+func (s *ClientDocuments) RetrievePermissions(ctx context.Context, getDocPermissionsRequest components.GetDocPermissionsRequest, locale *string, opts ...operations.Option) (*operations.GetdocpermissionsResponse, error) {
+	request := operations.GetdocpermissionsRequest{
+		Locale:                   locale,
+		GetDocPermissionsRequest: getDocPermissionsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *ClientDocuments) RetrievePermissions(ctx context.Context, request compo
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GetDocPermissionsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *ClientDocuments) RetrievePermissions(ctx context.Context, request compo
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -254,7 +263,12 @@ func (s *ClientDocuments) RetrievePermissions(ctx context.Context, request compo
 
 // Retrieve - Read documents
 // Read the documents including metadata (does not include enhanced metadata via `/documentmetadata`) for the given list of Glean Document IDs or URLs specified in the request.
-func (s *ClientDocuments) Retrieve(ctx context.Context, request *components.GetDocumentsRequest, opts ...operations.Option) (*operations.GetdocumentsResponse, error) {
+func (s *ClientDocuments) Retrieve(ctx context.Context, locale *string, getDocumentsRequest *components.GetDocumentsRequest, opts ...operations.Option) (*operations.GetdocumentsResponse, error) {
+	request := operations.GetdocumentsRequest{
+		Locale:              locale,
+		GetDocumentsRequest: getDocumentsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -287,7 +301,7 @@ func (s *ClientDocuments) Retrieve(ctx context.Context, request *components.GetD
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "GetDocumentsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -311,6 +325,10 @@ func (s *ClientDocuments) Retrieve(ctx context.Context, request *components.GetD
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -475,7 +493,12 @@ func (s *ClientDocuments) Retrieve(ctx context.Context, request *components.GetD
 
 // RetrieveByFacets - Read documents by facets
 // Read the documents including metadata (does not include enhanced metadata via `/documentmetadata`) macthing the given facet conditions.
-func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, request *components.GetDocumentsByFacetsRequest, opts ...operations.Option) (*operations.GetdocumentsbyfacetsResponse, error) {
+func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, locale *string, getDocumentsByFacetsRequest *components.GetDocumentsByFacetsRequest, opts ...operations.Option) (*operations.GetdocumentsbyfacetsResponse, error) {
+	request := operations.GetdocumentsbyfacetsRequest{
+		Locale:                      locale,
+		GetDocumentsByFacetsRequest: getDocumentsByFacetsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -508,7 +531,7 @@ func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, request *compone
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "GetDocumentsByFacetsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -532,6 +555,10 @@ func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, request *compone
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -696,7 +723,12 @@ func (s *ClientDocuments) RetrieveByFacets(ctx context.Context, request *compone
 
 // Summarize documents
 // Generate an AI summary of the requested documents.
-func (s *ClientDocuments) Summarize(ctx context.Context, request components.SummarizeRequest, opts ...operations.Option) (*operations.SummarizeResponse, error) {
+func (s *ClientDocuments) Summarize(ctx context.Context, summarizeRequest components.SummarizeRequest, locale *string, opts ...operations.Option) (*operations.SummarizeResponse, error) {
+	request := operations.SummarizeRequest{
+		Locale:           locale,
+		SummarizeRequest: summarizeRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -729,7 +761,7 @@ func (s *ClientDocuments) Summarize(ctx context.Context, request components.Summ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SummarizeRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -753,6 +785,10 @@ func (s *ClientDocuments) Summarize(ctx context.Context, request components.Summ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

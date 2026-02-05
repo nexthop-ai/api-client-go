@@ -40,7 +40,7 @@ func TestPins_Editpin(t *testing.T) {
 				},
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -57,7 +57,7 @@ func TestPins_Getpin(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Pins.Retrieve(ctx, components.GetPinRequest{})
+	res, err := s.Client.Pins.Retrieve(ctx, components.GetPinRequest{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -74,7 +74,7 @@ func TestPins_Listpins(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Pins.List(ctx, operations.ListpinsRequest{})
+	res, err := s.Client.Pins.List(ctx, operations.ListpinsRequestBody{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -107,7 +107,7 @@ func TestPins_Pin(t *testing.T) {
 				},
 			},
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -124,7 +124,7 @@ func TestPins_Unpin(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Pins.Remove(ctx, components.Unpin{})
+	res, err := s.Client.Pins.Remove(ctx, components.Unpin{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

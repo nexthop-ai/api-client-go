@@ -23,7 +23,7 @@ func TestClientDocuments_Getdocpermissions(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Documents.RetrievePermissions(ctx, components.GetDocPermissionsRequest{})
+	res, err := s.Client.Documents.RetrievePermissions(ctx, components.GetDocPermissionsRequest{}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -40,7 +40,7 @@ func TestClientDocuments_Getdocuments(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Documents.Retrieve(ctx, nil)
+	res, err := s.Client.Documents.Retrieve(ctx, nil, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 
@@ -57,7 +57,7 @@ func TestClientDocuments_Getdocumentsbyfacets(t *testing.T) {
 		apiclientgo.WithSecurity(utils.GetEnv("GLEAN_API_TOKEN", "value")),
 	)
 
-	res, err := s.Client.Documents.RetrieveByFacets(ctx, &components.GetDocumentsByFacetsRequest{
+	res, err := s.Client.Documents.RetrieveByFacets(ctx, nil, &components.GetDocumentsByFacetsRequest{
 		FilterSets: []components.FacetFilterSet{
 			components.FacetFilterSet{
 				Filters: []components.FacetFilter{

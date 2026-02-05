@@ -33,7 +33,12 @@ func newSearch(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks.H
 
 // QueryAsAdmin - Search the index (admin)
 // Retrieves results for search query without respect for permissions. This is available only to privileged users.
-func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequest, opts ...operations.Option) (*operations.AdminsearchResponse, error) {
+func (s *Search) QueryAsAdmin(ctx context.Context, searchRequest components.SearchRequest, locale *string, opts ...operations.Option) (*operations.AdminsearchResponse, error) {
+	request := operations.AdminsearchRequest{
+		Locale:        locale,
+		SearchRequest: searchRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -66,7 +71,7 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequ
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SearchRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -90,6 +95,10 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -279,7 +288,12 @@ func (s *Search) QueryAsAdmin(ctx context.Context, request components.SearchRequ
 
 // Autocomplete
 // Retrieve query suggestions, operators and documents for the given partially typed query.
-func (s *Search) Autocomplete(ctx context.Context, request components.AutocompleteRequest, opts ...operations.Option) (*operations.AutocompleteResponse, error) {
+func (s *Search) Autocomplete(ctx context.Context, autocompleteRequest components.AutocompleteRequest, locale *string, opts ...operations.Option) (*operations.AutocompleteResponse, error) {
+	request := operations.AutocompleteRequest{
+		Locale:              locale,
+		AutocompleteRequest: autocompleteRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -312,7 +326,7 @@ func (s *Search) Autocomplete(ctx context.Context, request components.Autocomple
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AutocompleteRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -336,6 +350,10 @@ func (s *Search) Autocomplete(ctx context.Context, request components.Autocomple
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -498,7 +516,12 @@ func (s *Search) Autocomplete(ctx context.Context, request components.Autocomple
 
 // RetrieveFeed - Feed of documents and events
 // The personalized feed/home includes different types of contents including suggestions, recents, calendar events and many more.
-func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedRequest, opts ...operations.Option) (*operations.FeedResponse, error) {
+func (s *Search) RetrieveFeed(ctx context.Context, feedRequest components.FeedRequest, locale *string, opts ...operations.Option) (*operations.FeedResponse, error) {
+	request := operations.FeedRequest{
+		Locale:      locale,
+		FeedRequest: feedRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -531,7 +554,7 @@ func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedReques
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "FeedRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -555,6 +578,10 @@ func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedReques
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -719,7 +746,12 @@ func (s *Search) RetrieveFeed(ctx context.Context, request components.FeedReques
 
 // Recommendations - Recommend documents
 // Retrieve recommended documents for the given URL or Glean Document ID.
-func (s *Search) Recommendations(ctx context.Context, request components.RecommendationsRequest, opts ...operations.Option) (*operations.RecommendationsResponse, error) {
+func (s *Search) Recommendations(ctx context.Context, recommendationsRequest components.RecommendationsRequest, locale *string, opts ...operations.Option) (*operations.RecommendationsResponse, error) {
+	request := operations.RecommendationsRequest{
+		Locale:                 locale,
+		RecommendationsRequest: recommendationsRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -752,7 +784,7 @@ func (s *Search) Recommendations(ctx context.Context, request components.Recomme
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RecommendationsRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -776,6 +808,10 @@ func (s *Search) Recommendations(ctx context.Context, request components.Recomme
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
@@ -943,7 +979,12 @@ func (s *Search) Recommendations(ctx context.Context, request components.Recomme
 
 // Query - Search
 // Retrieve results from the index for the given query and filters.
-func (s *Search) Query(ctx context.Context, request components.SearchRequest, opts ...operations.Option) (*operations.SearchResponse, error) {
+func (s *Search) Query(ctx context.Context, searchRequest components.SearchRequest, locale *string, opts ...operations.Option) (*operations.SearchResponse, error) {
+	request := operations.SearchRequest{
+		Locale:        locale,
+		SearchRequest: searchRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -976,7 +1017,7 @@ func (s *Search) Query(ctx context.Context, request components.SearchRequest, op
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SearchRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -1000,6 +1041,10 @@ func (s *Search) Query(ctx context.Context, request components.SearchRequest, op
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	if reqContentType != "" {
 		req.Header.Set("Content-Type", reqContentType)
+	}
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {

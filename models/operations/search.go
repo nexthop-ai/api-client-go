@@ -6,6 +6,27 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 )
 
+type SearchRequest struct {
+	// The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`.
+	Locale *string `queryParam:"style=form,explode=true,name=locale"`
+	// Search request
+	SearchRequest components.SearchRequest `request:"mediaType=application/json"`
+}
+
+func (s *SearchRequest) GetLocale() *string {
+	if s == nil {
+		return nil
+	}
+	return s.Locale
+}
+
+func (s *SearchRequest) GetSearchRequest() components.SearchRequest {
+	if s == nil {
+		return components.SearchRequest{}
+	}
+	return s.SearchRequest
+}
+
 type SearchResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// OK

@@ -38,7 +38,7 @@ func TestSummarize_Summarize(t *testing.T) {
 				},
 			),
 		},
-	})
+	}, nil)
 	require.NoError(t, err)
 	assert.Equal(t, 200, res.HTTPMeta.Response.StatusCode)
 

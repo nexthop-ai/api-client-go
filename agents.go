@@ -705,7 +705,7 @@ func (s *Agents) List(ctx context.Context, request components.SearchAgentsReques
 }
 
 // RunStream - Create an agent run and stream the response
-// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the result as a stream of server-sent events (SSE).
+// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the result as a stream of server-sent events (SSE). **Note**: If the agent uses an input form trigger, all form fields (including optional fields) must be included in the `input` object.
 func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreate, opts ...operations.Option) (*operations.CreateAndStreamRunResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -926,7 +926,7 @@ func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreat
 }
 
 // Run - Create an agent run and wait for the response
-// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the final response.
+// Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the final response. **Note**: If the agent uses an input form trigger, all form fields (including optional fields) must be included in the `input` object.
 func (s *Agents) Run(ctx context.Context, request components.AgentRunCreate, opts ...operations.Option) (*operations.CreateAndWaitRunResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

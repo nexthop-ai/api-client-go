@@ -18,6 +18,8 @@ type AgentSchemas struct {
 	InputSchema InputSchema `json:"input_schema"`
 	// The schema for the agent output. In JSON Schema format.
 	OutputSchema OutputSchema `json:"output_schema"`
+	// List of tools that the agent can invoke. Only included when include_tools query parameter is set to true.
+	Tools []ActionSummary `json:"tools,omitempty"`
 }
 
 func (a *AgentSchemas) GetAgentID() string {
@@ -39,4 +41,11 @@ func (a *AgentSchemas) GetOutputSchema() OutputSchema {
 		return OutputSchema{}
 	}
 	return a.OutputSchema
+}
+
+func (a *AgentSchemas) GetTools() []ActionSummary {
+	if a == nil {
+		return nil
+	}
+	return a.Tools
 }

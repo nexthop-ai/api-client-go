@@ -21,6 +21,7 @@ The action the user took within a Glean client with respect to the object referr
 | `EventLastToken`                | LAST_TOKEN                      |
 | `EventManualFeedback`           | MANUAL_FEEDBACK                 |
 | `EventManualFeedbackSideBySide` | MANUAL_FEEDBACK_SIDE_BY_SIDE    |
+| `EventFeedbackTimeSaved`        | FEEDBACK_TIME_SAVED             |
 | `EventMarkAsRead`               | MARK_AS_READ                    |
 | `EventMessage`                  | MESSAGE                         |
 | `EventMiddleClick`              | MIDDLE_CLICK                    |

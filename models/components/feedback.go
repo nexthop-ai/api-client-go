@@ -98,6 +98,8 @@ const (
 	EventManualFeedback Event = "MANUAL_FEEDBACK"
 	// EventManualFeedbackSideBySide The user submitted comparative feedback for multiple side-by-side implementations.
 	EventManualFeedbackSideBySide Event = "MANUAL_FEEDBACK_SIDE_BY_SIDE"
+	// EventFeedbackTimeSaved The user submitted feedback about time saved by an agent or workflow.
+	EventFeedbackTimeSaved Event = "FEEDBACK_TIME_SAVED"
 	// EventMarkAsRead The user explicitly marked the content as read.
 	EventMarkAsRead Event = "MARK_AS_READ"
 	// EventMessage The user attempted to send a message using their default messaing app.
@@ -169,6 +171,8 @@ func (e *Event) UnmarshalJSON(data []byte) error {
 	case "MANUAL_FEEDBACK":
 		fallthrough
 	case "MANUAL_FEEDBACK_SIDE_BY_SIDE":
+		fallthrough
+	case "FEEDBACK_TIME_SAVED":
 		fallthrough
 	case "MARK_AS_READ":
 		fallthrough

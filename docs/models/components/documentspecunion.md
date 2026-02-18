@@ -27,3 +27,19 @@ documentSpecUnion := components.CreateDocumentSpecUnionDocumentSpec3(components.
 documentSpecUnion := components.CreateDocumentSpecUnionDocumentSpec4(components.DocumentSpec4{/* values here */})
 ```
 
+## Union Discrimination
+
+Use the `Type` field to determine which variant is active, then access the corresponding field:
+
+```go
+switch documentSpecUnion.Type {
+	case components.DocumentSpecUnionTypeDocumentSpec1:
+		// documentSpecUnion.DocumentSpec1 is populated
+	case components.DocumentSpecUnionTypeDocumentSpec2:
+		// documentSpecUnion.DocumentSpec2 is populated
+	case components.DocumentSpecUnionTypeDocumentSpec3:
+		// documentSpecUnion.DocumentSpec3 is populated
+	case components.DocumentSpecUnionTypeDocumentSpec4:
+		// documentSpecUnion.DocumentSpec4 is populated
+}
+```

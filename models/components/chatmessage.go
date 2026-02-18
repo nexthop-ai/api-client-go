@@ -44,6 +44,18 @@ const (
 	MessageTypeContent MessageType = "CONTENT"
 	// MessageTypeContext A message providing context in addition to the user query.
 	MessageTypeContext MessageType = "CONTEXT"
+	// MessageTypeControl Control signal for message streaming.
+	MessageTypeControl MessageType = "CONTROL"
+	// MessageTypeControlStart Control signal indicating the start of a message stream.
+	MessageTypeControlStart MessageType = "CONTROL_START"
+	// MessageTypeControlFinish Control signal indicating the end of a message stream.
+	MessageTypeControlFinish MessageType = "CONTROL_FINISH"
+	// MessageTypeControlCancel Control signal indicating the message stream was cancelled.
+	MessageTypeControlCancel MessageType = "CONTROL_CANCEL"
+	// MessageTypeControlRetry Indicates the message streaming needed to be retried.
+	MessageTypeControlRetry MessageType = "CONTROL_RETRY"
+	// MessageTypeControlUnknown Fallback control signal for unrecognized control types.
+	MessageTypeControlUnknown MessageType = "CONTROL_UNKNOWN"
 	// MessageTypeDebug A debug message. Strictly used internally.
 	MessageTypeDebug MessageType = "DEBUG"
 	// MessageTypeDebugExternal A debug message to be used while debugging Action creation.
@@ -72,6 +84,18 @@ func (e *MessageType) UnmarshalJSON(data []byte) error {
 	case "CONTENT":
 		fallthrough
 	case "CONTEXT":
+		fallthrough
+	case "CONTROL":
+		fallthrough
+	case "CONTROL_START":
+		fallthrough
+	case "CONTROL_FINISH":
+		fallthrough
+	case "CONTROL_CANCEL":
+		fallthrough
+	case "CONTROL_RETRY":
+		fallthrough
+	case "CONTROL_UNKNOWN":
 		fallthrough
 	case "DEBUG":
 		fallthrough

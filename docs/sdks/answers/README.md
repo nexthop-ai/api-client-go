@@ -1392,7 +1392,17 @@ func main() {
         log.Fatal(err)
     }
     if res.Answer != nil {
-        // handle response
+        switch res.Answer.SourceDocumentSpec.Type {
+            case components.DocumentSpecUnionTypeDocumentSpec1:
+                // res.Answer.SourceDocumentSpec.DocumentSpec1 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec2:
+                // res.Answer.SourceDocumentSpec.DocumentSpec2 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec3:
+                // res.Answer.SourceDocumentSpec.DocumentSpec3 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec4:
+                // res.Answer.SourceDocumentSpec.DocumentSpec4 is populated
+        }
+
     }
 }
 ```
@@ -2425,7 +2435,17 @@ func main() {
         log.Fatal(err)
     }
     if res.Answer != nil {
-        // handle response
+        switch res.Answer.SourceDocumentSpec.Type {
+            case components.DocumentSpecUnionTypeDocumentSpec1:
+                // res.Answer.SourceDocumentSpec.DocumentSpec1 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec2:
+                // res.Answer.SourceDocumentSpec.DocumentSpec2 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec3:
+                // res.Answer.SourceDocumentSpec.DocumentSpec3 is populated
+            case components.DocumentSpecUnionTypeDocumentSpec4:
+                // res.Answer.SourceDocumentSpec.DocumentSpec4 is populated
+        }
+
     }
 }
 ```

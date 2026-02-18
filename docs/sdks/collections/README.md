@@ -86,6 +86,7 @@ import(
 	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/types"
 	"log"
+	"github.com/gleanwork/api-client-go/models/operations"
 )
 
 func main() {
@@ -763,7 +764,13 @@ func main() {
         log.Fatal(err)
     }
     if res.OneOf != nil {
-        // handle response
+        switch res.OneOf.Type {
+            case operations.CreatecollectionResponseBodyTypeResponseBody1:
+                // res.OneOf.ResponseBody1 is populated
+            case operations.CreatecollectionResponseBodyTypeResponseBody2:
+                // res.OneOf.ResponseBody2 is populated
+        }
+
     }
 }
 ```

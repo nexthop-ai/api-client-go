@@ -12,6 +12,9 @@ type GleanDataError struct {
 	ErrorMessages    []ErrorMessage              `json:"errorMessages,omitempty"`
 	// Indicates the federated search results could not be fetched due to rate limiting.
 	FederatedSearchRateLimitError *bool `json:"federatedSearchRateLimitError,omitempty"`
+	// Datasource instances that could not be queried because the user has not completed or has expired per-user OAuth.
+	//
+	UnauthorizedDatasourceInstances []UnauthorizedDatasourceInstance `json:"unauthorizedDatasourceInstances,omitempty"`
 }
 
 func (g *GleanDataError) GetBadGmailToken() *bool {
@@ -47,4 +50,11 @@ func (g *GleanDataError) GetFederatedSearchRateLimitError() *bool {
 		return nil
 	}
 	return g.FederatedSearchRateLimitError
+}
+
+func (g *GleanDataError) GetUnauthorizedDatasourceInstances() []UnauthorizedDatasourceInstance {
+	if g == nil {
+		return nil
+	}
+	return g.UnauthorizedDatasourceInstances
 }

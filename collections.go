@@ -690,6 +690,7 @@ func (s *Collections) Delete(ctx context.Context, deleteCollectionRequest compon
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 422:
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):

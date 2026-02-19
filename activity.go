@@ -199,6 +199,7 @@ func (s *Activity) Report(ctx context.Context, request components.Activity, opts
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -407,6 +408,7 @@ func (s *Activity) Feedback(ctx context.Context, feedbackQueryParameter *string,
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

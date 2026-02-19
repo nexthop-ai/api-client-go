@@ -1121,6 +1121,7 @@ func (s *Pins) Remove(ctx context.Context, unpin components.Unpin, locale *strin
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

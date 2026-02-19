@@ -200,6 +200,7 @@ func (s *IndexingDocuments) AddOrUpdate(ctx context.Context, request components.
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -401,6 +402,7 @@ func (s *IndexingDocuments) Index(ctx context.Context, request components.IndexD
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -602,6 +604,7 @@ func (s *IndexingDocuments) BulkIndex(ctx context.Context, request components.Bu
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -811,6 +814,7 @@ func (s *IndexingDocuments) ProcessAll(ctx context.Context, request *components.
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1010,6 +1014,7 @@ func (s *IndexingDocuments) Delete(ctx context.Context, request components.Delet
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

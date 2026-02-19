@@ -200,6 +200,7 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

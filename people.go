@@ -648,6 +648,7 @@ func (s *People) Index(ctx context.Context, request components.IndexEmployeeRequ
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -847,6 +848,7 @@ func (s *People) BulkIndex(ctx context.Context, request components.BulkIndexEmpl
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1039,6 +1041,7 @@ func (s *People) ProcessAllEmployeesAndTeams(ctx context.Context, opts ...operat
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1238,6 +1241,7 @@ func (s *People) Delete(ctx context.Context, request components.DeleteEmployeeRe
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1437,6 +1441,7 @@ func (s *People) IndexTeam(ctx context.Context, request components.IndexTeamRequ
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1636,6 +1641,7 @@ func (s *People) DeleteTeam(ctx context.Context, request components.DeleteTeamRe
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1835,6 +1841,7 @@ func (s *People) BulkIndexTeams(ctx context.Context, request components.BulkInde
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

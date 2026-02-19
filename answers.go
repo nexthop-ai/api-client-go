@@ -437,6 +437,7 @@ func (s *Answers) Delete(ctx context.Context, deleteAnswerRequest components.Del
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

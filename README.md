@@ -251,6 +251,10 @@ For more information on obtaining the appropriate token type, please contact you
 <details open>
 <summary>Available methods</summary>
 
+### [Authentication](docs/sdks/authentication/README.md)
+
+* [Checkdatasourceauth](docs/sdks/authentication/README.md#checkdatasourceauth) - Check datasource authorization
+
 ### [Client.Activity](docs/sdks/activity/README.md)
 
 * [Report](docs/sdks/activity/README.md#report) - Report document activity

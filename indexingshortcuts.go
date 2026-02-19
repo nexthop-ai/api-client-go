@@ -199,6 +199,7 @@ func (s *IndexingShortcuts) BulkIndex(ctx context.Context, request components.Bu
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -398,6 +399,7 @@ func (s *IndexingShortcuts) Upload(ctx context.Context, request components.Uploa
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

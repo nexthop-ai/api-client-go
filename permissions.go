@@ -199,6 +199,7 @@ func (s *Permissions) UpdatePermissions(ctx context.Context, request components.
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -400,6 +401,7 @@ func (s *Permissions) IndexUser(ctx context.Context, request components.IndexUse
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -600,6 +602,7 @@ func (s *Permissions) BulkIndexUsers(ctx context.Context, request components.Bul
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -799,6 +802,7 @@ func (s *Permissions) IndexGroup(ctx context.Context, request components.IndexGr
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -999,6 +1003,7 @@ func (s *Permissions) BulkIndexGroups(ctx context.Context, request components.Bu
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1198,6 +1203,7 @@ func (s *Permissions) IndexMembership(ctx context.Context, request components.In
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1397,6 +1403,7 @@ func (s *Permissions) BulkIndexMemberships(ctx context.Context, request componen
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1596,6 +1603,7 @@ func (s *Permissions) ProcessMemberships(ctx context.Context, request *component
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1794,6 +1802,7 @@ func (s *Permissions) DeleteUser(ctx context.Context, request components.DeleteU
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -1994,6 +2003,7 @@ func (s *Permissions) DeleteGroup(ctx context.Context, request components.Delete
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -2193,6 +2203,7 @@ func (s *Permissions) DeleteMembership(ctx context.Context, request components.D
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:
@@ -2392,6 +2403,7 @@ func (s *Permissions) AuthorizeBetaUsers(ctx context.Context, request components
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

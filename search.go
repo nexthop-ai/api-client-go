@@ -945,6 +945,7 @@ func (s *Search) Recommendations(ctx context.Context, recommendationsRequest com
 	case httpRes.StatusCode == 202:
 		fallthrough
 	case httpRes.StatusCode == 204:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 401:

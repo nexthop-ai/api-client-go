@@ -834,6 +834,7 @@ func (s *Governance) Deletefindingsexport(ctx context.Context, id int64, opts ..
 
 	switch {
 	case httpRes.StatusCode == 200:
+		utils.DrainBody(httpRes)
 	case httpRes.StatusCode == 403:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:

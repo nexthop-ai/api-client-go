@@ -39,7 +39,7 @@ go:
   defaultErrorName: APIError
   envVarPrefix: GLEAN
   flattenGlobalSecurity: true
-  forwardCompatibleEnumsByDefault: false
+  forwardCompatibleEnumsByDefault: true
   forwardCompatibleUnionsByDefault: "false"
   imports:
     option: openapi

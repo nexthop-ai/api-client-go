@@ -9,6 +9,8 @@ package hooks
  */
 
 func initHooks(h *Hooks) {
+	h.registerSDKInitHook(&ServerURLNormalizerHook{})
+
 	agentFileUploadHook := &AgentFileUploadHook{}
 	h.registerAfterErrorHook(agentFileUploadHook)
 

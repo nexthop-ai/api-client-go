@@ -1539,7 +1539,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
-		apiclientgo.WithInstance(os.Getenv("GLEAN_INSTANCE")),
+		apiclientgo.WithServerURL("https://mycompany-be.glean.com"),
 	)
 
 	res, err := s.Client.Search.Query(ctx, components.SearchRequest{
@@ -1572,7 +1572,7 @@ func main() {
 
 	s := apiclientgo.New(
 		apiclientgo.WithSecurity(os.Getenv("GLEAN_API_TOKEN")),
-		apiclientgo.WithInstance(os.Getenv("GLEAN_INSTANCE")),
+		apiclientgo.WithServerURL("https://mycompany-be.glean.com"),
 		apiclientgo.WithExcludeDeprecatedAfter("2026-10-15"),
 		apiclientgo.WithIncludeExperimental(true),
 	)

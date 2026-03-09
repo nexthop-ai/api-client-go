@@ -18,7 +18,7 @@ func (g GetShortcutRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GetShortcutRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"alias"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -65,17 +65,43 @@ func CreateGetShortcutRequestUnionGetShortcutRequest(getShortcutRequest GetShort
 
 func (u *GetShortcutRequestUnion) UnmarshalJSON(data []byte) error {
 
-	var getShortcutRequest GetShortcutRequest = GetShortcutRequest{}
-	if err := utils.UnmarshalJSON(data, &getShortcutRequest, "", true, nil); err == nil {
-		u.GetShortcutRequest = &getShortcutRequest
-		u.Type = GetShortcutRequestUnionTypeGetShortcutRequest
-		return nil
-	}
+	var candidates []utils.UnionCandidate
 
+	// Collect all valid candidates
 	var userGeneratedContentID UserGeneratedContentID = UserGeneratedContentID{}
 	if err := utils.UnmarshalJSON(data, &userGeneratedContentID, "", true, nil); err == nil {
-		u.UserGeneratedContentID = &userGeneratedContentID
-		u.Type = GetShortcutRequestUnionTypeUserGeneratedContentID
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  GetShortcutRequestUnionTypeUserGeneratedContentID,
+			Value: &userGeneratedContentID,
+		})
+	}
+
+	var getShortcutRequest GetShortcutRequest = GetShortcutRequest{}
+	if err := utils.UnmarshalJSON(data, &getShortcutRequest, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  GetShortcutRequestUnionTypeGetShortcutRequest,
+			Value: &getShortcutRequest,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for GetShortcutRequestUnion", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for GetShortcutRequestUnion", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(GetShortcutRequestUnionType)
+	switch best.Type {
+	case GetShortcutRequestUnionTypeUserGeneratedContentID:
+		u.UserGeneratedContentID = best.Value.(*UserGeneratedContentID)
+		return nil
+	case GetShortcutRequestUnionTypeGetShortcutRequest:
+		u.GetShortcutRequest = best.Value.(*GetShortcutRequest)
 		return nil
 	}
 

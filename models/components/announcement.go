@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -20,20 +18,16 @@ const (
 func (e AnnouncementChannel) ToPointer() *AnnouncementChannel {
 	return &e
 }
-func (e *AnnouncementChannel) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AnnouncementChannel) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "MAIN", "SOCIAL_FEED":
+			return true
+		}
 	}
-	switch v {
-	case "MAIN":
-		fallthrough
-	case "SOCIAL_FEED":
-		*e = AnnouncementChannel(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AnnouncementChannel: %v", v)
-	}
+	return false
 }
 
 // AnnouncementPostType - This determines whether this is an external-link post or a regular announcement post. TEXT - Regular announcement that can contain rich text. LINK - Announcement that is linked to an external site.
@@ -47,20 +41,16 @@ const (
 func (e AnnouncementPostType) ToPointer() *AnnouncementPostType {
 	return &e
 }
-func (e *AnnouncementPostType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AnnouncementPostType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TEXT", "LINK":
+			return true
+		}
 	}
-	switch v {
-	case "TEXT":
-		fallthrough
-	case "LINK":
-		*e = AnnouncementPostType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AnnouncementPostType: %v", v)
-	}
+	return false
 }
 
 type AnnouncementViewerInfo struct {

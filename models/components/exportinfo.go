@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ExportInfoStatus - The status of the export
 type ExportInfoStatus string
 
@@ -19,22 +14,16 @@ const (
 func (e ExportInfoStatus) ToPointer() *ExportInfoStatus {
 	return &e
 }
-func (e *ExportInfoStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ExportInfoStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PENDING", "COMPLETED", "FAILED":
+			return true
+		}
 	}
-	switch v {
-	case "PENDING":
-		fallthrough
-	case "COMPLETED":
-		fallthrough
-	case "FAILED":
-		*e = ExportInfoStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ExportInfoStatus: %v", v)
-	}
+	return false
 }
 
 type ExportInfo struct {

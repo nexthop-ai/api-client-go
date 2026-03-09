@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type CommunicationChannel string
 
 const (
@@ -17,18 +12,14 @@ const (
 func (e CommunicationChannel) ToPointer() *CommunicationChannel {
 	return &e
 }
-func (e *CommunicationChannel) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CommunicationChannel) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "COMMUNICATION_CHANNEL_EMAIL", "COMMUNICATION_CHANNEL_SLACK":
+			return true
+		}
 	}
-	switch v {
-	case "COMMUNICATION_CHANNEL_EMAIL":
-		fallthrough
-	case "COMMUNICATION_CHANNEL_SLACK":
-		*e = CommunicationChannel(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CommunicationChannel: %v", v)
-	}
+	return false
 }

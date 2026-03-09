@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Application`      | *any*              | :heavy_minus_sign: | N/A                |
+| `Application`      | `any`              | :heavy_minus_sign: | N/A                |

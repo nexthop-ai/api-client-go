@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // SectionType - Type of the section. This defines how the section should be interpreted and rendered in the digest.
 type SectionType string
 
@@ -22,20 +17,14 @@ const (
 func (e SectionType) ToPointer() *SectionType {
 	return &e
 }
-func (e *SectionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *SectionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "CHANNEL", "MENTIONS", "TOPIC":
+			return true
+		}
 	}
-	switch v {
-	case "CHANNEL":
-		fallthrough
-	case "MENTIONS":
-		fallthrough
-	case "TOPIC":
-		*e = SectionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for SectionType: %v", v)
-	}
+	return false
 }

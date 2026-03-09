@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // UserActivityAction - The action for the activity
 type UserActivityAction string
 
@@ -30,44 +25,16 @@ const (
 func (e UserActivityAction) ToPointer() *UserActivityAction {
 	return &e
 }
-func (e *UserActivityAction) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UserActivityAction) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ADD", "ADD_REMINDER", "CLICK", "COMMENT", "DELETE", "DISMISS", "EDIT", "MENTION", "MOVE", "OTHER", "RESTORE", "UNKNOWN", "VERIFY", "VIEW":
+			return true
+		}
 	}
-	switch v {
-	case "ADD":
-		fallthrough
-	case "ADD_REMINDER":
-		fallthrough
-	case "CLICK":
-		fallthrough
-	case "COMMENT":
-		fallthrough
-	case "DELETE":
-		fallthrough
-	case "DISMISS":
-		fallthrough
-	case "EDIT":
-		fallthrough
-	case "MENTION":
-		fallthrough
-	case "MOVE":
-		fallthrough
-	case "OTHER":
-		fallthrough
-	case "RESTORE":
-		fallthrough
-	case "UNKNOWN":
-		fallthrough
-	case "VERIFY":
-		fallthrough
-	case "VIEW":
-		*e = UserActivityAction(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UserActivityAction: %v", v)
-	}
+	return false
 }
 
 type UserActivity struct {

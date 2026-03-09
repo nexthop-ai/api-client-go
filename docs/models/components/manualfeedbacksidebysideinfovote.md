@@ -2,6 +2,16 @@
 
 The vote for this specific implementation.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.ManualFeedbackSideBySideInfoVoteUpvote
+```
+
 
 ## Values
 

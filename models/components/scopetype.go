@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ScopeType - Describes the scope for a ReadPermission, WritePermission, or GrantPermission object
 type ScopeType string
 
@@ -18,18 +13,14 @@ const (
 func (e ScopeType) ToPointer() *ScopeType {
 	return &e
 }
-func (e *ScopeType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ScopeType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "GLOBAL", "OWN":
+			return true
+		}
 	}
-	switch v {
-	case "GLOBAL":
-		fallthrough
-	case "OWN":
-		*e = ScopeType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ScopeType: %v", v)
-	}
+	return false
 }

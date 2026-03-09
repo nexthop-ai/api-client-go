@@ -261,7 +261,7 @@ func (s *People) Debug(ctx context.Context, datasource string, debugUserRequest 
 //
 // Tip: Use [/debug/{datasource}/status](https://developers.glean.com/indexing/debugging/datasource-status) for richer information.
 //
-// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+// Deprecated: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 func (s *People) Count(ctx context.Context, request components.GetUserCountRequest, opts ...operations.Option) (*operations.PostAPIIndexV1GetusercountResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -681,6 +681,8 @@ func (s *People) Index(ctx context.Context, request components.IndexEmployeeRequ
 
 // BulkIndex - Bulk index employees
 // Replaces all the currently indexed employees using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+//
+// Deprecated: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 func (s *People) BulkIndex(ctx context.Context, request components.BulkIndexEmployeesRequest, opts ...operations.Option) (*operations.PostAPIIndexV1BulkindexemployeesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

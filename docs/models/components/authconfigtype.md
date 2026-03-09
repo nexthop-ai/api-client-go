@@ -7,6 +7,19 @@ Use 'OAUTH_*' when Glean calls an external API (e.g., Jira) on behalf of a user 
 'DWD' refers to domain wide delegation.
 
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.AuthConfigTypeNone
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.AuthConfigType("custom_value")
+```
+
 
 ## Values
 

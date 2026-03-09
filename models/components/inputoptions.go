@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DatasourcesType - The types of datasource for which to run the report/policy.
 type DatasourcesType string
 
@@ -18,20 +13,16 @@ const (
 func (e DatasourcesType) ToPointer() *DatasourcesType {
 	return &e
 }
-func (e *DatasourcesType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DatasourcesType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ALL", "CUSTOM":
+			return true
+		}
 	}
-	switch v {
-	case "ALL":
-		fallthrough
-	case "CUSTOM":
-		*e = DatasourcesType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DatasourcesType: %v", v)
-	}
+	return false
 }
 
 // InputOptionsTimePeriodType - Type of time period for which to run the report/policy. PAST_DAY is deprecated.
@@ -48,26 +39,16 @@ const (
 func (e InputOptionsTimePeriodType) ToPointer() *InputOptionsTimePeriodType {
 	return &e
 }
-func (e *InputOptionsTimePeriodType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *InputOptionsTimePeriodType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ALL_TIME", "PAST_YEAR", "PAST_DAY", "CUSTOM", "LAST_N_DAYS":
+			return true
+		}
 	}
-	switch v {
-	case "ALL_TIME":
-		fallthrough
-	case "PAST_YEAR":
-		fallthrough
-	case "PAST_DAY":
-		fallthrough
-	case "CUSTOM":
-		fallthrough
-	case "LAST_N_DAYS":
-		*e = InputOptionsTimePeriodType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for InputOptionsTimePeriodType: %v", v)
-	}
+	return false
 }
 
 // InputOptions - Controls which data-sources and what time-range to include in scans.

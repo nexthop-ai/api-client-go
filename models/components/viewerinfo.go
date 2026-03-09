@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -23,22 +21,16 @@ const (
 func (e Role) ToPointer() *Role {
 	return &e
 }
-func (e *Role) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Role) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ANSWER_MODERATOR", "OWNER", "VIEWER":
+			return true
+		}
 	}
-	switch v {
-	case "ANSWER_MODERATOR":
-		fallthrough
-	case "OWNER":
-		fallthrough
-	case "VIEWER":
-		*e = Role(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Role: %v", v)
-	}
+	return false
 }
 
 type ViewerInfo struct {

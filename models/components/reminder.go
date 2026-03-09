@@ -22,7 +22,7 @@ func (r Reminder) MarshalJSON() ([]byte, error) {
 }
 
 func (r *Reminder) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"assignee", "remindAt"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil

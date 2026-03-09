@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -25,32 +23,16 @@ const (
 func (e GeneratedQnaStatus) ToPointer() *GeneratedQnaStatus {
 	return &e
 }
-func (e *GeneratedQnaStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *GeneratedQnaStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "COMPUTING", "DISABLED", "FAILED", "NO_ANSWER", "SKIPPED", "STREAMING", "SUCCEEDED", "TIMEOUT":
+			return true
+		}
 	}
-	switch v {
-	case "COMPUTING":
-		fallthrough
-	case "DISABLED":
-		fallthrough
-	case "FAILED":
-		fallthrough
-	case "NO_ANSWER":
-		fallthrough
-	case "SKIPPED":
-		fallthrough
-	case "STREAMING":
-		fallthrough
-	case "SUCCEEDED":
-		fallthrough
-	case "TIMEOUT":
-		*e = GeneratedQnaStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for GeneratedQnaStatus: %v", v)
-	}
+	return false
 }
 
 type GeneratedQna struct {

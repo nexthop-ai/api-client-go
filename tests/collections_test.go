@@ -288,7 +288,7 @@ func TestCollections_Createcollection(t *testing.T) {
 									Snippets: []components.SearchResultSnippet{
 										components.SearchResultSnippet{
 											MimeType: apiclientgo.Pointer("mimeType"),
-											Snippet:  "snippet",
+											Snippet:  apiclientgo.Pointer("snippet"),
 										},
 									},
 								},
@@ -965,7 +965,7 @@ func TestCollections_Editcollection(t *testing.T) {
 									Snippets: []components.SearchResultSnippet{
 										components.SearchResultSnippet{
 											MimeType: apiclientgo.Pointer("mimeType"),
-											Snippet:  "snippet",
+											Snippet:  apiclientgo.Pointer("snippet"),
 										},
 									},
 								},

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ChatFileStatus - Current status of the file.
 type ChatFileStatus string
 
@@ -20,22 +15,14 @@ const (
 func (e ChatFileStatus) ToPointer() *ChatFileStatus {
 	return &e
 }
-func (e *ChatFileStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ChatFileStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PROCESSING", "PROCESSED", "FAILED", "DELETED":
+			return true
+		}
 	}
-	switch v {
-	case "PROCESSING":
-		fallthrough
-	case "PROCESSED":
-		fallthrough
-	case "FAILED":
-		fallthrough
-	case "DELETED":
-		*e = ChatFileStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ChatFileStatus: %v", v)
-	}
+	return false
 }

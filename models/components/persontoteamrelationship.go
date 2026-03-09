@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -23,26 +21,16 @@ const (
 func (e PersonToTeamRelationshipRelationship) ToPointer() *PersonToTeamRelationshipRelationship {
 	return &e
 }
-func (e *PersonToTeamRelationshipRelationship) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PersonToTeamRelationshipRelationship) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "MEMBER", "MANAGER", "LEAD", "POINT_OF_CONTACT", "OTHER":
+			return true
+		}
 	}
-	switch v {
-	case "MEMBER":
-		fallthrough
-	case "MANAGER":
-		fallthrough
-	case "LEAD":
-		fallthrough
-	case "POINT_OF_CONTACT":
-		fallthrough
-	case "OTHER":
-		*e = PersonToTeamRelationshipRelationship(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PersonToTeamRelationshipRelationship: %v", v)
-	}
+	return false
 }
 
 // PersonToTeamRelationship - Metadata about the relationship of a person to a team.
@@ -61,7 +49,7 @@ func (p PersonToTeamRelationship) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PersonToTeamRelationship) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"person"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

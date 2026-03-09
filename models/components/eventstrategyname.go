@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EventStrategyName - The name of method used to surface relevant data for a given calendar event.
 type EventStrategyName string
 
@@ -25,32 +20,14 @@ const (
 func (e EventStrategyName) ToPointer() *EventStrategyName {
 	return &e
 }
-func (e *EventStrategyName) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EventStrategyName) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "customerCard", "news", "call", "email", "meetingNotes", "linkedIn", "relevantDocuments", "chatFollowUps", "conversations":
+			return true
+		}
 	}
-	switch v {
-	case "customerCard":
-		fallthrough
-	case "news":
-		fallthrough
-	case "call":
-		fallthrough
-	case "email":
-		fallthrough
-	case "meetingNotes":
-		fallthrough
-	case "linkedIn":
-		fallthrough
-	case "relevantDocuments":
-		fallthrough
-	case "chatFollowUps":
-		fallthrough
-	case "conversations":
-		*e = EventStrategyName(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EventStrategyName: %v", v)
-	}
+	return false
 }

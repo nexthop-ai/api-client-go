@@ -18,7 +18,7 @@ func (d DocumentOrError) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DocumentOrError) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"error"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -65,17 +65,43 @@ func CreateDocumentOrErrorUnionDocumentOrError(documentOrError DocumentOrError) 
 
 func (u *DocumentOrErrorUnion) UnmarshalJSON(data []byte) error {
 
-	var documentOrError DocumentOrError = DocumentOrError{}
-	if err := utils.UnmarshalJSON(data, &documentOrError, "", true, nil); err == nil {
-		u.DocumentOrError = &documentOrError
-		u.Type = DocumentOrErrorUnionTypeDocumentOrError
-		return nil
-	}
+	var candidates []utils.UnionCandidate
 
+	// Collect all valid candidates
 	var document Document = Document{}
 	if err := utils.UnmarshalJSON(data, &document, "", true, nil); err == nil {
-		u.Document = &document
-		u.Type = DocumentOrErrorUnionTypeDocument
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentOrErrorUnionTypeDocument,
+			Value: &document,
+		})
+	}
+
+	var documentOrError DocumentOrError = DocumentOrError{}
+	if err := utils.UnmarshalJSON(data, &documentOrError, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentOrErrorUnionTypeDocumentOrError,
+			Value: &documentOrError,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for DocumentOrErrorUnion", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for DocumentOrErrorUnion", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(DocumentOrErrorUnionType)
+	switch best.Type {
+	case DocumentOrErrorUnionTypeDocument:
+		u.Document = best.Value.(*Document)
+		return nil
+	case DocumentOrErrorUnionTypeDocumentOrError:
+		u.DocumentOrError = best.Value.(*DocumentOrError)
 		return nil
 	}
 

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type Provider string
 
 const (
@@ -17,20 +12,16 @@ const (
 func (e Provider) ToPointer() *Provider {
 	return &e
 }
-func (e *Provider) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Provider) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ZOOM", "HANGOUTS":
+			return true
+		}
 	}
-	switch v {
-	case "ZOOM":
-		fallthrough
-	case "HANGOUTS":
-		*e = Provider(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Provider: %v", v)
-	}
+	return false
 }
 
 type ConferenceDataSource string
@@ -44,22 +35,16 @@ const (
 func (e ConferenceDataSource) ToPointer() *ConferenceDataSource {
 	return &e
 }
-func (e *ConferenceDataSource) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ConferenceDataSource) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NATIVE_CONFERENCE", "LOCATION", "DESCRIPTION":
+			return true
+		}
 	}
-	switch v {
-	case "NATIVE_CONFERENCE":
-		fallthrough
-	case "LOCATION":
-		fallthrough
-	case "DESCRIPTION":
-		*e = ConferenceDataSource(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ConferenceDataSource: %v", v)
-	}
+	return false
 }
 
 type ConferenceData struct {

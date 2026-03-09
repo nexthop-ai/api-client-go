@@ -24,7 +24,7 @@ func (g Group) MarshalJSON() ([]byte, error) {
 }
 
 func (g *Group) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"type", "id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil

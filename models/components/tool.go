@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ToolType - Type of tool (READ, WRITE)
 type ToolType string
 
@@ -18,20 +13,16 @@ const (
 func (e ToolType) ToPointer() *ToolType {
 	return &e
 }
-func (e *ToolType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ToolType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "READ", "WRITE":
+			return true
+		}
 	}
-	switch v {
-	case "READ":
-		fallthrough
-	case "WRITE":
-		*e = ToolType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ToolType: %v", v)
-	}
+	return false
 }
 
 type Tool struct {

@@ -2,7 +2,7 @@
 
 package apiclientgo
 
-// Generated from OpenAPI doc version 0.9.0 and generator version 2.832.9
+// Generated from OpenAPI doc version 0.9.0 and generator version 2.856.1
 
 import (
 	"context"
@@ -70,6 +70,8 @@ type Glean struct {
 	Authentication *Authentication
 	Indexing       *Indexing
 	Governance     *Governance
+	// Manage datasources.
+	Datasources *Datasources
 
 	sdkConfiguration config.SDKConfiguration
 	hooks            *hooks.Hooks
@@ -77,7 +79,7 @@ type Glean struct {
 
 type SDKOption func(*Glean)
 
-// WithServerURL allows the overriding of the default server URL
+// WithServerURL allows providing an alternative server URL
 func WithServerURL(serverURL string) SDKOption {
 	return func(sdk *Glean) {
 		sdk.sdkConfiguration.ServerURL = serverURL
@@ -159,9 +161,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Glean {
 	sdk := &Glean{
-		SDKVersion: "0.11.28",
+		SDKVersion: "0.11.29",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.11.28 2.832.9 0.9.0 github.com/gleanwork/api-client-go",
+			UserAgent:  "speakeasy-sdk/go 0.11.29 2.856.1 0.9.0 github.com/gleanwork/api-client-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{
@@ -198,6 +200,7 @@ func New(opts ...SDKOption) *Glean {
 	sdk.Authentication = newAuthentication(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Indexing = newIndexing(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Governance = newGovernance(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Datasources = newDatasources(sdk, sdk.sdkConfiguration, sdk.hooks)
 
 	return sdk
 }

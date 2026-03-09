@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type Scope string
 
 const (
@@ -20,26 +15,16 @@ const (
 func (e Scope) ToPointer() *Scope {
 	return &e
 }
-func (e *Scope) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Scope) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "APP_CARD", "AUTOCOMPLETE_EXACT_MATCH", "AUTOCOMPLETE_FUZZY_MATCH", "AUTOCOMPLETE_ZERO_QUERY", "NEW_TAB_PAGE":
+			return true
+		}
 	}
-	switch v {
-	case "APP_CARD":
-		fallthrough
-	case "AUTOCOMPLETE_EXACT_MATCH":
-		fallthrough
-	case "AUTOCOMPLETE_FUZZY_MATCH":
-		fallthrough
-	case "AUTOCOMPLETE_ZERO_QUERY":
-		fallthrough
-	case "NEW_TAB_PAGE":
-		*e = Scope(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Scope: %v", v)
-	}
+	return false
 }
 
 // Quicklink - An action for a specific datasource that will show up in autocomplete and app card, e.g. "Create new issue" for jira.

@@ -111,7 +111,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -146,7 +146,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -218,7 +218,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -253,7 +253,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -325,7 +325,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -360,7 +360,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -1088,7 +1088,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -1200,7 +1200,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -1220,7 +1220,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -1240,7 +1240,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -1997,7 +1997,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -2109,7 +2109,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -2129,7 +2129,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -2149,7 +2149,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -2906,7 +2906,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -3018,7 +3018,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -3038,7 +3038,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -3058,7 +3058,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -3838,7 +3838,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -3950,7 +3950,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -3970,7 +3970,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -3990,7 +3990,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -4747,7 +4747,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -4859,7 +4859,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -4879,7 +4879,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -4899,7 +4899,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -5656,7 +5656,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -5768,7 +5768,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -5788,7 +5788,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -5808,7 +5808,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -5938,7 +5938,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -5973,7 +5973,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -6045,7 +6045,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -6080,7 +6080,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -6152,7 +6152,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -6187,7 +6187,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -6915,7 +6915,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -7027,7 +7027,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -7047,7 +7047,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -7067,7 +7067,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -7824,7 +7824,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -7936,7 +7936,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -7956,7 +7956,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -7976,7 +7976,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -8733,7 +8733,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -8845,7 +8845,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -8865,7 +8865,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -8885,7 +8885,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -9665,7 +9665,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -9777,7 +9777,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -9797,7 +9797,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -9817,7 +9817,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -10574,7 +10574,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -10686,7 +10686,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -10706,7 +10706,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -10726,7 +10726,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -11483,7 +11483,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -11595,7 +11595,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -11615,7 +11615,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -11635,7 +11635,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -11765,7 +11765,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -11800,7 +11800,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -11872,7 +11872,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -11907,7 +11907,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -11979,7 +11979,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -12014,7 +12014,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -12742,7 +12742,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -12854,7 +12854,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -12874,7 +12874,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -12894,7 +12894,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -13651,7 +13651,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -13763,7 +13763,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -13783,7 +13783,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -13803,7 +13803,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -14560,7 +14560,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -14672,7 +14672,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -14692,7 +14692,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -14712,7 +14712,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -15492,7 +15492,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -15604,7 +15604,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -15624,7 +15624,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -15644,7 +15644,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -16401,7 +16401,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -16513,7 +16513,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -16533,7 +16533,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -16553,7 +16553,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -17310,7 +17310,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -17422,7 +17422,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -17442,7 +17442,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -17462,7 +17462,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -17710,7 +17710,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -17745,7 +17745,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -17817,7 +17817,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -17852,7 +17852,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -17924,7 +17924,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -17959,7 +17959,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -18687,7 +18687,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -18799,7 +18799,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -18819,7 +18819,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -18839,7 +18839,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -19596,7 +19596,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -19708,7 +19708,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -19728,7 +19728,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -19748,7 +19748,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -20505,7 +20505,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -20617,7 +20617,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -20637,7 +20637,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -20657,7 +20657,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -21437,7 +21437,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -21549,7 +21549,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -21569,7 +21569,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -21589,7 +21589,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -22346,7 +22346,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -22458,7 +22458,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -22478,7 +22478,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -22498,7 +22498,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -23255,7 +23255,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -23367,7 +23367,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -23387,7 +23387,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -23407,7 +23407,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -23537,7 +23537,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -23572,7 +23572,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -23644,7 +23644,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -23679,7 +23679,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -23751,7 +23751,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -23786,7 +23786,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -24514,7 +24514,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -24626,7 +24626,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -24646,7 +24646,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -24666,7 +24666,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -25423,7 +25423,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -25535,7 +25535,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -25555,7 +25555,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -25575,7 +25575,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -26332,7 +26332,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -26444,7 +26444,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -26464,7 +26464,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -26484,7 +26484,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -27264,7 +27264,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -27376,7 +27376,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -27396,7 +27396,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -27416,7 +27416,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -28173,7 +28173,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -28285,7 +28285,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -28305,7 +28305,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -28325,7 +28325,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -29082,7 +29082,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -29194,7 +29194,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -29214,7 +29214,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -29234,7 +29234,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -29364,7 +29364,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -29399,7 +29399,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -29471,7 +29471,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -29506,7 +29506,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -29578,7 +29578,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -29613,7 +29613,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -30341,7 +30341,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -30453,7 +30453,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -30473,7 +30473,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -30493,7 +30493,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -31250,7 +31250,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -31362,7 +31362,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -31382,7 +31382,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -31402,7 +31402,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -32159,7 +32159,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -32271,7 +32271,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -32291,7 +32291,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -32311,7 +32311,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -33091,7 +33091,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -33203,7 +33203,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -33223,7 +33223,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -33243,7 +33243,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -34000,7 +34000,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -34112,7 +34112,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -34132,7 +34132,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -34152,7 +34152,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -34909,7 +34909,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -35021,7 +35021,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -35041,7 +35041,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -35061,7 +35061,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -35226,7 +35226,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -35261,7 +35261,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -35333,7 +35333,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -35368,7 +35368,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -35440,7 +35440,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -35475,7 +35475,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -36203,7 +36203,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -36315,7 +36315,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -36335,7 +36335,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -36355,7 +36355,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -37112,7 +37112,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -37224,7 +37224,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -37244,7 +37244,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -37264,7 +37264,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -38021,7 +38021,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -38133,7 +38133,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -38153,7 +38153,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -38173,7 +38173,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -38953,7 +38953,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -39065,7 +39065,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -39085,7 +39085,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -39105,7 +39105,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -39862,7 +39862,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -39974,7 +39974,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -39994,7 +39994,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -40014,7 +40014,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -40771,7 +40771,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -40883,7 +40883,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -40903,7 +40903,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -40923,7 +40923,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -41053,7 +41053,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -41088,7 +41088,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -41160,7 +41160,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -41195,7 +41195,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -41267,7 +41267,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -41302,7 +41302,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -42030,7 +42030,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -42142,7 +42142,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -42162,7 +42162,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -42182,7 +42182,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -42939,7 +42939,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -43051,7 +43051,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -43071,7 +43071,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -43091,7 +43091,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -43848,7 +43848,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -43960,7 +43960,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -43980,7 +43980,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -44000,7 +44000,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -44780,7 +44780,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -44892,7 +44892,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -44912,7 +44912,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -44932,7 +44932,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -45689,7 +45689,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -45801,7 +45801,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -45821,7 +45821,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -45841,7 +45841,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -46598,7 +46598,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -46710,7 +46710,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -46730,7 +46730,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -46750,7 +46750,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -46880,7 +46880,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -46915,7 +46915,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -46987,7 +46987,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -47022,7 +47022,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -47094,7 +47094,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -47129,7 +47129,7 @@ func main() {
                                 Snippets: []components.SearchResultSnippet{
                                     components.SearchResultSnippet{
                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                        Snippet: "snippet",
+                                        Snippet: apiclientgo.Pointer("snippet"),
                                     },
                                 },
                             },
@@ -47857,7 +47857,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -47969,7 +47969,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -47989,7 +47989,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -48009,7 +48009,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -48766,7 +48766,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -48878,7 +48878,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -48898,7 +48898,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -48918,7 +48918,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -49675,7 +49675,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -49787,7 +49787,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -49807,7 +49807,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -49827,7 +49827,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -50607,7 +50607,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -50719,7 +50719,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -50739,7 +50739,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -50759,7 +50759,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -51516,7 +51516,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -51628,7 +51628,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -51648,7 +51648,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -51668,7 +51668,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -52425,7 +52425,7 @@ func main() {
                                         Snippets: []components.SearchResultSnippet{
                                             components.SearchResultSnippet{
                                                 MimeType: apiclientgo.Pointer("mimeType"),
-                                                Snippet: "snippet",
+                                                Snippet: apiclientgo.Pointer("snippet"),
                                             },
                                         },
                                     },
@@ -52537,7 +52537,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -52557,7 +52557,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -52577,7 +52577,7 @@ func main() {
                                                 Snippets: []components.SearchResultSnippet{
                                                     components.SearchResultSnippet{
                                                         MimeType: apiclientgo.Pointer("mimeType"),
-                                                        Snippet: "snippet",
+                                                        Snippet: apiclientgo.Pointer("snippet"),
                                                     },
                                                 },
                                             },
@@ -52657,8 +52657,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `chatRequest`                                                                                                                                                                                       | [components.ChatRequest](../../models/components/chatrequest.md)                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                                  | Includes chat history for Glean AI to respond to.                                                                                                                                                   |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -52710,8 +52710,8 @@ func main() {
 | Parameter                                                                                                                                                                                           | Type                                                                                                                                                                                                | Required                                                                                                                                                                                            | Description                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -52767,8 +52767,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `deleteChatsRequest`                                                                                                                                                                                | [components.DeleteChatsRequest](../../models/components/deletechatsrequest.md)                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -52824,8 +52824,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `getChatRequest`                                                                                                                                                                                    | [components.GetChatRequest](../../models/components/getchatrequest.md)                                                                                                                              | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -52877,8 +52877,8 @@ func main() {
 | Parameter                                                                                                                                                                                           | Type                                                                                                                                                                                                | Required                                                                                                                                                                                            | Description                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -52934,8 +52934,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `getChatApplicationRequest`                                                                                                                                                                         | [components.GetChatApplicationRequest](../../models/components/getchatapplicationrequest.md)                                                                                                        | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -53001,8 +53001,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `uploadChatFilesRequest`                                                                                                                                                                            | [components.UploadChatFilesRequest](../../models/components/uploadchatfilesrequest.md)                                                                                                              | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -53060,8 +53060,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `getChatFilesRequest`                                                                                                                                                                               | [components.GetChatFilesRequest](../../models/components/getchatfilesrequest.md)                                                                                                                    | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -53121,8 +53121,8 @@ func main() {
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                                                               | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                  | The context to use for the request.                                                                                                                                                                 |
 | `deleteChatFilesRequest`                                                                                                                                                                            | [components.DeleteChatFilesRequest](../../models/components/deletechatfilesrequest.md)                                                                                                              | :heavy_check_mark:                                                                                                                                                                                  | N/A                                                                                                                                                                                                 |
-| `locale`                                                                                                                                                                                            | **string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
-| `timezoneOffset`                                                                                                                                                                                    | **int64*                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
+| `locale`                                                                                                                                                                                            | `*string`                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                  | The client's preferred locale in rfc5646 format (e.g. `en`, `ja`, `pt-BR`). If omitted, the `Accept-Language` will be used. If not present or not supported, defaults to the closest match or `en`. |
+| `timezoneOffset`                                                                                                                                                                                    | `*int64`                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC.                                                                                          |
 | `opts`                                                                                                                                                                                              | [][operations.Option](../../models/operations/option.md)                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                  | The options for this request.                                                                                                                                                                       |
 
 ### Response
@@ -53328,7 +53328,7 @@ func main() {
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
 | `chatRequest`                                                                                              | [components.ChatRequest](../../models/components/chatrequest.md)                                           | :heavy_check_mark:                                                                                         | Includes chat history for Glean AI to respond to.                                                          |
-| `timezoneOffset`                                                                                           | **int64*                                                                                                   | :heavy_minus_sign:                                                                                         | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC. |
+| `timezoneOffset`                                                                                           | `*int64`                                                                                                   | :heavy_minus_sign:                                                                                         | The offset of the client's timezone in minutes from UTC. e.g. PDT is -420 because it's 7 hours behind UTC. |
 | `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 ### Response

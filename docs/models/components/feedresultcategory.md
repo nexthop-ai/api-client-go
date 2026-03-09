@@ -2,6 +2,19 @@
 
 Category of the result, one of the requested categories in incoming request.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.FeedResultCategoryDocumentSuggestion
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.FeedResultCategory("custom_value")
+```
+
 
 ## Values
 
@@ -32,3 +45,7 @@ Category of the result, one of the requested categories in incoming request.
 | `FeedResultCategoryZeroStateWorkflowSuggestion`  | ZERO_STATE_WORKFLOW_SUGGESTION                   |
 | `FeedResultCategoryPersonalizedChatSuggestion`   | PERSONALIZED_CHAT_SUGGESTION                     |
 | `FeedResultCategoryDailyDigest`                  | DAILY_DIGEST                                     |
+| `FeedResultCategoryTask`                         | TASK                                             |
+| `FeedResultCategoryPlanMyDay`                    | PLAN_MY_DAY                                      |
+| `FeedResultCategoryEndMyDay`                     | END_MY_DAY                                       |
+| `FeedResultCategoryStarterKit`                   | STARTER_KIT                                      |

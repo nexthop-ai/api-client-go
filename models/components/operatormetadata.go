@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type OperatorType string
 
 const (
@@ -19,24 +14,16 @@ const (
 func (e OperatorType) ToPointer() *OperatorType {
 	return &e
 }
-func (e *OperatorType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *OperatorType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TEXT", "DOUBLE", "DATE", "USER":
+			return true
+		}
 	}
-	switch v {
-	case "TEXT":
-		fallthrough
-	case "DOUBLE":
-		fallthrough
-	case "DATE":
-		fallthrough
-	case "USER":
-		*e = OperatorType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for OperatorType: %v", v)
-	}
+	return false
 }
 
 type OperatorMetadata struct {

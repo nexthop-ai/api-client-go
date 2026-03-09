@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // TimeRangeFilterTimePeriodType - The type of time period for which to filter findings.
 type TimeRangeFilterTimePeriodType string
 
@@ -21,26 +16,16 @@ const (
 func (e TimeRangeFilterTimePeriodType) ToPointer() *TimeRangeFilterTimePeriodType {
 	return &e
 }
-func (e *TimeRangeFilterTimePeriodType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TimeRangeFilterTimePeriodType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PAST_DAY", "PAST_WEEK", "PAST_MONTH", "PAST_YEAR", "CUSTOM":
+			return true
+		}
 	}
-	switch v {
-	case "PAST_DAY":
-		fallthrough
-	case "PAST_WEEK":
-		fallthrough
-	case "PAST_MONTH":
-		fallthrough
-	case "PAST_YEAR":
-		fallthrough
-	case "CUSTOM":
-		*e = TimeRangeFilterTimePeriodType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TimeRangeFilterTimePeriodType: %v", v)
-	}
+	return false
 }
 
 type TimeRangeFilter struct {

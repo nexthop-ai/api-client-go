@@ -22,7 +22,7 @@ func (a AuthToken) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AuthToken) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"accessToken", "datasource"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

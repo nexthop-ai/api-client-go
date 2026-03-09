@@ -24,7 +24,7 @@ func (d DatasourceProfile) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DatasourceProfile) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"datasource", "handle"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil

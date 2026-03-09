@@ -2,6 +2,19 @@
 
 The document category of this object type.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.DocCategoryUncategorized
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.DocCategory("custom_value")
+```
+
 
 ## Values
 

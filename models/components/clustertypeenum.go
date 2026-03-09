@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ClusterTypeEnum - The reason for inclusion of clusteredResults.
 type ClusterTypeEnum string
 
@@ -27,36 +22,14 @@ const (
 func (e ClusterTypeEnum) ToPointer() *ClusterTypeEnum {
 	return &e
 }
-func (e *ClusterTypeEnum) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ClusterTypeEnum) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "SIMILAR", "FRESHNESS", "TITLE", "CONTENT", "NONE", "THREAD_REPLY", "THREAD_ROOT", "PREFIX", "SUFFIX", "AUTHOR_PREFIX", "AUTHOR_SUFFIX":
+			return true
+		}
 	}
-	switch v {
-	case "SIMILAR":
-		fallthrough
-	case "FRESHNESS":
-		fallthrough
-	case "TITLE":
-		fallthrough
-	case "CONTENT":
-		fallthrough
-	case "NONE":
-		fallthrough
-	case "THREAD_REPLY":
-		fallthrough
-	case "THREAD_ROOT":
-		fallthrough
-	case "PREFIX":
-		fallthrough
-	case "SUFFIX":
-		fallthrough
-	case "AUTHOR_PREFIX":
-		fallthrough
-	case "AUTHOR_SUFFIX":
-		*e = ClusterTypeEnum(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ClusterTypeEnum: %v", v)
-	}
+	return false
 }

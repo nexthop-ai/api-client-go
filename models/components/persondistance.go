@@ -20,7 +20,7 @@ func (p PersonDistance) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PersonDistance) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"name", "obfuscatedId", "distance"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

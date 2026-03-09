@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EntitiesSortOrder - Different ways of sorting entities
 type EntitiesSortOrder string
 
@@ -23,28 +18,14 @@ const (
 func (e EntitiesSortOrder) ToPointer() *EntitiesSortOrder {
 	return &e
 }
-func (e *EntitiesSortOrder) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EntitiesSortOrder) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ENTITY_NAME", "FIRST_NAME", "LAST_NAME", "ORG_SIZE_COUNT", "START_DATE", "TEAM_SIZE", "RELEVANCE":
+			return true
+		}
 	}
-	switch v {
-	case "ENTITY_NAME":
-		fallthrough
-	case "FIRST_NAME":
-		fallthrough
-	case "LAST_NAME":
-		fallthrough
-	case "ORG_SIZE_COUNT":
-		fallthrough
-	case "START_DATE":
-		fallthrough
-	case "TEAM_SIZE":
-		fallthrough
-	case "RELEVANCE":
-		*e = EntitiesSortOrder(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EntitiesSortOrder: %v", v)
-	}
+	return false
 }

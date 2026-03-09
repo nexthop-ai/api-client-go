@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -21,22 +19,16 @@ const (
 func (e TeamStatus) ToPointer() *TeamStatus {
 	return &e
 }
-func (e *TeamStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TeamStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PROCESSED", "QUEUED_FOR_CREATION", "QUEUED_FOR_DELETION":
+			return true
+		}
 	}
-	switch v {
-	case "PROCESSED":
-		fallthrough
-	case "QUEUED_FOR_CREATION":
-		fallthrough
-	case "QUEUED_FOR_DELETION":
-		*e = TeamStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TeamStatus: %v", v)
-	}
+	return false
 }
 
 type Team struct {
@@ -88,7 +80,7 @@ func (t Team) MarshalJSON() ([]byte, error) {
 }
 
 func (t *Team) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"id", "name"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

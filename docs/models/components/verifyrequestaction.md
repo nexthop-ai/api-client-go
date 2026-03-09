@@ -2,6 +2,16 @@
 
 The verification action requested.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.VerifyRequestActionVerify
+```
+
 
 ## Values
 

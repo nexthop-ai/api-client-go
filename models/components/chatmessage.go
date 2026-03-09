@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -18,20 +16,16 @@ const (
 func (e Author) ToPointer() *Author {
 	return &e
 }
-func (e *Author) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Author) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "USER", "GLEAN_AI":
+			return true
+		}
 	}
-	switch v {
-	case "USER":
-		fallthrough
-	case "GLEAN_AI":
-		*e = Author(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Author: %v", v)
-	}
+	return false
 }
 
 // MessageType - Semantically groups content of a certain type. It can be used for purposes such as differential UI treatment. USER authored messages should be of type CONTENT and do not need `messageType` specified.
@@ -73,46 +67,16 @@ const (
 func (e MessageType) ToPointer() *MessageType {
 	return &e
 }
-func (e *MessageType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *MessageType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UPDATE", "CONTENT", "CONTEXT", "CONTROL", "CONTROL_START", "CONTROL_FINISH", "CONTROL_CANCEL", "CONTROL_RETRY", "CONTROL_UNKNOWN", "DEBUG", "DEBUG_EXTERNAL", "ERROR", "HEADING", "WARNING", "SERVER_TOOL":
+			return true
+		}
 	}
-	switch v {
-	case "UPDATE":
-		fallthrough
-	case "CONTENT":
-		fallthrough
-	case "CONTEXT":
-		fallthrough
-	case "CONTROL":
-		fallthrough
-	case "CONTROL_START":
-		fallthrough
-	case "CONTROL_FINISH":
-		fallthrough
-	case "CONTROL_CANCEL":
-		fallthrough
-	case "CONTROL_RETRY":
-		fallthrough
-	case "CONTROL_UNKNOWN":
-		fallthrough
-	case "DEBUG":
-		fallthrough
-	case "DEBUG_EXTERNAL":
-		fallthrough
-	case "ERROR":
-		fallthrough
-	case "HEADING":
-		fallthrough
-	case "WARNING":
-		fallthrough
-	case "SERVER_TOOL":
-		*e = MessageType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for MessageType: %v", v)
-	}
+	return false
 }
 
 // ChatMessage - A message that is rendered as one coherent unit with one given sender.

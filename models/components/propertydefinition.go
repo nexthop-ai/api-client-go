@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // PropertyType - The type of custom property - this governs the search and faceting behavior. Note that MULTIPICKLIST is not yet supported.
 type PropertyType string
 
@@ -23,30 +18,16 @@ const (
 func (e PropertyType) ToPointer() *PropertyType {
 	return &e
 }
-func (e *PropertyType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PropertyType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TEXT", "DATE", "INT", "USERID", "PICKLIST", "TEXTLIST", "MULTIPICKLIST":
+			return true
+		}
 	}
-	switch v {
-	case "TEXT":
-		fallthrough
-	case "DATE":
-		fallthrough
-	case "INT":
-		fallthrough
-	case "USERID":
-		fallthrough
-	case "PICKLIST":
-		fallthrough
-	case "TEXTLIST":
-		fallthrough
-	case "MULTIPICKLIST":
-		*e = PropertyType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PropertyType: %v", v)
-	}
+	return false
 }
 
 type UIOptions string
@@ -60,22 +41,16 @@ const (
 func (e UIOptions) ToPointer() *UIOptions {
 	return &e
 }
-func (e *UIOptions) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UIOptions) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NONE", "SEARCH_RESULT", "DOC_HOVERCARD":
+			return true
+		}
 	}
-	switch v {
-	case "NONE":
-		fallthrough
-	case "SEARCH_RESULT":
-		fallthrough
-	case "DOC_HOVERCARD":
-		*e = UIOptions(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UIOptions: %v", v)
-	}
+	return false
 }
 
 type PropertyDefinition struct {

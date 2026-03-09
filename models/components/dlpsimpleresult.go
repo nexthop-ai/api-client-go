@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type DlpSimpleResult string
 
 const (
@@ -17,18 +12,14 @@ const (
 func (e DlpSimpleResult) ToPointer() *DlpSimpleResult {
 	return &e
 }
-func (e *DlpSimpleResult) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DlpSimpleResult) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "SUCCESS", "FAILURE":
+			return true
+		}
 	}
-	switch v {
-	case "SUCCESS":
-		fallthrough
-	case "FAILURE":
-		*e = DlpSimpleResult(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DlpSimpleResult: %v", v)
-	}
+	return false
 }

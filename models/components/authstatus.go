@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // AuthStatus - The per-user authorization status for a datasource.
 type AuthStatus string
 
@@ -21,24 +16,14 @@ const (
 func (e AuthStatus) ToPointer() *AuthStatus {
 	return &e
 }
-func (e *AuthStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AuthStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DISABLED", "AWAITING_AUTH", "AUTHORIZED", "STALE_OAUTH", "SEG_MIGRATION":
+			return true
+		}
 	}
-	switch v {
-	case "DISABLED":
-		fallthrough
-	case "AWAITING_AUTH":
-		fallthrough
-	case "AUTHORIZED":
-		fallthrough
-	case "STALE_OAUTH":
-		fallthrough
-	case "SEG_MIGRATION":
-		*e = AuthStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AuthStatus: %v", v)
-	}
+	return false
 }

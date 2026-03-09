@@ -8,7 +8,7 @@
 
 * [~~Count~~](#count) - Get user count :warning: **Deprecated**
 * [Index](#index) - Index employee
-* [BulkIndex](#bulkindex) - Bulk index employees
+* [~~BulkIndex~~](#bulkindex) - Bulk index employees :warning: **Deprecated**
 * [ProcessAllEmployeesAndTeams](#processallemployeesandteams) - Schedules the processing of uploaded employees and teams
 * [Delete](#delete) - Delete employee
 * [IndexTeam](#indexteam) - Index team
@@ -60,7 +60,7 @@ func main() {
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `datasource`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | The datasource to which the user belongs                                   |
+| `datasource`                                                               | `string`                                                                   | :heavy_check_mark:                                                         | The datasource to which the user belongs                                   |
 | `debugUserRequest`                                                         | [components.DebugUserRequest](../../models/components/debuguserrequest.md) | :heavy_check_mark:                                                         | N/A                                                                        |
 | `opts`                                                                     | [][operations.Option](../../models/operations/option.md)                   | :heavy_minus_sign:                                                         | The options for this request.                                              |
 
@@ -81,7 +81,7 @@ Fetches user count for the specified custom datasource.
 Tip: Use [/debug/{datasource}/status](https://developers.glean.com/indexing/debugging/datasource-status) for richer information.
 
 
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+> :warning: **DEPRECATED**: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 
 ### Example Usage
 
@@ -198,9 +198,11 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | apierrors.APIError | 4XX, 5XX           | \*/\*              |
 
-## BulkIndex
+## ~~BulkIndex~~
 
 Replaces all the currently indexed employees using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+
+> :warning: **DEPRECATED**: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 
 ### Example Usage
 

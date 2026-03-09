@@ -7,4 +7,4 @@ Describes the response body of the /getusercount API call
 
 | Field                                                             | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `UserCount`                                                       | **int64*                                                          | :heavy_minus_sign:                                                | Number of users corresponding to the specified custom datasource. |
+| `UserCount`                                                       | `*int64`                                                          | :heavy_minus_sign:                                                | Number of users corresponding to the specified custom datasource. |

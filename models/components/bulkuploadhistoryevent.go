@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // BulkUploadHistoryEventStatus - The status of the upload, an enum of ACTIVE, SUCCESSFUL
 type BulkUploadHistoryEventStatus string
 
@@ -18,20 +13,16 @@ const (
 func (e BulkUploadHistoryEventStatus) ToPointer() *BulkUploadHistoryEventStatus {
 	return &e
 }
-func (e *BulkUploadHistoryEventStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BulkUploadHistoryEventStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ACTIVE", "SUCCESSFUL":
+			return true
+		}
 	}
-	switch v {
-	case "ACTIVE":
-		fallthrough
-	case "SUCCESSFUL":
-		*e = BulkUploadHistoryEventStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for BulkUploadHistoryEventStatus: %v", v)
-	}
+	return false
 }
 
 // ProcessingState - The current state of the upload, an enum of UNAVAILABLE, UPLOAD STARTED, UPLOAD IN PROGRESS, UPLOAD COMPLETED, DELETION PAUSED, INDEXING COMPLETED
@@ -49,28 +40,16 @@ const (
 func (e ProcessingState) ToPointer() *ProcessingState {
 	return &e
 }
-func (e *ProcessingState) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProcessingState) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNAVAILABLE", "UPLOAD STARTED", "UPLOAD IN PROGRESS", "UPLOAD COMPLETED", "DELETION PAUSED", "INDEXING COMPLETED":
+			return true
+		}
 	}
-	switch v {
-	case "UNAVAILABLE":
-		fallthrough
-	case "UPLOAD STARTED":
-		fallthrough
-	case "UPLOAD IN PROGRESS":
-		fallthrough
-	case "UPLOAD COMPLETED":
-		fallthrough
-	case "DELETION PAUSED":
-		fallthrough
-	case "INDEXING COMPLETED":
-		*e = ProcessingState(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ProcessingState: %v", v)
-	}
+	return false
 }
 
 // BulkUploadHistoryEvent - Information about a successful bulk upload

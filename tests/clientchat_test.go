@@ -332,7 +332,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -367,7 +367,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -402,7 +402,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2219,7 +2219,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2254,7 +2254,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2326,7 +2326,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2398,7 +2398,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2433,7 +2433,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -2468,7 +2468,7 @@ func TestClientChat_ChatStreamUpdateResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -4085,7 +4085,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -4120,7 +4120,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -4192,7 +4192,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -4227,7 +4227,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -4262,7 +4262,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -5859,7 +5859,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -5894,7 +5894,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -5929,7 +5929,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -6766,7 +6766,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -6801,7 +6801,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -6873,7 +6873,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -6908,7 +6908,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -6943,7 +6943,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -7015,7 +7015,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},
@@ -7050,7 +7050,7 @@ func TestClientChat_ChatStreamCitationResponse(t *testing.T) {
 								Snippets: []components.SearchResultSnippet{
 									components.SearchResultSnippet{
 										MimeType: apiclientgo.Pointer("mimeType"),
-										Snippet:  "snippet",
+										Snippet:  apiclientgo.Pointer("snippet"),
 									},
 								},
 							},

@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -23,26 +21,16 @@ const (
 func (e PersonTeamRelationship) ToPointer() *PersonTeamRelationship {
 	return &e
 }
-func (e *PersonTeamRelationship) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PersonTeamRelationship) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "MEMBER", "MANAGER", "LEAD", "POINT_OF_CONTACT", "OTHER":
+			return true
+		}
 	}
-	switch v {
-	case "MEMBER":
-		fallthrough
-	case "MANAGER":
-		fallthrough
-	case "LEAD":
-		fallthrough
-	case "POINT_OF_CONTACT":
-		fallthrough
-	case "OTHER":
-		*e = PersonTeamRelationship(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PersonTeamRelationship: %v", v)
-	}
+	return false
 }
 
 // PersonTeam - Use `id` if you index teams via Glean, and use `name` and `externalLink` if you want to use your own team pages

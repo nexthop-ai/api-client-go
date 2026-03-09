@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -35,52 +33,16 @@ const (
 func (e DatasourceCategory) ToPointer() *DatasourceCategory {
 	return &e
 }
-func (e *DatasourceCategory) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DatasourceCategory) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNCATEGORIZED", "TICKETS", "CRM", "PUBLISHED_CONTENT", "COLLABORATIVE_CONTENT", "QUESTION_ANSWER", "MESSAGING", "CODE_REPOSITORY", "CHANGE_MANAGEMENT", "PEOPLE", "EMAIL", "SSO", "ATS", "KNOWLEDGE_HUB", "EXTERNAL_SHORTCUT", "ENTITY", "CALENDAR", "AGENTS":
+			return true
+		}
 	}
-	switch v {
-	case "UNCATEGORIZED":
-		fallthrough
-	case "TICKETS":
-		fallthrough
-	case "CRM":
-		fallthrough
-	case "PUBLISHED_CONTENT":
-		fallthrough
-	case "COLLABORATIVE_CONTENT":
-		fallthrough
-	case "QUESTION_ANSWER":
-		fallthrough
-	case "MESSAGING":
-		fallthrough
-	case "CODE_REPOSITORY":
-		fallthrough
-	case "CHANGE_MANAGEMENT":
-		fallthrough
-	case "PEOPLE":
-		fallthrough
-	case "EMAIL":
-		fallthrough
-	case "SSO":
-		fallthrough
-	case "ATS":
-		fallthrough
-	case "KNOWLEDGE_HUB":
-		fallthrough
-	case "EXTERNAL_SHORTCUT":
-		fallthrough
-	case "ENTITY":
-		fallthrough
-	case "CALENDAR":
-		fallthrough
-	case "AGENTS":
-		*e = DatasourceCategory(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DatasourceCategory: %v", v)
-	}
+	return false
 }
 
 type HideBuiltInFacet string
@@ -95,24 +57,16 @@ const (
 func (e HideBuiltInFacet) ToPointer() *HideBuiltInFacet {
 	return &e
 }
-func (e *HideBuiltInFacet) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *HideBuiltInFacet) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TYPE", "TAG", "AUTHOR", "OWNER":
+			return true
+		}
 	}
-	switch v {
-	case "TYPE":
-		fallthrough
-	case "TAG":
-		fallthrough
-	case "AUTHOR":
-		fallthrough
-	case "OWNER":
-		*e = HideBuiltInFacet(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for HideBuiltInFacet: %v", v)
-	}
+	return false
 }
 
 // CustomDatasourceConfigConnectorType - The source from which document content was pulled, e.g. an API crawl or browser history
@@ -132,32 +86,16 @@ const (
 func (e CustomDatasourceConfigConnectorType) ToPointer() *CustomDatasourceConfigConnectorType {
 	return &e
 }
-func (e *CustomDatasourceConfigConnectorType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CustomDatasourceConfigConnectorType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "API_CRAWL", "BROWSER_CRAWL", "BROWSER_HISTORY", "BUILTIN", "FEDERATED_SEARCH", "PUSH_API", "WEB_CRAWL", "NATIVE_HISTORY":
+			return true
+		}
 	}
-	switch v {
-	case "API_CRAWL":
-		fallthrough
-	case "BROWSER_CRAWL":
-		fallthrough
-	case "BROWSER_HISTORY":
-		fallthrough
-	case "BUILTIN":
-		fallthrough
-	case "FEDERATED_SEARCH":
-		fallthrough
-	case "PUSH_API":
-		fallthrough
-	case "WEB_CRAWL":
-		fallthrough
-	case "NATIVE_HISTORY":
-		*e = CustomDatasourceConfigConnectorType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CustomDatasourceConfigConnectorType: %v", v)
-	}
+	return false
 }
 
 // CustomDatasourceConfig - Structure describing config properties of a custom datasource

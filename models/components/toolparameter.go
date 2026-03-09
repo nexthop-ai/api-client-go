@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ToolParameterType - Parameter type (string, number, boolean, object, array)
 type ToolParameterType string
 
@@ -21,26 +16,16 @@ const (
 func (e ToolParameterType) ToPointer() *ToolParameterType {
 	return &e
 }
-func (e *ToolParameterType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ToolParameterType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "string", "number", "boolean", "object", "array":
+			return true
+		}
 	}
-	switch v {
-	case "string":
-		fallthrough
-	case "number":
-		fallthrough
-	case "boolean":
-		fallthrough
-	case "object":
-		fallthrough
-	case "array":
-		*e = ToolParameterType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ToolParameterType: %v", v)
-	}
+	return false
 }
 
 type ToolParameter struct {

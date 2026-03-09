@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -24,30 +22,16 @@ const (
 func (e EditCollectionResponseErrorCode) ToPointer() *EditCollectionResponseErrorCode {
 	return &e
 }
-func (e *EditCollectionResponseErrorCode) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EditCollectionResponseErrorCode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NAME_EXISTS", "NOT_FOUND", "COLLECTION_PINNED", "CONCURRENT_HIERARCHY_EDIT", "HEIGHT_VIOLATION", "WIDTH_VIOLATION", "NO_PERMISSIONS":
+			return true
+		}
 	}
-	switch v {
-	case "NAME_EXISTS":
-		fallthrough
-	case "NOT_FOUND":
-		fallthrough
-	case "COLLECTION_PINNED":
-		fallthrough
-	case "CONCURRENT_HIERARCHY_EDIT":
-		fallthrough
-	case "HEIGHT_VIOLATION":
-		fallthrough
-	case "WIDTH_VIOLATION":
-		fallthrough
-	case "NO_PERMISSIONS":
-		*e = EditCollectionResponseErrorCode(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EditCollectionResponseErrorCode: %v", v)
-	}
+	return false
 }
 
 type EditCollectionResponse struct {

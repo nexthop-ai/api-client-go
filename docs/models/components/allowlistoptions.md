@@ -7,4 +7,4 @@ Terms that are allow-listed during the scans. If any finding picked up by a rule
 
 | Field                                                        | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `Terms`                                                      | []*string*                                                   | :heavy_minus_sign:                                           | list of words and phrases to consider as whitelisted content |
+| `Terms`                                                      | []`string`                                                   | :heavy_minus_sign:                                           | list of words and phrases to consider as whitelisted content |

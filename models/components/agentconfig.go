@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // AgentEnum - Name of the agent.
 type AgentEnum string
 
@@ -28,28 +23,16 @@ const (
 func (e AgentEnum) ToPointer() *AgentEnum {
 	return &e
 }
-func (e *AgentEnum) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AgentEnum) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DEFAULT", "GPT", "UNIVERSAL", "FAST", "ADVANCED", "AUTO":
+			return true
+		}
 	}
-	switch v {
-	case "DEFAULT":
-		fallthrough
-	case "GPT":
-		fallthrough
-	case "UNIVERSAL":
-		fallthrough
-	case "FAST":
-		fallthrough
-	case "ADVANCED":
-		fallthrough
-	case "AUTO":
-		*e = AgentEnum(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AgentEnum: %v", v)
-	}
+	return false
 }
 
 // Mode - Top level modes to run GleanChat in.
@@ -65,20 +48,16 @@ const (
 func (e Mode) ToPointer() *Mode {
 	return &e
 }
-func (e *Mode) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Mode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DEFAULT", "QUICK":
+			return true
+		}
 	}
-	switch v {
-	case "DEFAULT":
-		fallthrough
-	case "QUICK":
-		*e = Mode(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Mode: %v", v)
-	}
+	return false
 }
 
 // AgentConfig - Describes the agent that executes the request.

@@ -53,24 +53,54 @@ func CreateCustomFieldValueCustomFieldValuePerson(customFieldValuePerson CustomF
 
 func (u *CustomFieldValue) UnmarshalJSON(data []byte) error {
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var customFieldValueStr CustomFieldValueStr = CustomFieldValueStr{}
 	if err := utils.UnmarshalJSON(data, &customFieldValueStr, "", true, nil); err == nil {
-		u.CustomFieldValueStr = &customFieldValueStr
-		u.Type = CustomFieldValueTypeCustomFieldValueStr
-		return nil
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CustomFieldValueTypeCustomFieldValueStr,
+			Value: &customFieldValueStr,
+		})
 	}
 
 	var customFieldValueHyperlink CustomFieldValueHyperlink = CustomFieldValueHyperlink{}
 	if err := utils.UnmarshalJSON(data, &customFieldValueHyperlink, "", true, nil); err == nil {
-		u.CustomFieldValueHyperlink = &customFieldValueHyperlink
-		u.Type = CustomFieldValueTypeCustomFieldValueHyperlink
-		return nil
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CustomFieldValueTypeCustomFieldValueHyperlink,
+			Value: &customFieldValueHyperlink,
+		})
 	}
 
 	var customFieldValuePerson CustomFieldValuePerson = CustomFieldValuePerson{}
 	if err := utils.UnmarshalJSON(data, &customFieldValuePerson, "", true, nil); err == nil {
-		u.CustomFieldValuePerson = &customFieldValuePerson
-		u.Type = CustomFieldValueTypeCustomFieldValuePerson
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CustomFieldValueTypeCustomFieldValuePerson,
+			Value: &customFieldValuePerson,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomFieldValue", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CustomFieldValue", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(CustomFieldValueType)
+	switch best.Type {
+	case CustomFieldValueTypeCustomFieldValueStr:
+		u.CustomFieldValueStr = best.Value.(*CustomFieldValueStr)
+		return nil
+	case CustomFieldValueTypeCustomFieldValueHyperlink:
+		u.CustomFieldValueHyperlink = best.Value.(*CustomFieldValueHyperlink)
+		return nil
+	case CustomFieldValueTypeCustomFieldValuePerson:
+		u.CustomFieldValuePerson = best.Value.(*CustomFieldValuePerson)
 		return nil
 	}
 

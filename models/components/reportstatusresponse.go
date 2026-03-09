@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type ReportStatusResponseStatus string
 
 const (
@@ -21,28 +16,16 @@ const (
 func (e ReportStatusResponseStatus) ToPointer() *ReportStatusResponseStatus {
 	return &e
 }
-func (e *ReportStatusResponseStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ReportStatusResponseStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PENDING", "SUCCESS", "FAILURE", "CANCELLED", "CANCELLING", "ACTIVE":
+			return true
+		}
 	}
-	switch v {
-	case "PENDING":
-		fallthrough
-	case "SUCCESS":
-		fallthrough
-	case "FAILURE":
-		fallthrough
-	case "CANCELLED":
-		fallthrough
-	case "CANCELLING":
-		fallthrough
-	case "ACTIVE":
-		*e = ReportStatusResponseStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ReportStatusResponseStatus: %v", v)
-	}
+	return false
 }
 
 type ReportStatusResponse struct {

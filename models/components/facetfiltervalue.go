@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -26,26 +24,16 @@ const (
 func (e RelationType) ToPointer() *RelationType {
 	return &e
 }
-func (e *RelationType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *RelationType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "EQUALS", "ID_EQUALS", "LT", "GT", "NOT_EQUALS":
+			return true
+		}
 	}
-	switch v {
-	case "EQUALS":
-		fallthrough
-	case "ID_EQUALS":
-		fallthrough
-	case "LT":
-		fallthrough
-	case "GT":
-		fallthrough
-	case "NOT_EQUALS":
-		*e = RelationType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for RelationType: %v", v)
-	}
+	return false
 }
 
 type FacetFilterValue struct {

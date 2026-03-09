@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DlpReportStatus - The status of the policy/report. Only ACTIVE status will be picked for scans.
 type DlpReportStatus string
 
@@ -20,22 +15,14 @@ const (
 func (e DlpReportStatus) ToPointer() *DlpReportStatus {
 	return &e
 }
-func (e *DlpReportStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DlpReportStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ACTIVE", "INACTIVE", "CANCELLED", "NONE":
+			return true
+		}
 	}
-	switch v {
-	case "ACTIVE":
-		fallthrough
-	case "INACTIVE":
-		fallthrough
-	case "CANCELLED":
-		fallthrough
-	case "NONE":
-		*e = DlpReportStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DlpReportStatus: %v", v)
-	}
+	return false
 }

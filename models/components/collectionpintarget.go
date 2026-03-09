@@ -20,7 +20,7 @@ func (c CollectionPinTarget) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CollectionPinTarget) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"category"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

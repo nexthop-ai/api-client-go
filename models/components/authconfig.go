@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -28,28 +26,16 @@ const (
 func (e AuthConfigType) ToPointer() *AuthConfigType {
 	return &e
 }
-func (e *AuthConfigType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AuthConfigType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NONE", "OAUTH_USER", "OAUTH_ADMIN", "API_KEY", "BASIC_AUTH", "DWD":
+			return true
+		}
 	}
-	switch v {
-	case "NONE":
-		fallthrough
-	case "OAUTH_USER":
-		fallthrough
-	case "OAUTH_ADMIN":
-		fallthrough
-	case "API_KEY":
-		fallthrough
-	case "BASIC_AUTH":
-		fallthrough
-	case "DWD":
-		*e = AuthConfigType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AuthConfigType: %v", v)
-	}
+	return false
 }
 
 // GrantType - The type of grant type being used.
@@ -63,20 +49,16 @@ const (
 func (e GrantType) ToPointer() *GrantType {
 	return &e
 }
-func (e *GrantType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *GrantType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "AUTH_CODE", "CLIENT_CREDENTIALS":
+			return true
+		}
 	}
-	switch v {
-	case "AUTH_CODE":
-		fallthrough
-	case "CLIENT_CREDENTIALS":
-		*e = GrantType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for GrantType: %v", v)
-	}
+	return false
 }
 
 // AuthConfigStatus - Auth status of the tool.
@@ -91,22 +73,16 @@ const (
 func (e AuthConfigStatus) ToPointer() *AuthConfigStatus {
 	return &e
 }
-func (e *AuthConfigStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AuthConfigStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "AWAITING_AUTH", "AUTHORIZED", "AUTH_DISABLED":
+			return true
+		}
 	}
-	switch v {
-	case "AWAITING_AUTH":
-		fallthrough
-	case "AUTHORIZED":
-		fallthrough
-	case "AUTH_DISABLED":
-		*e = AuthConfigStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AuthConfigStatus: %v", v)
-	}
+	return false
 }
 
 // AuthConfig - Config for tool's authentication method.
@@ -134,6 +110,8 @@ type AuthConfig struct {
 	Audiences []string `json:"audiences,omitempty"`
 	// The OAuth provider's endpoint, where access tokens are requested.
 	AuthorizationURL *string `json:"authorization_url,omitempty"`
+	// The OAuth 2.0 Resource Indicator (RFC 8707) for the protected resource. Discovered from Protected Resource Metadata (RFC 9728) during DCR. Included in authorization and token exchange requests when present.
+	Resource *string `json:"resource,omitempty"`
 	// The time the tool was last authorized in ISO format (ISO 8601).
 	LastAuthorizedAt *time.Time `json:"lastAuthorizedAt,omitempty"`
 }
@@ -210,6 +188,13 @@ func (a *AuthConfig) GetAuthorizationURL() *string {
 		return nil
 	}
 	return a.AuthorizationURL
+}
+
+func (a *AuthConfig) GetResource() *string {
+	if a == nil {
+		return nil
+	}
+	return a.Resource
 }
 
 func (a *AuthConfig) GetLastAuthorizedAt() *time.Time {

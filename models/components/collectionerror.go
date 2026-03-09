@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -23,30 +21,16 @@ const (
 func (e CollectionErrorErrorCode) ToPointer() *CollectionErrorErrorCode {
 	return &e
 }
-func (e *CollectionErrorErrorCode) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CollectionErrorErrorCode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NAME_EXISTS", "NOT_FOUND", "COLLECTION_PINNED", "CONCURRENT_HIERARCHY_EDIT", "HEIGHT_VIOLATION", "WIDTH_VIOLATION", "NO_PERMISSIONS":
+			return true
+		}
 	}
-	switch v {
-	case "NAME_EXISTS":
-		fallthrough
-	case "NOT_FOUND":
-		fallthrough
-	case "COLLECTION_PINNED":
-		fallthrough
-	case "CONCURRENT_HIERARCHY_EDIT":
-		fallthrough
-	case "HEIGHT_VIOLATION":
-		fallthrough
-	case "WIDTH_VIOLATION":
-		fallthrough
-	case "NO_PERMISSIONS":
-		*e = CollectionErrorErrorCode(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CollectionErrorErrorCode: %v", v)
-	}
+	return false
 }
 
 type CollectionError struct {
@@ -58,7 +42,7 @@ func (c CollectionError) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CollectionError) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"errorCode"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

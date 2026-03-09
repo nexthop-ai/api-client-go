@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // UserRole - A user's role with respect to a specific document.
 type UserRole string
 
@@ -21,24 +16,14 @@ const (
 func (e UserRole) ToPointer() *UserRole {
 	return &e
 }
-func (e *UserRole) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UserRole) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "OWNER", "VIEWER", "ANSWER_MODERATOR", "EDITOR", "VERIFIER":
+			return true
+		}
 	}
-	switch v {
-	case "OWNER":
-		fallthrough
-	case "VIEWER":
-		fallthrough
-	case "ANSWER_MODERATOR":
-		fallthrough
-	case "EDITOR":
-		fallthrough
-	case "VERIFIER":
-		*e = UserRole(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UserRole: %v", v)
-	}
+	return false
 }

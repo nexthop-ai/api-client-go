@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -20,22 +18,16 @@ const (
 func (e State) ToPointer() *State {
 	return &e
 }
-func (e *State) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *State) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNVERIFIED", "VERIFIED", "DEPRECATED":
+			return true
+		}
 	}
-	switch v {
-	case "UNVERIFIED":
-		fallthrough
-	case "VERIFIED":
-		fallthrough
-	case "DEPRECATED":
-		*e = State(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for State: %v", v)
-	}
+	return false
 }
 
 type Verification struct {
@@ -49,7 +41,7 @@ func (v Verification) MarshalJSON() ([]byte, error) {
 }
 
 func (v *Verification) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &v, "", false, []string{"state"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &v, "", false, nil); err != nil {
 		return err
 	}
 	return nil

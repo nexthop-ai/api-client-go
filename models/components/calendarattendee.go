@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -20,24 +18,16 @@ const (
 func (e ResponseStatus) ToPointer() *ResponseStatus {
 	return &e
 }
-func (e *ResponseStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ResponseStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ACCEPTED", "DECLINED", "NO_RESPONSE", "TENTATIVE":
+			return true
+		}
 	}
-	switch v {
-	case "ACCEPTED":
-		fallthrough
-	case "DECLINED":
-		fallthrough
-	case "NO_RESPONSE":
-		fallthrough
-	case "TENTATIVE":
-		*e = ResponseStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ResponseStatus: %v", v)
-	}
+	return false
 }
 
 type CalendarAttendee struct {
@@ -56,7 +46,7 @@ func (c CalendarAttendee) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CalendarAttendee) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"person"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -19,20 +17,16 @@ const (
 func (e AnswerSourceType) ToPointer() *AnswerSourceType {
 	return &e
 }
-func (e *AnswerSourceType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AnswerSourceType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DOCUMENT", "ASSISTANT":
+			return true
+		}
 	}
-	switch v {
-	case "DOCUMENT":
-		fallthrough
-	case "ASSISTANT":
-		*e = AnswerSourceType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AnswerSourceType: %v", v)
-	}
+	return false
 }
 
 type Answer struct {
@@ -81,7 +75,7 @@ func (a Answer) MarshalJSON() ([]byte, error) {
 }
 
 func (a *Answer) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

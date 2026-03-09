@@ -12,7 +12,7 @@ type Indexing struct {
 	Permissions    *Permissions
 	Datasource     *Datasource
 	People         *People
-	Datasources    *Datasources
+	Datasources    *IndexingDatasources
 	Authentication *IndexingAuthentication
 	Shortcuts      *IndexingShortcuts
 
@@ -30,7 +30,7 @@ func newIndexing(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *hooks
 		Permissions:      newPermissions(rootSDK, sdkConfig, hooks),
 		Datasource:       newDatasource(rootSDK, sdkConfig, hooks),
 		People:           newPeople(rootSDK, sdkConfig, hooks),
-		Datasources:      newDatasources(rootSDK, sdkConfig, hooks),
+		Datasources:      newIndexingDatasources(rootSDK, sdkConfig, hooks),
 		Authentication:   newIndexingAuthentication(rootSDK, sdkConfig, hooks),
 		Shortcuts:        newIndexingShortcuts(rootSDK, sdkConfig, hooks),
 	}

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // UpdateType - Optional type classification for the update.
 type UpdateType string
 
@@ -20,18 +15,14 @@ const (
 func (e UpdateType) ToPointer() *UpdateType {
 	return &e
 }
-func (e *UpdateType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UpdateType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ACTIONABLE", "INFORMATIVE":
+			return true
+		}
 	}
-	switch v {
-	case "ACTIONABLE":
-		fallthrough
-	case "INFORMATIVE":
-		*e = UpdateType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UpdateType: %v", v)
-	}
+	return false
 }

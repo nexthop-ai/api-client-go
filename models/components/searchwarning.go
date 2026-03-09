@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // WarningType - The type of the warning.
 type WarningType string
 
@@ -23,30 +18,16 @@ const (
 func (e WarningType) ToPointer() *WarningType {
 	return &e
 }
-func (e *WarningType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *WarningType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "LONG_QUERY", "QUOTED_PUNCTUATION", "PUNCTUATION_ONLY", "COPYPASTED_QUOTES", "INVALID_OPERATOR", "MAYBE_INVALID_FACET_QUERY", "TOO_MANY_DATASOURCE_GROUPS":
+			return true
+		}
 	}
-	switch v {
-	case "LONG_QUERY":
-		fallthrough
-	case "QUOTED_PUNCTUATION":
-		fallthrough
-	case "PUNCTUATION_ONLY":
-		fallthrough
-	case "COPYPASTED_QUOTES":
-		fallthrough
-	case "INVALID_OPERATOR":
-		fallthrough
-	case "MAYBE_INVALID_FACET_QUERY":
-		fallthrough
-	case "TOO_MANY_DATASOURCE_GROUPS":
-		*e = WarningType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for WarningType: %v", v)
-	}
+	return false
 }
 
 type SearchWarning struct {

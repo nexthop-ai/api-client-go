@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // EntityType - The type of entity.
 type EntityType string
 
@@ -19,20 +14,14 @@ const (
 func (e EntityType) ToPointer() *EntityType {
 	return &e
 }
-func (e *EntityType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EntityType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PERSON", "PROJECT", "CUSTOMER":
+			return true
+		}
 	}
-	switch v {
-	case "PERSON":
-		fallthrough
-	case "PROJECT":
-		fallthrough
-	case "CUSTOMER":
-		*e = EntityType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for EntityType: %v", v)
-	}
+	return false
 }

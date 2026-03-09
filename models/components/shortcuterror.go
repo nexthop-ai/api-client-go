@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type ShortcutErrorErrorType string
 
 const (
@@ -19,24 +14,16 @@ const (
 func (e ShortcutErrorErrorType) ToPointer() *ShortcutErrorErrorType {
 	return &e
 }
-func (e *ShortcutErrorErrorType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ShortcutErrorErrorType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NO_PERMISSION", "INVALID_ID", "EXISTING_SHORTCUT", "INVALID_CHARS":
+			return true
+		}
 	}
-	switch v {
-	case "NO_PERMISSION":
-		fallthrough
-	case "INVALID_ID":
-		fallthrough
-	case "EXISTING_SHORTCUT":
-		fallthrough
-	case "INVALID_CHARS":
-		*e = ShortcutErrorErrorType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ShortcutErrorErrorType: %v", v)
-	}
+	return false
 }
 
 type ShortcutError struct {

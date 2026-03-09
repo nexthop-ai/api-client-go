@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -20,20 +18,16 @@ const (
 func (e ToolMetadataType) ToPointer() *ToolMetadataType {
 	return &e
 }
-func (e *ToolMetadataType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ToolMetadataType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "RETRIEVAL", "ACTION":
+			return true
+		}
 	}
-	switch v {
-	case "RETRIEVAL":
-		fallthrough
-	case "ACTION":
-		*e = ToolMetadataType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ToolMetadataType: %v", v)
-	}
+	return false
 }
 
 // KnowledgeType - Indicates the kind of knowledge a tool would access or modify.
@@ -48,22 +42,16 @@ const (
 func (e KnowledgeType) ToPointer() *KnowledgeType {
 	return &e
 }
-func (e *KnowledgeType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *KnowledgeType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NEUTRAL_KNOWLEDGE", "COMPANY_KNOWLEDGE", "WORLD_KNOWLEDGE":
+			return true
+		}
 	}
-	switch v {
-	case "NEUTRAL_KNOWLEDGE":
-		fallthrough
-	case "COMPANY_KNOWLEDGE":
-		fallthrough
-	case "WORLD_KNOWLEDGE":
-		*e = KnowledgeType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for KnowledgeType: %v", v)
-	}
+	return false
 }
 
 // WriteActionType - Valid only for write actions. Represents the type of write action. REDIRECT - The client renders the URL which contains information for carrying out the action. EXECUTION - Send a request to an external server and execute the action. MCP - Send a tools/call request to an MCP server to execute the action.
@@ -78,22 +66,16 @@ const (
 func (e WriteActionType) ToPointer() *WriteActionType {
 	return &e
 }
-func (e *WriteActionType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *WriteActionType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "REDIRECT", "EXECUTION", "MCP":
+			return true
+		}
 	}
-	switch v {
-	case "REDIRECT":
-		fallthrough
-	case "EXECUTION":
-		fallthrough
-	case "MCP":
-		*e = WriteActionType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for WriteActionType: %v", v)
-	}
+	return false
 }
 
 // AuthType - The type of authentication being used.
@@ -115,28 +97,16 @@ const (
 func (e AuthType) ToPointer() *AuthType {
 	return &e
 }
-func (e *AuthType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AuthType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NONE", "OAUTH_USER", "OAUTH_ADMIN", "API_KEY", "BASIC_AUTH", "DWD":
+			return true
+		}
 	}
-	switch v {
-	case "NONE":
-		fallthrough
-	case "OAUTH_USER":
-		fallthrough
-	case "OAUTH_ADMIN":
-		fallthrough
-	case "API_KEY":
-		fallthrough
-	case "BASIC_AUTH":
-		fallthrough
-	case "DWD":
-		*e = AuthType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AuthType: %v", v)
-	}
+	return false
 }
 
 // ToolMetadata - The manifest for a tool that can be used to augment Glean Assistant.

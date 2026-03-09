@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ActivityEnum - Activity e.g. search, home page visit or all.
 type ActivityEnum string
 
@@ -18,20 +13,16 @@ const (
 func (e ActivityEnum) ToPointer() *ActivityEnum {
 	return &e
 }
-func (e *ActivityEnum) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ActivityEnum) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ALL", "SEARCH":
+			return true
+		}
 	}
-	switch v {
-	case "ALL":
-		fallthrough
-	case "SEARCH":
-		*e = ActivityEnum(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ActivityEnum: %v", v)
-	}
+	return false
 }
 
 type UserActivityInsight struct {

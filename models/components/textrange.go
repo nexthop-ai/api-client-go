@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -20,24 +18,16 @@ const (
 func (e TextRangeType) ToPointer() *TextRangeType {
 	return &e
 }
-func (e *TextRangeType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TextRangeType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "BOLD", "CITATION", "HIGHLIGHT", "LINK":
+			return true
+		}
 	}
-	switch v {
-	case "BOLD":
-		fallthrough
-	case "CITATION":
-		fallthrough
-	case "HIGHLIGHT":
-		fallthrough
-	case "LINK":
-		*e = TextRangeType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for TextRangeType: %v", v)
-	}
+	return false
 }
 
 // TextRange - A subsection of a given string to which some special formatting should be applied.
@@ -57,7 +47,7 @@ func (t TextRange) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TextRange) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"startIndex"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

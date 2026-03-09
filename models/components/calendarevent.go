@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // CalendarEventEventType - The nature of the event, for example "out of office".
 type CalendarEventEventType string
 
@@ -18,20 +13,16 @@ const (
 func (e CalendarEventEventType) ToPointer() *CalendarEventEventType {
 	return &e
 }
-func (e *CalendarEventEventType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CalendarEventEventType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DEFAULT", "OUT_OF_OFFICE":
+			return true
+		}
 	}
-	switch v {
-	case "DEFAULT":
-		fallthrough
-	case "OUT_OF_OFFICE":
-		*e = CalendarEventEventType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CalendarEventEventType: %v", v)
-	}
+	return false
 }
 
 // CalendarEvent - A generic, light-weight calendar event.

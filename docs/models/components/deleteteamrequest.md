@@ -7,4 +7,4 @@ Describes the request body of the /deleteteam API call
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `ID`                  | *string*              | :heavy_check_mark:    | The deleted team's id |
+| `ID`                  | `string`              | :heavy_check_mark:    | The deleted team's id |

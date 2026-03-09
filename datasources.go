@@ -14,9 +14,9 @@ import (
 	"github.com/gleanwork/api-client-go/models/operations"
 	"github.com/gleanwork/api-client-go/retry"
 	"net/http"
-	"net/url"
 )
 
+// Datasources - Manage datasources.
 type Datasources struct {
 	rootSDK          *Glean
 	sdkConfiguration config.SDKConfiguration
@@ -31,9 +31,14 @@ func newDatasources(rootSDK *Glean, sdkConfig config.SDKConfiguration, hooks *ho
 	}
 }
 
-// Add or update datasource
-// Add or update a custom datasource and its schema.
-func (s *Datasources) Add(ctx context.Context, request components.CustomDatasourceConfig, opts ...operations.Option) (*operations.PostAPIIndexV1AdddatasourceResponse, error) {
+// GetDatasourceInstanceConfiguration - Get datasource instance configuration
+// Gets the greenlisted configuration values for a datasource instance. Returns only configuration keys that are exposed via the public API greenlist.
+func (s *Datasources) GetDatasourceInstanceConfiguration(ctx context.Context, datasourceID string, instanceID string, opts ...operations.Option) (*operations.GetDatasourceInstanceConfigurationResponse, error) {
+	request := operations.GetDatasourceInstanceConfigurationRequest{
+		DatasourceID: datasourceID,
+		InstanceID:   instanceID,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -52,7 +57,7 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/api/index/v1/adddatasource")
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/rest/api/v1/configure/datasources/{datasourceId}/instances/{instanceId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -62,13 +67,9 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "post_/api/index/v1/adddatasource",
+		OperationID:      "getDatasourceInstanceConfiguration",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
-	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
-	if err != nil {
-		return nil, err
 	}
 
 	timeout := o.Timeout
@@ -82,15 +83,12 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 		defer cancel()
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "*/*")
+	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
-	if reqContentType != "" {
-		req.Header.Set("Content-Type", reqContentType)
-	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
@@ -176,7 +174,7 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"400", "401", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"400", "401", "403", "404", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -191,7 +189,7 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 		}
 	}
 
-	res := &operations.PostAPIIndexV1AdddatasourceResponse{
+	res := &operations.GetDatasourceInstanceConfigurationResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -200,9 +198,55 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 
 	switch {
 	case httpRes.StatusCode == 200:
-		utils.DrainBody(httpRes)
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out components.DatasourceConfigurationResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			res.DatasourceConfigurationResponse = &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode == 400:
 		fallthrough
+	case httpRes.StatusCode == 403:
+		fallthrough
+	case httpRes.StatusCode == 404:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
@@ -229,9 +273,15 @@ func (s *Datasources) Add(ctx context.Context, request components.CustomDatasour
 
 }
 
-// RetrieveConfig - Get datasource config
-// Fetches the datasource config for the specified custom datasource.
-func (s *Datasources) RetrieveConfig(ctx context.Context, request components.GetDatasourceConfigRequest, opts ...operations.Option) (*operations.PostAPIIndexV1GetdatasourceconfigResponse, error) {
+// UpdateDatasourceInstanceConfiguration - Update datasource instance configuration
+// Updates the greenlisted configuration values for a datasource instance. Only configuration keys that are exposed via the public API greenlist may be set. Returns the full greenlisted configuration after the update is applied.
+func (s *Datasources) UpdateDatasourceInstanceConfiguration(ctx context.Context, datasourceID string, instanceID string, updateDatasourceConfigurationRequest components.UpdateDatasourceConfigurationRequest, opts ...operations.Option) (*operations.UpdateDatasourceInstanceConfigurationResponse, error) {
+	request := operations.UpdateDatasourceInstanceConfigurationRequest{
+		DatasourceID:                         datasourceID,
+		InstanceID:                           instanceID,
+		UpdateDatasourceConfigurationRequest: updateDatasourceConfigurationRequest,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -250,7 +300,7 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := url.JoinPath(baseURL, "/api/index/v1/getdatasourceconfig")
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/rest/api/v1/configure/datasources/{datasourceId}/instances/{instanceId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -260,11 +310,11 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "post_/api/index/v1/getdatasourceconfig",
+		OperationID:      "updateDatasourceInstanceConfiguration",
 		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateDatasourceConfigurationRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
@@ -280,7 +330,7 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 		defer cancel()
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "PATCH", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
@@ -374,7 +424,7 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"400", "401", "409", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"400", "401", "403", "404", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -389,7 +439,7 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 		}
 	}
 
-	res := &operations.PostAPIIndexV1GetdatasourceconfigResponse{
+	res := &operations.UpdateDatasourceInstanceConfigurationResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -405,12 +455,12 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 				return nil, err
 			}
 
-			var out components.CustomDatasourceConfig
+			var out components.DatasourceConfigurationResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CustomDatasourceConfig = &out
+			res.DatasourceConfigurationResponse = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
@@ -420,9 +470,34 @@ func (s *Datasources) RetrieveConfig(ctx context.Context, request components.Get
 		}
 	case httpRes.StatusCode == 400:
 		fallthrough
-	case httpRes.StatusCode == 401:
+	case httpRes.StatusCode == 403:
 		fallthrough
-	case httpRes.StatusCode == 409:
+	case httpRes.StatusCode == 404:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)

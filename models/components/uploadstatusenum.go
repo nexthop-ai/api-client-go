@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // UploadStatusEnum - Upload status, enum of NOT_UPLOADED, UPLOADED, STATUS_UNKNOWN
 type UploadStatusEnum string
 
@@ -19,20 +14,14 @@ const (
 func (e UploadStatusEnum) ToPointer() *UploadStatusEnum {
 	return &e
 }
-func (e *UploadStatusEnum) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UploadStatusEnum) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UPLOADED", "NOT_UPLOADED", "STATUS_UNKNOWN":
+			return true
+		}
 	}
-	switch v {
-	case "UPLOADED":
-		fallthrough
-	case "NOT_UPLOADED":
-		fallthrough
-	case "STATUS_UNKNOWN":
-		*e = UploadStatusEnum(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UploadStatusEnum: %v", v)
-	}
+	return false
 }

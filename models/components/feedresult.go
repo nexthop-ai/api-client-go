@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // FeedResultCategory - Category of the result, one of the requested categories in incoming request.
 type FeedResultCategory string
 
@@ -36,71 +31,25 @@ const (
 	FeedResultCategoryZeroStateWorkflowSuggestion  FeedResultCategory = "ZERO_STATE_WORKFLOW_SUGGESTION"
 	FeedResultCategoryPersonalizedChatSuggestion   FeedResultCategory = "PERSONALIZED_CHAT_SUGGESTION"
 	FeedResultCategoryDailyDigest                  FeedResultCategory = "DAILY_DIGEST"
+	FeedResultCategoryTask                         FeedResultCategory = "TASK"
+	FeedResultCategoryPlanMyDay                    FeedResultCategory = "PLAN_MY_DAY"
+	FeedResultCategoryEndMyDay                     FeedResultCategory = "END_MY_DAY"
+	FeedResultCategoryStarterKit                   FeedResultCategory = "STARTER_KIT"
 )
 
 func (e FeedResultCategory) ToPointer() *FeedResultCategory {
 	return &e
 }
-func (e *FeedResultCategory) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *FeedResultCategory) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DOCUMENT_SUGGESTION", "DOCUMENT_SUGGESTION_SCENARIO", "TRENDING_DOCUMENT", "USE_CASE", "VERIFICATION_REMINDER", "EVENT", "ANNOUNCEMENT", "MENTION", "DATASOURCE_AFFINITY", "RECENT", "COMPANY_RESOURCE", "EXPERIMENTAL", "PEOPLE_CELEBRATIONS", "SOCIAL_LINK", "EXTERNAL_TASKS", "DISPLAYABLE_LIST", "ZERO_STATE_CHAT_SUGGESTION", "ZERO_STATE_CHAT_TOOL_SUGGESTION", "ZERO_STATE_WORKFLOW_CREATED_BY_ME", "ZERO_STATE_WORKFLOW_FAVORITES", "ZERO_STATE_WORKFLOW_POPULAR", "ZERO_STATE_WORKFLOW_RECENT", "ZERO_STATE_WORKFLOW_SUGGESTION", "PERSONALIZED_CHAT_SUGGESTION", "DAILY_DIGEST", "TASK", "PLAN_MY_DAY", "END_MY_DAY", "STARTER_KIT":
+			return true
+		}
 	}
-	switch v {
-	case "DOCUMENT_SUGGESTION":
-		fallthrough
-	case "DOCUMENT_SUGGESTION_SCENARIO":
-		fallthrough
-	case "TRENDING_DOCUMENT":
-		fallthrough
-	case "USE_CASE":
-		fallthrough
-	case "VERIFICATION_REMINDER":
-		fallthrough
-	case "EVENT":
-		fallthrough
-	case "ANNOUNCEMENT":
-		fallthrough
-	case "MENTION":
-		fallthrough
-	case "DATASOURCE_AFFINITY":
-		fallthrough
-	case "RECENT":
-		fallthrough
-	case "COMPANY_RESOURCE":
-		fallthrough
-	case "EXPERIMENTAL":
-		fallthrough
-	case "PEOPLE_CELEBRATIONS":
-		fallthrough
-	case "SOCIAL_LINK":
-		fallthrough
-	case "EXTERNAL_TASKS":
-		fallthrough
-	case "DISPLAYABLE_LIST":
-		fallthrough
-	case "ZERO_STATE_CHAT_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_CHAT_TOOL_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_WORKFLOW_CREATED_BY_ME":
-		fallthrough
-	case "ZERO_STATE_WORKFLOW_FAVORITES":
-		fallthrough
-	case "ZERO_STATE_WORKFLOW_POPULAR":
-		fallthrough
-	case "ZERO_STATE_WORKFLOW_RECENT":
-		fallthrough
-	case "ZERO_STATE_WORKFLOW_SUGGESTION":
-		fallthrough
-	case "PERSONALIZED_CHAT_SUGGESTION":
-		fallthrough
-	case "DAILY_DIGEST":
-		*e = FeedResultCategory(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for FeedResultCategory: %v", v)
-	}
+	return false
 }
 
 type FeedResult struct {

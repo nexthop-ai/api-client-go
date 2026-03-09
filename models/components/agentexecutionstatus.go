@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // AgentExecutionStatus - The status of the run. One of 'error', 'success'.
 type AgentExecutionStatus string
 
@@ -18,18 +13,14 @@ const (
 func (e AgentExecutionStatus) ToPointer() *AgentExecutionStatus {
 	return &e
 }
-func (e *AgentExecutionStatus) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AgentExecutionStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "error", "success":
+			return true
+		}
 	}
-	switch v {
-	case "error":
-		fallthrough
-	case "success":
-		*e = AgentExecutionStatus(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AgentExecutionStatus: %v", v)
-	}
+	return false
 }

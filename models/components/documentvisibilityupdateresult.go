@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DocumentVisibilityUpdateResultOverride - The visibility-override state of the document.
 type DocumentVisibilityUpdateResultOverride string
 
@@ -20,24 +15,16 @@ const (
 func (e DocumentVisibilityUpdateResultOverride) ToPointer() *DocumentVisibilityUpdateResultOverride {
 	return &e
 }
-func (e *DocumentVisibilityUpdateResultOverride) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DocumentVisibilityUpdateResultOverride) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "NONE", "HIDE_FROM_ALL", "HIDE_FROM_GROUPS", "HIDE_FROM_ALL_EXCEPT_OWNER":
+			return true
+		}
 	}
-	switch v {
-	case "NONE":
-		fallthrough
-	case "HIDE_FROM_ALL":
-		fallthrough
-	case "HIDE_FROM_GROUPS":
-		fallthrough
-	case "HIDE_FROM_ALL_EXCEPT_OWNER":
-		*e = DocumentVisibilityUpdateResultOverride(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DocumentVisibilityUpdateResultOverride: %v", v)
-	}
+	return false
 }
 
 type DocumentVisibilityUpdateResult struct {

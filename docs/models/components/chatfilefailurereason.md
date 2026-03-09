@@ -2,6 +2,19 @@
 
 Reason for failed status.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.ChatFileFailureReasonParseFailed
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.ChatFileFailureReason("custom_value")
+```
+
 
 ## Values
 

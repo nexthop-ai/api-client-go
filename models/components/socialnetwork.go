@@ -20,7 +20,7 @@ func (s SocialNetwork) MarshalJSON() ([]byte, error) {
 }
 
 func (s *SocialNetwork) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"name", "profileUrl"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil

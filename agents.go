@@ -223,11 +223,34 @@ func (s *Agents) Retrieve(ctx context.Context, agentID string, locale *string, t
 			}
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 404:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode == 400:
 		fallthrough
 	case httpRes.StatusCode == 403:
-		fallthrough
-	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -447,13 +470,36 @@ func (s *Agents) RetrieveSchemas(ctx context.Context, agentID string, locale *st
 			}
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
-	case httpRes.StatusCode == 400:
-		fallthrough
-	case httpRes.StatusCode == 403:
-		fallthrough
 	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode == 422:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode == 400:
+		fallthrough
+	case httpRes.StatusCode == 403:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -670,13 +716,36 @@ func (s *Agents) List(ctx context.Context, request components.SearchAgentsReques
 			}
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
-	case httpRes.StatusCode == 400:
-		fallthrough
-	case httpRes.StatusCode == 403:
-		fallthrough
 	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode == 422:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode == 400:
+		fallthrough
+	case httpRes.StatusCode == 403:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
@@ -889,15 +958,38 @@ func (s *Agents) RunStream(ctx context.Context, request components.AgentRunCreat
 			}
 			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
-	case httpRes.StatusCode == 400:
-		fallthrough
-	case httpRes.StatusCode == 403:
-		fallthrough
 	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode == 409:
 		fallthrough
 	case httpRes.StatusCode == 422:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out apierrors.ErrorResponse
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			out.HTTPMeta = components.HTTPMetadata{
+				Request:  req,
+				Response: httpRes,
+			}
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, apierrors.NewAPIError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode == 400:
+		fallthrough
+	case httpRes.StatusCode == 403:
 		fallthrough
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)

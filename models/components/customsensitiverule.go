@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // CustomSensitiveRuleLikelihoodThreshold - Likelihood threshold for BUILT_IN infotypes (e.g., LIKELY, VERY_LIKELY). Only applicable for BUILT_IN type.
 type CustomSensitiveRuleLikelihoodThreshold string
 
@@ -21,26 +16,16 @@ const (
 func (e CustomSensitiveRuleLikelihoodThreshold) ToPointer() *CustomSensitiveRuleLikelihoodThreshold {
 	return &e
 }
-func (e *CustomSensitiveRuleLikelihoodThreshold) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CustomSensitiveRuleLikelihoodThreshold) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "LIKELY", "VERY_LIKELY", "POSSIBLE", "UNLIKELY", "VERY_UNLIKELY":
+			return true
+		}
 	}
-	switch v {
-	case "LIKELY":
-		fallthrough
-	case "VERY_LIKELY":
-		fallthrough
-	case "POSSIBLE":
-		fallthrough
-	case "UNLIKELY":
-		fallthrough
-	case "VERY_UNLIKELY":
-		*e = CustomSensitiveRuleLikelihoodThreshold(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CustomSensitiveRuleLikelihoodThreshold: %v", v)
-	}
+	return false
 }
 
 type CustomSensitiveRule struct {

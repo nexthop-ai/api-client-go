@@ -2,6 +2,19 @@
 
 Top level modes to run GleanChat in.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.ModeDefault
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.Mode("custom_value")
+```
+
 
 ## Values
 

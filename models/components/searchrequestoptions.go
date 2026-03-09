@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -27,26 +25,16 @@ const (
 func (e ResponseHint) ToPointer() *ResponseHint {
 	return &e
 }
-func (e *ResponseHint) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ResponseHint) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ALL_RESULT_COUNTS", "FACET_RESULTS", "QUERY_METADATA", "RESULTS", "SPELLCHECK_METADATA":
+			return true
+		}
 	}
-	switch v {
-	case "ALL_RESULT_COUNTS":
-		fallthrough
-	case "FACET_RESULTS":
-		fallthrough
-	case "QUERY_METADATA":
-		fallthrough
-	case "RESULTS":
-		fallthrough
-	case "SPELLCHECK_METADATA":
-		*e = ResponseHint(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ResponseHint: %v", v)
-	}
+	return false
 }
 
 type SearchRequestOptions struct {
@@ -88,7 +76,7 @@ func (s SearchRequestOptions) MarshalJSON() ([]byte, error) {
 }
 
 func (s *SearchRequestOptions) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"facetBucketSize"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil

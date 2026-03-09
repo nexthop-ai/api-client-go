@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ChatFileFailureReason - Reason for failed status.
 type ChatFileFailureReason string
 
@@ -27,36 +22,14 @@ const (
 func (e ChatFileFailureReason) ToPointer() *ChatFileFailureReason {
 	return &e
 }
-func (e *ChatFileFailureReason) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ChatFileFailureReason) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PARSE_FAILED", "AV_SCAN_FAILED", "FILE_TOO_SMALL", "FILE_TOO_LARGE", "FILE_EXTENSION_UNSUPPORTED", "FILE_METADATA_VALIDATION_FAIL", "FILE_PROCESSING_TIMED_OUT", "OAUTH_NEEDED", "URL_FETCH_FAILED", "EMPTY_CONTENT", "AUTH_REQUIRED":
+			return true
+		}
 	}
-	switch v {
-	case "PARSE_FAILED":
-		fallthrough
-	case "AV_SCAN_FAILED":
-		fallthrough
-	case "FILE_TOO_SMALL":
-		fallthrough
-	case "FILE_TOO_LARGE":
-		fallthrough
-	case "FILE_EXTENSION_UNSUPPORTED":
-		fallthrough
-	case "FILE_METADATA_VALIDATION_FAIL":
-		fallthrough
-	case "FILE_PROCESSING_TIMED_OUT":
-		fallthrough
-	case "OAUTH_NEEDED":
-		fallthrough
-	case "URL_FETCH_FAILED":
-		fallthrough
-	case "EMPTY_CONTENT":
-		fallthrough
-	case "AUTH_REQUIRED":
-		*e = ChatFileFailureReason(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ChatFileFailureReason: %v", v)
-	}
+	return false
 }

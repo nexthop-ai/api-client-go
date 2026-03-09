@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // WriteActionParameterType - The type of the value (e.g., integer, string, boolean, etc.)
 type WriteActionParameterType string
 
@@ -20,24 +15,16 @@ const (
 func (e WriteActionParameterType) ToPointer() *WriteActionParameterType {
 	return &e
 }
-func (e *WriteActionParameterType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *WriteActionParameterType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNKNOWN", "INTEGER", "STRING", "BOOLEAN":
+			return true
+		}
 	}
-	switch v {
-	case "UNKNOWN":
-		fallthrough
-	case "INTEGER":
-		fallthrough
-	case "STRING":
-		fallthrough
-	case "BOOLEAN":
-		*e = WriteActionParameterType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for WriteActionParameterType: %v", v)
-	}
+	return false
 }
 
 type WriteActionParameter struct {

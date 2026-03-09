@@ -353,7 +353,7 @@ func main() {
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `datasource`                                                                       | *string*                                                                           | :heavy_check_mark:                                                                 | The datasource to which the document belongs                                       |
+| `datasource`                                                                       | `string`                                                                           | :heavy_check_mark:                                                                 | The datasource to which the document belongs                                       |
 | `debugDocumentRequest`                                                             | [components.DebugDocumentRequest](../../models/components/debugdocumentrequest.md) | :heavy_check_mark:                                                                 | N/A                                                                                |
 | `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
 
@@ -417,7 +417,7 @@ func main() {
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `datasource`                                                                         | *string*                                                                             | :heavy_check_mark:                                                                   | The datasource to which the document belongs                                         |
+| `datasource`                                                                         | `string`                                                                             | :heavy_check_mark:                                                                   | The datasource to which the document belongs                                         |
 | `debugDocumentsRequest`                                                              | [components.DebugDocumentsRequest](../../models/components/debugdocumentsrequest.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
 | `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
@@ -499,7 +499,7 @@ Intended for debugging/validation. Fetches the current upload and indexing statu
 Tip: Use [/debug/{datasource}/document](https://developers.glean.com/indexing/debugging/datasource-document) for richer information.
 
 
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+> :warning: **DEPRECATED**: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 
 ### Example Usage
 
@@ -561,7 +561,7 @@ Fetches document count for the specified custom datasource.
 Tip: Use [/debug/{datasource}/status](https://developers.glean.com/indexing/debugging/datasource-status) for richer information.
 
 
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+> :warning: **DEPRECATED**: Deprecated on 2026-02-03, removal scheduled for 2026-10-15: Endpoint is deprecated.
 
 ### Example Usage
 

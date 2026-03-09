@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type DebugDatasourceStatusResponseCounts struct {
 	// A list of object types and corresponding upload counts. Note: This data may be cached and could be up to 3 hours stale.
 	//
@@ -106,22 +101,16 @@ const (
 func (e DatasourceVisibility) ToPointer() *DatasourceVisibility {
 	return &e
 }
-func (e *DatasourceVisibility) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DatasourceVisibility) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ENABLED_FOR_ALL", "ENABLED_FOR_TEST_GROUP", "NOT_ENABLED":
+			return true
+		}
 	}
-	switch v {
-	case "ENABLED_FOR_ALL":
-		fallthrough
-	case "ENABLED_FOR_TEST_GROUP":
-		fallthrough
-	case "NOT_ENABLED":
-		*e = DatasourceVisibility(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DatasourceVisibility: %v", v)
-	}
+	return false
 }
 
 // DebugDatasourceStatusResponse - Describes the response body of the /debug/{datasource}/status API call

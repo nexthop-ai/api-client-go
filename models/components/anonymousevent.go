@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -19,20 +17,16 @@ const (
 func (e AnonymousEventEventType) ToPointer() *AnonymousEventEventType {
 	return &e
 }
-func (e *AnonymousEventEventType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AnonymousEventEventType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DEFAULT", "OUT_OF_OFFICE":
+			return true
+		}
 	}
-	switch v {
-	case "DEFAULT":
-		fallthrough
-	case "OUT_OF_OFFICE":
-		*e = AnonymousEventEventType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AnonymousEventEventType: %v", v)
-	}
+	return false
 }
 
 // AnonymousEvent - A generic, light-weight calendar event.

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DocumentVisibility - The level of visibility of the document as understood by our system.
 type DocumentVisibility string
 
@@ -28,26 +23,14 @@ const (
 func (e DocumentVisibility) ToPointer() *DocumentVisibility {
 	return &e
 }
-func (e *DocumentVisibility) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DocumentVisibility) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PRIVATE", "SPECIFIC_PEOPLE_AND_GROUPS", "DOMAIN_LINK", "DOMAIN_VISIBLE", "PUBLIC_LINK", "PUBLIC_VISIBLE":
+			return true
+		}
 	}
-	switch v {
-	case "PRIVATE":
-		fallthrough
-	case "SPECIFIC_PEOPLE_AND_GROUPS":
-		fallthrough
-	case "DOMAIN_LINK":
-		fallthrough
-	case "DOMAIN_VISIBLE":
-		fallthrough
-	case "PUBLIC_LINK":
-		fallthrough
-	case "PUBLIC_VISIBLE":
-		*e = DocumentVisibility(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DocumentVisibility: %v", v)
-	}
+	return false
 }

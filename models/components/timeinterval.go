@@ -18,7 +18,7 @@ func (t TimeInterval) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TimeInterval) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"start", "end"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

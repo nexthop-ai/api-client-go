@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type AutocompleteResultResultType string
 
 const (
@@ -29,44 +24,16 @@ const (
 func (e AutocompleteResultResultType) ToPointer() *AutocompleteResultResultType {
 	return &e
 }
-func (e *AutocompleteResultResultType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AutocompleteResultResultType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ADDITIONAL_DOCUMENT", "APP", "BROWSER_HISTORY", "DATASOURCE", "DOCUMENT", "ENTITY", "GOLINK", "HISTORY", "CHAT_HISTORY", "NEW_CHAT", "OPERATOR", "OPERATOR_VALUE", "QUICKLINK", "SUGGESTION":
+			return true
+		}
 	}
-	switch v {
-	case "ADDITIONAL_DOCUMENT":
-		fallthrough
-	case "APP":
-		fallthrough
-	case "BROWSER_HISTORY":
-		fallthrough
-	case "DATASOURCE":
-		fallthrough
-	case "DOCUMENT":
-		fallthrough
-	case "ENTITY":
-		fallthrough
-	case "GOLINK":
-		fallthrough
-	case "HISTORY":
-		fallthrough
-	case "CHAT_HISTORY":
-		fallthrough
-	case "NEW_CHAT":
-		fallthrough
-	case "OPERATOR":
-		fallthrough
-	case "OPERATOR_VALUE":
-		fallthrough
-	case "QUICKLINK":
-		fallthrough
-	case "SUGGESTION":
-		*e = AutocompleteResultResultType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for AutocompleteResultResultType: %v", v)
-	}
+	return false
 }
 
 type AutocompleteResult struct {

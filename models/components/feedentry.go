@@ -90,89 +90,27 @@ const (
 	JustificationTypeZeroStateAgentSuggestion          JustificationType = "ZERO_STATE_AGENT_SUGGESTION"
 	JustificationTypePersonalizedChatSuggestion        JustificationType = "PERSONALIZED_CHAT_SUGGESTION"
 	JustificationTypeDailyDigest                       JustificationType = "DAILY_DIGEST"
+	JustificationTypeTask                              JustificationType = "TASK"
+	JustificationTypePlanMyDay                         JustificationType = "PLAN_MY_DAY"
+	JustificationTypeEndMyDay                          JustificationType = "END_MY_DAY"
+	JustificationTypeStarterKitExtension               JustificationType = "STARTER_KIT_EXTENSION"
+	JustificationTypeStarterKitOrgChart                JustificationType = "STARTER_KIT_ORG_CHART"
+	JustificationTypeStarterKitAddDoc                  JustificationType = "STARTER_KIT_ADD_DOC"
 )
 
 func (e JustificationType) ToPointer() *JustificationType {
 	return &e
 }
-func (e *JustificationType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *JustificationType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FREQUENTLY_ACCESSED", "RECENTLY_ACCESSED", "TRENDING_DOCUMENT", "VERIFICATION_REMINDER", "SUGGESTED_DOCUMENT", "EMPTY_STATE_SUGGESTION", "FRECENCY_SCORED", "SERVER_GENERATED", "USE_CASE", "UPDATE_SINCE_LAST_VIEW", "RECENTLY_STARTED", "EVENT", "USER_MENTION", "ANNOUNCEMENT", "EXTERNAL_ANNOUNCEMENT", "POPULARITY_BASED_TRENDING", "COMPANY_RESOURCE", "EVENT_DOCUMENT_FROM_CONTENT", "EVENT_DOCUMENT_FROM_SEARCH", "VISIT_AFFINITY_SCORED", "SUGGESTED_APP", "SUGGESTED_PERSON", "ACTIVITY_HIGHLIGHT", "SAVED_SEARCH", "SUGGESTED_CHANNEL", "PEOPLE_CELEBRATIONS", "SOCIAL_LINK", "ZERO_STATE_CHAT_SUGGESTION", "ZERO_STATE_CHAT_TOOL_SUGGESTION", "ZERO_STATE_PROMPT_TEMPLATE_SUGGESTION", "ZERO_STATE_STATIC_WORKFLOW_SUGGESTION", "ZERO_STATE_AGENT_SUGGESTION", "PERSONALIZED_CHAT_SUGGESTION", "DAILY_DIGEST", "TASK", "PLAN_MY_DAY", "END_MY_DAY", "STARTER_KIT_EXTENSION", "STARTER_KIT_ORG_CHART", "STARTER_KIT_ADD_DOC":
+			return true
+		}
 	}
-	switch v {
-	case "FREQUENTLY_ACCESSED":
-		fallthrough
-	case "RECENTLY_ACCESSED":
-		fallthrough
-	case "TRENDING_DOCUMENT":
-		fallthrough
-	case "VERIFICATION_REMINDER":
-		fallthrough
-	case "SUGGESTED_DOCUMENT":
-		fallthrough
-	case "EMPTY_STATE_SUGGESTION":
-		fallthrough
-	case "FRECENCY_SCORED":
-		fallthrough
-	case "SERVER_GENERATED":
-		fallthrough
-	case "USE_CASE":
-		fallthrough
-	case "UPDATE_SINCE_LAST_VIEW":
-		fallthrough
-	case "RECENTLY_STARTED":
-		fallthrough
-	case "EVENT":
-		fallthrough
-	case "USER_MENTION":
-		fallthrough
-	case "ANNOUNCEMENT":
-		fallthrough
-	case "EXTERNAL_ANNOUNCEMENT":
-		fallthrough
-	case "POPULARITY_BASED_TRENDING":
-		fallthrough
-	case "COMPANY_RESOURCE":
-		fallthrough
-	case "EVENT_DOCUMENT_FROM_CONTENT":
-		fallthrough
-	case "EVENT_DOCUMENT_FROM_SEARCH":
-		fallthrough
-	case "VISIT_AFFINITY_SCORED":
-		fallthrough
-	case "SUGGESTED_APP":
-		fallthrough
-	case "SUGGESTED_PERSON":
-		fallthrough
-	case "ACTIVITY_HIGHLIGHT":
-		fallthrough
-	case "SAVED_SEARCH":
-		fallthrough
-	case "SUGGESTED_CHANNEL":
-		fallthrough
-	case "PEOPLE_CELEBRATIONS":
-		fallthrough
-	case "SOCIAL_LINK":
-		fallthrough
-	case "ZERO_STATE_CHAT_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_CHAT_TOOL_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_PROMPT_TEMPLATE_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_STATIC_WORKFLOW_SUGGESTION":
-		fallthrough
-	case "ZERO_STATE_AGENT_SUGGESTION":
-		fallthrough
-	case "PERSONALIZED_CHAT_SUGGESTION":
-		fallthrough
-	case "DAILY_DIGEST":
-		*e = JustificationType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for JustificationType: %v", v)
-	}
+	return false
 }
 
 type FeedEntry struct {

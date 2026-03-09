@@ -2,6 +2,19 @@
 
 Type of the justification.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.JustificationTypeFrequentlyAccessed
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.JustificationType("custom_value")
+```
+
 
 ## Values
 
@@ -41,3 +54,9 @@ Type of the justification.
 | `JustificationTypeZeroStateAgentSuggestion`          | ZERO_STATE_AGENT_SUGGESTION                          |
 | `JustificationTypePersonalizedChatSuggestion`        | PERSONALIZED_CHAT_SUGGESTION                         |
 | `JustificationTypeDailyDigest`                       | DAILY_DIGEST                                         |
+| `JustificationTypeTask`                              | TASK                                                 |
+| `JustificationTypePlanMyDay`                         | PLAN_MY_DAY                                          |
+| `JustificationTypeEndMyDay`                          | END_MY_DAY                                           |
+| `JustificationTypeStarterKitExtension`               | STARTER_KIT_EXTENSION                                |
+| `JustificationTypeStarterKitOrgChart`                | STARTER_KIT_ORG_CHART                                |
+| `JustificationTypeStarterKitAddDoc`                  | STARTER_KIT_ADD_DOC                                  |

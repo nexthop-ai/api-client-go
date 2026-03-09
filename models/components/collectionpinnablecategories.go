@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // CollectionPinnableCategories - Categories a Collection can be pinned to.
 type CollectionPinnableCategories string
 
@@ -19,20 +14,14 @@ const (
 func (e CollectionPinnableCategories) ToPointer() *CollectionPinnableCategories {
 	return &e
 }
-func (e *CollectionPinnableCategories) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CollectionPinnableCategories) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "COMPANY_RESOURCE", "DEPARTMENT_RESOURCE", "TEAM_RESOURCE":
+			return true
+		}
 	}
-	switch v {
-	case "COMPANY_RESOURCE":
-		fallthrough
-	case "DEPARTMENT_RESOURCE":
-		fallthrough
-	case "TEAM_RESOURCE":
-		*e = CollectionPinnableCategories(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CollectionPinnableCategories: %v", v)
-	}
+	return false
 }

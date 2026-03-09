@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DlpSeverity - Severity levels for DLP findings and analyses.
 type DlpSeverity string
 
@@ -20,22 +15,14 @@ const (
 func (e DlpSeverity) ToPointer() *DlpSeverity {
 	return &e
 }
-func (e *DlpSeverity) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DlpSeverity) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNSPECIFIED", "LOW", "MEDIUM", "HIGH":
+			return true
+		}
 	}
-	switch v {
-	case "UNSPECIFIED":
-		fallthrough
-	case "LOW":
-		fallthrough
-	case "MEDIUM":
-		fallthrough
-	case "HIGH":
-		*e = DlpSeverity(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DlpSeverity: %v", v)
-	}
+	return false
 }

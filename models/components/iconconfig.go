@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -29,42 +27,16 @@ const (
 func (e IconType) ToPointer() *IconType {
 	return &e
 }
-func (e *IconType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *IconType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "COLLECTION", "CUSTOM", "DATASOURCE", "DATASOURCE_INSTANCE", "FAVICON", "FILE_TYPE", "GENERATED_BACKGROUND", "GLYPH", "MIME_TYPE", "NO_ICON", "PERSON", "REACTIONS", "URL":
+			return true
+		}
 	}
-	switch v {
-	case "COLLECTION":
-		fallthrough
-	case "CUSTOM":
-		fallthrough
-	case "DATASOURCE":
-		fallthrough
-	case "DATASOURCE_INSTANCE":
-		fallthrough
-	case "FAVICON":
-		fallthrough
-	case "FILE_TYPE":
-		fallthrough
-	case "GENERATED_BACKGROUND":
-		fallthrough
-	case "GLYPH":
-		fallthrough
-	case "MIME_TYPE":
-		fallthrough
-	case "NO_ICON":
-		fallthrough
-	case "PERSON":
-		fallthrough
-	case "REACTIONS":
-		fallthrough
-	case "URL":
-		*e = IconType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for IconType: %v", v)
-	}
+	return false
 }
 
 // IconConfig - Defines how to render an icon

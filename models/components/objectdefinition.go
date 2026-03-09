@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DocCategory - The document category of this object type.
 type DocCategory string
 
@@ -34,52 +29,16 @@ const (
 func (e DocCategory) ToPointer() *DocCategory {
 	return &e
 }
-func (e *DocCategory) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DocCategory) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "UNCATEGORIZED", "TICKETS", "CRM", "PUBLISHED_CONTENT", "COLLABORATIVE_CONTENT", "QUESTION_ANSWER", "MESSAGING", "CODE_REPOSITORY", "CHANGE_MANAGEMENT", "PEOPLE", "EMAIL", "SSO", "ATS", "KNOWLEDGE_HUB", "EXTERNAL_SHORTCUT", "ENTITY", "CALENDAR", "AGENTS":
+			return true
+		}
 	}
-	switch v {
-	case "UNCATEGORIZED":
-		fallthrough
-	case "TICKETS":
-		fallthrough
-	case "CRM":
-		fallthrough
-	case "PUBLISHED_CONTENT":
-		fallthrough
-	case "COLLABORATIVE_CONTENT":
-		fallthrough
-	case "QUESTION_ANSWER":
-		fallthrough
-	case "MESSAGING":
-		fallthrough
-	case "CODE_REPOSITORY":
-		fallthrough
-	case "CHANGE_MANAGEMENT":
-		fallthrough
-	case "PEOPLE":
-		fallthrough
-	case "EMAIL":
-		fallthrough
-	case "SSO":
-		fallthrough
-	case "ATS":
-		fallthrough
-	case "KNOWLEDGE_HUB":
-		fallthrough
-	case "EXTERNAL_SHORTCUT":
-		fallthrough
-	case "ENTITY":
-		fallthrough
-	case "CALENDAR":
-		fallthrough
-	case "AGENTS":
-		*e = DocCategory(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DocCategory: %v", v)
-	}
+	return false
 }
 
 // ObjectDefinition - The definition for an `DocumentMetadata.objectType` within a datasource.

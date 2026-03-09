@@ -3,7 +3,6 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
@@ -23,26 +22,16 @@ const (
 func (e DocumentSpecUgcType2) ToPointer() *DocumentSpecUgcType2 {
 	return &e
 }
-func (e *DocumentSpecUgcType2) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DocumentSpecUgcType2) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ANNOUNCEMENTS", "ANSWERS", "COLLECTIONS", "SHORTCUTS", "CHATS":
+			return true
+		}
 	}
-	switch v {
-	case "ANNOUNCEMENTS":
-		fallthrough
-	case "ANSWERS":
-		fallthrough
-	case "COLLECTIONS":
-		fallthrough
-	case "SHORTCUTS":
-		fallthrough
-	case "CHATS":
-		*e = DocumentSpecUgcType2(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DocumentSpecUgcType2: %v", v)
-	}
+	return false
 }
 
 type DocumentSpec4 struct {
@@ -59,7 +48,7 @@ func (d DocumentSpec4) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DocumentSpec4) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"ugcType", "ugcId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -100,26 +89,16 @@ const (
 func (e DocumentSpecUgcType1) ToPointer() *DocumentSpecUgcType1 {
 	return &e
 }
-func (e *DocumentSpecUgcType1) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DocumentSpecUgcType1) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ANNOUNCEMENTS", "ANSWERS", "COLLECTIONS", "SHORTCUTS", "CHATS":
+			return true
+		}
 	}
-	switch v {
-	case "ANNOUNCEMENTS":
-		fallthrough
-	case "ANSWERS":
-		fallthrough
-	case "COLLECTIONS":
-		fallthrough
-	case "SHORTCUTS":
-		fallthrough
-	case "CHATS":
-		*e = DocumentSpecUgcType1(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DocumentSpecUgcType1: %v", v)
-	}
+	return false
 }
 
 type DocumentSpec3 struct {
@@ -136,7 +115,7 @@ func (d DocumentSpec3) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DocumentSpec3) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"ugcType", "contentId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -173,7 +152,7 @@ func (d DocumentSpec2) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DocumentSpec2) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -196,7 +175,7 @@ func (d DocumentSpec1) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DocumentSpec1) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"url"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -265,31 +244,65 @@ func CreateDocumentSpecUnionDocumentSpec4(documentSpec4 DocumentSpec4) DocumentS
 
 func (u *DocumentSpecUnion) UnmarshalJSON(data []byte) error {
 
-	var documentSpec3 DocumentSpec3 = DocumentSpec3{}
-	if err := utils.UnmarshalJSON(data, &documentSpec3, "", true, nil); err == nil {
-		u.DocumentSpec3 = &documentSpec3
-		u.Type = DocumentSpecUnionTypeDocumentSpec3
-		return nil
-	}
+	var candidates []utils.UnionCandidate
 
-	var documentSpec4 DocumentSpec4 = DocumentSpec4{}
-	if err := utils.UnmarshalJSON(data, &documentSpec4, "", true, nil); err == nil {
-		u.DocumentSpec4 = &documentSpec4
-		u.Type = DocumentSpecUnionTypeDocumentSpec4
-		return nil
-	}
-
+	// Collect all valid candidates
 	var documentSpec1 DocumentSpec1 = DocumentSpec1{}
 	if err := utils.UnmarshalJSON(data, &documentSpec1, "", true, nil); err == nil {
-		u.DocumentSpec1 = &documentSpec1
-		u.Type = DocumentSpecUnionTypeDocumentSpec1
-		return nil
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentSpecUnionTypeDocumentSpec1,
+			Value: &documentSpec1,
+		})
 	}
 
 	var documentSpec2 DocumentSpec2 = DocumentSpec2{}
 	if err := utils.UnmarshalJSON(data, &documentSpec2, "", true, nil); err == nil {
-		u.DocumentSpec2 = &documentSpec2
-		u.Type = DocumentSpecUnionTypeDocumentSpec2
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentSpecUnionTypeDocumentSpec2,
+			Value: &documentSpec2,
+		})
+	}
+
+	var documentSpec3 DocumentSpec3 = DocumentSpec3{}
+	if err := utils.UnmarshalJSON(data, &documentSpec3, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentSpecUnionTypeDocumentSpec3,
+			Value: &documentSpec3,
+		})
+	}
+
+	var documentSpec4 DocumentSpec4 = DocumentSpec4{}
+	if err := utils.UnmarshalJSON(data, &documentSpec4, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  DocumentSpecUnionTypeDocumentSpec4,
+			Value: &documentSpec4,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for DocumentSpecUnion", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for DocumentSpecUnion", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(DocumentSpecUnionType)
+	switch best.Type {
+	case DocumentSpecUnionTypeDocumentSpec1:
+		u.DocumentSpec1 = best.Value.(*DocumentSpec1)
+		return nil
+	case DocumentSpecUnionTypeDocumentSpec2:
+		u.DocumentSpec2 = best.Value.(*DocumentSpec2)
+		return nil
+	case DocumentSpecUnionTypeDocumentSpec3:
+		u.DocumentSpec3 = best.Value.(*DocumentSpec3)
+		return nil
+	case DocumentSpecUnionTypeDocumentSpec4:
+		u.DocumentSpec4 = best.Value.(*DocumentSpec4)
 		return nil
 	}
 

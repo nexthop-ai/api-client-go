@@ -40,7 +40,7 @@ func (r ResponseBody2) MarshalJSON() ([]byte, error) {
 }
 
 func (r *ResponseBody2) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"error"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -70,7 +70,7 @@ func (r ResponseBody1) MarshalJSON() ([]byte, error) {
 }
 
 func (r *ResponseBody1) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"collection"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -125,17 +125,43 @@ func CreateCreatecollectionResponseBodyResponseBody2(responseBody2 ResponseBody2
 
 func (u *CreatecollectionResponseBody) UnmarshalJSON(data []byte) error {
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var responseBody1 ResponseBody1 = ResponseBody1{}
 	if err := utils.UnmarshalJSON(data, &responseBody1, "", true, nil); err == nil {
-		u.ResponseBody1 = &responseBody1
-		u.Type = CreatecollectionResponseBodyTypeResponseBody1
-		return nil
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreatecollectionResponseBodyTypeResponseBody1,
+			Value: &responseBody1,
+		})
 	}
 
 	var responseBody2 ResponseBody2 = ResponseBody2{}
 	if err := utils.UnmarshalJSON(data, &responseBody2, "", true, nil); err == nil {
-		u.ResponseBody2 = &responseBody2
-		u.Type = CreatecollectionResponseBodyTypeResponseBody2
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreatecollectionResponseBodyTypeResponseBody2,
+			Value: &responseBody2,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreatecollectionResponseBody", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreatecollectionResponseBody", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(CreatecollectionResponseBodyType)
+	switch best.Type {
+	case CreatecollectionResponseBodyTypeResponseBody1:
+		u.ResponseBody1 = best.Value.(*ResponseBody1)
+		return nil
+	case CreatecollectionResponseBodyTypeResponseBody2:
+		u.ResponseBody2 = best.Value.(*ResponseBody2)
 		return nil
 	}
 

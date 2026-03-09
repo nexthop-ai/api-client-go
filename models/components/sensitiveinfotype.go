@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // SensitiveInfoTypeLikelihoodThreshold
 //
 // Deprecated: Deprecated on 2026-02-05, removal scheduled for 2026-10-15: Field is deprecated.
@@ -23,26 +18,16 @@ const (
 func (e SensitiveInfoTypeLikelihoodThreshold) ToPointer() *SensitiveInfoTypeLikelihoodThreshold {
 	return &e
 }
-func (e *SensitiveInfoTypeLikelihoodThreshold) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *SensitiveInfoTypeLikelihoodThreshold) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "LIKELY", "VERY_LIKELY", "POSSIBLE", "UNLIKELY", "VERY_UNLIKELY":
+			return true
+		}
 	}
-	switch v {
-	case "LIKELY":
-		fallthrough
-	case "VERY_LIKELY":
-		fallthrough
-	case "POSSIBLE":
-		fallthrough
-	case "UNLIKELY":
-		fallthrough
-	case "VERY_UNLIKELY":
-		*e = SensitiveInfoTypeLikelihoodThreshold(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for SensitiveInfoTypeLikelihoodThreshold: %v", v)
-	}
+	return false
 }
 
 type SensitiveInfoType struct {

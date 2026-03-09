@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"time"
 )
@@ -21,24 +19,16 @@ const (
 func (e CollectionItemItemType) ToPointer() *CollectionItemItemType {
 	return &e
 }
-func (e *CollectionItemItemType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CollectionItemItemType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DOCUMENT", "TEXT", "URL", "COLLECTION":
+			return true
+		}
 	}
-	switch v {
-	case "DOCUMENT":
-		fallthrough
-	case "TEXT":
-		fallthrough
-	case "URL":
-		fallthrough
-	case "COLLECTION":
-		*e = CollectionItemItemType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CollectionItemItemType: %v", v)
-	}
+	return false
 }
 
 type CollectionItem struct {
@@ -70,7 +60,7 @@ func (c CollectionItem) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CollectionItem) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"collectionId", "itemType"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil

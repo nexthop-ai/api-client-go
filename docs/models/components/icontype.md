@@ -1,5 +1,18 @@
 # IconType
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.IconTypeCollection
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.IconType("custom_value")
+```
+
 
 ## Values
 

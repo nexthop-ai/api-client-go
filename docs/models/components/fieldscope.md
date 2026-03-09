@@ -2,6 +2,16 @@
 
 Controls which fields to include in the export
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.FieldScopeAll
+```
+
 
 ## Values
 

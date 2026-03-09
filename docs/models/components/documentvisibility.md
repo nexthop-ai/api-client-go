@@ -2,6 +2,19 @@
 
 The level of visibility of the document as understood by our system.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.DocumentVisibilityPrivate
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.DocumentVisibility("custom_value")
+```
+
 
 ## Values
 

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type UgcType string
 
 const (
@@ -22,28 +17,14 @@ const (
 func (e UgcType) ToPointer() *UgcType {
 	return &e
 }
-func (e *UgcType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UgcType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ANNOUNCEMENTS_TYPE", "ANSWERS_TYPE", "COLLECTIONS_TYPE", "SHORTCUTS_TYPE", "WORKFLOWS_TYPE", "PROMPT_TEMPLATES_TYPE", "PRISM_VIEWS_TYPE":
+			return true
+		}
 	}
-	switch v {
-	case "ANNOUNCEMENTS_TYPE":
-		fallthrough
-	case "ANSWERS_TYPE":
-		fallthrough
-	case "COLLECTIONS_TYPE":
-		fallthrough
-	case "SHORTCUTS_TYPE":
-		fallthrough
-	case "WORKFLOWS_TYPE":
-		fallthrough
-	case "PROMPT_TEMPLATES_TYPE":
-		fallthrough
-	case "PRISM_VIEWS_TYPE":
-		*e = UgcType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for UgcType: %v", v)
-	}
+	return false
 }

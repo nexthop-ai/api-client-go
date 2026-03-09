@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // DlpFrequency - Interval between scans. DAILY is deprecated.
 type DlpFrequency string
 
@@ -21,24 +16,14 @@ const (
 func (e DlpFrequency) ToPointer() *DlpFrequency {
 	return &e
 }
-func (e *DlpFrequency) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DlpFrequency) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ONCE", "DAILY", "WEEKLY", "CONTINUOUS", "NONE":
+			return true
+		}
 	}
-	switch v {
-	case "ONCE":
-		fallthrough
-	case "DAILY":
-		fallthrough
-	case "WEEKLY":
-		fallthrough
-	case "CONTINUOUS":
-		fallthrough
-	case "NONE":
-		*e = DlpFrequency(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for DlpFrequency: %v", v)
-	}
+	return false
 }

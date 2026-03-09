@@ -4,6 +4,8 @@ package components
 
 type ListChatsResponse struct {
 	ChatResults []ChatMetadataResult `json:"chatResults,omitempty"`
+	// An opaque cursor for fetching the next page of results. If empty, there are no more results.
+	Cursor *string `json:"cursor,omitempty"`
 }
 
 func (l *ListChatsResponse) GetChatResults() []ChatMetadataResult {
@@ -11,4 +13,11 @@ func (l *ListChatsResponse) GetChatResults() []ChatMetadataResult {
 		return nil
 	}
 	return l.ChatResults
+}
+
+func (l *ListChatsResponse) GetCursor() *string {
+	if l == nil {
+		return nil
+	}
+	return l.Cursor
 }

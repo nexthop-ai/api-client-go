@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 	"github.com/gleanwork/api-client-go/types"
 	"time"
@@ -26,24 +24,16 @@ const (
 func (e PersonMetadataType) ToPointer() *PersonMetadataType {
 	return &e
 }
-func (e *PersonMetadataType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PersonMetadataType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FULL_TIME", "CONTRACTOR", "NON_EMPLOYEE", "FORMER_EMPLOYEE":
+			return true
+		}
 	}
-	switch v {
-	case "FULL_TIME":
-		fallthrough
-	case "CONTRACTOR":
-		fallthrough
-	case "NON_EMPLOYEE":
-		fallthrough
-	case "FORMER_EMPLOYEE":
-		*e = PersonMetadataType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for PersonMetadataType: %v", v)
-	}
+	return false
 }
 
 type PersonMetadata struct {

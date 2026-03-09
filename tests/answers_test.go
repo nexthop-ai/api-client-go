@@ -286,7 +286,7 @@ func TestAnswers_Createanswer(t *testing.T) {
 										Snippets: []components.SearchResultSnippet{
 											components.SearchResultSnippet{
 												MimeType: apiclientgo.Pointer("mimeType"),
-												Snippet:  "snippet",
+												Snippet:  apiclientgo.Pointer("snippet"),
 											},
 										},
 									},
@@ -1090,7 +1090,7 @@ func TestAnswers_Editanswer(t *testing.T) {
 									Snippets: []components.SearchResultSnippet{
 										components.SearchResultSnippet{
 											MimeType: apiclientgo.Pointer("mimeType"),
-											Snippet:  "snippet",
+											Snippet:  apiclientgo.Pointer("snippet"),
 										},
 									},
 								},

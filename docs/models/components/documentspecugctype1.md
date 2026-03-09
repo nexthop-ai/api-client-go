@@ -2,6 +2,19 @@
 
 The type of the user generated content (UGC datasource).
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.DocumentSpecUgcType1Announcements
+
+// Open enum: custom values can be created with a direct type cast
+custom := components.DocumentSpecUgcType1("custom_value")
+```
+
 
 ## Values
 

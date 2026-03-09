@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // SearchResultProminenceEnum - The level of visual distinction that should be given to a result.
 type SearchResultProminenceEnum string
 
@@ -22,20 +17,14 @@ const (
 func (e SearchResultProminenceEnum) ToPointer() *SearchResultProminenceEnum {
 	return &e
 }
-func (e *SearchResultProminenceEnum) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *SearchResultProminenceEnum) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "HERO", "PROMOTED", "STANDARD":
+			return true
+		}
 	}
-	switch v {
-	case "HERO":
-		fallthrough
-	case "PROMOTED":
-		fallthrough
-	case "STANDARD":
-		*e = SearchResultProminenceEnum(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for SearchResultProminenceEnum: %v", v)
-	}
+	return false
 }

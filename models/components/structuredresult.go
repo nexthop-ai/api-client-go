@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -23,22 +21,16 @@ const (
 func (e Prominence) ToPointer() *Prominence {
 	return &e
 }
-func (e *Prominence) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Prominence) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "HERO", "PROMOTED", "STANDARD":
+			return true
+		}
 	}
-	switch v {
-	case "HERO":
-		fallthrough
-	case "PROMOTED":
-		fallthrough
-	case "STANDARD":
-		*e = Prominence(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Prominence: %v", v)
-	}
+	return false
 }
 
 // StructuredResultSource - Source context for this result. Possible values depend on the result type.
@@ -54,24 +46,16 @@ const (
 func (e StructuredResultSource) ToPointer() *StructuredResultSource {
 	return &e
 }
-func (e *StructuredResultSource) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *StructuredResultSource) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "EXPERT_DETECTION", "ENTITY_NLQ", "CALENDAR_EVENT", "AGENT":
+			return true
+		}
 	}
-	switch v {
-	case "EXPERT_DETECTION":
-		fallthrough
-	case "ENTITY_NLQ":
-		fallthrough
-	case "CALENDAR_EVENT":
-		fallthrough
-	case "AGENT":
-		*e = StructuredResultSource(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for StructuredResultSource: %v", v)
-	}
+	return false
 }
 
 // StructuredResult - A single object that can support any object in the work graph. Only a single object will be populated.

@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // CollectionPinnableTargets - What targets can a Collection be pinned to.
 type CollectionPinnableTargets string
 
@@ -18,18 +13,14 @@ const (
 func (e CollectionPinnableTargets) ToPointer() *CollectionPinnableTargets {
 	return &e
 }
-func (e *CollectionPinnableTargets) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CollectionPinnableTargets) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "RESOURCE_CARD", "TEAM_PROFILE_PAGE":
+			return true
+		}
 	}
-	switch v {
-	case "RESOURCE_CARD":
-		fallthrough
-	case "TEAM_PROFILE_PAGE":
-		*e = CollectionPinnableTargets(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CollectionPinnableTargets: %v", v)
-	}
+	return false
 }

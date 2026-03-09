@@ -2,6 +2,16 @@
 
 The action the user took within a Glean client with respect to the object referred to by the given `trackingToken`.
 
+## Example Usage
+
+```go
+import (
+	"github.com/gleanwork/api-client-go/models/components"
+)
+
+value := components.EventClick
+```
+
 
 ## Values
 

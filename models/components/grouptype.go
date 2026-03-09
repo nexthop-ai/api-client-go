@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // GroupType - The type of user group
 type GroupType string
 
@@ -24,30 +19,14 @@ const (
 func (e GroupType) ToPointer() *GroupType {
 	return &e
 }
-func (e *GroupType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *GroupType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "DEPARTMENT", "ALL", "TEAM", "JOB_TITLE", "ROLE_TYPE", "LOCATION", "REGION", "EXTERNAL_GROUP":
+			return true
+		}
 	}
-	switch v {
-	case "DEPARTMENT":
-		fallthrough
-	case "ALL":
-		fallthrough
-	case "TEAM":
-		fallthrough
-	case "JOB_TITLE":
-		fallthrough
-	case "ROLE_TYPE":
-		fallthrough
-	case "LOCATION":
-		fallthrough
-	case "REGION":
-		fallthrough
-	case "EXTERNAL_GROUP":
-		*e = GroupType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for GroupType: %v", v)
-	}
+	return false
 }

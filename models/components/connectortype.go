@@ -2,11 +2,6 @@
 
 package components
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // ConnectorType - The source from which document content was pulled, e.g. an API crawl or browser history
 type ConnectorType string
 
@@ -24,30 +19,14 @@ const (
 func (e ConnectorType) ToPointer() *ConnectorType {
 	return &e
 }
-func (e *ConnectorType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ConnectorType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "API_CRAWL", "BROWSER_CRAWL", "BROWSER_HISTORY", "BUILTIN", "FEDERATED_SEARCH", "PUSH_API", "WEB_CRAWL", "NATIVE_HISTORY":
+			return true
+		}
 	}
-	switch v {
-	case "API_CRAWL":
-		fallthrough
-	case "BROWSER_CRAWL":
-		fallthrough
-	case "BROWSER_HISTORY":
-		fallthrough
-	case "BUILTIN":
-		fallthrough
-	case "FEDERATED_SEARCH":
-		fallthrough
-	case "PUSH_API":
-		fallthrough
-	case "WEB_CRAWL":
-		fallthrough
-	case "NATIVE_HISTORY":
-		*e = ConnectorType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ConnectorType: %v", v)
-	}
+	return false
 }

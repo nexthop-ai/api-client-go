@@ -3,8 +3,6 @@
 package components
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/gleanwork/api-client-go/internal/utils"
 )
 
@@ -34,48 +32,16 @@ const (
 func (e Relation) ToPointer() *Relation {
 	return &e
 }
-func (e *Relation) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Relation) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ATTACHMENT", "CANONICAL", "CASE", "contact", "CONTACT", "CONVERSATION_MESSAGES", "EXPERT", "FROM", "HIGHLIGHT", "opportunity", "OPPORTUNITY", "RECENT", "SOURCE", "TICKET", "TRANSCRIPT", "WITH":
+			return true
+		}
 	}
-	switch v {
-	case "ATTACHMENT":
-		fallthrough
-	case "CANONICAL":
-		fallthrough
-	case "CASE":
-		fallthrough
-	case "contact":
-		fallthrough
-	case "CONTACT":
-		fallthrough
-	case "CONVERSATION_MESSAGES":
-		fallthrough
-	case "EXPERT":
-		fallthrough
-	case "FROM":
-		fallthrough
-	case "HIGHLIGHT":
-		fallthrough
-	case "opportunity":
-		fallthrough
-	case "OPPORTUNITY":
-		fallthrough
-	case "RECENT":
-		fallthrough
-	case "SOURCE":
-		fallthrough
-	case "TICKET":
-		fallthrough
-	case "TRANSCRIPT":
-		fallthrough
-	case "WITH":
-		*e = Relation(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Relation: %v", v)
-	}
+	return false
 }
 
 type RelatedDocuments struct {

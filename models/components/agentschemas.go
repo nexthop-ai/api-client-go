@@ -14,6 +14,8 @@ type OutputSchema struct {
 type AgentSchemas struct {
 	// The ID of the agent.
 	AgentID string `json:"agent_id"`
+	// The name of the agent.
+	Name *string `json:"name,omitempty"`
 	// The schema for the agent input. In JSON Schema format.
 	InputSchema InputSchema `json:"input_schema"`
 	// The schema for the agent output. In JSON Schema format.
@@ -27,6 +29,13 @@ func (a *AgentSchemas) GetAgentID() string {
 		return ""
 	}
 	return a.AgentID
+}
+
+func (a *AgentSchemas) GetName() *string {
+	if a == nil {
+		return nil
+	}
+	return a.Name
 }
 
 func (a *AgentSchemas) GetInputSchema() InputSchema {

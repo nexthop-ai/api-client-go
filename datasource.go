@@ -6,6 +6,8 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"net/http"
+
 	"github.com/gleanwork/api-client-go/internal/config"
 	"github.com/gleanwork/api-client-go/internal/hooks"
 	"github.com/gleanwork/api-client-go/internal/utils"
@@ -13,7 +15,6 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/models/operations"
 	"github.com/gleanwork/api-client-go/retry"
-	"net/http"
 )
 
 type Datasource struct {
@@ -200,7 +201,7 @@ func (s *Datasource) Status(ctx context.Context, datasource string, opts ...oper
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json; charset=UTF-8`):
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
 				return nil, err

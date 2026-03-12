@@ -6,6 +6,9 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"net/http"
+	"net/url"
+
 	"github.com/gleanwork/api-client-go/internal/config"
 	"github.com/gleanwork/api-client-go/internal/hooks"
 	"github.com/gleanwork/api-client-go/internal/utils"
@@ -13,8 +16,6 @@ import (
 	"github.com/gleanwork/api-client-go/models/components"
 	"github.com/gleanwork/api-client-go/models/operations"
 	"github.com/gleanwork/api-client-go/retry"
-	"net/http"
-	"net/url"
 )
 
 type IndexingDocuments struct {
@@ -1223,7 +1224,7 @@ func (s *IndexingDocuments) Debug(ctx context.Context, datasource string, debugD
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json; charset=UTF-8`):
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
 				return nil, err
@@ -1448,7 +1449,7 @@ func (s *IndexingDocuments) DebugMany(ctx context.Context, datasource string, de
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
-		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json; charset=UTF-8`):
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {
 				return nil, err
